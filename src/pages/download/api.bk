@@ -1,0 +1,238 @@
+<div class="w-380 mt-20 border-b-1 border-[#34498E] pb-3">
+    <div class="text-[40px] text-[#34498E] font-600">Database API Download</div>
+</div>
+<div class="w-380 mt-10">
+    <div class="w-380 bg-[#34498E] text-gray-50 p-4 text-[20px] font-600 flex flex-row">
+        <div>Phage FASTA File Download</div>
+        <div class="ml-210">URL Example</div>
+    </div>
+
+    <div class="w-380 border-1 border-gray-700 h-13 flex flex-row">
+        <div
+            class="w-200 border-r-1 border-gray-700 h-13 flex-row flex pl-4 items-center text-[19px]"
+        >
+            All Phage FASTA File Download URL
+        </div>
+        <div class="w-180 flex flex-row items-center justify-center">
+            <el-link
+                type="primary"
+                class="text-lg"
+                href="https://phageapi.deepomics.org/download/phage/fasta"
+            >
+                https://phageapi.deepomics.org/download/phage/fasta
+            </el-link>
+        </div>
+    </div>
+    <div class="w-380 border-1 border-gray-700 h-13 flex flex-row">
+        <div
+            class="w-200 border-r-1 border-gray-700 h-13 flex-row flex pl-4 items-center text-[19px]"
+        >
+            Phgae FASTA File Download URL By Phage ID
+        </div>
+        <div class="w-180 flex flex-row items-center justify-center">
+            <el-link
+                type="primary"
+                class="text-lg"
+                href="https://phageapi.deepomics.org/download/phage/fasta/?phageid=J02448.1"
+            >
+                https://phageapi.deepomics.org/download/phage/fasta/?phageid=J02448.1
+            </el-link>
+        </div>
+    </div>
+    <div class="w-380 border-1 border-gray-700 h-13 flex flex-row">
+        <div
+            class="w-200 border-r-1 border-gray-700 h-13 flex-row flex pl-4 items-center text-[19px]"
+        >
+            Phgae FASTA File Download URL By Data Source
+        </div>
+        <div class="w-180 flex flex-row items-center justify-center">
+            <el-link
+                type="primary"
+                class="text-lg"
+                href="https://phageapi.deepomics.org/download/phage/fasta/?datasource=Genbank"
+            >
+                https://phageapi.deepomics.org/download/phage/fasta/?datasource=Genbank
+            </el-link>
+        </div>
+    </div>
+</div>
+<div class="w-380 mt-10">
+    <div class="w-380 bg-[#34498E] text-gray-50 p-4 text-[20px] font-600 flex flex-row">
+        <div>Protein FASTA File Download</div>
+        <div class="ml-210">URL Example</div>
+    </div>
+
+    <div class="w-380 border-1 border-gray-700 h-13 flex flex-row">
+        <div
+            class="w-200 border-r-1 border-gray-700 h-13 flex-row flex pl-4 items-center text-[19px]"
+        >
+            All Protein FASTA File Download URL
+        </div>
+        <div class="w-180 flex flex-row items-center justify-center">
+            <el-link
+                type="primary"
+                class="text-lg"
+                href="https://phageapi.deepomics.org/download/protein/fasta"
+            >
+                https://phageapi.deepomics.org/download/protein/fasta
+            </el-link>
+        </div>
+    </div>
+    <div class="w-380 border-1 border-gray-700 h-13 flex flex-row">
+        <div
+            class="w-200 border-r-1 border-gray-700 h-13 flex-row flex pl-4 items-center text-[19px]"
+        >
+            Protein FASTA File Download URL By Phage ID
+        </div>
+        <div class="w-180 flex flex-row items-center justify-center">
+            <el-link
+                type="primary"
+                class="text-lg"
+                href="https://phageapi.deepomics.org/download/protein/fasta/?phageid=J02448.1"
+            >
+                https://phageapi.deepomics.org/download/protein/fasta/?phageid=J02448.1
+            </el-link>
+        </div>
+    </div>
+    <div class="w-380 border-1 border-gray-700 h-13 flex flex-row">
+        <div
+            class="w-200 border-r-1 border-gray-700 h-13 flex-row flex pl-4 items-center text-[19px]"
+        >
+            Protein FASTA File Download URL By Protein ID
+        </div>
+        <div class="w-180 flex flex-row items-center justify-center">
+            <el-link
+                type="primary"
+                class="text-lg"
+                href="https://phageapi.deepomics.org/download/protein/fasta/?proteinid=AAA32210.1"
+            >
+                https://phageapi.deepomics.org/download/protein/fasta/?proteinid=AAA32210.1
+            </el-link>
+        </div>
+    </div>
+    <div class="w-380 border-1 border-gray-700 h-13 flex flex-row">
+        <div
+            class="w-200 border-r-1 border-gray-700 h-13 flex-row flex pl-4 items-center text-[19px]"
+        >
+            Protein FASTA File Download URL By Data Source
+        </div>
+        <div class="w-180 flex flex-row items-center justify-center">
+            <el-link
+                type="primary"
+                class="text-lg"
+                href="https://phageapi.deepomics.org/download/protein/fasta/?datasource=Genbank"
+            >
+                https://phageapi.deepomics.org/download/protein/fasta/?datasource=Genbank
+            </el-link>
+        </div>
+    </div>
+</div>
+<div class="w-380 mt-10">
+    <div class="w-380 bg-[#34498E] text-gray-50 p-4 text-[20px] font-600 flex flex-row">
+        <div>Phage GBK File Download</div>
+        <div class="ml-210">URL Example</div>
+    </div>
+
+    <div class="w-380 border-1 border-gray-700 h-13 flex flex-row">
+        <div
+            class="w-200 border-r-1 border-gray-700 h-13 flex-row flex pl-4 items-center text-[19px]"
+        >
+            All Phage GBK File Download URL
+        </div>
+        <div class="w-180 flex flex-row items-center justify-center">
+            <el-link
+                type="primary"
+                class="text-lg"
+                href="https://phageapi.deepomics.org/download/phage/gbk"
+            >
+                https://phageapi.deepomics.org/download/phage/gbk
+            </el-link>
+        </div>
+    </div>
+    <div class="w-380 border-1 border-gray-700 h-13 flex flex-row">
+        <div
+            class="w-200 border-r-1 border-gray-700 h-13 flex-row flex pl-4 items-center text-[19px]"
+        >
+            Phgae GBK File Download URL By Phage ID
+        </div>
+        <div class="w-180 flex flex-row items-center justify-center">
+            <el-link
+                type="primary"
+                class="text-lg"
+                href="https://phageapi.deepomics.org/download/phage/gbk/?phageid=J02448.1"
+            >
+                https://phageapi.deepomics.org/download/phage/gbk/?phageid=J02448.1
+            </el-link>
+        </div>
+    </div>
+    <div class="w-380 border-1 border-gray-700 h-13 flex flex-row">
+        <div
+            class="w-200 border-r-1 border-gray-700 h-13 flex-row flex pl-4 items-center text-[19px]"
+        >
+            Phgae GBK File Download URL By Data Source
+        </div>
+        <div class="w-180 flex flex-row items-center justify-center">
+            <el-link
+                type="primary"
+                class="text-lg"
+                href="https://phageapi.deepomics.org/download/phage/gbk/?datasource=Genbank"
+            >
+                https://phageapi.deepomics.org/download/phage/gbk/?datasource=Genbank
+            </el-link>
+        </div>
+    </div>
+</div>
+<div class="w-380 mt-10">
+    <div class="w-380 bg-[#34498E] text-gray-50 p-4 text-[20px] font-600 flex flex-row">
+        <div>Phage GFF3 File Download</div>
+        <div class="ml-210">URL Example</div>
+    </div>
+
+    <div class="w-380 border-1 border-gray-700 h-13 flex flex-row">
+        <div
+            class="w-200 border-r-1 border-gray-700 h-13 flex-row flex pl-4 items-center text-[19px]"
+        >
+            All Phage GFF3 File Download URL
+        </div>
+        <div class="w-180 flex flex-row items-center justify-center">
+            <el-link
+                type="primary"
+                class="text-lg"
+                href="https://phageapi.deepomics.org/download/phage/gff3"
+            >
+                https://phageapi.deepomics.org/download/phage/gff3
+            </el-link>
+        </div>
+    </div>
+    <div class="w-380 border-1 border-gray-700 h-13 flex flex-row">
+        <div
+            class="w-200 border-r-1 border-gray-700 h-13 flex-row flex pl-4 items-center text-[19px]"
+        >
+            Phgae GFF3 File Download URL By Phage ID
+        </div>
+        <div class="w-180 flex flex-row items-center justify-center">
+            <el-link
+                type="primary"
+                class="text-lg"
+                href="https://phageapi.deepomics.org/download/phage/gff3/?phageid=J02448.1"
+            >
+                https://phageapi.deepomics.org/download/phage/gff3/?phageid=J02448.1
+            </el-link>
+        </div>
+    </div>
+    <div class="w-380 border-1 border-gray-700 h-13 flex flex-row">
+        <div
+            class="w-200 border-r-1 border-gray-700 h-13 flex-row flex pl-4 items-center text-[19px]"
+        >
+            Phgae GFF3 File Download URL By Data Source
+        </div>
+        <div class="w-180 flex flex-row items-center justify-center">
+            <el-link
+                type="primary"
+                class="text-lg"
+                href="https://phageapi.deepomics.org/download/phage/gff3/?datasource=Genbank"
+            >
+                https://phageapi.deepomics.org/download/phage/gff3/?datasource=Genbank
+            </el-link>
+        </div>
+    </div>

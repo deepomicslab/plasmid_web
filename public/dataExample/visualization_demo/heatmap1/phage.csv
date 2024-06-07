@@ -1,0 +1,30 @@
+Acession_ID	gc_content	length	genes	completeness	taxonomy	host
+Broecker_Sample_ID29-1191-0_NODE_1524_length_8276_cov_8.926043	57.63653939101015	8276	12	Low-quality	Caudovirales	Coprococcus eutactus
+Broecker_Sample_ID29-1191-0_NODE_1826_length_7254_cov_8.801361	50.26192445547284	7254	12	Not-determined	Caudovirales	Flavonifractor plautii
+Broecker_Sample_ID29-1191-0_NODE_1995_length_6797_cov_9.057698	57.49595409739591	6797	11	Low-quality	Caudovirales	Salmonella enterica
+Broecker_Sample_ID29-1191-0_NODE_2048_length_6665_cov_14.955068	45.19129782445612	6665	8	Not-determined	Caudovirales	Lachnospira eligens
+Broecker_Sample_ID29-1191-0_NODE_2911_length_5216_cov_10.715171	50.17254601226993	5216	10	Low-quality	Caudovirales	Ruthenibacterium lactatiformans
+Broecker_Sample_ID29-1191-0_NODE_2913_length_5215_cov_19.495155	38.38926174496644	5215	8	Low-quality		Bacteroides fragilis
+Broecker_Sample_ID29-1191-0_NODE_364_length_23296_cov_8.034035	52.76871565934066	23296	41	Medium-quality	Caudovirales	Flavonifractor plautii
+Broecker_Sample_ID29-1191-0_NODE_881_length_12231_cov_17.324573	43.73313711062056	12231	16	Not-determined	Caudovirales	Bacteroides vulgatus
+Broecker_Sample_ID29-1191-0_NODE_952_length_11499_cov_5.112985	56.98756413601183	11499	12	Low-quality	Caudovirales	Ruthenibacterium lactatiformans
+Broecker_Sample_ID29-1191-3_NODE_1000_length_7331_cov_2.968252	40.06274723775747	7331	8	Low-quality	Caudovirales	Lachnospira eligens
+Broecker_Sample_ID29-1191-3_NODE_1021_length_7202_cov_3.017350	39.23910024993057	7202	10	Low-quality	Caudovirales	Bacteroides dorei
+Broecker_Sample_ID29-1191-3_NODE_102_length_38363_cov_11.011251	51.96152542814691	38363	45	Complete	Caudovirales	Erwinia amylovora
+Broecker_Sample_ID29-1191-3_NODE_1210_length_6284_cov_3.820677	50.8274984086569	6284	9	Not-determined	Caudovirales	Agathobacter rectalis
+Broecker_Sample_ID29-1191-3_NODE_1276_length_6000_cov_8.699916	47.86666666666667	6000	8	Not-determined	Caudovirales	Ruminococcus bicirculans
+Broecker_Sample_ID29-1191-3_NODE_381_length_14378_cov_2.795364	52.24648768952567	14378	18	Not-determined	Caudovirales	Flavonifractor plautii
+Broecker_Sample_ID29-1192-0_NODE_1219_length_10495_cov_2.580843	50.28108623153883	10495	31	Low-quality	Caudovirales	Clostridium phoceensis
+Broecker_Sample_ID29-1192-0_NODE_1404_length_9390_cov_2.567542	49.488817891373806	9390	15	Low-quality	Caudovirales	Clostridium bolteae
+Broecker_Sample_ID29-1192-0_NODE_1406_length_9387_cov_3.922096	44.91317779908384	9387	9	Low-quality	Caudovirales	Zymomonas mobilis
+Broecker_Sample_ID29-1192-0_NODE_1514_length_8834_cov_5.258116	48.1095766357256	8834	10	Low-quality	Caudovirales	Escherichia coli
+Broecker_Sample_ID29-1192-0_NODE_153_length_54007_cov_4.436388	55.78165793323088	54007	77	Medium-quality	Caudovirales	Faecalibacterium prausnitzii
+Broecker_Sample_ID29-1192-0_NODE_1566_length_8626_cov_2.555361	47.51912821701832	8626	10	Low-quality	Caudovirales	Fusicatenibacter saccharivorans
+Broecker_Sample_ID29-1192-0_NODE_1718_length_7884_cov_2.240644	43.32825976661593	7884	10	Low-quality	Caudovirales	Lachnospiraceae bacterium
+Broecker_Sample_ID29-1192-0_NODE_1948_length_7150_cov_2.136716	43.81818181818182	7150	5	Low-quality	Caudovirales	Ruminiclostridium siraeum
+Broecker_Sample_ID29-1192-0_NODE_1992_length_6996_cov_6.475436	47.59862778730704	6996	11	Low-quality	Caudovirales	Ruthenibacterium lactatiformans
+Broecker_Sample_ID29-1192-0_NODE_2299_length_6143_cov_2.917871	49.69884421292528	6143	9	Low-quality	Caudovirales	Dorea longicatena
+Broecker_Sample_ID29-1192-0_NODE_2656_length_5395_cov_2.445880	49.50880444856349	5395	9	Low-quality	Caudovirales	Corynebacterium diphtheriae
+Broecker_Sample_ID29-1192-0_NODE_2701_length_5339_cov_2.627176	42.98557782356247	5339	8	Low-quality	Caudovirales	Clostridioides difficile
+Broecker_Sample_ID29-1192-0_NODE_2896_length_5046_cov_4.049890	40.48751486325803	5046	4	Low-quality	Caudovirales	Streptococcus pyogenes
+Broecker_Sample_ID29-1192-0_NODE_357_length_26490_cov_8.543787	52.97470743676859	26490	36	Medium-quality	Caudovirales	Clostridium phoceensis

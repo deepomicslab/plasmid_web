@@ -1,0 +1,12 @@
+src/typings/auto-components.d.ts
+src/typings/auto-import.d.ts
+/.eslintrc-auto-import.json
+/pnpm-lock.yaml
+/.env.*
+/.*ignore
+/.husky
+/.lintstagedrc
+*.csv
+*.ico
+*.png
+*.svg

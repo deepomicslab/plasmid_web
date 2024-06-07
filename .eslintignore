@@ -1,0 +1,22 @@
+# node_modules
+# dist
+# typings
+# .vscode
+# .husky
+# *.woff
+# *.ttf
+# *.sh
+src/typings/auto-import.d.ts
+src/typings/auto-components.d.ts
+/pnpm-lock.yaml
+/index.html
+
+*.scss
+*.css
+
+*.svg
+*.png
+*.ico
+
+*.md
+*.csv

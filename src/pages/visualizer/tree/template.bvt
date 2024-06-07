@@ -1,0 +1,196 @@
+svg {
+	Container {
+		x = 100
+		Component {
+			Container {
+				coord = "polar"
+				x = 200 + maxTextLength + treeHeight/4; y=200 + maxTextLength + treeHeight/4
+				@let w = 360/(leaveslist.length)
+				@for (item, index) in leaveslist{
+					Arc {
+        				x1 = index*w
+        				x2 = (index+1)*w + 0.05
+        				r1 = treeHeight/4 - 5
+        				r2 = treeHeight/4 + maxTextLength
+						fill = clusterhash[item] ? colorhash[clusterhash[item]] : 'white'
+						fillOpacity = 0.6
+						stroke = 'none'
+						strokeWidth = 0
+						behavior:tooltip {
+                        	content = (`Name: ${item}<br>Cluster Id: ${clusterhash[item]}<br>
+							Subcluster Id: ${subclusterhash[item]}`)
+                    	}
+    				}
+					// inner
+					@if(hosthash[item]){
+						Arc {
+        					x1 = index*w
+        					x2 = (index+1)*w + 0.05
+        					r1 = treeHeight/4 - 5 + maxTextLength + 10
+        					r2 = treeHeight/4 + 25 + maxTextLength + 10
+							fill = hosthash[item] ? colorhash[hosthash[item]] : "white"
+							fillOpacity = 0.6
+							stroke = 'none'
+							strokeWidth = 0
+							behavior:tooltip {
+                        		content = (`Name: ${item}<br>Cluster Id: ${clusterhash[item]}<br>
+								Subcluster Id: ${subclusterhash[item]}<br>Host: ${hosthash[item]}`)
+                    		}
+						}
+    				}
+					// outer
+					@if(lifestylehash[item]){
+						Arc {
+        					x1 = index*w
+        					x2 = (index+1)*w + 0.05
+        					r1 = treeHeight/4 - 5 + maxTextLength + 45
+        					r2 = treeHeight/4 + maxTextLength + 75
+							fill = lifestylehash[item] ? colorhash[lifestylehash[item]] : "white"
+							fillOpacity = 0.6
+							stroke = 'none'
+							strokeWidth = 0
+							behavior:tooltip {
+                        		content = (`Name: ${item}<br>Cluster Id: ${clusterhash[item]}<br>
+								Subcluster Id: ${subclusterhash[item]}<br>Life Style: ${lifestylehash[item]}`)
+                    		}
+    					}
+					}
+				}
+			}
+
+		}
+		Tree{
+			x = 200 + maxTextLength; y = 200 + maxTextLength
+			width = treeHeight/2;height = treeHeight/2
+        	direction = "radical"
+			data = treedata
+			:leaf(d){
+				Circle.centered {
+					@let radius = 3 + (d.leaf.data.length - minLeafNodesLength) * (maxRadius-4) / (maxLeafNodesLength - minLeafNodesLength)
+					r = colorhash[subclusterhash[d.leaf.data.name]] == '#FFFFFF' ? radius - 0.5: radius
+					fill = colorhash[subclusterhash[d.leaf.data.name]]
+					stroke = colorhash[subclusterhash[d.leaf.data.name]] == '#FFFFFF' ? 'black': 'none'
+					strokeWidth = 0.5
+					behavior:tooltip {
+                        content = (`Name: ${d.leaf.data.name}<br>Cluster Id: ${clusterhash[d.leaf.data.name]}<br>
+						Subcluster Id: ${subclusterhash[d.leaf.data.name]}<br>
+						Length: ${d.leaf.data.length}`)
+                    }
+				}
+				Container {
+					@let isRH = d.tree.isRightHalf(d.leaf.x)
+					Text {
+						anchor = d.tree.leafAnchor(d.leaf)
+						x = isRH? 15: -15
+						text = d.leaf.data.name.replace(/_/g,' ')
+						fill = 'black'
+						fontSize = 10
+						behavior:tooltip {
+                        	content = (`Name: ${d.leaf.data.name}<br>Cluster Id: ${clusterhash[d.leaf.data.name]}<br>
+							Subcluster Id: ${subclusterhash[d.leaf.data.name]}<br>
+							Length: ${d.leaf.data.length}`)
+                    	}
+					}
+					
+				}
+
+			}
+		}
+		Container {
+			x = 300 + maxTextLength*2 + treeHeight/2; y = 100
+			Container {
+				x = 10
+				Text{
+					x = -15
+					text = 'Distance to Parent'
+					style:font-weight = "bold"
+					fontSize = 16
+				}
+				Circle.centered {
+					y = 30
+					r = maxRadius - 1
+					fill = 'black'
+				}
+				Text {
+					x = 16; y = 25
+					text = maxLeafNodesLength
+				}
+				Circle.centered {
+					y = 60
+					r = 3
+					fill = 'black'
+				}
+				Text {
+					x = 16; y = 54
+					text = minLeafNodesLength
+				}
+			}
+			@if(legendclusterlist[0] !== undefined){
+				Text {
+					x = -5; y = 80
+					text = 'Cluster Legend'
+					style:font-weight = "bold"
+					fontSize = 16
+				}
+				@for(item,index) in chunkclusterlist{
+					@for(cluster, cindex) in item{
+						Rect {
+							x = index*(25+maxLegendTextLength); y = cindex*20 + 105
+							width = 20;height = 10
+							fill = colorhash[cluster]
+						}
+						Text {
+							x = index*(25+maxLegendTextLength)+25; y = cindex*20 + 105
+							text = cluster
+							fontSize = 12
+						}
+					}
+					
+				}
+			}
+			@if(lifestylelist[0] !== undefined){
+				Text {
+					x = -5; y = chunkclusterlist[0].length * 20 + 20 + 100
+					text = 'Lifestyle Legend'
+					style:font-weight = "bold"
+					fontSize = 16
+				}
+				@for(item,index) in lifestylelist{
+					Rect {
+						y = index*20 + 20 + chunkclusterlist[0].length * 20 + 20 + 105
+						width = 20;height = 10
+						fill = colorhash[item]
+					}
+					Text {
+						x = 25; y = index*20 + 20 + chunkclusterlist[0].length * 20 + 20 + 105
+						text = item
+					}
+				}
+			}
+			@if(hostlist[0] !== undefined){
+				Text {
+					x = -5; y = chunkclusterlist[0].length * 20 + 20 + 20  + 140
+					text = 'Host Legend'
+					style:font-weight = "bold"
+					fontSize = 16
+				}
+				@for(item,index) in hostlist{
+					Rect {
+						y = hostlength[index]*20 + 20 + chunkclusterlist[0].length * 20 + 20 + 20  + 145
+						width = 20;height = 10
+						fill = colorhash[item]
+					}
+					Container {
+						x = 25; y = hostlength[index]*20 + 20 + chunkclusterlist[0].length * 20 + 20 + 20 + 145
+						@for(subitem, subindex) in hosttext[index]{
+							Text {
+								y = subindex*20
+								text = subitem
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

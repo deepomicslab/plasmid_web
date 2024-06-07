@@ -1,0 +1,21 @@
+,Acession_ID,Data_Source,phage_name,length,host,gc_content,relative_path9
+15,NC_001423.1,RefSeq,Bacteriophage,19366.0,Bacillus subtilis,0.3966229474336466,phage_fasta/NC_001423.1.fasta
+18,NC_001604.1,RefSeq,Enterobacteria,39937.0,Escherichia coli,0.48398727996594637,phage_fasta/NC_001604.1.fasta
+82,NC_001335.1,RefSeq,Mycobacterium,52297.0,Mycobacterium smegmatis,0.6225787330057173,phage_fasta/NC_001335.1.fasta
+12,NC_001416.1,RefSeq,Enterobacteria,48502.0,Escherichia coli,0.4985773782524432,phage_fasta/NC_001416.1.fasta
+21,NC_001629.1,RefSeq,Lactococcus,22195.0,Lactococcus,0.3599008785762559,phage_fasta/NC_001629.1.fasta
+22,NC_001697.1,RefSeq,Haemophilus,32355.0,Haemophilus influenzae,0.4000618142481842,phage_fasta/NC_001697.1.fasta
+28,NC_001884.1,RefSeq,Bacillus,134416.0,Bacillus subtilis,0.34635013688846567,phage_fasta/NC_001884.1.fasta
+30,NC_001895.1,RefSeq,Enterobacteria,33593.0,Escherichia coli,0.5016818980144673,phage_fasta/NC_001895.1.fasta
+31,NC_001900.1,RefSeq,Mycobacterium,49136.0,Mycobacterium tuberculosis,0.6352979485509606,phage_fasta/NC_001900.1.fasta
+32,NC_001901.1,RefSeq,Bacteriophage,46375.0,Escherichia coli,0.5117196765498653,phage_fasta/NC_001901.1.fasta
+33,NC_001902.1,RefSeq,Methanobacterium,26111.0,Methanobacterium,0.46306154494274443,phage_fasta/NC_001902.1.fasta
+34,NC_001909.1,RefSeq,Lactococcus,31754.0,Lactococcus lactis,0.3434527933488694,phage_fasta/NC_001909.1.fasta
+39,NC_000924.1,RefSeq,Enterobacteria,61670.0,Escherichia coli,0.4936760175125669,phage_fasta/NC_000924.1.fasta
+41,NC_000871.1,RefSeq,Streptococcus,37370.0,Streptococcus thermophilus,0.38274016590848275,phage_fasta/NC_000871.1.fasta
+42,NC_000872.1,RefSeq,Streptococcus,40739.0,Streptococcus thermophilus,0.37565968727754734,phage_fasta/NC_000872.1.fasta
+43,NC_000896.1,RefSeq,Lactobacillus,43785.0,Lactobacillus gasseri,0.35571542765787373,phage_fasta/NC_000896.1.fasta
+44,NC_000902.1,RefSeq,Enterobacteria,60942.0,Escherichia coli,0.49913032063273277,phage_fasta/NC_000902.1.fasta
+45,NC_000929.1,RefSeq,Enterobacteria,36717.0,Escherichia coli,0.5205490644660512,phage_fasta/NC_000929.1.fasta
+46,NC_000935.1,RefSeq,Acyrthosiphon,36524.0,Bacteria,0.4388621180593582,phage_fasta/NC_000935.1.fasta
+47,NC_001271.1,RefSeq,Yersinia,39600.0,Yersinia enterocolitica,0.5063131313131313,phage_fasta/NC_001271.1.fasta

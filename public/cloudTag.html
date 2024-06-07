@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>SVG3DTagCloud - Example 5</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="js/jquery.svg3dtagcloud.min.js"></script>
+
+        <link
+            href="https://fonts.googleapis.com/css?family=Oswald&subset=latin,latin-ext"
+            rel="stylesheet"
+            type="text/css"
+        />
+
+        <style type="text/css">
+            html,
+            body,
+            div,
+            span,
+            applet,
+            object,
+            iframe,
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            p,
+            blockquote,
+            pre,
+            a,
+            abbr,
+            acronym,
+            address,
+            big,
+            cite,
+            code,
+            del,
+            dfn,
+            em,
+            font,
+            img,
+            ins,
+            kbd,
+            q,
+            s,
+            samp,
+            small,
+            strike,
+            strong,
+            sub,
+            sup,
+            tt,
+            var,
+            b,
+            u,
+            i,
+            center,
+            dl,
+            dt,
+            dd,
+            ol,
+            ul,
+            li,
+            fieldset,
+            form,
+            label,
+            legend,
+            table,
+            caption,
+            tbody,
+            tfoot,
+            thead,
+            tr,
+            th,
+            td {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                outline: 0;
+                font-size: 100%;
+                vertical-align: baseline;
+                background: transparent;
+                box-sizing: border-box;
+            }
+
+            body {
+                overflow: hidden;
+                background-color: #000;
+                background: transparent;
+                opacity: 1;
+            }
+
+            .phage-link text {
+                fill: #08d9d6 !important;
+            }
+            .dataset-link text {
+                fill: #ff2e63 !important;
+            }
+            .host-link text {
+                /* fill: #252A34 !important; */
+            }
+        </style>
+
+        <script>
+            $(document).ready(function () {
+                var index = 0,
+                    entries = [
+                        [
+                            // {
+                            //     label: 'Caudovirales',
+                            //     target: '_blank',
+                            //     url: '',
+                            //     // fontSize: 34,
+                            //     class: 'phage-link',
+                            // },
+                            // {
+                            //     label: 'Retrovirales',
+                            //     target: '_blank',
+                            //     url: '',
+                            //     class: 'phage-link',
+                            // },
+                            // {
+                            //     label: 'Microviridae',
+                            //     target: '_blank',
+                            //     url: '',
+                            //     class: 'phage-link',
+                            // },
+                            // {
+                            //     label: 'Riboviria',
+                            //     target: '_blank',
+                            //     url: '',
+                            //     class: 'phage-link',
+                            // },
+                            // {
+                            //     label: 'NCLDV',
+                            //     target: '_blank',
+                            //     url: '',
+                            //     class: 'phage-link',
+                            // },
+                            // {
+                            //     label: 'Lavidaviridae',
+                            //     target: '_blank',
+                            //     url: '',
+                            //     class: 'phage-link',
+                            // },
+                            // {
+                            //     label: 'Inoviridae',
+                            //     target: '_blank',
+                            //     url: '',
+                            //     class: 'phage-link',
+                            // },
+
+                            {
+                                label: 'Annotated Protein',
+                                target: '_blank',
+                                url: 'https://phagescope.deepomics.org/database/protein',
+                                class: 'phage-link',
+                            },
+                            {
+                                label: 'Transcription Terminator',
+                                target: '_blank',
+                                url: 'https://phagescope.deepomics.org/database/structural/terminators',
+                                class: 'phage-link',
+                            },
+                            {
+                                label: 'tRNA & tmRNA Gene',
+                                target: '_blank',
+                                url: 'https://phagescope.deepomics.org/database/function/trna',
+                                class: 'phage-link',
+                            },
+                            {
+                                label: 'Anti-CRISPR Protein',
+                                target: '_blank',
+                                url: 'https://phagescope.deepomics.org/database/function/anticrispr',
+                                class: 'phage-link',
+                            },
+                            {
+                                label: 'CRISPR Array',
+                                target: '_blank',
+                                url: 'https://phagescope.deepomics.org/database/function/crispr',
+                                class: 'phage-link',
+                            },
+                            {
+                                label: 'Transmembrane Protein',
+                                target: '_blank',
+                                url: 'https://phagescope.deepomics.org/database/function/transmembrane',
+                                class: 'phage-link',
+                            },
+                            {
+                                label: 'Bacillota',
+                                url: 'https://phagescope.deepomics.org/database/host/list?rank=Phylum&node=Bacillota',
+                                target: '_blank',
+                                class: 'host-link',
+                            },
+                            {
+                                label: 'Campylobacterota',
+                                url: 'https://phagescope.deepomics.org/database/host/list?rank=Phylum&node=Campylobacterota',
+                                target: '_blank',
+                                class: 'host-link',
+                            },
+                            {
+                                label: 'Cyanobacteriota',
+                                url: 'https://phagescope.deepomics.org/database/host/list?rank=Phylum&node=Cyanobacteriota',
+                                target: '_blank',
+                                class: 'host-link',
+                            },
+                            {
+                                label: 'Bacteroidota',
+                                url: 'https://phagescope.deepomics.org/database/host/list?rank=Phylum&node=Bacteroidota',
+                                target: '_blank',
+                                class: 'host-link',
+                            },
+                            {
+                                label: 'Verrucomicrobiota',
+                                url: 'https://phagescope.deepomics.org/database/host/list?rank=Phylum&node=Verrucomicrobiota',
+                                target: '_blank',
+                                class: 'host-link',
+                            },
+                            {
+                                label: 'Synergistota',
+                                url: 'https://phagescope.deepomics.org/database/host/list?rank=Phylum&node=Synergistota',
+                                target: '_blank',
+                                class: 'host-link',
+                            },
+                            {
+                                label: 'Pseudomonadota',
+                                url: 'https://phagescope.deepomics.org/database/host/list?rank=Phylum&node=Pseudomonadota',
+                                target: '_blank',
+                                class: 'host-link',
+                            },
+                            {
+                                label: 'Fusobacteriota',
+                                url: 'https://phagescope.deepomics.org/database/host/list?rank=Phylum&node=Fusobacteriota',
+                                target: '_blank',
+                                class: 'host-link',
+                            },
+                            {
+                                label: 'Thermodesulfobacteriota',
+                                url: 'https://phagescope.deepomics.org/database/host/list?rank=Phylum&node=Thermodesulfobacteriota',
+                                target: '_blank',
+                                class: 'host-link',
+                            },
+                            {
+                                label: 'Spirochaetota',
+                                url: 'https://phagescope.deepomics.org/database/host/list?rank=Phylum&node=Spirochaetota',
+                                target: '_blank',
+                                class: 'host-link',
+                            },
+                            {
+                                label: 'Genbank',
+                                url: 'https://phagescope.deepomics.org/database/phage?dataset=phage_Genbank',
+                                target: '_blank',
+                                class: 'dataset-link',
+                            },
+                            {
+                                label: 'RefSeq',
+                                url: 'https://phagescope.deepomics.org/database/phage?dataset=phage_RefSeq',
+                                target: '_blank',
+                                class: 'dataset-link',
+                            },
+                            {
+                                label: 'DDBJ',
+                                url: 'https://phagescope.deepomics.org/database/phage?dataset=phage_DDBJ',
+                                target: '_blank',
+                                class: 'dataset-link',
+                            },
+                            {
+                                label: 'EMBL',
+                                url: 'https://phagescope.deepomics.org/database/phage?dataset=phage_EMBL',
+                                target: '_blank',
+                                class: 'dataset-link',
+                            },
+                            {
+                                label: 'PhagesDB',
+                                url: 'https://phagescope.deepomics.org/database/phage?dataset=phage_PhagesDB',
+                                target: '_blank',
+                                class: 'dataset-link',
+                            },
+                            {
+                                label: 'GPD',
+                                url: 'https://phagescope.deepomics.org/database/phage?dataset=phage_GPD',
+                                target: '_blank',
+                                class: 'dataset-link',
+                            },
+                            {
+                                label: 'GVD',
+                                url: 'https://phagescope.deepomics.org/database/phage?dataset=phage_GVD',
+                                target: '_blank',
+                                class: 'dataset-link',
+                            },
+                            {
+                                label: 'MGV',
+                                url: 'https://phagescope.deepomics.org/database/phage?dataset=phage_MGV',
+                                target: '_blank',
+                                class: 'dataset-link',
+                            },
+                            {
+                                label: 'TemPhD',
+                                url: 'https://phagescope.deepomics.org/database/phage?dataset=phage_TemPhD',
+                                target: '_blank',
+                                class: 'dataset-link',
+                            },
+                            {
+                                label: 'CHVD',
+                                url: 'https://phagescope.deepomics.org/database/phage?dataset=phage_CHVD',
+                                target: '_blank',
+                                class: 'dataset-link',
+                            },
+                            {
+                                label: 'IGVD',
+                                url: 'https://phagescope.deepomics.org/database/phage?dataset=phage_IGVD',
+                                target: '_blank',
+                                class: 'dataset-link',
+                            },
+                            {
+                                label: 'IMG_VR',
+                                url: 'https://phagescope.deepomics.org/database/phage?dataset=phage_IMG_VR',
+                                target: '_blank',
+                                class: 'dataset-link',
+                            },
+                            {
+                                label: 'GOV2',
+                                url: 'https://phagescope.deepomics.org/database/phage?dataset=phage_GOV2',
+                                target: '_blank',
+                                class: 'dataset-link',
+                            },
+                            {
+                                label: 'STV',
+                                url: 'https://phagescope.deepomics.org/database/phage?dataset=phage_STV',
+                                target: '_blank',
+                                class: 'dataset-link',
+                            },
+                        ],
+                    ]
+
+                var settings = {
+                    entries: entries[index],
+                    width: 480,
+                    height: 480,
+                    radius: '70%',
+                    radiusMin: 75,
+                    bgDraw: true,
+                    bgColor: '#f8f9fa',
+                    opacityOver: 1,
+                    opacityOut: 0.05,
+                    opacitySpeed: 6,
+                    fov: 800,
+                    speed: 0.4,
+                    fontFamily: 'Oswald, Arial, sans-serif',
+                    fontSize: '20',
+                    fontColor: '#456074',
+                    fontWeight: 'normal', //bold
+                    fontStyle: 'normal', //italic
+                    fontStretch: 'normal', //wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
+                    fontToUpperCase: true,
+                    tooltipFontFamily: 'Oswald, Arial, sans-serif',
+                    tooltipFontSize: '11',
+                    tooltipFontColor: '#fff',
+                    tooltipFontWeight: 'normal', //bold
+                    tooltipFontStyle: 'normal', //italic
+                    tooltipFontStretch: 'normal', //wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
+                    tooltipFontToUpperCase: false,
+                    tooltipTextAnchor: 'left',
+                    tooltipDiffX: 0,
+                    tooltipDiffY: 10,
+                }
+
+                //var svg3DTagCloud = new SVG3DTagCloud( document.getElementById( 'holder'  ), settings );
+                $('#holder').svg3DTagCloud(settings)
+                // $('.phage-link').find('text').css('fill', '#EE7E7D !important')
+            })
+        </script>
+    </head>
+
+    <body>
+        <div id="holder"></div>
+    </body>
+</html>

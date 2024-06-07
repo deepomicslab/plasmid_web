@@ -1,0 +1,102 @@
+id,Acession_ID,Data_Source,phage_name,length,host,gc_content,relative_path
+0,J02448.1,Genbank,Bacteriophage,6407.0,Escherichia coli,0.40939597315436244,phage_fasta/J02448.1.fasta
+1,M14428.1,Genbank,Bacteriophage,5386.0,Escherichia coli C,0.4433717044188637,phage_fasta/M14428.1.fasta
+2,AF059243.1,Genbank,Bacteriophage,4248.0,Enterobacteriaceae,0.5082391713747646,phage_fasta/AF059243.1.fasta
+3,AF227250.1,Genbank,Enterobacteriophage,3486.0,Escherichia coli,0.4652897303499713,phage_fasta/AF227250.1.fasta
+4,NC_001330.1,RefSeq,Enterobacteria,6087.0,Escherichia coli,0.45178248726794806,phage_fasta/NC_001330.1.fasta
+5,NC_001331.1,RefSeq,Pseudomonas,7349.0,Pseudomonas aeruginosa,0.6149135936862158,phage_fasta/NC_001331.1.fasta
+6,NC_001332.1,RefSeq,Enterobacteria,6744.0,Escherichia coli,0.42719454329774614,phage_fasta/NC_001332.1.fasta
+7,NC_001335.1,RefSeq,Mycobacterium,52297.0,Mycobacterium smegmatis,0.6225787330057173,phage_fasta/NC_001335.1.fasta
+8,NC_001341.1,RefSeq,Acholeplasma,4491.0,Acholeplasma laidlawii,0.33288799821865955,phage_fasta/NC_001341.1.fasta
+9,NC_001365.1,RefSeq,Spiroplasma,8273.0,Spiroplasma citri,0.228937507554696,phage_fasta/NC_001365.1.fasta
+10,NC_001396.1,RefSeq,Xanthomonas,7308.0,Xanthomonas campestris,0.5807334428024084,phage_fasta/NC_001396.1.fasta
+11,NC_002014.1,RefSeq,Enterobacteria,6883.0,Escherichia coli,0.40549179137004215,phage_fasta/NC_002014.1.fasta
+12,NC_001416.1,RefSeq,Enterobacteria,48502.0,Escherichia coli,0.4985773782524432,phage_fasta/NC_001416.1.fasta
+13,NC_001418.1,RefSeq,Pseudomonas,5833.0,Pseudomonas aeruginosa,0.4536259214812275,phage_fasta/NC_001418.1.fasta
+14,NC_001422.1,RefSeq,Escherichia,5386.0,Escherichia coli,0.44764203490531007,phage_fasta/NC_001422.1.fasta
+15,NC_001423.1,RefSeq,Bacteriophage,19366.0,Bacillus subtilis,0.3966229474336466,phage_fasta/NC_001423.1.fasta
+16,NC_001426.1,RefSeq,Enterobacteria,3466.0,Escherichia coli,0.4786497403346797,phage_fasta/NC_001426.1.fasta
+17,NC_001447.1,RefSeq,Acholeplasma,11965.0,Acholeplasma laidlawii,0.31959882992060173,phage_fasta/NC_001447.1.fasta
+18,NC_001604.1,RefSeq,Enterobacteria,39937.0,Escherichia coli,0.48398727996594637,phage_fasta/NC_001604.1.fasta
+19,NC_001609.1,RefSeq,Enterobacteria,11624.0,Escherichia coli,0.49526841018582246,phage_fasta/NC_001609.1.fasta
+20,NC_001628.1,RefSeq,Pseudomonas,3588.0,Pseudomonas aeruginosa,0.5420847268673356,phage_fasta/NC_001628.1.fasta
+21,NC_001629.1,RefSeq,Lactococcus,22195.0,Lactococcus,0.3599008785762559,phage_fasta/NC_001629.1.fasta
+22,NC_001697.1,RefSeq,Haemophilus,32355.0,Haemophilus influenzae,0.4000618142481842,phage_fasta/NC_001697.1.fasta
+23,NC_001706.1,RefSeq,Lactobacillus,22172.0,Lactococcus lactis,0.3630705394190871,phage_fasta/NC_001706.1.fasta
+24,NC_001730.1,RefSeq,Bacteriophage,6089.0,Escherichia coli,0.44917063557234355,phage_fasta/NC_001730.1.fasta
+25,NC_001741.1,RefSeq,Chlamydia,4877.0,Chlamydia psittaci,0.3649784703711298,phage_fasta/NC_001741.1.fasta
+26,NC_001825.1,RefSeq,Streptococcus,19343.0,Streptococcus pneumoniae,0.38830584707646176,phage_fasta/NC_001825.1.fasta
+27,NC_001835.1,RefSeq,Lactococcus,28451.0,Lactococcus lactis,0.345119679448877,phage_fasta/NC_001835.1.fasta
+28,NC_001884.1,RefSeq,Bacillus,134416.0,Bacillus subtilis,0.34635013688846567,phage_fasta/NC_001884.1.fasta
+29,NC_001890.1,RefSeq,Enterobacteria,4215.0,Escherichia coli,0.48540925266903917,phage_fasta/NC_001890.1.fasta
+30,NC_001895.1,RefSeq,Enterobacteria,33593.0,Escherichia coli,0.5016818980144673,phage_fasta/NC_001895.1.fasta
+31,NC_001900.1,RefSeq,Mycobacterium,49136.0,Mycobacterium tuberculosis,0.6352979485509606,phage_fasta/NC_001900.1.fasta
+32,NC_001901.1,RefSeq,Bacteriophage,46375.0,Escherichia coli,0.5117196765498653,phage_fasta/NC_001901.1.fasta
+33,NC_001902.1,RefSeq,Methanobacterium,26111.0,Methanobacterium,0.46306154494274443,phage_fasta/NC_001902.1.fasta
+34,NC_001909.1,RefSeq,Lactococcus,31754.0,Lactococcus lactis,0.3434527933488694,phage_fasta/NC_001909.1.fasta
+35,NC_001942.1,RefSeq,Mycoplasma,15644.0,Mycoplasma arthritidis,0.2903349526975198,phage_fasta/NC_001942.1.fasta
+36,NC_001954.1,RefSeq,Enterobacteria,8454.0,Escherichia coli,0.4370712088951975,phage_fasta/NC_001954.1.fasta
+37,NC_001956.1,RefSeq,Vibrio,8651.0,Vibrio cholerae,0.44526644318575886,phage_fasta/NC_001956.1.fasta
+38,NC_001998.1,RefSeq,Guinea,4529.0,Chlamydia psittaci,0.40980348862883637,phage_fasta/NC_001998.1.fasta
+39,NC_000924.1,RefSeq,Enterobacteria,61670.0,Escherichia coli,0.4936760175125669,phage_fasta/NC_000924.1.fasta
+40,NC_000867.1,RefSeq,Pseudoalteromonas,10079.0,Pseudoalteromonas,0.4216688163508285,phage_fasta/NC_000867.1.fasta
+41,NC_000871.1,RefSeq,Streptococcus,37370.0,Streptococcus thermophilus,0.38274016590848275,phage_fasta/NC_000871.1.fasta
+42,NC_000872.1,RefSeq,Streptococcus,40739.0,Streptococcus thermophilus,0.37565968727754734,phage_fasta/NC_000872.1.fasta
+43,NC_000896.1,RefSeq,Lactobacillus,43785.0,Lactobacillus gasseri,0.35571542765787373,phage_fasta/NC_000896.1.fasta
+44,NC_000902.1,RefSeq,Enterobacteria,60942.0,Escherichia coli,0.49913032063273277,phage_fasta/NC_000902.1.fasta
+45,NC_000929.1,RefSeq,Enterobacteria,36717.0,Escherichia coli,0.5205490644660512,phage_fasta/NC_000929.1.fasta
+46,NC_000935.1,RefSeq,Acyrthosiphon,36524.0,Bacteria,0.4388621180593582,phage_fasta/NC_000935.1.fasta
+47,NC_001271.1,RefSeq,Yersinia,39600.0,Yersinia enterocolitica,0.5063131313131313,phage_fasta/NC_001271.1.fasta
+48,NC_001317.1,RefSeq,Escherichia,30624.0,Escherichia coli,0.5308581504702194,phage_fasta/NC_001317.1.fasta
+49,NC_002166.1,RefSeq,Bacteriophage,40751.0,Escherichia coli,0.4948344825893843,phage_fasta/NC_002166.1.fasta
+50,NC_002167.1,RefSeq,Enterobacteria,39732.0,Escherichia coli,0.4978606664653176,phage_fasta/NC_002167.1.fasta
+51,NC_002185.1,RefSeq,Streptococcus,35466.0,Streptococcus thermophilus,0.3872723171488186,phage_fasta/NC_002185.1.fasta
+52,NC_002194.1,RefSeq,Chlamydia,4563.0,Chlamydia psittaci,0.4093797939951786,phage_fasta/NC_002194.1.fasta
+53,NC_002214.1,RefSeq,Streptococcus,39807.0,Streptococcus thermophilus,0.38556032858542466,phage_fasta/NC_002214.1.fasta
+54,NC_002321.1,RefSeq,Staphylococcus,41401.0,Staphylococcus aureus,0.33554745054467283,phage_fasta/NC_002321.1.fasta
+55,NC_002362.1,RefSeq,Vibrio,8784.0,Vibrio parahaemolyticus,0.4516165755919854,phage_fasta/NC_002362.1.fasta
+56,NC_002363.1,RefSeq,Vibrio,6891.0,Vibrio parahaemolyticus,0.47235524597300826,phage_fasta/NC_002363.1.fasta
+57,NC_002486.1,RefSeq,Staphylococcus,45636.0,Staphylococcus aureus,0.3347576474712946,phage_fasta/NC_002486.1.fasta
+58,NC_002180.1,RefSeq,Chlamydia,4532.0,Chlamydia pneumoniae AR39,0.40622241835834066,phage_fasta/NC_002180.1.fasta
+59,NC_002515.1,RefSeq,Mycoplasma,11660.0,Mycoplasma pulmonis,0.2679245283018868,phage_fasta/NC_002515.1.fasta
+60,NC_002519.1,RefSeq,Roseophage,39898.0,Roseobacter,0.46160208531755975,phage_fasta/NC_002519.1.fasta
+61,NC_002643.1,RefSeq,Bdellovibrio,4594.0,Bdellovibrio bacteriovorus,0.4610361340879408,phage_fasta/NC_002643.1.fasta
+62,NC_002649.1,RefSeq,Bacillus,21129.0,Bacillus sp.,0.34653793364570024,phage_fasta/NC_002649.1.fasta
+63,NC_002656.1,RefSeq,Mycobacterium,50550.0,Mycobacterium smegmatis,0.6364985163204748,phage_fasta/NC_002656.1.fasta
+64,AF323671.1,Genbank,Bacteriophage,14957.0,Lactococcus lactis,0.3587617837801698,phage_fasta/AF323671.1.fasta
+65,AF323672.1,Genbank,Bacteriophage,14510.0,Lactococcus lactis,0.3423845623707788,phage_fasta/AF323672.1.fasta
+66,AF323673.1,Genbank,Bacteriophage,15179.0,Lactococcus lactis,0.3303906713222215,phage_fasta/AF323673.1.fasta
+67,NC_002670.1,RefSeq,Lactococcus,14510.0,Lactococcus lactis,0.3423845623707788,phage_fasta/NC_002670.1.fasta
+68,NC_002666.1,RefSeq,Lactococcus,35538.0,Lactococcus lactis,0.3518768642016996,phage_fasta/NC_002666.1.fasta
+69,NC_002667.1,RefSeq,Lactococcus,41834.0,Lactococcus lactis,0.35322943060668355,phage_fasta/NC_002667.1.fasta
+70,NC_002668.1,RefSeq,Lactococcus,36949.0,Lactococcus lactis,0.3567890876613711,phage_fasta/NC_002668.1.fasta
+71,NC_002669.1,RefSeq,Lactococcus,14957.0,Lactococcus lactis,0.3587617837801698,phage_fasta/NC_002669.1.fasta
+72,NC_002671.1,RefSeq,Lactococcus,15179.0,Lactococcus lactis,0.3303906713222215,phage_fasta/NC_002671.1.fasta
+73,NC_002703.1,RefSeq,Lactococcus,38347.0,Lactococcus lactis,0.3622186872506324,phage_fasta/NC_002703.1.fasta
+74,NC_002730.1,RefSeq,Enterobacteria,38297.0,Escherichia coli,0.4668773010940805,phage_fasta/NC_002730.1.fasta
+75,NC_002747.1,RefSeq,Lactococcus,37667.0,Lactococcus lactis,0.35378447978336475,phage_fasta/NC_002747.1.fasta
+76,NC_002796.1,RefSeq,Lactococcus,40003.0,Lactococcus lactis,0.3497487688423368,phage_fasta/NC_002796.1.fasta
+77,NC_003085.1,RefSeq,Myxococcus,49534.0,Myxococcus xanthus,0.6774538700690435,phage_fasta/NC_003085.1.fasta
+78,NC_003216.1,RefSeq,Listeria,40834.0,Listeria monocytogenes,0.3610716559729637,phage_fasta/NC_003216.1.fasta
+79,NC_003278.1,RefSeq,Pseudomonas,35580.0,Pseudomonas aeruginosa,0.6262225969645868,phage_fasta/NC_003278.1.fasta
+80,NC_003288.1,RefSeq,Staphylococcus,43081.0,Staphylococcus aureus,0.3543093242960934,phage_fasta/NC_003288.1.fasta
+81,NC_003298.1,RefSeq,Enterobacteria,38208.0,Escherichia coli,0.49900544388609713,phage_fasta/NC_003298.1.fasta
+82,NC_003299.1,RefSeq,Pseudomonas,7051.0,Pseudomonas syringae,0.5402070628279677,phage_fasta/NC_003299.1.fasta
+83,NC_003300.1,RefSeq,Pseudomonas,4741.0,Pseudomonas syringae,0.5526260282640794,phage_fasta/NC_003300.1.fasta
+84,NC_003301.1,RefSeq,Pseudomonas,3192.0,Pseudomonas syringae,0.5444862155388471,phage_fasta/NC_003301.1.fasta
+85,NC_003313.1,RefSeq,Vibrio,33106.0,Vibrio cholerae,0.48897480819186856,phage_fasta/NC_003313.1.fasta
+86,NC_003309.1,RefSeq,Burkholderia,53373.0,Burkholderia thailandensis,0.6119198845858392,phage_fasta/NC_003309.1.fasta
+87,NC_003315.1,RefSeq,Haemophilus,31508.0,Haemophilus influenzae,0.39935889297956073,phage_fasta/NC_003315.1.fasta
+88,NC_003324.1,RefSeq,Sinorhizobium,57416.0,Sinorhizobium meliloti,0.6148634526961125,phage_fasta/NC_003324.1.fasta
+89,NC_003356.1,RefSeq,Enterobacteria,42575.0,Escherichia coli,0.49350557839107456,phage_fasta/NC_003356.1.fasta
+90,NC_003387.1,RefSeq,Mycobacterium,52797.0,Mycobacterium avium,0.6811371858249522,phage_fasta/NC_003387.1.fasta
+91,NC_003438.1,RefSeq,Spiroplasma,4421.0,Spiroplasma melliferum,0.3205157204252432,phage_fasta/NC_003438.1.fasta
+92,NC_003444.1,RefSeq,Enterobacteria,37074.0,Shigella flexneri,0.5076873280466094,phage_fasta/NC_003444.1.fasta
+93,NC_003460.1,RefSeq,Propionibacterium,5804.0,Propionibacterium freudenreichii,0.6428325292901448,phage_fasta/NC_003460.1.fasta
+94,AP004402.1,DDBJ,Stx2,61765.0,Escherichia coli,0.49388812434226503,phage_fasta/AP004402.1.fasta
+95,NC_003524.1,RefSeq,Clostridium,33507.0,Clostridium perfringens,0.283821291073507,phage_fasta/NC_003524.1.fasta
+96,NC_003714.1,RefSeq,Pseudomonas,2948.0,Pseudomonas savastanoi pv. phaseolicola,0.5515603799185889,phage_fasta/NC_003714.1.fasta
+97,NC_003715.1,RefSeq,Pseudomonas,6374.0,Pseudomonas savastanoi pv. phaseolicola,0.5552243489174773,phage_fasta/NC_003715.1.fasta
+98,NC_003716.1,RefSeq,Pseudomonas,4063.0,Pseudomonas savastanoi pv. phaseolicola,0.567560915579621,phage_fasta/NC_003716.1.fasta
+99,NC_003793.1,RefSeq,Spiroplasma,7768.0,Spiroplasma citri,0.23159114315139032,phage_fasta/NC_003793.1.fasta
+100,NC_004066.1,RefSeq,Lactococcus,36798.0,Lactococcus lactis,0.3583618674927985,phage_fasta/NC_004066.1.fasta

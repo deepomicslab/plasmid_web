@@ -1,0 +1,44 @@
+svg {
+	Container {
+		x = 200;y=200
+		Tree{
+			width = 200;height = treeHeight
+        	direction = "right"
+			data = treedata
+			:leaf(d){
+				Container {
+					Text {
+						x = textgaplen; y = -4
+						text = d.leaf.data.name.replace(/_/g,' ')
+						fill = 'black'
+						fontSize = 12
+					}
+					@for (item, index) in heatmaphash[d.leaf.data.name]{
+						Rect {
+							x = index*22 + 5; y = -4
+							width = 20;height = 8
+							fill = colorshash[index].get(item/maxvaluehash[index])
+							behavior:tooltip {
+                            	content = (`${d.leaf.data.name.replace(/_/g,' ')}<br>${titles[index]}<br>${item}`)
+                        	}
+						}
+					}
+				}
+			}
+		}
+		@for (item, index) in titles{
+			Rect{
+				x = 200 + (index-1)*22 + 7; y = -10
+				width = 20; height = 8
+				fill = TypeDict[item]['color']
+			}
+			Text {
+				x = 200 + (index-1)*22 + 10;y = -20
+				text = item
+				rotation= @rotate(-90)
+			}
+		}
+
+	}
+
+}
