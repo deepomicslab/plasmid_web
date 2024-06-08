@@ -485,7 +485,7 @@ const createColumns = (): DataTableColumns<RowData> => [
     {
         title: 'Action',
         key: 'actions',
-        width: '200px',
+        width: '300px',
         align: 'center',
         fixed: 'right',
         render(row: any) {
@@ -519,7 +519,22 @@ const createColumns = (): DataTableColumns<RowData> => [
                             strong: true,
                             tertiary: true,
                             size: 'small',
-                            type: 'info',
+                            type: 'success',
+                            onClick: () => {
+                                window.open(
+                                    `https://alphafold.ebi.ac.uk/search/text/${row.sequence}/`
+                                )
+                            },
+                        },
+                        { default: () => 'Structure' }
+                    ),
+                    h(
+                        NButton,
+                        {
+                            strong: true,
+                            tertiary: true,
+                            size: 'small',
+                            type: 'warning',
                             onClick: () => {
                                 const blob = new Blob([row.sequence], { type: 'text/plain' })
                                 const url = URL.createObjectURL(blob)

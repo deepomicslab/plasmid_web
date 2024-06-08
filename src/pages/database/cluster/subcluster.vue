@@ -52,7 +52,7 @@
         </div>
         <div class="flex flex-row justify-between mb-4">
             <div class="flex flex-row w-200">
-                <div class="text-4xl font-500 mb-8">Phage Members</div>
+                <div class="text-4xl font-500 mb-8">Plasmid Members</div>
                 <div class="mt-1.5 ml-4">
                     <n-dropdown trigger="hover" :options="dropdownoptions" :show-arrow="true">
                         <n-button>

@@ -7243,6 +7243,13 @@ react-is@^17.0.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
+react-pdb-view@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/react-pdb-view/-/react-pdb-view-1.0.3.tgz#26447a821e875a073736e6ee3e3868a2d878e157"
+  integrity sha512-k3Szn+g69It+JfQHZMLizROlpKpJqyUH7LPXvcGz7H8VsYOkCDVZea68GF6NpGeIrBbkZ5sq66/oJac+2waXxA==
+  dependencies:
+    shebang-loader "0.0.1"
+
 read-pkg-up@^7.0.1:
   version "7.0.1"
   resolved "https://registry.yarnpkg.com/read-pkg-up/-/read-pkg-up-7.0.1.tgz#f3a6135758459733ae2b95638056e1854e7ef507"
@@ -7649,6 +7656,11 @@ shebang-command@^2.0.0:
   integrity sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==
   dependencies:
     shebang-regex "^3.0.0"
+
+shebang-loader@0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/shebang-loader/-/shebang-loader-0.0.1.tgz#a4000495d44cceefbec63435e7b1698569fa52ec"
+  integrity sha512-nQvhUHvKyzGK5aqPxHfHB5nlAN2EZ2U61S2G0YrxAuCRU5iGhFcxxRiaAdb18UoRS1zVMhRz4gdQ1xFEg3AOyA==
 
 shebang-regex@^1.0.0:
   version "1.0.0"

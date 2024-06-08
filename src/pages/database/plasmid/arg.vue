@@ -28,7 +28,7 @@
         </div>
         <div
             style="box-shadow: 0 0 64px #cfd5db"
-            class="w-300 h-320 ml-20"
+            class="w-310 h-300 ml-20"
             v-if="argList.length !== 0"
         >
             <argcirco />

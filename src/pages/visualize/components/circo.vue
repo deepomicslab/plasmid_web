@@ -16,7 +16,7 @@
         <!-- <div class="w-330 h-30 bg-gray-200 flex justify-center">
             <svg id="Legend_area_circo" height="120" width="1140"></svg>
         </div> -->
-        <div class="w-350 h-85 bg-gray-200 flex justify-center">
+        <div class="w-350 h-60 bg-gray-200 flex justify-center">
             <svg id="Circos_Legend_area" height="400" width="1140"></svg>
         </div>
     </div>
@@ -111,42 +111,68 @@ const getPositionInnerC = (rad, offset)=>{
 
 
 const drawLegend = () => {
-    const legnedSvg = d3.select('#Circos_Legend_area')
-    legnedSvg
-        .selectAll('legendLabel')
-        .data(proteinType)
-        .enter()
-        .append('rect')
-        .attr('x', function (d, i) {
-            // eslint-disable-next-line no-bitwise
-            return ((i / 9) | 0) * 400 + 50
-        })
-        .attr('y', function (d, i) {
-            return (i % 9) * 30 + 35
-        })
-        .attr('width', 20)
-        .attr('height', 20)
-        .style('fill', function (d) {
-            return TypeDict[d].color
-        })
-    legnedSvg
-        .selectAll('legendText')
-        .data(proteinType)
-        .enter()
-        .append('text')
-        .attr('x', function (d, i) {
-            // eslint-disable-next-line no-bitwise
-            return ((i / 9) | 0) * 400 + 75
-        })
-        .attr('y', function (d, i) {
-            return (i % 9) * 30 + 47
-        })
-        .style('fill', '#818181')
-        .text(function (d) {
-            return TypeDict[d].name
-        })
-        .attr('text-anchor', 'start')
-        .style('alignment-baseline', 'middle')
+    const tooltip = d3
+            .select('body')
+            .append('div')
+            .style('position', 'absolute')
+            .style('z-index', '100')
+            .style('visibility', 'hidden')
+            .style('background', '#000')
+            .style('color', '#fff')
+            .text('a simple tooltip')
+        // .style('top', `300px`)
+        // .style('left', `800px`)
+        const legnedSvg = d3.select('#Circos_Legend_area')
+        legnedSvg
+            .selectAll('legendLabel')
+            .data(proteinType)
+            .enter()
+            .append('rect')
+            .attr('x', function (d, i) {
+                // eslint-disable-next-line no-bitwise
+                return ((i / 6) | 0) * 220 + 50
+            })
+            .attr('y', function (d, i) {
+                return (i % 6) * 30 + 35
+            })
+            .attr('width', 20)
+            .attr('height', 20)
+            .style('fill', function (d) {
+                return TypeDict[d].color
+            })
+        legnedSvg
+            .selectAll('legendText')
+            .data(proteinType)
+            .enter()
+            .append('text')
+            .attr('x', function (d, i) {
+                // eslint-disable-next-line no-bitwise
+                return ((i / 6) | 0) * 220 + 75
+            })
+            .attr('y', function (d, i) {
+                return (i % 6) * 30 + 47
+            })
+            .style('fill', '#818181')
+            .text(function (d) {
+                const { name } = TypeDict[d]
+                if (name.length > 20) {
+                    return `${name.substring(0, 20)}...`
+                }
+                return name
+            })
+            .attr('text-anchor', 'start')
+            .style('alignment-baseline', 'middle')
+            .on('mouseover', function (event, d) {
+                // console.log(TypeDict[d])
+                tooltip.text(TypeDict[d].name)
+                return tooltip.style('visibility', 'visible')
+            })
+            .on('mousemove', function (event) {
+                return tooltip.style('top', `${event.pageY}px`).style('left', `${event.pageX}px`)
+            })
+            .on('mouseout', function () {
+                return tooltip.style('visibility', 'hidden')
+            })
 }
 
 const drawGCLegend = () => {

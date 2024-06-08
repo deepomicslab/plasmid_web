@@ -114,7 +114,7 @@
         <div>
             <el-input
                 v-model="crisprInfo.sequence"
-                :rows="10"
+                :rows="3"
                 type="textarea"
                 class="font-mono mt-5 tracking-wide text-lg"
             />

@@ -122,8 +122,8 @@
 
         <svg id="Viz_area_annotation" :height="height" :width="width"></svg>
     </el-scrollbar>
-    <div class="w-310 h-85 bg-gray-200 flex justify-center">
-        <svg id="Legend_area" height="400" width="1140"></svg>
+    <div class="w-310 h-60 bg-gray-200 flex justify-center">
+        <svg id="Legend_area" height="240" width="1140"></svg>
     </div>
 </template>
 
@@ -260,6 +260,17 @@ watch(loaddata, () => {
             })
         })
         // The legend at the bottom
+        const tooltip = d3
+            .select('body')
+            .append('div')
+            .style('position', 'absolute')
+            .style('z-index', '100')
+            .style('visibility', 'hidden')
+            .style('background', '#000')
+            .style('color', '#fff')
+            .text('a simple tooltip')
+        // .style('top', `300px`)
+        // .style('left', `800px`)
         const legnedSvg = d3.select('#Legend_area')
         legnedSvg
             .selectAll('legendLabel')
@@ -268,10 +279,10 @@ watch(loaddata, () => {
             .append('rect')
             .attr('x', function (d, i) {
                 // eslint-disable-next-line no-bitwise
-                return ((i / 9) | 0) * 400 + 50
+                return ((i / 6) | 0) * 220 + 50
             })
             .attr('y', function (d, i) {
-                return (i % 9) * 30 + 35
+                return (i % 6) * 30 + 35
             })
             .attr('width', 20)
             .attr('height', 20)
@@ -285,17 +296,32 @@ watch(loaddata, () => {
             .append('text')
             .attr('x', function (d, i) {
                 // eslint-disable-next-line no-bitwise
-                return ((i / 9) | 0) * 400 + 75
+                return ((i / 6) | 0) * 220 + 75
             })
             .attr('y', function (d, i) {
-                return (i % 9) * 30 + 47
+                return (i % 6) * 30 + 47
             })
             .style('fill', '#818181')
             .text(function (d) {
-                return TypeDict[d].name
+                const { name } = TypeDict[d]
+                if (name.length > 20) {
+                    return `${name.substring(0, 20)}...`
+                }
+                return name
             })
             .attr('text-anchor', 'start')
             .style('alignment-baseline', 'middle')
+            .on('mouseover', function (event, d) {
+                // console.log(TypeDict[d])
+                tooltip.text(TypeDict[d].name)
+                return tooltip.style('visibility', 'visible')
+            })
+            .on('mousemove', function (event) {
+                return tooltip.style('top', `${event.pageY}px`).style('left', `${event.pageX}px`)
+            })
+            .on('mouseout', function () {
+                return tooltip.style('visibility', 'hidden')
+            })
 
         height.value = (_.size(splitdata) - 1) * lineHeight.value + 250
         const svg = d3

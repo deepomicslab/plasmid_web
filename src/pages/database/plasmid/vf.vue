@@ -27,7 +27,7 @@
         <div class="text-2xl font-500 my-10">Annotated Genome Map with Virulent Factor</div>
         <div
             style="box-shadow: 0 0 64px #cfd5db"
-            class="w-300 h-320 ml-20"
+            class="w-310 h-300 ml-20"
             v-if="vfList.length !== 0"
         >
             <vfcirco />
@@ -95,7 +95,7 @@
                 {{ detailInfo.mechanism }}
             </el-descriptions-item>
         </el-descriptions>
-        <div class="w-350 mt-6">
+        <div class="w-310 mt-6">
             <div class="flex flex-row w-350">
                 <div class="text-xl font-300 mb-4">Protein Sequence</div>
             </div>

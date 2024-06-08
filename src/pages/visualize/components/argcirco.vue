@@ -13,7 +13,7 @@
         <el-scrollbar class="h-230" v-loading="loadchart">
             <svg id="Viz_arg" :height="height" :width="width"></svg>
         </el-scrollbar>
-        <div class="w-310 h-85 bg-gray-200 flex justify-center">
+        <div class="w-310 h-60 bg-gray-200 flex justify-center">
             <svg id="Legend_arg" height="400" width="1140"></svg>
         </div>
     </div>
@@ -83,117 +83,278 @@ const getPositionInnerC = (rad, offset)=>{
     return getPointPosition(rad,innerCircleR.value+offset)
 }
 
-
 const argTypeDict = {
-    'Adherence': {
-        name: 'Adherence',
+    'aminocoumarin antibiotic': {
+        name: 'aminocoumarin antibiotic',
+        color: '#f54291'
+    },
+    'aminoglycoside antibiotic': {
+        name: 'aminoglycoside antibiotic',
+        color: '#42f554'
+    },
+    'antibacterial free fatty acids': {
+        name: 'antibacterial free fatty acids',
+        color: '#f5a742'
+    },
+    'bicyclomycin-like antibiotic': {
+        name: 'bicyclomycin-like antibiotic',
+        color: '#427af5'
+    },
+    'carbapenem': {
+        name: 'carbapenem',
+        color: '#e5f542'
+    },
+    'cephalosporin': {
+        name: 'cephalosporin',
+        color: '#f54242'
+    },
+    'cephamycin': {
+        name: 'cephamycin',
+        color: '#42f5e0'
+    },
+    'diaminopyrimidine antibiotic': {
+        name: 'diaminopyrimidine antibiotic',
+        color: '#9a42f5'
+    },
+    'disinfecting agents and antiseptics': {
+        name: 'disinfecting agents and antiseptics',
+        color: '#f542d4'
+    },
+    'elfamycin antibiotic': {
+        name: 'elfamycin antibiotic',
+        color: '#42f59d'
+    },
+    'fluoroquinolone antibiotic': {
+        name: 'fluoroquinolone antibiotic',
+        color: '#f59542'
+    },
+    'fusidane antibiotic': {
+        name: 'fusidane antibiotic',
+        color: '#42a2f5'
+    },
+    'glycopeptide antibiotic': {
+        name: 'glycopeptide antibiotic',
+        color: '#f5d442'
+    },
+    'glycylcycline': {
+        name: 'glycylcycline',
+        color: '#f54242'
+    },
+    'isoniazid-like antibiotic': {
+        name: 'isoniazid-like antibiotic',
+        color: '#42f5cb'
+    },
+    'lincosamide antibiotic': {
+        name: 'lincosamide antibiotic',
+        color: '#e442f5'
+    },
+    'macrolide antibiotic': {
+        name: 'macrolide antibiotic',
+        color: '#42f55a'
+    },
+    'monobactam': {
+        name: 'monobactam',
+        color: '#f5a742'
+    },
+    'mupirocin-like antibiotic': {
+        name: 'mupirocin-like antibiotic',
+        color: '#4242f5'
+    },
+    'nitrofuran antibiotic': {
+        name: 'nitrofuran antibiotic',
+        color: '#f5f542'
+    },
+    'nitroimidazole antibiotic': {
+        name: 'nitroimidazole antibiotic',
+        color: '#f54291'
+    },
+    'nucleoside antibiotic': {
+        name: 'nucleoside antibiotic',
+        color: '#42f554'
+    },
+    'orthosomycin antibiotic': {
+        name: 'orthosomycin antibiotic',
+        color: '#f5a742'
+    },
+    'oxacephem': {
+        name: 'oxacephem',
+        color: '#42e1f5'
+    },
+    'oxazolidinone antibiotic': {
+        name: 'oxazolidinone antibiotic',
+        color: '#f57f42'
+    },
+    'penam': {
+        name: 'penam',
+        color: '#9a42f5'
+    },
+    'penem': {
+        name: 'penem',
+        color: '#e442f5'
+    },
+    'peptide antibiotic': {
+        name: 'peptide antibiotic',
+        color: '#42f59d'
+    },
+    'phenicol antibiotic': {
+        name: 'phenicol antibiotic',
+        color: '#f59542'
+    },
+    'phosphonic acid antibiotic': {
+        name: 'phosphonic acid antibiotic',
+        color: '#42a2f5'
+    },
+    'pleuromutilin antibiotic': {
+        name: 'pleuromutilin antibiotic',
+        color: '#f5d442'
+    },
+    'polyamine antibiotic': {
+        name: 'polyamine antibiotic',
+        color: '#f54242'
+    },
+    'pyrazine antibiotic': {
+        name: 'pyrazine antibiotic',
+        color: '#42f5cb'
+    },
+    'rifamycin antibiotic': {
+        name: 'rifamycin antibiotic',
+        color: '#e442f5'
+    },
+    'salicylic acid antibiotic': {
+        name: 'salicylic acid antibiotic',
+        color: '#42f55a'
+    },
+    'streptogramin A antibiotic': {
+        name: 'streptogramin A antibiotic',
+        color: '#f5a742'
+    },
+    'streptogramin B antibiotic': {
+        name: 'streptogramin B antibiotic',
+        color: '#4242f5'
+    },
+    'streptogramin antibiotic': {
+        name: 'streptogramin antibiotic',
+        color: '#f5f542'
+    },
+    'sulfonamide antibiotic': {
+        name: 'sulfonamide antibiotic',
+        color: '#f54291'
+    },
+    'tetracycline antibiotic': {
+        name: 'tetracycline antibiotic',
+        color: '#42f554'
+    },
+    'thioamide antibiotic': {
+        name: 'thioamide antibiotic',
+        color: '#f5a742'
+    },
+    'mixed': {
+        name: 'mixed',
         color: '#f94eba',
     },
-    'Antimicrobial activity/Competitive advantage': {
-        name: 'Antimicrobial activity/Competitive advantage',
-        color: '#7123f8',
-    },
-    'Biofilm': {
-        name: 'Biofilm',
-        color: '#59e3e6',
-    },
-    'Effector delivery system': {
-        name: 'Effector delivery system',
-        color: '#a1d930',
-    },
-    'Exoenzyme': {
-        name: 'Exoenzyme',
-        color: '#ff8c00',
-    },
-    'Exotoxin': {
-        name: 'Exotoxin',
-        color: '#ff69b4',
-    },
-    'Immune modulation': {
-        name: 'Immune modulation',
-        color: '#3cb371',
-    },
-    'Invasion': {
-        name: 'Invasion',
-        color: '#ffd700',
-    },
-    'Motility': {
-        name: 'Motility',
-        color: '#4b0082',
-    },
-    'Nutritional/Metabolic factor': {
-        name: 'Nutritional/Metabolic factor',
-        color: '#6495ed',
-    },
-    'Others': {
-        name: 'Others',
-        color: '#20b2aa',
-    },
-    'Regulation': {
-        name: 'Regulation',
-        color: '#9370db',
-    },
-    'Stress survival': {
-        name: 'Stress survival',
-        color: '#ff6347',
-    }
+
 };
 
 
-const getVFColor:string = (type: string)=>{
-    // return argTypeDict[type]['color'] | '#ff6347'
-    return '#ff6347'
+const getArgColor:string = (type: string)=>{
+    if (type.includes(';'))
+       return '#f94eba'
+    else
+        return argTypeDict[type]['color']
+    // return '#ff6347'
 }
+const tooltip = d3
+            .select('body')
+            .append('div')
+            .style('position', 'absolute')
+            .style('z-index', '100')
+            .style('visibility', 'hidden')
+            .style('background', '#000')
+            .style('color', '#fff')
+            .text('a simple tooltip')
 const drawLegend = () => {
-    const legnedSvg = d3.select('#Legend_arg')
-    console.log(proteinType)
-    legnedSvg
-        .selectAll('legendLabel')
-        .data(proteinType)
-        .enter()
-        .append('rect')
-        .attr('x', function (d, i) {
-            // eslint-disable-next-line no-bitwise
-            return ((i / 9) | 0) * 400 + 50
-        })
-        .attr('y', function (d, i) {
-            return (i % 9) * 30 + 35
-        })
-        .attr('width', 20)
-        .attr('height', 20)
-        .style('fill', function (d) {
-            return TypeDict[d].color
-        })
-    legnedSvg
-        .selectAll('legendText')
-        .data(proteinType)
-        .enter()
-        .append('text')
-        .attr('x', function (d, i) {
-            // eslint-disable-next-line no-bitwise
-            return ((i / 9) | 0) * 400 + 75
-        })
-        .attr('y', function (d, i) {
-            return (i % 9) * 30 + 47
-        })
-        .style('fill', '#818181')
-        .text(function (d) {
-            return TypeDict[d].name
-        })
-        .attr('text-anchor', 'start')
-        .style('alignment-baseline', 'middle')
+    // const legnedSvg = d3.select('#Legend_arg')
+
+        // .style('top', `300px`)
+        // .style('left', `800px`)
+        const legnedSvg = d3.select('#Legend_arg')
+        legnedSvg
+            .selectAll('legendLabel')
+            .data(proteinType)
+            .enter()
+            .append('rect')
+            .attr('x', function (d, i) {
+                // eslint-disable-next-line no-bitwise
+                return ((i / 6) | 0) * 220 + 50
+            })
+            .attr('y', function (d, i) {
+                return (i % 6) * 30 + 35
+            })
+            .attr('width', 20)
+            .attr('height', 20)
+            .style('fill', function (d) {
+                return TypeDict[d].color
+            })
+        legnedSvg
+            .selectAll('legendText')
+            .data(proteinType)
+            .enter()
+            .append('text')
+            .attr('x', function (d, i) {
+                // eslint-disable-next-line no-bitwise
+                return ((i / 6) | 0) * 220 + 75
+            })
+            .attr('y', function (d, i) {
+                return (i % 6) * 30 + 47
+            })
+            .style('fill', '#818181')
+            .text(function (d) {
+                const { name } = TypeDict[d]
+                if (name.length > 20) {
+                    return `${name.substring(0, 20)}...`
+                }
+                return name
+            })
+            .attr('text-anchor', 'start')
+            .style('alignment-baseline', 'middle')
+            .on('mouseover', function (event, d) {
+                // console.log(TypeDict[d])
+                tooltip.text(TypeDict[d].name)
+                return tooltip.style('visibility', 'visible')
+            })
+            .on('mousemove', function (event) {
+                return tooltip.style('top', `${event.pageY}px`).style('left', `${event.pageX}px`)
+            })
+            .on('mouseout', function () {
+                return tooltip.style('visibility', 'hidden')
+            })
 }
 
-const drawVFLegend = () => {
+const drawArgLegend = () => {
     const legendSvg = d3.select('#Viz_arg')
                         .append('svg')
                         .attr('x',width.value-200)
-                        .attr('y',height.value-400)
-    const argType = ['Adherence', 'Antimicrobial activity/Competitive advantage','Biofilm', 'Effector delivery system', 'Exoenzyme', 'Exotoxin',
-       'Immune modulation', 'Invasion', 'Motility',
-       'Nutritional/Metabolic factor', 'Others', 'Regulation',
-       'Stress survival']
-    
+                        .attr('y',height.value-650)
+                        .style('overflow', 'auto')
+    const argType = ['aminocoumarin antibiotic', 'aminoglycoside antibiotic',
+       'antibacterial free fatty acids', 'bicyclomycin-like antibiotic',
+       'carbapenem', 'cephalosporin', 'cephamycin',
+       'diaminopyrimidine antibiotic',
+       'disinfecting agents and antiseptics', 'elfamycin antibiotic',
+       'fluoroquinolone antibiotic', 'fusidane antibiotic',
+       'glycopeptide antibiotic', 'glycylcycline',
+       'isoniazid-like antibiotic', 'lincosamide antibiotic',
+       'macrolide antibiotic', 'monobactam', 'mupirocin-like antibiotic',
+       'nitrofuran antibiotic', 'nitroimidazole antibiotic',
+       'nucleoside antibiotic', 'orthosomycin antibiotic', 'oxacephem',
+       'oxazolidinone antibiotic', 'penam', 'penem', 'peptide antibiotic',
+       'phenicol antibiotic', 'phosphonic acid antibiotic',
+       'pleuromutilin antibiotic', 'polyamine antibiotic',
+       'pyrazine antibiotic', 'rifamycin antibiotic',
+       'salicylic acid antibiotic', 'streptogramin A antibiotic',
+       'streptogramin B antibiotic', 'streptogramin antibiotic',
+       'sulfonamide antibiotic', 'tetracycline antibiotic',
+       'thioamide antibiotic', 'mixed']
     // lengendSvg
     legendSvg
         .selectAll('.legend')
@@ -206,7 +367,7 @@ const drawVFLegend = () => {
         })
         .attr('y', function (d, i) {
             // eslint-disable-next-line no-bitwise
-            return i * 30
+            return i * 15
         })
         .attr('width', 10)
         .attr('height', 10)
@@ -219,18 +380,33 @@ const drawVFLegend = () => {
         .enter()
         .append('text')
         .attr('x', function (d, i) {
-            return  30
+            return  15
         })
         .attr('y', function (d, i) {
             // eslint-disable-next-line no-bitwise
-            return  i*30 + 6
+            return  i*15 + 6
         })
         .style('fill', '#818181')
         .text(function (d) {
-            return argTypeDict[d].name
+            const { name } = argTypeDict[d]
+            if (name.length > 20) {
+                return `${name.substring(0, 20)}...`
+            }
+            return name
         })
         .attr('text-anchor', 'start')
         .attr('alignment-baseline', 'middle')
+        .on('mouseover', function (event, d) {
+            // console.log(TypeDict[d])
+            tooltip.text(argTypeDict[d].name)
+            return tooltip.style('visibility', 'visible')
+        })
+        .on('mousemove', function (event) {
+            return tooltip.style('top', `${event.pageY}px`).style('left', `${event.pageX}px`)
+        })
+        .on('mouseout', function () {
+            return tooltip.style('visibility', 'hidden')
+        })
 }
 
 const drawGCLegend = () => {
@@ -406,7 +582,7 @@ watch(loadeddata, () => {
     // }
     drawLegend()
     // drawtRNALegend
-    // drawVFLegend()
+    drawArgLegend()
     drawGCLegend()
 
     const protein = _.sortBy(proteindata.value, o => {
@@ -832,7 +1008,7 @@ watch(loadeddata, () => {
 
         const pathsp = `${arrowOuterLine + outerArc + tailLine + innerArc}Z`
         //get color
-        const color = getVFColor(d.drug_category)
+        const color = getArgColor(d.drug_class)
         // draw arrow
         const thisArrow = svgArea
             .append('path')
@@ -842,7 +1018,7 @@ watch(loadeddata, () => {
             .attr('stroke-width', '0.5px')
             .attr('class','mark-trna')
 
-        const areaW = 190
+        const areaW = 300
         const areaH = 190
         const toolArea = svgArea.append('svg')
                     .attr('width', areaW)

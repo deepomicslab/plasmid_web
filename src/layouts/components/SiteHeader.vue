@@ -90,18 +90,8 @@ const menuOptions: MenuOption[] = [
                 key: '/database/cluster',
             },
             {
-                label: 'Structural Annotation Data',
-                key: '/database/structural',
-                children: [
-                    {
-                        label: 'Annotated Protein List',
-                        key: '/database/protein',
-                    },
-                    // {
-                    //     label: 'Transcription Terminator List',
-                    //     key: '/database/structural/terminators',
-                    // },
-                ],
+                label: 'Protein List',
+                key: '/database/protein',
             },
             {
                 label: 'Functional Annotation Data',

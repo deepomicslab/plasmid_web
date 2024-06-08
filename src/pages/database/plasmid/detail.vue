@@ -183,7 +183,7 @@
             </div>
             <div
                 style="box-shadow: 0 0 64px #cfd5db"
-                class="w-310 h-270 mt-5 ml-10 mb-20"
+                class="w-310 h-250 mt-5 ml-10 mb-20"
                 v-show="annoshow"
             >
                 <annotation />
@@ -191,7 +191,7 @@
         </div>
         <div
             style="box-shadow: 0 0 64px #cfd5db"
-            class="w-350 h-320 ml-2 mt-5 mb-20"
+            class="w-350 h-300 ml-2 mt-5 mb-20"
             v-show="!annoshow"
         >
             <circo />
@@ -200,15 +200,20 @@
             <terminator />
         </div> -->
         <!-- <div class="mt-20 ml-10" v-show="phageStore.phageanti.length !== 0"><anti /></div> -->
-        <div class="mt-20 ml-10" v-show="phageStore.phagesp.length !== 0"><sp /></div>
-        <div class="mt-20 ml-10" v-show="phageStore.phagearg.length !== 0"><arg /></div>
-        <div class="mt-20 ml-10" v-show="phageStore.phagevf.length !== 0">
+        <div class="mt-20 ml-10 w-310 h-480" v-show="phageStore.phagesp.length !== 0"><sp /></div>
+        <div class="mt-20 ml-10 w-310 h-480" v-show="phageStore.phagearg.length !== 0"><arg /></div>
+        <div class="mt-20 ml-10 w-310 h-480" v-show="phageStore.phagevf.length !== 0">
             <vf />
         </div>
-        <div class="mt-20 ml-10 mb-20" v-show="phageStore.phagetransprotein.length !== 0">
+        <div
+            class="mt-20 ml-10 mb-20 w-310 h-480"
+            v-show="phageStore.phagetransprotein.length !== 0"
+        >
             <transprotein />
         </div>
-        <div class="mt-20 ml-10 mb-20" v-show="phageStore.phagetrna.length !== 0"><trna /></div>
+        <div class="mt-20 ml-10 mb-20 w-310 h-480" v-show="phageStore.phagetrna.length !== 0">
+            <trna />
+        </div>
     </div>
 
     <el-dialog v-model="proteinVisible" title="Protein Detail" width="90%">
@@ -499,7 +504,7 @@ const createColumns = (): DataTableColumns<RowData> => [
     {
         title: 'Action',
         key: 'actions',
-        width: 100,
+        width: 300,
         align: 'center',
         render(row) {
             return h(
@@ -524,6 +529,21 @@ const createColumns = (): DataTableColumns<RowData> => [
                             },
                         },
                         { default: () => 'Detail' }
+                    ),
+                    h(
+                        NButton,
+                        {
+                            strong: true,
+                            tertiary: true,
+                            size: 'small',
+                            type: 'success',
+                            onClick: () => {
+                                window.open(
+                                    `https://alphafold.ebi.ac.uk/search/text/${row.sequence}/`
+                                )
+                            },
+                        },
+                        { default: () => 'Structure' }
                     ),
                 ]
             )
