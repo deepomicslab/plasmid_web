@@ -8,7 +8,7 @@
                         <template #icon>
                             <n-icon><di /></n-icon>
                         </template>
-                        Download Phage Data
+                        Download Plasmid Data
                     </el-button>
                 </div>
             </div>
