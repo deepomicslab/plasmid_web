@@ -153,16 +153,15 @@ onBeforeMount(async () => {
             baseURL: '/api/database/',
             timeout: 100000,
             params: {
+                pagesize: 100000000,
                 plasmid_id: phageStore.plasmid_id,
             },
         })
         vfdata.value = response.data.results
     }
-    console.log(vfdata.value, '====')
     loading.value = false
     phageStore.vfloaded = true
     phageStore.phagevf = vfdata.value
-    console.log(phageStore.phagevf, '???')
 })
 const vfList = computed(() => vfdata.value)
 
@@ -208,7 +207,6 @@ const createVfColumns = (): DataTableColumns<VfRowData> => [
     {
         type: 'selection',
     },
-
     {
         title: 'ID',
         key: 'id',

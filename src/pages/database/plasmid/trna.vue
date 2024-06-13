@@ -142,6 +142,7 @@ onBeforeMount(async () => {
             baseURL: '/api/database',
             timeout: 100000,
             params: {
+                pagesize: 100000000,
                 plasmid_id: phageStore.plasmid_id,
             },
         })

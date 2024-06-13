@@ -7,6 +7,8 @@ export const usePhageStore = defineStore('phagedata', () => {
     const plasmid = ref()
     // eslint-disable-next-line camelcase
     const heliceData = ref([])
+    // eslint-disable-next-line no-redeclare
+    const casData = ref([])
     // eslint-disable-next-line camelcase
     const plasmid_id = ref()
     const phageprotein = ref()
@@ -48,6 +50,7 @@ export const usePhageStore = defineStore('phagedata', () => {
         phagevf,
         phagearg,
         heliceData,
+        casData,
         plasmid,
         plasmid_id,
         phageprotein,

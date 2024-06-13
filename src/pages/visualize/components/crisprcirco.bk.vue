@@ -10,12 +10,9 @@
                 Download PNG Chart
             </el-button>
         </div>
-        <el-scrollbar class="h-230 w-310" v-loading="loadchart">
+        <el-scrollbar class="h-220" v-loading="loadchart">
             <svg id="Viz_crispr" :height="height" :width="width"></svg>
         </el-scrollbar>
-        <div class="w-310 h-60 bg-gray-200 flex justify-center">
-            <svg id="Legend_cirspr" height="400" width="1140"></svg>
-        </div>
     </div>
 </template>
 <!-- Function for radial charts -->
@@ -56,16 +53,18 @@ const gcSkewBaseR = computed(() => gcContentBaseR.value + gcContentArc.value)
 const gcSkewMidR = computed(() => gcSkewBaseR.value + gcSkewArc.value / 2)
 const gcSkewPlus = ref()
 const gcSkewMinus = ref()
+
 const fastadata = computed(() => {
     return phageStore.phagefastadata
 })
-const casdata = computed(() => {
-    return phageStore.casData
-})
 
+const crisprdata = computed(() => {
+    return phageStore.phagecrispr
+})
 const proteindata = computed(() => {
     return phageStore.phageprotein
 })
+
 const getPointPosition=(rad, radius)=>{
     return [ cx.value + radius * Math.cos(rad),
             cy.value + radius * Math.sin(rad),
@@ -84,129 +83,106 @@ const getPositionInnerC = (rad, offset)=>{
     return getPointPosition(rad,innerCircleR.value+offset)
 }
 
-const spTypeDict = {
-    'Cas': {
-        name: 'Cas',
-        color: '#f94eba',
-    },
-    'CRISPR': {
-        name: 'CRISPR',
-        color: '#7123f8',
-    },
-};
+const lowerBound = 1
+const upperBound = 4
+const lowerBoundColor = '#00ff00'
+const upperBoundColor = '#002600'
+const colorScaler = d3
+    .scaleLinear()
+    .range([lowerBoundColor, upperBoundColor])
+    .domain([lowerBound, upperBound])
 
-
-const getVFColor:string = (type: string)=>{
-    console.log(type, '----')
-    return spTypeDict[type]['color']
+const levelArr = []
+for (let index = lowerBound; index < upperBound+1; index++) {
+    levelArr.push(index)
 }
+
+const drawEvidenceLegend = ()=>{
+    const vizArea = d3.select('#Viz_crispr')
+    const evidenceLegend = vizArea.append('svg')
+                                    .attr('x',  width.value-120)
+                                    .attr('y', height.value-190)
+                                    .attr('width', 140)
+                                    .attr('height', 190)
+    const mt = 25
+    const mr = 20
+    const rectH = 40
+    const rectW = 45
+    evidenceLegend.selectAll('rect')
+                        .data(levelArr)
+                        .enter()
+                        .append('rect')
+                        .attr('x', mr)
+                        .attr('y', (d,i) => mt+i*rectH)
+                        .attr('width', rectW)
+                        .attr('height', rectH)
+                        .style('fill', (d) => colorScaler(d))  
+
+    evidenceLegend.selectAll('text')
+                    .data(levelArr)
+                    .enter()
+                    .append('text')
+                    .attr('x', mr+rectW+10)
+                    .attr('y', (d,i) => mt+rectH/2+i*rectH)
+                    .text((d) => d)
+                    .attr('font-size', '15px')
+                    .style('fill', '#818181')
+                    .style('text-anchor', 'start')
+                    .attr('alignment-baseline', 'middle')
+
+    evidenceLegend.append('text')
+                    .attr('x', 0)
+                    .attr('y', 0)
+                    .text('Evidence Level')
+                    .attr('font-size', '14px')
+                    .style('fill', '#818181')
+                    .style('text-anchor', 'start')
+                    .style('alignment-baseline', 'hanging')
+
+}
+
 const drawLegend = () => {
-    const tooltip = d3
-            .select('body')
-            .append('div')
-            .style('position', 'absolute')
-            .style('z-index', '100')
-            .style('visibility', 'hidden')
-            .style('background', '#000')
-            .style('color', '#fff')
-            .text('a simple tooltip')
-        // .style('top', `300px`)
-        // .style('left', `800px`)
-        const legnedSvg = d3.select('#Legend_cirspr')
-        legnedSvg
-            .selectAll('legendLabel')
-            .data(proteinType)
-            .enter()
-            .append('rect')
-            .attr('x', function (d, i) {
-                // eslint-disable-next-line no-bitwise
-                return ((i / 6) | 0) * 220 + 50
-            })
-            .attr('y', function (d, i) {
-                return (i % 6) * 30 + 35
-            })
-            .attr('width', 20)
-            .attr('height', 20)
-            .style('fill', function (d) {
-                return TypeDict[d].color
-            })
-        legnedSvg
-            .selectAll('legendText')
-            .data(proteinType)
-            .enter()
-            .append('text')
-            .attr('x', function (d, i) {
-                // eslint-disable-next-line no-bitwise
-                return ((i / 6) | 0) * 220 + 75
-            })
-            .attr('y', function (d, i) {
-                return (i % 6) * 30 + 47
-            })
-            .style('fill', '#818181')
-            .text(function (d) {
-                const { name } = TypeDict[d]
-                if (name.length > 20) {
-                    return `${name.substring(0, 20)}...`
-                }
-                return name
-            })
-            .attr('text-anchor', 'start')
-            .style('alignment-baseline', 'middle')
-            .on('mouseover', function (event, d) {
-                // console.log(TypeDict[d])
-                tooltip.text(TypeDict[d].name)
-                return tooltip.style('visibility', 'visible')
-            })
-            .on('mousemove', function (event) {
-                return tooltip.style('top', `${event.pageY}px`).style('left', `${event.pageX}px`)
-            })
-            .on('mouseout', function () {
-                return tooltip.style('visibility', 'hidden')
-            })
-}
-
-const drawSPLegend = () => {
     const legendSvg = d3.select('#Viz_crispr')
                         .append('svg')
-                        .attr('x',width.value-200)
-                        .attr('y',height.value-100)
-    const spType = ['Cas', 'CRISPR']
-    
+                        .attr('id', 'Legend_ter')
+                        .attr('x',0)
+                        .attr('y',height.value-180)
+    const legendType = [...proteinType]
+
     // lengendSvg
+    
     legendSvg
-        .selectAll('.legend')
-        .data(spType)
+        .selectAll('legendLabel')
+        .data(legendType)
         .enter()
         .append('rect')
-        .attr('class', 'legend')
         .attr('x', function (d, i) {
-            return 0
+            return (i % 2) * 140 + 15
         })
         .attr('y', function (d, i) {
             // eslint-disable-next-line no-bitwise
-            return i * 30
+            return ((i / 2) | 0) * 30 
         })
         .attr('width', 20)
         .attr('height', 20)
         .style('fill', function (d) {
-            console.log(d)
-            return spTypeDict[d].color
+            return TypeDict[d].color
         })
     legendSvg
         .selectAll('legendText')
-        .data(spType)
+        .data(legendType)
         .enter()
         .append('text')
         .attr('x', function (d, i) {
-            return  30
+            return  (i % 2) * 140 + 40
         })
         .attr('y', function (d, i) {
             // eslint-disable-next-line no-bitwise
-            return  i*30 + 10
+            return  ((i / 2) | 0) * 30 + 12
         })
         .style('fill', '#818181')
         .text(function (d) {
-            return spTypeDict[d].name
+            return TypeDict[d].name
         })
         .attr('text-anchor', 'start')
         .attr('alignment-baseline', 'middle')
@@ -255,9 +231,8 @@ const drawGCLegend = () => {
         .attr('text-anchor', 'start')
         .attr('alignment-baseline', 'middle')
 }
-
 const loadeddata = computed(() => {
-    return phageStore.sploaded && phageStore.phagedataloaded
+    return phageStore.crisprloaded && phageStore.phagedataloaded
 })
 
 const calculateGC = () => {
@@ -371,11 +346,11 @@ watch(loadeddata, () => {
         return 
     }
     calculateGC()
-    const trna = casdata.value
+    const crispr = crisprdata.value
     const content = gcContent.value
     const plus = gcSkewPlus.value
     const minus = gcSkewMinus.value
-    // if(typeof trna==='undefined' 
+    // if(typeof crispr==='undefined' 
     // || typeof proteindata.value==='undefined'
     // || typeof content==='undefined'
     // || typeof plus==='undefined'
@@ -383,20 +358,20 @@ watch(loadeddata, () => {
     //     console.log("no data. waiting...")
     //     return
     // }
+    
     drawLegend()
-    // drawtRNALegend
-    drawSPLegend()
+    drawEvidenceLegend()
     drawGCLegend()
 
     const protein = _.sortBy(proteindata.value, o => {
-        return parseInt(o.start)
+        return parseInt(o.Start_location)
     })
 
     const axisEnd = Math.max(fastaLength.value,
             Number(
                 _.maxBy(protein, o => {
-                    return Number(o.end)
-                })?.end
+                    return Number(o.Stop_location)
+                })?.Stop_location
             )
     )
 
@@ -411,15 +386,14 @@ watch(loadeddata, () => {
     const outer_axis_start = getPositionOuterC(0, 0)
     const outer_axis_end = getPositionOuterC(radScaler(axisEnd), 0)
     const outer_axis_path = `M ${outer_axis_start[0]}, ${outer_axis_start[1]}
-     A ${outerCircleR.value}, ${outerCircleR.value} 0 1 1 ${outer_axis_end[0]}, ${outer_axis_end[1]} `
- 
+    A ${outerCircleR.value}, ${outerCircleR.value} 0 1 1 ${outer_axis_end[0]}, ${outer_axis_end[1]} `
+
     svgArea
         .append('path')
         .attr('d', outer_axis_path)
         .attr('stroke', 'gray')
         .attr('stroke-width', `${circleStrokeWidth}`)
         .attr('fill', 'none')
-        
 
     //draw MIDDLE axis circle
     const middle_axis_start = getPositionMiddleC(0, 0)
@@ -478,6 +452,7 @@ watch(loadeddata, () => {
         let offset
         isBig ? (offset = -23) : (offset = -13)
 
+
         const tick_start = getPositionInnerC(radScaler(tick), 0)
         const tick_end = getPositionInnerC(radScaler(tick), offset)
 
@@ -524,7 +499,6 @@ watch(loadeddata, () => {
                 tickStr = `${tickStr}`
             }
             
-            
             svgArea
                 .append('text')
                 .attr('x', textAnchor[0])
@@ -539,13 +513,12 @@ watch(loadeddata, () => {
     }
 
     const protein_arrowG=svgArea.append('g')
-    const labelG = svgArea.append('g')
-    
     const minDiffRad = 2 * (Math.PI / 180)
+
     _.map(protein, (d, i) => {
 
-        const start_rad = radScaler(d.start)
-        const end_rad = radScaler(d.end)
+        const start_rad = radScaler(d.Start_location)
+        const end_rad = radScaler(d.Stop_location)
 
         const start = getPositionMiddleC(start_rad, 0)
         const end = getPositionMiddleC(end_rad, 0)
@@ -556,7 +529,7 @@ watch(loadeddata, () => {
         const end_outer = getPositionMiddleC(end_rad, arrowWidth.value / 2)
         const end_inner = getPositionMiddleC(end_rad, -arrowWidth.value / 2)
 
-        const len = d.end - d.start
+        const len = d.Stop_location - d.Start_location
 
         let head
         let arrow_outer
@@ -570,7 +543,8 @@ watch(loadeddata, () => {
         }else{
             arrowRad=minDiffRad
         }
-        if (d.strand == '-') {
+
+        if (d.Strand === '-') {
             head = start
 
             arrow_outer = getPositionMiddleC(start_rad+arrowRad, arrowWidth.value/2)
@@ -578,7 +552,7 @@ watch(loadeddata, () => {
 
             tail_outer = end_outer
             tail_inner = end_inner
-        } else if (d.strand == '+') {
+        } else if (d.Strand === '+') {
             head = end
 
             arrow_outer = getPositionMiddleC(end_rad-arrowRad, arrowWidth.value/2)
@@ -594,27 +568,37 @@ watch(loadeddata, () => {
         //path of arrow
         const arrowOuterLine = `M ${head[0]},${head[1]} L ${arrow_outer[0]} ,${arrow_outer[1]} `
         const outerArc = `A ${outerArcR}, ${outerArcR} 0 0 ${
-            d.strand == '+' ? 0 : 1
+            d.Strand == '+' ? 0 : 1
         } ${tail_outer[0]}, ${tail_outer[1]} `
         const tailLine = `L ${tail_inner[0]} ,${tail_inner[1]} `
         const innerArc = `A ${innerArcR}, ${innerArcR} 0 0 ${
-            d.strand == '+' ? 1 : 0
+            d.Strand == '+' ? 1 : 0
         } ${arrow_inner[0]}, ${arrow_inner[1]} `
 
+        //draw arrow
         const thisArrow = protein_arrowG
             .append('path')
             .attr('d', `${arrowOuterLine + outerArc + tailLine + innerArc}Z`)
             .attr('fill', ()=>{
-                if (d.cog_category in TypeDict) return TypeDict[d.cog_category].color
-                return TypeDict.S.color
+                const classlist = d.Protein_function_classification?.split(';').slice(
+                    0,
+                    -1
+                ) as string[]
+                if (classlist.length === 1) {
+                    if (classlist[0] in TypeDict) {
+                        return TypeDict[classlist[0]].color
+                    }
+                    return TypeDict.mix.color
+                }
+                return TypeDict.mix.color
             })
             .attr('stroke', 'black')
             .attr('stroke-width', '0.5px')
 
-    })
 
-    //GC Section Start
-    //GC-Content
+    })
+    
+    //Draw GC-Conent
     const gcContentDiv = svgArea.append('g')
     
     const mid_start = getPointPosition(0, gcContentMidR.value)
@@ -740,38 +724,10 @@ watch(loadeddata, () => {
     .attr('stroke-width', `${1}`)
     .attr('fill', 'none')
     //GC section end
-    const getStartEndRad = (proLocation,startPoint, endPoint) =>{
-        const startRad = radScaler(
-            parseInt(proLocation)+(parseInt(startPoint)-1)*3)
-        const endRad = radScaler(
-            parseInt(proLocation)+(parseInt(endPoint)-1)*3)
-        return [startRad, endRad]
-    }
-    
-    const getSegmentPath = (proLocation,startPoint, endPoint)=>{
-        // const startRad = radScaler(
-        //     parseInt(proLocation)+(startPoint-1)*3)
-        // const endRad = radScaler(
-        //     parseInt(proLocation)+(endPoint-1)*3)
 
-        const startRad = getStartEndRad(proLocation,startPoint, endPoint)[0]
-        const endRad = getStartEndRad(proLocation,startPoint, endPoint)[1]
-
-        const startInner = getPositionOuterC(startRad,-arrowWidth.value/2)
-        const startOuter = getPositionOuterC(startRad, arrowWidth.value/2)
-        const endInner = getPositionOuterC(endRad, -arrowWidth.value/2)
-        const endOuter = getPositionOuterC(endRad, arrowWidth.value/2)
-    
-        const outerR = outerCircleR.value+arrowWidth.value/2
-        const innerR = outerCircleR.value-arrowWidth.value/2
-        return `M ${startInner[0]} ${startInner[1]} L ${startOuter[0]} ${startOuter[1]}
-        A  ${outerR} ${outerR} 0 0 1 ${endOuter[0]} ${endOuter[1]} 
-        L ${endInner[0]} ${endInner[1]} A ${innerR} ${innerR} 0 0 0 ${startInner[0]} ${startInner[1]}`
-        
-    }
-    _.map(trna, (d) => {
-        const start_rad = radScaler(d.start)
-        const end_rad = radScaler(d.end)
+    _.map(crispr, (d, i) => {
+        const start_rad = radScaler(d.CRISPR_Start)
+        const end_rad = radScaler(d.CRISPR_End)
 
         const start = getPositionOuterC(start_rad, 0)
         const end = getPositionOuterC(end_rad, 0)
@@ -783,80 +739,77 @@ watch(loadeddata, () => {
         const end_inner = getPositionOuterC(end_rad, -arrowWidth.value / 2)
 
         //if direction is true, the positive direction defined here, i.e. the clockwise direction
-        // let direction
-        // if (d.strand === '-') {
-        //     direction = false
-        // } else if (d.strand === '+') {
-        //     direction = true
-        // }
-
-        // let head
-        // let arrow_outer
-        // let arrow_inner
-        // let tail_outer
-        // let tail_inner
-        // let arrowRad
-
-        // //length of protein is short
-        // if (end_rad - start_rad < minDiffRad) {
-        //     arrowRad = end_rad-start_rad
-        // }else{
-        //     arrowRad=minDiffRad
-        // }
-
-        // if (direction===false) {
-        //     head = start
-
-        //     arrow_outer = getPositionOuterC(start_rad+arrowRad, arrowWidth.value/2)
-        //     arrow_inner = getPositionOuterC(start_rad+arrowRad, -arrowWidth.value/2)
-
-        //     tail_outer = end_outer
-        //     tail_inner = end_inner
-        // } else{
-        //     head = end
-
-        //     arrow_outer = getPositionOuterC(end_rad-arrowRad, arrowWidth.value/2)
-        //     arrow_inner = getPositionOuterC(end_rad-arrowRad, -arrowWidth.value/2)
-
-        //     tail_outer = start_outer
-        //     tail_inner = start_inner
-        // }
+        let direction
+        if (d.Potential_Orientation_AT === 'Reverse') {
+            direction = false
+        } else if (d.Potential_Orientation_AT === 'Forward') {
+            direction = true
+        } else if (d.Potential_Orientation_AT === 'Unknown') {
+            direction = true
+        }
         
 
-        // //path of arrow
-        // const outerArcR = outerCircleR.value + arrowWidth.value / 2
-        // const innerArcR = outerCircleR.value - arrowWidth.value / 2
-        
-        // const arrowOuterLine = `M ${head[0]},${head[1]} L ${arrow_outer[0]} ,${arrow_outer[1]} `
-        // const outerArc = `A ${outerArcR}, ${outerArcR} 0 0 ${
-        //    direction ? 0 : 1
-        // } ${tail_outer[0]}, ${tail_outer[1]} `
-        // const tailLine = `L ${tail_inner[0]} ,${tail_inner[1]} `
-        // const innerArc = `A ${innerArcR}, ${innerArcR} 0 0 ${
-        //     direction ? 1 : 0
-        // } ${arrow_inner[0]}, ${arrow_inner[1]} `
+        let head
+        let arrow_outer
+        let arrow_inner
+        let tail_outer
+        let tail_inner
+        let arrowRad
 
-        // const pathsp = `${arrowOuterLine + outerArc + tailLine + innerArc}Z`
-        // //get color
-        const color = getVFColor(d.type)
+        //length of protein is short
+        if (end_rad - start_rad < minDiffRad) {
+            arrowRad = end_rad-start_rad
+        }else{
+            arrowRad = minDiffRad
+        }
+
+        if (direction===false) {
+            head = start
+
+            arrow_outer = getPositionOuterC(start_rad+arrowRad, arrowWidth.value/2)
+            arrow_inner = getPositionOuterC(start_rad+arrowRad, -arrowWidth.value/2)
+
+            tail_outer = end_outer
+            tail_inner = end_inner
+        } else {
+            head = end
+
+            arrow_outer = getPositionOuterC(end_rad-arrowRad, arrowWidth.value/2)
+            arrow_inner = getPositionOuterC(end_rad-arrowRad, -arrowWidth.value/2)
+
+            tail_outer = start_outer
+            tail_inner = start_inner
+        }
+
+        //path of arrow
+        const outerArcR = outerCircleR.value + arrowWidth.value / 2
+        const innerArcR = outerCircleR.value - arrowWidth.value / 2
+        
+        const arrowOuterLine = `M ${head[0]},${head[1]} L ${arrow_outer[0]} ,${arrow_outer[1]} `
+        const outerArc = `A ${outerArcR}, ${outerArcR} 0 0 ${
+            direction ? 0 : 1
+        } ${tail_outer[0]}, ${tail_outer[1]} `
+        const tailLine = `L ${tail_inner[0]} ,${tail_inner[1]} `
+        const innerArc = `A ${innerArcR}, ${innerArcR} 0 0 ${
+            direction ? 1 : 0
+        } ${arrow_inner[0]}, ${arrow_inner[1]} `
+
+        const pathsp = `${arrowOuterLine + outerArc + tailLine + innerArc}Z`
+        //get color
+        const color = colorScaler(d.Evidence_Level)
+        
         // // draw arrow
-        // const thisArrow = svgArea
-        //     .append('path')
-        //     .attr('d', pathsp)
-        //     .attr('fill', color)
-        //     .attr('stroke', color)
-        //     .attr('stroke-width', '0.5px')
-        //     .attr('class','mark-trna')
-        console.log(d.start, 
-        1, d.end-d.start+1)
-        const thisArrow = svgArea.append('path')
-            .attr('d', getSegmentPath(d.start, 
-                    1, d.end-d.start+1))
-            .attr('stroke', 'none')
+        const thisArrow = svgArea
+            .append('path')
+            .attr('d', pathsp)
             .attr('fill', color)
-            .attr('class','mark')
+            .attr('class','mark-crispr')
+            // .attr('stroke', 'black')
+            // .attr('stroke-width', '0.5px')
+        
+        //Section: draw tooltip
         const areaW = 300
-        const areaH = 190
+        const areaH = 220
         const toolArea = svgArea.append('svg')
                     .attr('width', areaW)
                     .attr('height', areaH)
@@ -870,17 +823,17 @@ watch(loadeddata, () => {
             .style('opacity', 0.6)
         
         const toolTextPositions = []
-        const total = 8
-        const posGap = 25
+        const total = 10
+        const posGap = 23
         for (let i = 0; i < total; i++) {
             toolTextPositions.push( (i+1) * posGap )
         }
 
         const mouseenter = function () {
-            svgArea.selectAll('.mark-trna').style('opacity', '0.5')
+            svgArea.selectAll('.mark-crispr').style('opacity', '0.3')
             d3.select(this).style('opacity', '1')
             
-            const radMid = radScaler((Number(d.start) + Number(d.end)) / 2)
+            const radMid = radScaler((Number(d.CRISPR_Start) + Number(d.CRISPR_End)) / 2)
             const atAxis = getPositionOuterC(radMid, 0)
             let position
             if(radMid<=Math.PI/2){
@@ -905,14 +858,19 @@ watch(loadeddata, () => {
                 .attr('x', position[0])
                 .attr('y', position[1])
 
-            const textContent=[`ID: ${d.id}`,
-                                `Type: ${d.type}`,
-                                `Start Point: ${d.start}`,
-                                `End Point: ${d.end}`,
-                                // `strand: ${d.strand}`,
+            const textContent=[`Crispr ID: ${d.CRISPR_Id}`,
+                                `Duplicated Spacers: ${d.Duplicated_Spacers}`,
+                                `Start Point: ${d.CRISPR_Start}`,
+                                `End Point: ${d.CRISPR_End}`,
+                                `Crispr Length: ${d.CRISPR_Length}`,
+                                `Potentail Orientation at: ${d.Potential_Orientation_AT}`,
+                                `Repeat Length: ${d.Repeat_Length}`,
+                                `Spacers Nb: ${d.Spacers_Nb}`,
+                                `Mean-size Spacers: ${d.Mean_size_Spacers}`,
+                                `Evidence Level: ${d.Evidence_Level}`,
                                 ]
             // console.log(textContent)
-            const toolText = toolArea.selectAll('text')
+            toolArea.selectAll('text')
                     .data(toolTextPositions)
                     .join('text')
                     .style('fill', 'white')
@@ -923,7 +881,7 @@ watch(loadeddata, () => {
                     .style('font-size', 12)
         }
         const mouseleave = function() {
-            svgArea.selectAll('.mark-trna').style('opacity', '1')
+            svgArea.selectAll('.mark-crispr').style('opacity', '1')
             toolArea
                 .style('opacity', 0).attr('x', 0).attr('y', 0)
             // toolArea.selectAll('text').style('opacity',0)
@@ -941,7 +899,7 @@ function downloadsvg() {
     const url = URL.createObjectURL(blob)
     const link = document.createElement('a')
     link.href = url
-    link.download = 'trna_circo.svg'
+    link.download = 'crispr_circo.svg'
     link.click()
     URL.revokeObjectURL(url)
 }
@@ -973,7 +931,7 @@ const downloadSVGAsPNG = async () => {
 
             const link = document.createElement('a')
             link.href = url
-            link.download = 'trna_circo.png'
+            link.download = 'crispr_circo.png'
             link.click()
 
             URL.revokeObjectURL(url)

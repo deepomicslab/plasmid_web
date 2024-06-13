@@ -114,6 +114,12 @@
                 </el-descriptions-item>
                 <el-descriptions-item>
                     <template #label>
+                        <div class="cell-item"># of CRISPR</div>
+                    </template>
+                    {{ phageStore.phagecrispr.length }}
+                </el-descriptions-item>
+                <el-descriptions-item>
+                    <template #label>
                         <div class="cell-item"># of Secondary Metabolism</div>
                     </template>
                     {{ phageStore.phageanti.length }}
@@ -199,7 +205,13 @@
         <!-- <div class="mt-20 ml-10" v-show="phageStore.phageterminator.length !== 0">
             <terminator />
         </div> -->
+        <div class="mt-20 ml-10 mb-20 w-310 h-480" v-show="phageStore.phagetrna.length !== 0">
+            <trna />
+        </div>
         <!-- <div class="mt-20 ml-10" v-show="phageStore.phageanti.length !== 0"><anti /></div> -->
+        <div class="mt-20 ml-10 w-310 h-400" v-show="phageStore.phagecrispr.length !== 0">
+            <crispr />
+        </div>
         <div class="mt-20 ml-10 w-310 h-480" v-show="phageStore.phagesp.length !== 0"><sp /></div>
         <div class="mt-20 ml-10 w-310 h-480" v-show="phageStore.phagearg.length !== 0"><arg /></div>
         <div class="mt-20 ml-10 w-310 h-480" v-show="phageStore.phagevf.length !== 0">
@@ -210,9 +222,6 @@
             v-show="phageStore.phagetransprotein.length !== 0"
         >
             <transprotein />
-        </div>
-        <div class="mt-20 ml-10 mb-20 w-310 h-480" v-show="phageStore.phagetrna.length !== 0">
-            <trna />
         </div>
     </div>
 
@@ -274,6 +283,7 @@ import proteindetail from '../protein/detail.vue'
 import annotation from '../../visualize/components/annotation.vue'
 import circo from '../../visualize/components/circo.vue'
 // import terminator from './terminator.vue'
+import crispr from './crispr.vue'
 import sp from './sp.vue'
 import arg from './arg.vue'
 import trna from './trna.vue'

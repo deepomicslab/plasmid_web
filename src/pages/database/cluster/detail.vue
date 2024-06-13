@@ -247,7 +247,7 @@ onBeforeMount(async () => {
     subclusterdata.value = response.data.results
     loadSubcluster.value = false
 
-    const responses2 = await axios.get(`/get_cluster_plamids/`, {
+    const responses2 = await axios.get(`/get_cluster_plasmids/`, {
         baseURL: '/api/database',
         timeout: 10000,
         params: {
