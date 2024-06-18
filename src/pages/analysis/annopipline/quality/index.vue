@@ -22,10 +22,10 @@
                     >
                         View Demo Result
                     </el-button>
-                    <el-button round size="large" color="#34498E" @click="gosubmithelper">
+                    <el-button round size="large" color="#3f6212" @click="gosubmithelper">
                         Submission Helper
                     </el-button>
-                    <el-button round size="large" color="#34498E" class="ml-5">
+                    <el-button round size="large" color="#3f6212" class="ml-5">
                         <a
                             href="https://github.com/deepomicslab/PhageScope/issues"
                             target="_blank"
@@ -36,7 +36,7 @@
                     </el-button>
                 </div>
                 <div class="text-lg font-500 ml-20 mt-3 w-9/10 flex flex-row">
-                    <el-icon class="text-lg mt-1 mr-2 text-[#34498E]"><InfoFilled /></el-icon>
+                    <el-icon class="text-lg mt-1 mr-2 text-[#3f6212]"><InfoFilled /></el-icon>
                     It takes a few minutes to
                     <p class="text-[#EE7E7D] mx-2">RUN DEMO.</p>
                     Click
@@ -202,7 +202,7 @@
                 <div class="mt-20 flex flex-row justify-center">
                     <el-button
                         size="large"
-                        color="#34498E"
+                        color="#3f6212"
                         :width="70"
                         class="text-white hover:text-white focus:text-white active:text-white text-2xl"
                         @click="submit"

@@ -2,7 +2,7 @@
     <div class="h-680 flex flex-col py-5 px-20">
         <div class="flex flex-row ml-1 my-7">
             <div class="text-4xl font-600">tRNA & tmRNA Gene Information</div>
-            <el-button round color="#34498E" class="ml-5 mt-2" @click="godatahelper">
+            <el-button round color="#3f6212" class="ml-5 mt-2" @click="godatahelper">
                 Database Helper
             </el-button>
         </div>
@@ -252,7 +252,7 @@ const createColumns = (): DataTableColumns<trnaRowData> => [
                         type: 'info',
                         text: true,
                         size: 'small',
-                        color: '#34498e',
+                        color: '#3f6212',
                         onClick: async () => {
                             const response = await axios.get(`/plasmid/${row.plasmid}`, {
                                 baseURL: '/api/database',

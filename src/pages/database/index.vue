@@ -5,10 +5,10 @@ mt-10 mr-10 w-40 mt-10 mr-10 w-40
             <h1 class="text-5xl m-4 font-700">Database Overview</h1>
 
             <div class="flex flex-row ml-1 my-6">
-                <el-button round color="#34498E" class="ml-5" @click="godatalist">
+                <el-button round color="#3f6212" class="ml-5" @click="godatalist">
                     Total Data
                 </el-button>
-                <el-button round color="#34498E" class="ml-5" @click="godatahelper">
+                <el-button round color="#3f6212" class="ml-5" @click="godatahelper">
                     Database Helper
                 </el-button>
             </div>
@@ -20,12 +20,12 @@ mt-10 mr-10 w-40 mt-10 mr-10 w-40
                         <n-number-animation
                             ref="numberAnimationInstRef"
                             :from="0"
-                            :to="873718"
+                            :to="+`${overview_data.overview.plasmid}`"
                             :duration="1000"
                             show-separator
                         />
                         <template #label>
-                            <h1 class="text-[#212529] text-lg font-700 ml-1">Phage Sequences</h1>
+                            <h1 class="text-[#3f6212] text-lg font-700 ml-1">Plasmid Sequences</h1>
                         </template>
                     </n-statistic>
                 </div>
@@ -34,11 +34,11 @@ mt-10 mr-10 w-40 mt-10 mr-10 w-40
                         <n-number-animation
                             ref="numberAnimationInstRef"
                             :from="0"
-                            :to="4723"
+                            :to="+`${overview_data.overview.host}`"
                             show-separator
                         />
                         <template #label>
-                            <h1 class="text-[#212529] text-lg font-700">Host Species</h1>
+                            <h1 class="text-[#3f6212] text-lg font-700">Host Species</h1>
                         </template>
                     </n-statistic>
                 </div>
@@ -47,12 +47,12 @@ mt-10 mr-10 w-40 mt-10 mr-10 w-40
                         <n-number-animation
                             ref="numberAnimationInstRef"
                             :from="0"
-                            :to="43088582"
+                            :to="+`${overview_data.overview.protein}`"
                             :duration="1000"
                             show-separator
                         />
                         <template #label>
-                            <h1 class="text-[#212529] text-lg font-700">Annotated Proteins</h1>
+                            <h1 class="text-[#3f6212] text-lg font-700">Annotated Proteins</h1>
                         </template>
                     </n-statistic>
                 </div>
@@ -61,12 +61,12 @@ mt-10 mr-10 w-40 mt-10 mr-10 w-40
                         <n-number-animation
                             ref="numberAnimationInstRef"
                             :from="0"
-                            :to="6462417"
+                            :to="+`${overview_data.overview.arg}`"
                             show-separator
                         />
                         <template #label>
-                            <h1 class="text-[#212529] text-lg font-700">
-                                Transcription Terminators
+                            <h1 class="text-[#3f6212] text-lg font-700">
+                                Antimicrobial Resistance Genes
                             </h1>
                         </template>
                     </n-statistic>
@@ -76,11 +76,11 @@ mt-10 mr-10 w-40 mt-10 mr-10 w-40
                         <n-number-animation
                             ref="numberAnimationInstRef"
                             :from="0"
-                            :to="702607"
+                            :to="+`${overview_data.overview.tmh}`"
                             show-separator
                         />
                         <template #label>
-                            <h1 class="text-[#212529] text-lg font-700">tRNA & tmRNA Genes</h1>
+                            <h1 class="text-[#3f6212] text-lg font-700">Transmembrane Proteins</h1>
                         </template>
                     </n-statistic>
                 </div>
@@ -95,7 +95,7 @@ mt-10 mr-10 w-40 mt-10 mr-10 w-40
                             show-separator
                         />
                         <template #label>
-                            <h1 class="text-[#212529] text-lg font-700">tRNA & tmRNA Genes</h1>
+                            <h1 class="text-[#3f6212] text-lg font-700">tRNA & tmRNA Genes</h1>
                         </template>
                     </n-statistic>
                 </div> -->
@@ -104,11 +104,11 @@ mt-10 mr-10 w-40 mt-10 mr-10 w-40
                         <n-number-animation
                             ref="numberAnimationInstRef"
                             :from="0"
-                            :to="307329"
+                            :to="+`${overview_data.overview.sm}`"
                             show-separator
                         />
                         <template #label>
-                            <h1 class="text-[#212529] text-lg font-700">Anti-CRISPR Proteins</h1>
+                            <h1 class="text-[#3f6212] text-lg font-700">Secondary Metabolism</h1>
                         </template>
                     </n-statistic>
                 </div>
@@ -117,11 +117,11 @@ mt-10 mr-10 w-40 mt-10 mr-10 w-40
                         <n-number-animation
                             ref="numberAnimationInstRef"
                             :from="0"
-                            :to="56652"
+                            :to="+`${overview_data.overview.sp}`"
                             show-separator
                         />
                         <template #label>
-                            <h1 class="text-[#212529] text-lg font-700">CRISPR Arrays</h1>
+                            <h1 class="text-[#3f6212] text-lg font-700">Signal Peptides</h1>
                         </template>
                     </n-statistic>
                 </div>
@@ -130,11 +130,11 @@ mt-10 mr-10 w-40 mt-10 mr-10 w-40
                         <n-number-animation
                             ref="numberAnimationInstRef"
                             :from="0"
-                            :to="41609"
+                            :to="+`${overview_data.overview.vf}`"
                             show-separator
                         />
                         <template #label>
-                            <h1 class="text-[#212529] text-lg font-700">Virulent Factors</h1>
+                            <h1 class="text-[#3f6212] text-lg font-700">Virulent Factors</h1>
                         </template>
                     </n-statistic>
                 </div>
@@ -143,13 +143,11 @@ mt-10 mr-10 w-40 mt-10 mr-10 w-40
                         <n-number-animation
                             ref="numberAnimationInstRef"
                             :from="0"
-                            :to="2602"
+                            :to="+`${overview_data.overview.crispr}`"
                             show-separator
                         />
                         <template #label>
-                            <h1 class="text-[#212529] text-lg font-700">
-                                Antimicrobial Resistance Genes
-                            </h1>
+                            <h1 class="text-[#3f6212] text-lg font-700">CRISPR</h1>
                         </template>
                     </n-statistic>
                 </div>
@@ -158,11 +156,11 @@ mt-10 mr-10 w-40 mt-10 mr-10 w-40
                         <n-number-animation
                             ref="numberAnimationInstRef"
                             :from="0"
-                            :to="4020770"
+                            :to="+`${overview_data.overview.trna}`"
                             show-separator
                         />
                         <template #label>
-                            <h1 class="text-[#212529] text-lg font-700">Transmembrane Proteins</h1>
+                            <h1 class="text-[#3f6212] text-lg font-700">tRNA Genes</h1>
                         </template>
                     </n-statistic>
                 </div>
@@ -173,81 +171,13 @@ mt-10 mr-10 w-40 mt-10 mr-10 w-40
             <h1 class="text-4xl mt-8 ml-6 font-500">Host Phylum</h1>
             <div class="flex flex-row justify-start w-370 flex-wrap items-start ml-10 mt-6 mb-6">
                 <n-button
-                    class="mt-10 mr-10 w-80 text-[#34498e] text-xl h-11"
+                    class="mt-10 mr-10 w-80 text-[#3f6212] text-xl h-11"
                     tertiary
-                    @click="viewhost('Bacillota')"
+                    @click="viewhost(`${host}`)"
+                    v-for="host in overview_data.hosts"
+                    :key="host"
                 >
-                    Bacillota
-                </n-button>
-                <n-button
-                    class="mt-10 mr-10 w-80 text-[#34498e] text-xl h-11"
-                    tertiary
-                    @click="viewhost('Bacteroidota')"
-                >
-                    Bacteroidota
-                </n-button>
-                <n-button
-                    class="mt-10 mr-10 w-80 text-[#34498e] text-xl h-11"
-                    tertiary
-                    @click="viewhost('Pseudomonadota')"
-                >
-                    Pseudomonadota
-                </n-button>
-                <n-button
-                    class="mt-10 mr-10 w-80 text-[#34498e] text-xl h-11"
-                    tertiary
-                    @click="viewhost('Thermodesulfobacteriota')"
-                >
-                    Thermodesulfobacteriota
-                </n-button>
-                <n-button
-                    class="mt-10 mr-10 w-80 text-[#34498e] text-xl h-11"
-                    tertiary
-                    @click="viewhost('Campylobacterota')"
-                >
-                    Campylobacterota
-                </n-button>
-                <n-button
-                    class="mt-10 mr-10 w-80 text-[#34498e] text-xl h-11"
-                    tertiary
-                    @click="viewhost('Verrucomicrobiota')"
-                >
-                    Verrucomicrobiota
-                </n-button>
-                <n-button
-                    class="mt-10 mr-10 w-80 text-[#34498e] text-xl h-11"
-                    tertiary
-                    @click="viewhost('Fusobacteriota')"
-                >
-                    Fusobacteriota
-                </n-button>
-                <n-button
-                    class="mt-10 mr-10 w-80 text-[#34498e] text-xl h-11"
-                    tertiary
-                    @click="viewhost('Spirochaetota')"
-                >
-                    Spirochaetota
-                </n-button>
-                <n-button
-                    class="mt-10 mr-10 w-80 text-[#34498e] text-xl h-11"
-                    tertiary
-                    @click="viewhost('Cyanobacteriota')"
-                >
-                    Cyanobacteriota
-                </n-button>
-                <n-button
-                    class="mt-10 mr-10 w-80 text-[#34498e] text-xl h-11"
-                    tertiary
-                    @click="viewhost('Synergistota')"
-                >
-                    Synergistota
-                </n-button>
-                <n-button
-                    class="mt-10 mr-10 w-80 text-[#34498e] text-xl h-11"
-                    tertiary
-                    @click="viewhost('Others')"
-                >
-                    Others
+                    {{ host }}
                 </n-button>
             </div>
         </div>
@@ -256,112 +186,13 @@ mt-10 mr-10 w-40 mt-10 mr-10 w-40
             <h1 class="text-4xl mt-8 ml-6 font-500">Data Source</h1>
             <div class="flex flex-row justify-start w-370 flex-wrap items-start ml-10 mt-6">
                 <n-button
-                    class="mt-10 mr-10 w-80 text-[#34498e] text-xl h-11"
+                    class="mt-10 mr-10 w-80 text-[#3f6212] text-xl h-11"
                     tertiary
-                    @click="gobyset('phage')"
+                    @click="gobyset(`${datasource.value}`)"
+                    v-for="datasource in datasetDict"
+                    :key="datasource.label"
                 >
-                    All
-                </n-button>
-
-                <n-button
-                    class="mt-10 mr-10 w-80 text-[#34498e] text-xl h-11"
-                    tertiary
-                    @click="gobyset('phage_RefSeq')"
-                >
-                    RefSeq
-                </n-button>
-                <n-button
-                    class="mt-10 mr-10 w-80 text-[#34498e] text-xl h-11"
-                    tertiary
-                    @click="gobyset('phage_Genbank')"
-                >
-                    Genbank
-                </n-button>
-
-                <n-button
-                    class="mt-10 mr-10 w-80 text-[#34498e] text-xl h-11"
-                    tertiary
-                    @click="gobyset('phage_EMBL')"
-                >
-                    EMBL
-                </n-button>
-                <n-button
-                    class="mt-10 mr-10 w-80 text-[#34498e] text-xl h-11"
-                    tertiary
-                    @click="gobyset('phage_DDBJ')"
-                >
-                    DDBJ
-                </n-button>
-                <n-button
-                    class="mt-10 mr-10 w-80 text-[#34498e] text-xl h-11"
-                    tertiary
-                    @click="gobyset('phage_PhagesDB')"
-                >
-                    PhagesDB
-                </n-button>
-
-                <n-button
-                    class="mt-10 mr-10 w-80 text-[#34498e] text-xl h-11"
-                    tertiary
-                    @click="gobyset('phage_GVD')"
-                >
-                    GVD
-                </n-button>
-                <n-button
-                    class="mt-10 mr-10 w-80 text-[#34498e] text-xl h-11"
-                    tertiary
-                    @click="gobyset('phage_GPD')"
-                >
-                    GPD
-                </n-button>
-                <n-button
-                    class="mt-10 mr-10 w-80 text-[#34498e] text-xl h-11"
-                    tertiary
-                    @click="gobyset('phage_MGV')"
-                >
-                    MGV
-                </n-button>
-                <n-button
-                    class="mt-10 mr-10 w-80 text-[#34498e] text-xl h-11"
-                    tertiary
-                    @click="gobyset('phage_TemPhD')"
-                >
-                    TemPhD
-                </n-button>
-                <n-button
-                    class="mt-10 mr-10 w-80 text-[#34498e] text-xl h-11"
-                    tertiary
-                    @click="gobyset('phage_CHVD')"
-                >
-                    CHVD
-                </n-button>
-                <n-button
-                    class="mt-10 mr-10 w-80 text-[#34498e] text-xl h-11"
-                    tertiary
-                    @click="gobyset('phage_IGVD')"
-                >
-                    IGVD
-                </n-button>
-                <n-button
-                    class="mt-10 mr-10 w-80 text-[#34498e] text-xl h-11"
-                    tertiary
-                    @click="gobyset('phage_IMG_VR')"
-                >
-                    IMG_VR
-                </n-button>
-                <n-button
-                    class="mt-10 mr-10 w-80 text-[#34498e] text-xl h-11"
-                    tertiary
-                    @click="gobyset('phage_GOV2')"
-                >
-                    GOV2
-                </n-button>
-                <n-button
-                    class="mt-10 mr-10 w-80 text-[#34498e] text-xl h-11"
-                    tertiary
-                    @click="gobyset('phage_STV')"
-                >
-                    STV
+                    {{ datasource.label }}
                 </n-button>
             </div>
         </div>
@@ -380,7 +211,7 @@ mt-10 mr-10 w-40 mt-10 mr-10 w-40
                 <div>
                     <h1 class="text-3xl mt-9 ml-7 font-500 text-[#3262a8]">Bar Plot</h1>
                 </div>
-                <div class="flex flex-row justify-between mt-6 ml-8 w-285">
+                <!-- <div class="flex flex-row justify-between mt-6 ml-8 w-285">
                     <n-form-item label="Please choose plot type" class="w-75">
                         <n-select
                             v-model:value="barchartvalue1"
@@ -395,7 +226,7 @@ mt-10 mr-10 w-40 mt-10 mr-10 w-40
                             @update:value="barcharthandleUpdateValue2"
                         ></n-select>
                     </n-form-item>
-                </div>
+                </div> -->
                 <div class="flex flex-row">
                     <div
                         class="w-200 h-140 mb-10 mt-5 p-5 ml-8"
@@ -415,7 +246,7 @@ mt-10 mr-10 w-40 mt-10 mr-10 w-40
                 <div>
                     <h1 class="text-3xl mt-9 ml-7 font-500 text-[#3262a8]">Pie Chart</h1>
                 </div>
-                <div class="w-285 flex flex-row justify-between mt-6 ml-8">
+                <!-- <div class="w-285 flex flex-row justify-between mt-6 ml-8">
                     <n-form-item label="Please choose chart type" class="w-75">
                         <n-select
                             v-model:value="piechartvalue1"
@@ -430,20 +261,20 @@ mt-10 mr-10 w-40 mt-10 mr-10 w-40
                             @update:value="piecharthandleUpdateValue2"
                         ></n-select>
                     </n-form-item>
-                </div>
+                </div> -->
 
                 <div class="flex flex-row">
                     <div
                         class="w-200 h-120 mb-10 mt-5 p-5 ml-8"
                         style="box-shadow: 0 0 64px #cfd5db"
                     >
-                        <div id="mypieEcharts1" class="w-190 h-110" ref="echartpieDom1"></div>
+                        <div id="mypieEcharts1" class="h-110" ref="echartpieDom1"></div>
                     </div>
                     <div
                         class="w-200 h-120 mb-10 mt-5 ml-10 p-5"
                         style="box-shadow: 0 0 64px #cfd5db"
                     >
-                        <div id="mypieEcharts2" class="w-190 h-110" ref="echartpieDom2"></div>
+                        <div id="mypieEcharts2" class="h-110" ref="echartpieDom2"></div>
                     </div>
                 </div>
             </div>
@@ -461,7 +292,7 @@ mt-10 mr-10 w-40 mt-10 mr-10 w-40
                     </n-form-item>
                 </div>
                 <el-scrollbar
-                    class="w-410 h-240 ml-8 mt-10 mb-20 p-5"
+                    class="h-240 ml-8 mt-10 mb-20 p-5"
                     style="box-shadow: 0 0 64px #cfd5db"
                 >
                     <div
@@ -484,23 +315,35 @@ mt-10 mr-10 w-40 mt-10 mr-10 w-40
 <script setup lang="ts">
 import { CloudDownloadOutline as downicon } from '@vicons/ionicons5'
 import * as echarts from 'echarts'
+import axios from 'axios'
+import { datasetDict } from '@/utils/phage'
 
-import {
-    datasetsOption,
-    QualityOption,
-    Hostnumber,
-    lifestyleoption,
-    datasetspieOption,
-    qualitypieOption,
-    treedata,
-    hostTypeOptions,
-} from '@/utils/overview'
+// import // treedata,
+// // hostTypeOptions,
+// '@/utils/overview'
 
+const loading = ref(false)
+// eslint-disable-next-line camelcase
+const overview_data = ref({
+    overview: {},
+    hosts: [],
+    datasources: {
+        sources: [],
+        counts: [],
+    },
+    datahosts: {
+        hosts: [],
+        counts: [],
+    },
+    piedatasource: [],
+    piehosts: [],
+    treedata: [],
+})
 const router = useRouter()
-const godatalist = () => router.push({ path: '/database/phage' })
+const godatalist = () => router.push({ path: '/database/plasmid' })
 
 const gobyset = (seturl: string) => {
-    router.push({ path: '/database/phage', query: { dataset: seturl } })
+    router.push({ path: '/database/plasmid', query: { dataset: seturl } })
 }
 const viewhost = (node: string) => {
     router.push({
@@ -516,252 +359,48 @@ const styleObj = ref({
     height: '920px',
 })
 
-const treemapOption: echarts.EChartsOption = {
-    toolbox: {
-        itemSize: 20,
-        iconStyle: {
-            borderColor: '#34498e',
-        },
-        feature: {
-            saveAsImage: {},
-        },
-    },
-    title: {
-        text: 'Phage Host Taxonomy',
-        left: 'center',
-    },
-    tooltip: {
-        trigger: 'item',
-        triggerOn: 'mousemove',
-    },
-    series: [
-        {
-            type: 'treemap',
-            id: 'echarts-package-size',
-            animationDurationUpdate: 1000,
-            visibleMin: 100,
-            roam: false,
-            nodeClick: undefined,
-            data: treedata,
-            universalTransition: true,
+// const barchartvalue1 = ref('Phage Quality Tier Distribution')
+// const barchartvalue2 = ref('Host Phylum Distribution')
 
-            label: {
-                show: true,
-            },
-            itemStyle: {
-                borderColor: '#fff',
-            },
-            breadcrumb: {
-                show: false,
-            },
-            levels: [
-                {
-                    itemStyle: {
-                        borderWidth: 0,
-                        gapWidth: 5,
-                    },
-                },
-                {
-                    itemStyle: {
-                        gapWidth: 1,
-                    },
-                },
-                {
-                    colorSaturation: [0.35, 0.5],
-                    itemStyle: {
-                        gapWidth: 1,
-                        borderColorSaturation: 0.6,
-                    },
-                },
-            ],
-        },
-    ],
-}
-const sunburstOption: echarts.EChartsOption = {
-    title: {
-        text: 'Phage Host Taxonomy',
-        left: 'left',
-    },
-    toolbox: {
-        itemSize: 20,
-        iconStyle: {
-            borderColor: '#34498e',
-        },
-        feature: {
-            saveAsImage: {},
-        },
-    },
-    tooltip: {
-        trigger: 'item',
-        triggerOn: 'mousemove',
-    },
-    series: [
-        {
-            type: 'sunburst',
-            id: 'echarts-package-size',
-            radius: ['20%', '90%'],
-            animationDurationUpdate: 1000,
+// const barchartoptions1 = [
+//     {
+//         label: 'Phage Quality Tier Distribution',
+//         value: 'Phage Quality Tier Distribution',
+//     },
+//     {
+//         label: 'Data Source Distribution',
+//         value: 'Data Source Distribution',
+//     },
+// ]
+// const barchartoptions2 = [
+//     {
+//         label: 'Host Phylum Distribution',
+//         value: 'Host Phylum Distribution',
+//     },
+// ]
+// const piechartvalue1 = ref('Data Source Distribution')
+// const piechartvalue2 = ref('Phage Lifestyle Distribution')
+// const piechartoptions1 = [
+//     {
+//         label: 'Data Source Distribution',
+//         value: 'Data Source Distribution',
+//     },
+//     {
+//         label: 'Phage Quality Tier Distribution',
+//         value: 'Phage Quality Tier Distribution',
+//     },
+// ]
+// const piechartoptions2 = [
+//     {
+//         label: 'Phage Lifestyle Distribution',
+//         value: 'Phage Lifestyle Distribution',
+//     },
 
-            nodeClick: undefined,
-            data: treedata,
-            universalTransition: true,
-            itemStyle: {
-                borderWidth: 2,
-                borderRadius: 7,
-            },
-            emphasis: {
-                focus: 'ancestor',
-            },
-            levels: [
-                {},
-                {
-                    r0: '15%',
-                    r: '45%',
-                    itemStyle: {
-                        borderWidth: 2,
-                    },
-                    label: {
-                        rotate: 'tangential',
-
-                        formatter(data: any) {
-                            console.log(data)
-                            if (data.data.value < 23000) {
-                                return ' '
-                            }
-                            return data.data.name
-                        },
-                    },
-                },
-                {
-                    r0: '45%',
-                    r: '70%',
-                    label: {
-                        silent: true,
-                        rotate: 'tangential',
-
-                        formatter(data: any) {
-                            console.log(data)
-                            if (data.data.value < 23000) {
-                                return ' '
-                            }
-                            return data.data.name
-                        },
-                    },
-                },
-                {
-                    r0: '70%',
-                    r: '80%',
-                    label: {
-                        position: 'outside',
-                        padding: 5,
-                        silent: false,
-                        formatter(data: any) {
-                            console.log(data)
-                            if (data.data.value < 1000) {
-                                return ' '
-                            }
-                            return data.data.name
-                        },
-                    },
-                    itemStyle: {
-                        borderWidth: 3,
-                    },
-                },
-            ],
-        },
-    ],
-}
-const treeoption = {
-    title: {
-        text: 'Phage Host Taxonomy',
-        left: 'center',
-    },
-    toolbox: {
-        itemSize: 20,
-        iconStyle: {
-            borderColor: '#34498e',
-        },
-        feature: {
-            saveAsImage: {},
-        },
-    },
-    tooltip: {
-        trigger: 'item',
-        triggerOn: 'mousemove',
-    },
-    series: [
-        {
-            type: 'tree',
-            data: [{ name: 'Hosts', value: '441637', children: treedata }],
-            top: '2%',
-            left: '7%',
-            bottom: '2%',
-            right: '20%',
-            symbol: 'emptyCircle',
-            expandAndCollapse: true,
-            label: {
-                position: 'right',
-                verticalAlign: 'middle',
-                align: 'left',
-                fontSize: 15,
-            },
-            leaves: {
-                label: {
-                    position: 'bottom',
-                    verticalAlign: 'middle',
-                    align: 'left',
-                },
-            },
-            animationDurationUpdate: 750,
-            breadcrumb: {
-                show: false,
-            },
-        },
-    ],
-}
-
-const barchartvalue1 = ref('Phage Quality Tier Distribution')
-const barchartvalue2 = ref('Host Phylum Distribution')
-
-const barchartoptions1 = [
-    {
-        label: 'Phage Quality Tier Distribution',
-        value: 'Phage Quality Tier Distribution',
-    },
-    {
-        label: 'Data Source Distribution',
-        value: 'Data Source Distribution',
-    },
-]
-const barchartoptions2 = [
-    {
-        label: 'Host Phylum Distribution',
-        value: 'Host Phylum Distribution',
-    },
-]
-const piechartvalue1 = ref('Data Source Distribution')
-const piechartvalue2 = ref('Phage Lifestyle Distribution')
-const piechartoptions1 = [
-    {
-        label: 'Data Source Distribution',
-        value: 'Data Source Distribution',
-    },
-    {
-        label: 'Phage Quality Tier Distribution',
-        value: 'Phage Quality Tier Distribution',
-    },
-]
-const piechartoptions2 = [
-    {
-        label: 'Phage Lifestyle Distribution',
-        value: 'Phage Lifestyle Distribution',
-    },
-
-    {
-        label: 'Host Phylum Distribution',
-        value: 'Host Phylum Distribution',
-    },
-]
+//     {
+//         label: 'Host Phylum Distribution',
+//         value: 'Host Phylum Distribution',
+//     },
+// ]
 const treechartvalue1 = ref('Treemap')
 const treechartoptions1 = [
     {
@@ -777,6 +416,8 @@ const treechartoptions1 = [
         value: 'Tree',
     },
 ]
+console.log(overview_data.value)
+
 const echartbarDom1 = ref<HTMLElement | null>(null)
 const echartbarDom2 = ref<HTMLElement | null>(null)
 const echartpieDom1 = ref<HTMLElement | null>(null)
@@ -785,7 +426,221 @@ const echartpieDom2 = ref<HTMLElement | null>(null)
 const echartDom2 = ref<HTMLElement | null>(null)
 const echartDom3 = ref<HTMLElement | null>(null)
 
-const treecharthandleUpdateValue1 = (value: string) => {
+const treecharthandleUpdateValue1 = async (value: string) => {
+    const response = await axios.get('get_database_overview', {
+        baseURL: '/api/database/',
+        timeout: 100000,
+        // params: {
+        //     page: pagevalue.value,
+        //     pagesize: pageSize.value,
+        //     search: searchinput.value,
+        // },
+    })
+    const { data } = response
+    console.log(data, '===')
+    const treemapOption: echarts.EChartsOption = {
+        toolbox: {
+            itemSize: 20,
+            iconStyle: {
+                borderColor: '#3f6212',
+            },
+            feature: {
+                saveAsImage: {},
+            },
+        },
+        title: {
+            text: 'Plasmid Host Taxonomy',
+            left: 'center',
+        },
+        tooltip: {
+            trigger: 'item',
+            triggerOn: 'mousemove',
+        },
+        series: [
+            {
+                type: 'treemap',
+                id: 'echarts-package-size',
+                animationDurationUpdate: 1000,
+                visibleMin: 100,
+                roam: false,
+                nodeClick: undefined,
+                data: data.treedata,
+                universalTransition: true,
+
+                label: {
+                    show: true,
+                },
+                itemStyle: {
+                    borderColor: '#fff',
+                },
+                breadcrumb: {
+                    show: false,
+                },
+                levels: [
+                    {
+                        itemStyle: {
+                            borderWidth: 0,
+                            gapWidth: 5,
+                        },
+                    },
+                    {
+                        itemStyle: {
+                            gapWidth: 1,
+                        },
+                    },
+                    {
+                        colorSaturation: [0.35, 0.5],
+                        itemStyle: {
+                            gapWidth: 1,
+                            borderColorSaturation: 0.6,
+                        },
+                    },
+                ],
+            },
+        ],
+    }
+    const sunburstOption: echarts.EChartsOption = {
+        title: {
+            text: 'Plasmid Host Taxonomy',
+            left: 'center',
+        },
+        toolbox: {
+            itemSize: 20,
+            iconStyle: {
+                borderColor: '#3f6212',
+            },
+            feature: {
+                saveAsImage: {},
+            },
+        },
+        tooltip: {
+            trigger: 'item',
+            triggerOn: 'mousemove',
+        },
+        series: [
+            {
+                type: 'sunburst',
+                id: 'echarts-package-size',
+                radius: ['20%', '90%'],
+                animationDurationUpdate: 1000,
+
+                nodeClick: undefined,
+                data: data.treedata,
+                universalTransition: true,
+                itemStyle: {
+                    borderWidth: 2,
+                    borderRadius: 7,
+                },
+                emphasis: {
+                    focus: 'ancestor',
+                },
+                levels: [
+                    {},
+                    {
+                        r0: '15%',
+                        r: '45%',
+                        itemStyle: {
+                            borderWidth: 2,
+                        },
+                        label: {
+                            rotate: 'tangential',
+
+                            formatter(tmpdata: any) {
+                                console.log(data)
+                                if (tmpdata.data.value < 23000) {
+                                    return ' '
+                                }
+                                return tmpdata.data.name
+                            },
+                        },
+                    },
+                    {
+                        r0: '45%',
+                        r: '70%',
+                        label: {
+                            silent: true,
+                            rotate: 'tangential',
+
+                            formatter(tmpdata: any) {
+                                console.log(tmpdata)
+                                if (tmpdata.data.value < 23000) {
+                                    return ' '
+                                }
+                                return tmpdata.data.name
+                            },
+                        },
+                    },
+                    {
+                        r0: '70%',
+                        r: '80%',
+                        label: {
+                            position: 'outside',
+                            padding: 5,
+                            silent: false,
+                            formatter(tmpdata: any) {
+                                console.log(tmpdata)
+                                if (tmpdata.data.value < 1000) {
+                                    return ' '
+                                }
+                                return tmpdata.data.name
+                            },
+                        },
+                        itemStyle: {
+                            borderWidth: 3,
+                        },
+                    },
+                ],
+            },
+        ],
+    }
+    const treeoption = {
+        title: {
+            text: 'Plasmid Host Taxonomy',
+            left: 'center',
+        },
+        toolbox: {
+            itemSize: 20,
+            iconStyle: {
+                borderColor: '#3f6212',
+            },
+            feature: {
+                saveAsImage: {},
+            },
+        },
+        tooltip: {
+            trigger: 'item',
+            triggerOn: 'mousemove',
+        },
+        series: [
+            {
+                type: 'tree',
+                data: [{ name: 'Hosts', value: '441637', children: data.treedata }],
+                top: '2%',
+                left: '7%',
+                bottom: '2%',
+                right: '20%',
+                symbol: 'emptyCircle',
+                expandAndCollapse: true,
+                label: {
+                    position: 'right',
+                    verticalAlign: 'middle',
+                    align: 'left',
+                    fontSize: 15,
+                },
+                leaves: {
+                    label: {
+                        position: 'bottom',
+                        verticalAlign: 'middle',
+                        align: 'left',
+                    },
+                },
+                animationDurationUpdate: 750,
+                breadcrumb: {
+                    show: false,
+                },
+            },
+        ],
+    }
     treechartvalue1.value = value
     if (value === 'Treemap') {
         const mytreeEcharts = echarts.init(echartDom2.value as HTMLElement)
@@ -799,77 +654,295 @@ const treecharthandleUpdateValue1 = (value: string) => {
         mytreeEcharts.resize()
     }
 }
-onMounted(() => {
+onBeforeMount(async () => {
+    loading.value = true
+    const response = await axios.get('get_database_overview', {
+        baseURL: '/api/database/',
+        timeout: 100000,
+        // params: {
+        //     page: pagevalue.value,
+        //     pagesize: pageSize.value,
+        //     search: searchinput.value,
+        // },
+    })
+    const { data } = response
+    overview_data.value = data
+    console.log(overview_data.value.datasources)
+    loading.value = false
+    const datasetsOption = {
+        toolbox: {
+            itemSize: 20,
+            iconStyle: {
+                borderColor: '#3f6212',
+            },
+            feature: {
+                dataView: { readOnly: true },
+                magicType: { type: ['line', 'bar'] },
+                restore: {},
+                saveAsImage: {},
+            },
+        },
+        title: {
+            text: 'Data Source Distribution',
+            left: 'center',
+        },
+        tooltip: {},
+        xAxis: {
+            data: overview_data.value.datasources.sources,
+            axisLabel: {
+                interval: 0,
+                fontSize: 12,
+                rotate: 19,
+            },
+        },
+        yAxis: {},
+        series: [
+            {
+                name: 'Plasmids',
+                type: 'bar',
+                data: overview_data.value.datasources.counts,
+            },
+        ],
+    }
     const mybarEcharts1 = echarts.init(echartbarDom1.value as HTMLElement)
-    mybarEcharts1.setOption(QualityOption)
+    mybarEcharts1.setOption(datasetsOption)
+    const Hostnumber = {
+        title: {
+            text: 'Host Phylum Distribution',
+            left: 'center',
+        },
+        tooltip: {},
+        toolbox: {
+            itemSize: 20,
+            iconStyle: {
+                borderColor: '#3f6212',
+            },
+            feature: {
+                dataView: { readOnly: true },
+                magicType: { type: ['line', 'bar'] },
+                restore: {},
+                saveAsImage: {},
+            },
+        },
+        xAxis: {
+            data: overview_data.value.datahosts.hosts,
+            axisLabel: {
+                interval: 0,
+                rotate: 19,
+                fontSize: 13,
+            },
+        },
+        yAxis: {},
+        series: [
+            {
+                name: 'Plasmids',
+                type: 'bar',
+                data: overview_data.value.datahosts.counts,
+            },
+        ],
+    }
     const mybarEcharts2 = echarts.init(echartbarDom2.value as HTMLElement)
     mybarEcharts2.setOption(Hostnumber)
 
+    const datasetspieOption = {
+        title: {
+            text: 'Data Source Distribution',
+            left: 'center',
+        },
+        toolbox: {
+            itemSize: 20,
+            iconStyle: {
+                borderColor: '#3f6212',
+            },
+            feature: {
+                dataView: { readOnly: true },
+                saveAsImage: {},
+            },
+        },
+        tooltip: {
+            trigger: 'item',
+        },
+        legend: {
+            orient: 'vertical',
+            left: 'left',
+            textStyle: {
+                fontSize: 16,
+            },
+        },
+        series: [
+            {
+                name: 'Plasmids',
+                type: 'pie',
+                data: overview_data.value.piedatasource,
+                label: {
+                    fontSize: 15,
+                },
+            },
+        ],
+    }
     const mypieEcharts1 = echarts.init(echartpieDom1.value as HTMLElement)
     mypieEcharts1.setOption(datasetspieOption)
+    const hostTypeOptions = {
+        title: {
+            text: 'Host Phylum Distribution',
+            left: 'center',
+        },
+        toolbox: {
+            itemSize: 20,
+            iconStyle: {
+                borderColor: '#3f6212',
+            },
+            feature: {
+                dataView: { readOnly: true },
+                saveAsImage: {},
+            },
+        },
+        tooltip: {
+            trigger: 'item',
+        },
+        legend: {
+            left: 'left',
+            width: 50,
+            orient: 'horizontal',
+            itemHeight: 14,
+            textStyle: {
+                fontSize: 12,
+            },
+        },
+        series: [
+            {
+                name: 'Plasmids',
+                type: 'pie',
+                data: overview_data.value.piehosts,
+                label: {
+                    fontSize: 15,
+                },
+            },
+        ],
+    }
     const mypieEcharts2 = echarts.init(echartpieDom2.value as HTMLElement)
-    mypieEcharts2.setOption(lifestyleoption)
+    mypieEcharts2.setOption(hostTypeOptions)
+    const inittreemapOption: echarts.EChartsOption = {
+        toolbox: {
+            itemSize: 20,
+            iconStyle: {
+                borderColor: '#3f6212',
+            },
+            feature: {
+                saveAsImage: {},
+            },
+        },
+        title: {
+            text: 'Plasmid Host Taxonomy',
+            left: 'center',
+        },
+        tooltip: {
+            trigger: 'item',
+            triggerOn: 'mousemove',
+        },
+        series: [
+            {
+                type: 'treemap',
+                id: 'echarts-package-size',
+                animationDurationUpdate: 1000,
+                visibleMin: 100,
+                roam: false,
+                nodeClick: undefined,
+                data: overview_data.value.treedata,
+                universalTransition: true,
 
+                label: {
+                    show: true,
+                },
+                itemStyle: {
+                    borderColor: '#fff',
+                },
+                breadcrumb: {
+                    show: false,
+                },
+                levels: [
+                    {
+                        itemStyle: {
+                            borderWidth: 0,
+                            gapWidth: 5,
+                        },
+                    },
+                    {
+                        itemStyle: {
+                            gapWidth: 1,
+                        },
+                    },
+                    {
+                        colorSaturation: [0.35, 0.5],
+                        itemStyle: {
+                            gapWidth: 1,
+                            borderColorSaturation: 0.6,
+                        },
+                    },
+                ],
+            },
+        ],
+    }
     const mytreeEcharts = echarts.init(echartDom2.value as HTMLElement)
-    mytreeEcharts.setOption(treemapOption)
+    mytreeEcharts.setOption(inittreemapOption)
 })
 
-const barcharthandleUpdateValue1 = (value: string) => {
-    barchartvalue1.value = value
-    if (value === 'Data Source Distribution') {
-        const mybarEcharts1 = echarts.init(echartbarDom1.value as HTMLElement)
-        mybarEcharts1.setOption(datasetsOption)
-    } else if (value === 'Phage Quality Tier Distribution') {
-        const mybarEcharts1 = echarts.init(echartbarDom1.value as HTMLElement)
-        mybarEcharts1.setOption(QualityOption)
-    } else if (value === 'Host Phylum Distribution') {
-        const mybarEcharts1 = echarts.init(echartbarDom1.value as HTMLElement)
-        mybarEcharts1.setOption(Hostnumber)
-    }
-}
-const barcharthandleUpdateValue2 = (value: string) => {
-    barchartvalue2.value = value
-    if (value === 'Data Source Distribution') {
-        const mybarEcharts2 = echarts.init(echartbarDom2.value as HTMLElement)
-        mybarEcharts2.setOption(datasetsOption)
-    } else if (value === 'Phage Quality Tier Distribution') {
-        const mybarEcharts2 = echarts.init(echartbarDom2.value as HTMLElement)
-        mybarEcharts2.setOption(QualityOption)
-    } else if (value === 'Host Phylum Distribution') {
-        const mybarEcharts2 = echarts.init(echartbarDom2.value as HTMLElement)
-        mybarEcharts2.setOption(Hostnumber)
-    }
-}
+// const barcharthandleUpdateValue1 = (value: string) => {
+//     barchartvalue1.value = value
+//     if (value === 'Data Source Distribution') {
+//         const mybarEcharts1 = echarts.init(echartbarDom1.value as HTMLElement)
+//         mybarEcharts1.setOption(datasetsOption)
+//     } else if (value === 'Phage Quality Tier Distribution') {
+//         const mybarEcharts1 = echarts.init(echartbarDom1.value as HTMLElement)
+//         mybarEcharts1.setOption(QualityOption)
+//     } else if (value === 'Host Phylum Distribution') {
+//         const mybarEcharts1 = echarts.init(echartbarDom1.value as HTMLElement)
+//         mybarEcharts1.setOption(Hostnumber)
+//     }
+// }
+// const barcharthandleUpdateValue2 = (value: string) => {
+//     barchartvalue2.value = value
+//     if (value === 'Data Source Distribution') {
+//         const mybarEcharts2 = echarts.init(echartbarDom2.value as HTMLElement)
+//         mybarEcharts2.setOption(datasetsOption)
+//     } else if (value === 'Phage Quality Tier Distribution') {
+//         const mybarEcharts2 = echarts.init(echartbarDom2.value as HTMLElement)
+//         mybarEcharts2.setOption(QualityOption)
+//     } else if (value === 'Host Phylum Distribution') {
+//         const mybarEcharts2 = echarts.init(echartbarDom2.value as HTMLElement)
+//         mybarEcharts2.setOption(Hostnumber)
+//     }
+// }
 
-const piecharthandleUpdateValue1 = (value: string) => {
-    piechartvalue1.value = value
-    if (value === 'Data Source Distribution') {
-        const mypieEcharts1 = echarts.init(echartpieDom1.value as HTMLElement)
-        mypieEcharts1.setOption(datasetspieOption)
-    } else if (value === 'Phage Lifestyle Distribution') {
-        const mypieEcharts1 = echarts.init(echartpieDom1.value as HTMLElement)
-        mypieEcharts1.setOption(lifestyleoption)
-    } else if (value === 'Phage Quality Tier Distribution') {
-        const mypieEcharts1 = echarts.init(echartpieDom1.value as HTMLElement)
-        mypieEcharts1.setOption(qualitypieOption)
-    }
-}
-const piecharthandleUpdateValue2 = (value: string) => {
-    piechartvalue2.value = value
-    if (value === 'Data Source Distribution') {
-        const mypieEcharts2 = echarts.init(echartpieDom2.value as HTMLElement)
-        mypieEcharts2.setOption(datasetspieOption)
-    } else if (value === 'Phage Lifestyle Distribution') {
-        const mypieEcharts2 = echarts.init(echartpieDom2.value as HTMLElement)
-        mypieEcharts2.setOption(lifestyleoption)
-    } else if (value === 'Phage Quality Tier Distribution') {
-        const mypieEcharts2 = echarts.init(echartpieDom2.value as HTMLElement)
-        mypieEcharts2.setOption(qualitypieOption)
-    } else {
-        const mypieEcharts2 = echarts.init(echartpieDom2.value as HTMLElement)
-        mypieEcharts2.setOption(hostTypeOptions)
-    }
-}
+// const piecharthandleUpdateValue1 = (value: string) => {
+//     piechartvalue1.value = value
+//     if (value === 'Data Source Distribution') {
+//         const mypieEcharts1 = echarts.init(echartpieDom1.value as HTMLElement)
+//         mypieEcharts1.setOption(datasetspieOption)
+//     } else if (value === 'Phage Lifestyle Distribution') {
+//         const mypieEcharts1 = echarts.init(echartpieDom1.value as HTMLElement)
+//         mypieEcharts1.setOption(lifestyleoption)
+//     } else if (value === 'Phage Quality Tier Distribution') {
+//         const mypieEcharts1 = echarts.init(echartpieDom1.value as HTMLElement)
+//         mypieEcharts1.setOption(qualitypieOption)
+//     }
+// }
+// const piecharthandleUpdateValue2 = (value: string) => {
+//     piechartvalue2.value = value
+//     if (value === 'Data Source Distribution') {
+//         const mypieEcharts2 = echarts.init(echartpieDom2.value as HTMLElement)
+//         mypieEcharts2.setOption(datasetspieOption)
+//     } else if (value === 'Phage Lifestyle Distribution') {
+//         const mypieEcharts2 = echarts.init(echartpieDom2.value as HTMLElement)
+//         mypieEcharts2.setOption(lifestyleoption)
+//     } else if (value === 'Phage Quality Tier Distribution') {
+//         const mypieEcharts2 = echarts.init(echartpieDom2.value as HTMLElement)
+//         mypieEcharts2.setOption(qualitypieOption)
+//     } else {
+//         const mypieEcharts2 = echarts.init(echartpieDom2.value as HTMLElement)
+//         mypieEcharts2.setOption(hostTypeOptions)
+//     }
+// }
 
 const godatahelper = () => {
     router.push({
@@ -882,7 +955,7 @@ const godatahelper = () => {
 <style lang="scss" scoped>
 :deep(.n-statistic .n-statistic-value .n-statistic-value__content) {
     font-size: 42px;
-    color: #34498e;
+    color: #3f6212;
     font-weight: bold;
 }
 </style>

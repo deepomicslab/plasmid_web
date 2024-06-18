@@ -2,7 +2,7 @@
     <div class="h-630 flex flex-col py-10 px-30">
         <div class="flex flex-row ml-1 my-7">
             <div class="text-4xl font-600">Host Information</div>
-            <el-button round color="#34498E" class="ml-5 mt-2" @click="godatahelper">
+            <el-button round color="#3f6212" class="ml-5 mt-2" @click="godatahelper">
                 Database Helper
             </el-button>
         </div>
@@ -50,7 +50,7 @@
                 </el-tree>
             </el-scrollbar>
         </div>
-        <div class="mt-10">
+        <!-- <div class="mt-10">
             <div>
                 <h1 class="text-3xl mt-9 font-500 text-[#3262a8]">Tree Chart</h1>
             </div>
@@ -77,7 +77,7 @@
                     v-show="treechartvalue1 === 'Tree'"
                 ></div>
             </el-scrollbar>
-        </div>
+        </div> -->
     </div>
 </template>
 
@@ -87,17 +87,17 @@
 import axios from 'axios'
 import type Node from 'element-plus/es/components/tree/src/model/node'
 import { ArrowRight } from '@element-plus/icons-vue'
-import * as echarts from 'echarts'
+// import * as echarts from 'echarts'
 import { useQueryStore } from '@/store/query'
-import { treedata } from '@/utils/overview'
+// import { treedata } from '@/utils/overview'
 
 const queryStore = useQueryStore()
 const router = useRouter()
 const hostdata = ref()
 const loading = ref(false)
 
-const echartDom2 = ref<HTMLElement | null>(null)
-const echartDom3 = ref<HTMLElement | null>(null)
+// const echartDom2 = ref<HTMLElement | null>(null)
+// const echartDom3 = ref<HTMLElement | null>(null)
 
 interface Tree {
     label: string
@@ -163,242 +163,242 @@ const resetChecked = () => {
     treeRef.value!.setCheckedKeys([], false)
 }
 
-const styleObj = ref({
-    width: '1600px',
-    height: '920px',
-})
-const treechartvalue1 = ref('Treemap')
-const treechartoptions1 = [
-    {
-        label: 'Treemap',
-        value: 'Treemap',
-    },
-    {
-        label: 'Sunburst',
-        value: 'Sunburst',
-    },
-    {
-        label: 'Tree',
-        value: 'Tree',
-    },
-]
-const treemapOption: echarts.EChartsOption = {
-    toolbox: {
-        itemSize: 20,
-        iconStyle: {
-            borderColor: '#34498e',
-        },
-        feature: {
-            saveAsImage: {},
-        },
-    },
-    title: {
-        text: 'Plasmid Host Taxonomy',
-        left: 'center',
-    },
-    tooltip: {
-        trigger: 'item',
-        triggerOn: 'mousemove',
-    },
-    series: [
-        {
-            type: 'treemap',
-            id: 'echarts-package-size',
-            animationDurationUpdate: 1000,
-            visibleMin: 100,
-            roam: false,
-            nodeClick: undefined,
-            data: treedata,
-            universalTransition: true,
+// const styleObj = ref({
+//     width: '1600px',
+//     height: '920px',
+// })
+// const treechartvalue1 = ref('Treemap')
+// const treechartoptions1 = [
+//     {
+//         label: 'Treemap',
+//         value: 'Treemap',
+//     },
+//     {
+//         label: 'Sunburst',
+//         value: 'Sunburst',
+//     },
+//     {
+//         label: 'Tree',
+//         value: 'Tree',
+//     },
+// ]
+// const treemapOption: echarts.EChartsOption = {
+//     toolbox: {
+//         itemSize: 20,
+//         iconStyle: {
+//             borderColor: '#3f6212',
+//         },
+//         feature: {
+//             saveAsImage: {},
+//         },
+//     },
+//     title: {
+//         text: 'Plasmid Host Taxonomy',
+//         left: 'center',
+//     },
+//     tooltip: {
+//         trigger: 'item',
+//         triggerOn: 'mousemove',
+//     },
+//     series: [
+//         {
+//             type: 'treemap',
+//             id: 'echarts-package-size',
+//             animationDurationUpdate: 1000,
+//             visibleMin: 100,
+//             roam: false,
+//             nodeClick: undefined,
+//             data: treedata,
+//             universalTransition: true,
 
-            label: {
-                show: true,
-            },
-            itemStyle: {
-                borderColor: '#fff',
-            },
-            breadcrumb: {
-                show: false,
-            },
-            levels: [
-                {
-                    itemStyle: {
-                        borderWidth: 0,
-                        gapWidth: 5,
-                    },
-                },
-                {
-                    itemStyle: {
-                        gapWidth: 1,
-                    },
-                },
-                {
-                    colorSaturation: [0.35, 0.5],
-                    itemStyle: {
-                        gapWidth: 1,
-                        borderColorSaturation: 0.6,
-                    },
-                },
-            ],
-        },
-    ],
-}
-const sunburstOption: echarts.EChartsOption = {
-    title: {
-        text: 'Plasmid Host Taxonomy',
-        left: 'left',
-    },
-    toolbox: {
-        itemSize: 20,
-        iconStyle: {
-            borderColor: '#34498e',
-        },
-        feature: {
-            saveAsImage: {},
-        },
-    },
-    tooltip: {
-        trigger: 'item',
-        triggerOn: 'mousemove',
-    },
-    series: [
-        {
-            type: 'sunburst',
-            id: 'echarts-package-size',
-            radius: ['20%', '90%'],
-            animationDurationUpdate: 1000,
+//             label: {
+//                 show: true,
+//             },
+//             itemStyle: {
+//                 borderColor: '#fff',
+//             },
+//             breadcrumb: {
+//                 show: false,
+//             },
+//             levels: [
+//                 {
+//                     itemStyle: {
+//                         borderWidth: 0,
+//                         gapWidth: 5,
+//                     },
+//                 },
+//                 {
+//                     itemStyle: {
+//                         gapWidth: 1,
+//                     },
+//                 },
+//                 {
+//                     colorSaturation: [0.35, 0.5],
+//                     itemStyle: {
+//                         gapWidth: 1,
+//                         borderColorSaturation: 0.6,
+//                     },
+//                 },
+//             ],
+//         },
+//     ],
+// }
+// const sunburstOption: echarts.EChartsOption = {
+//     title: {
+//         text: 'Plasmid Host Taxonomy',
+//         left: 'left',
+//     },
+//     toolbox: {
+//         itemSize: 20,
+//         iconStyle: {
+//             borderColor: '#3f6212',
+//         },
+//         feature: {
+//             saveAsImage: {},
+//         },
+//     },
+//     tooltip: {
+//         trigger: 'item',
+//         triggerOn: 'mousemove',
+//     },
+//     series: [
+//         {
+//             type: 'sunburst',
+//             id: 'echarts-package-size',
+//             radius: ['20%', '90%'],
+//             animationDurationUpdate: 1000,
 
-            nodeClick: undefined,
-            data: treedata,
-            universalTransition: true,
-            itemStyle: {
-                borderWidth: 2,
-                borderRadius: 7,
-            },
-            emphasis: {
-                focus: 'ancestor',
-            },
-            levels: [
-                {},
-                {
-                    r0: '15%',
-                    r: '45%',
-                    itemStyle: {
-                        borderWidth: 2,
-                    },
-                    label: {
-                        rotate: 'tangential',
+//             nodeClick: undefined,
+//             data: treedata,
+//             universalTransition: true,
+//             itemStyle: {
+//                 borderWidth: 2,
+//                 borderRadius: 7,
+//             },
+//             emphasis: {
+//                 focus: 'ancestor',
+//             },
+//             levels: [
+//                 {},
+//                 {
+//                     r0: '15%',
+//                     r: '45%',
+//                     itemStyle: {
+//                         borderWidth: 2,
+//                     },
+//                     label: {
+//                         rotate: 'tangential',
 
-                        formatter(data: any) {
-                            console.log(data)
-                            if (data.data.value < 23000) {
-                                return ' '
-                            }
-                            return data.data.name
-                        },
-                    },
-                },
-                {
-                    r0: '45%',
-                    r: '70%',
-                    label: {
-                        silent: true,
-                        rotate: 'tangential',
+//                         formatter(data: any) {
+//                             console.log(data)
+//                             if (data.data.value < 23000) {
+//                                 return ' '
+//                             }
+//                             return data.data.name
+//                         },
+//                     },
+//                 },
+//                 {
+//                     r0: '45%',
+//                     r: '70%',
+//                     label: {
+//                         silent: true,
+//                         rotate: 'tangential',
 
-                        formatter(data: any) {
-                            console.log(data)
-                            if (data.data.value < 23000) {
-                                return ' '
-                            }
-                            return data.data.name
-                        },
-                    },
-                },
-                {
-                    r0: '70%',
-                    r: '80%',
-                    label: {
-                        position: 'outside',
-                        padding: 5,
-                        silent: false,
-                        formatter(data: any) {
-                            console.log(data)
-                            if (data.data.value < 1000) {
-                                return ' '
-                            }
-                            return data.data.name
-                        },
-                    },
-                    itemStyle: {
-                        borderWidth: 3,
-                    },
-                },
-            ],
-        },
-    ],
-}
-const treeoption = {
-    title: {
-        text: 'Plasmid Host Taxonomy',
-        left: 'center',
-    },
-    toolbox: {
-        itemSize: 20,
-        iconStyle: {
-            borderColor: '#34498e',
-        },
-        feature: {
-            saveAsImage: {},
-        },
-    },
-    tooltip: {
-        trigger: 'item',
-        triggerOn: 'mousemove',
-    },
-    series: [
-        {
-            type: 'tree',
-            data: [{ name: 'Hosts', value: '441637', children: treedata }],
-            top: '2%',
-            left: '7%',
-            bottom: '2%',
-            right: '20%',
-            symbol: 'emptyCircle',
-            expandAndCollapse: true,
-            label: {
-                position: 'right',
-                verticalAlign: 'middle',
-                align: 'left',
-                fontSize: 15,
-            },
-            leaves: {
-                label: {
-                    position: 'bottom',
-                    verticalAlign: 'middle',
-                    align: 'left',
-                },
-            },
-            animationDurationUpdate: 750,
-            breadcrumb: {
-                show: false,
-            },
-        },
-    ],
-}
-const treecharthandleUpdateValue1 = (value: string) => {
-    treechartvalue1.value = value
-    if (value === 'Treemap') {
-        const mytreeEcharts = echarts.init(echartDom2.value as HTMLElement)
-        mytreeEcharts.setOption(treemapOption)
-    } else if (value === 'Sunburst') {
-        const mytreeEcharts = echarts.init(echartDom2.value as HTMLElement)
-        mytreeEcharts.setOption(sunburstOption)
-    } else {
-        const mytreeEcharts = echarts.init(echartDom3.value as HTMLElement)
-        mytreeEcharts.setOption(treeoption)
-        mytreeEcharts.resize()
-    }
-}
+//                         formatter(data: any) {
+//                             console.log(data)
+//                             if (data.data.value < 23000) {
+//                                 return ' '
+//                             }
+//                             return data.data.name
+//                         },
+//                     },
+//                 },
+//                 {
+//                     r0: '70%',
+//                     r: '80%',
+//                     label: {
+//                         position: 'outside',
+//                         padding: 5,
+//                         silent: false,
+//                         formatter(data: any) {
+//                             console.log(data)
+//                             if (data.data.value < 1000) {
+//                                 return ' '
+//                             }
+//                             return data.data.name
+//                         },
+//                     },
+//                     itemStyle: {
+//                         borderWidth: 3,
+//                     },
+//                 },
+//             ],
+//         },
+//     ],
+// }
+// const treeoption = {
+//     title: {
+//         text: 'Plasmid Host Taxonomy',
+//         left: 'center',
+//     },
+//     toolbox: {
+//         itemSize: 20,
+//         iconStyle: {
+//             borderColor: '#3f6212',
+//         },
+//         feature: {
+//             saveAsImage: {},
+//         },
+//     },
+//     tooltip: {
+//         trigger: 'item',
+//         triggerOn: 'mousemove',
+//     },
+//     series: [
+//         {
+//             type: 'tree',
+//             data: [{ name: 'Hosts', value: '441637', children: treedata }],
+//             top: '2%',
+//             left: '7%',
+//             bottom: '2%',
+//             right: '20%',
+//             symbol: 'emptyCircle',
+//             expandAndCollapse: true,
+//             label: {
+//                 position: 'right',
+//                 verticalAlign: 'middle',
+//                 align: 'left',
+//                 fontSize: 15,
+//             },
+//             leaves: {
+//                 label: {
+//                     position: 'bottom',
+//                     verticalAlign: 'middle',
+//                     align: 'left',
+//                 },
+//             },
+//             animationDurationUpdate: 750,
+//             breadcrumb: {
+//                 show: false,
+//             },
+//         },
+//     ],
+// }
+// const treecharthandleUpdateValue1 = (value: string) => {
+//     treechartvalue1.value = value
+//     if (value === 'Treemap') {
+//         const mytreeEcharts = echarts.init(echartDom2.value as HTMLElement)
+//         mytreeEcharts.setOption(treemapOption)
+//     } else if (value === 'Sunburst') {
+//         const mytreeEcharts = echarts.init(echartDom2.value as HTMLElement)
+//         mytreeEcharts.setOption(sunburstOption)
+//     } else {
+//         const mytreeEcharts = echarts.init(echartDom3.value as HTMLElement)
+//         mytreeEcharts.setOption(treeoption)
+//         mytreeEcharts.resize()
+//     }
+// }
 onBeforeMount(async () => {
     const response = await axios.get(`/host_node/`, {
         baseURL: '/api/database',
@@ -409,8 +409,9 @@ onBeforeMount(async () => {
     })
     const { data } = response
     hostdata.value = data
-    const mytreeEcharts = echarts.init(echartDom2.value as HTMLElement)
-    mytreeEcharts.setOption(treemapOption)
+    console.log(hostdata.value.length)
+    // const mytreeEcharts = echarts.init(echartDom2.value as HTMLElement)
+    // mytreeEcharts.setOption(treemapOption)
 })
 const godatahelper = () => {
     router.push({

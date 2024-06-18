@@ -6,7 +6,7 @@
                     {{ rank }}
                 </el-tag>
                 {{ host }}
-                <el-button round color="#34498E" class="ml-5 mt-2" @click="godatahelper">
+                <el-button round color="#3f6212" class="ml-5 mt-2" @click="godatahelper">
                     Database Helper
                 </el-button>
             </div>

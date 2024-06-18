@@ -7,7 +7,7 @@
                         <div class="mr-5">
                             <el-image
                                 class="mt-7"
-                                src="/png/p5.png"
+                                src="/png/plasmid.png"
                                 style="width: 60px; height: 60px"
                             ></el-image>
                         </div>

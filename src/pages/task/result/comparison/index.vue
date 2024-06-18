@@ -93,7 +93,7 @@
             v-if="taskdetail.modulelist.includes('comparedatabse')"
         >
             <template #icon>
-                <el-icon class="text-[14px] text-[#34498E]">
+                <el-icon class="text-[14px] text-[#3f6212]">
                     <InfoFilled />
                 </el-icon>
             </template>

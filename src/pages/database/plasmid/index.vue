@@ -2,7 +2,7 @@
     <div class="flex flex-col py-5 px-20">
         <div class="flex flex-row ml-1 my-7">
             <div class="text-4xl font-600">Plasmid Information</div>
-            <el-button round color="#34498E" class="ml-5 mt-2" @click="godatahelper">
+            <el-button round color="#3f6212" class="ml-5 mt-2" @click="godatahelper">
                 Database Helper
             </el-button>
         </div>
@@ -59,7 +59,7 @@
                         placement="top"
                         class="mt-4"
                     >
-                        <el-icon class="text-base text-[#34498E]">
+                        <el-icon class="text-base text-[#3f6212]">
                             <InfoFilled />
                         </el-icon>
                     </el-tooltip>
@@ -180,7 +180,7 @@ import { datasetDict, datasetList } from '@/utils/phage'
 const showredundancy = ref('Show Redundancy')
 const pagevalue = ref(1)
 const pageSize = ref(30)
-const datasets = ref('phage')
+const datasets = ref('-1')
 const seqnum = ref('873,718')
 const loading = ref(false)
 const searchinput = ref('')
@@ -205,7 +205,7 @@ const redundancyoptions = [
 onBeforeMount(async () => {
     if (route.query?.dataset) {
         datasets.value = route.query?.dataset as string
-        phageurl.value = `/${route.query?.dataset}/`
+        source.value = route.query?.dataset as string
     }
     loading.value = true
     const response = await axios.get(phageurl.value, {
@@ -215,6 +215,7 @@ onBeforeMount(async () => {
             page: pagevalue.value,
             pagesize: pageSize.value,
             search: searchinput.value,
+            source: source.value,
         },
     })
     const { data } = response

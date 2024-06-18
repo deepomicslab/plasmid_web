@@ -37,7 +37,7 @@ import { NConfigProvider, GlobalThemeOverrides, NIcon, NEllipsis } from 'naive-u
 import windi from '@/windi'
 
 // eslint-disable-next-line import/extensions
-import Logo from '@/assets/img/p5.png'
+import Logo from '@/assets/img/plasmid.png'
 </script>
 
 <script setup lang="ts">

@@ -2,6 +2,10 @@ export const datasetList = ['COMPASS', 'Kraken2']
 
 export const datasetDict = [
     {
+        label: 'ALL',
+        value: -1,
+    },
+    {
         label: 'COMPASS',
         value: 0,
     },
