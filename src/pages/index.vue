@@ -10,22 +10,24 @@
         >
             <div class="flex flex-col h-full">
                 <div class="h-1/8 flex flex-row justify-start items-center w-full">
-                    <div class="font-500 text-[28px] text-[#3f6212] ml-18">Directly Start</div>
+                    <div class="font-500 text-[28px] text-[rgb(175,44,94)] ml-18">
+                        Directly Start
+                    </div>
                 </div>
                 <div class="h-2/8 flex flex-col justify-center items-center">
-                    <el-button round color="#3f6212" class="w-30 h-9" @click="goDocument">
+                    <el-button round color="rgb(175,44,94)" class="w-30 h-9" @click="goDocument">
                         Help
                     </el-button>
                     <img src="../../public/png/help.png" class="image w-34 h-23 mt-2" />
                 </div>
                 <div class="h-2/8 flex flex-col justify-center items-center">
-                    <el-button round color="#3f6212" class="w-30 h-9" @click="godatabasae">
+                    <el-button round color="rgb(175,44,94)" class="w-30 h-9" @click="godatabasae">
                         Database
                     </el-button>
                     <img src="../../public/png/database.png" class="image w-34 h-34" />
                 </div>
                 <div class="h-2/8 flex flex-col justify-center items-center">
-                    <el-button round color="#3f6212" class="w-30 h-9" @click="goAnalysis">
+                    <el-button round color="rgb(175,44,94)" class="w-30 h-9" @click="goAnalysis">
                         Analysis
                     </el-button>
                     <img src="../../public/png/analysis.png" class="image w-34 h-34" />
@@ -35,11 +37,13 @@
         <el-scrollbar ref="scrollbarRef" class="w-full">
             <div class="w-full flex flex-col justify-start h-700 bg-[#f8f9fa]">
                 <div class="h-220 flex flex-col">
-                    <div class="flex flex-row border-b-1 border-[#3f6212] ml-13 w-290 pb-6">
-                        <div class="text-5xl font-700 mt-20 text-[#3f6212]">PlasmidScope</div>
+                    <div class="flex flex-row border-b-1 border-[rgb(175,44,94)] ml-13 w-290 pb-6">
+                        <div class="text-5xl font-700 mt-20 text-[rgb(175,44,94)]">
+                            PlasmidScope
+                        </div>
                         <el-button
                             round
-                            color="#3f6212"
+                            color="rgb(175,44,94)"
                             class="w-25 h-7 mt-24 ml-10"
                             @click="godatabasae"
                         >
@@ -47,7 +51,7 @@
                         </el-button>
                         <el-button
                             round
-                            color="#3f6212"
+                            color="rgb(175,44,94)"
                             class="w-25 h-7 mt-24 ml-18"
                             @click="goAnalysis"
                         >
@@ -57,7 +61,7 @@
 
                     <div class="text-[22px] font-400 mt-13 ml-15 w-[84%] leading-9 text-gray-900">
                         Welcome to PhageScope! PhageScope is an
-                        <strong class="text-2xl font-600 text-[#ee7e7d] ml-1">
+                        <strong class="text-2xl font-600 text-[rgb(175,44,94)] ml-1">
                             online bacteriophage database
                         </strong>
                         that offers comprehensive annotations, including completeness assessment,
@@ -86,48 +90,66 @@
                                 database
                             </span>
                             includes
-                            <strong class="text-2xl font-600 text-[#ee7e7d] ml-1">873,718</strong>
-                            <strong class="text-[#ee7e7d] font-400 mx-1 text-[21px]">
+                            <strong class="text-2xl font-600 text-[rgb(175,44,94)] ml-1">
+                                873,718
+                            </strong>
+                            <strong class="text-[rgb(175,44,94)] font-400 mx-1 text-[21px]">
                                 phage sequences,
                             </strong>
                             with 767,797 nonredundant sequences, from 4,723 host species, harboring
-                            <strong class="text-2xl font-600 text-[#ee7e7d] ml-1">
+                            <strong class="text-2xl font-600 text-[rgb(175,44,94)] ml-1">
                                 43,088,582
                             </strong>
-                            <strong class="text-[#ee7e7d] font-400 ml-1 text-[21px]">
+                            <strong class="text-[rgb(175,44,94)] font-400 ml-1 text-[21px]">
                                 annotated proteins,
                             </strong>
-                            <strong class="text-2xl font-600 text-[#ee7e7d] ml-1">6,462,417</strong>
-                            <strong class="text-[#ee7e7d] font-400 ml-1 text-[21px]">
+                            <strong class="text-2xl font-600 text-[rgb(175,44,94)] ml-1">
+                                6,462,417
+                            </strong>
+                            <strong class="text-[rgb(175,44,94)] font-400 ml-1 text-[21px]">
                                 terminators,
                             </strong>
-                            <strong class="text-2xl font-600 text-[#ee7e7d] ml-1">691,091</strong>
-                            <strong class="text-[#ee7e7d] font-400 ml-1 text-[21px]">
+                            <strong class="text-2xl font-600 text-[rgb(175,44,94)] ml-1">
+                                691,091
+                            </strong>
+                            <strong class="text-[rgb(175,44,94)] font-400 ml-1 text-[21px]">
                                 tRNA genes,
                             </strong>
-                            <strong class="text-2xl font-600 text-[#ee7e7d] ml-1">11,516</strong>
-                            <strong class="text-[#ee7e7d] font-400 ml-1 text-[21px]">
+                            <strong class="text-2xl font-600 text-[rgb(175,44,94)] ml-1">
+                                11,516
+                            </strong>
+                            <strong class="text-[rgb(175,44,94)] font-400 ml-1 text-[21px]">
                                 tmRNA genes,
                             </strong>
-                            <strong class="text-2xl font-600 text-[#ee7e7d] ml-1">307,329</strong>
-                            <strong class="text-[#ee7e7d] font-400 ml-1 text-[21px]">
+                            <strong class="text-2xl font-600 text-[rgb(175,44,94)] ml-1">
+                                307,329
+                            </strong>
+                            <strong class="text-[rgb(175,44,94)] font-400 ml-1 text-[21px]">
                                 anti-CRISPR proteins,
                             </strong>
-                            <strong class="text-2xl font-600 text-[#ee7e7d] ml-1">56,652</strong>
-                            <strong class="text-[#ee7e7d] font-400 ml-1 text-[21px]">
+                            <strong class="text-2xl font-600 text-[rgb(175,44,94)] ml-1">
+                                56,652
+                            </strong>
+                            <strong class="text-[rgb(175,44,94)] font-400 ml-1 text-[21px]">
                                 CRISPR arrays,
                             </strong>
-                            <strong class="text-2xl font-600 text-[#ee7e7d] ml-1">41,609</strong>
-                            <strong class="text-[#ee7e7d] font-400 ml-1 text-[21px]">
+                            <strong class="text-2xl font-600 text-[rgb(175,44,94)] ml-1">
+                                41,609
+                            </strong>
+                            <strong class="text-[rgb(175,44,94)] font-400 ml-1 text-[21px]">
                                 virulent factors,
                             </strong>
-                            <strong class="text-2xl font-600 text-[#ee7e7d] ml-1">2,602</strong>
-                            <strong class="text-[#ee7e7d] font-400 ml-1 text-[21px]">
+                            <strong class="text-2xl font-600 text-[rgb(175,44,94)] ml-1">
+                                2,602
+                            </strong>
+                            <strong class="text-[rgb(175,44,94)] font-400 ml-1 text-[21px]">
                                 antimicrobial resistance genes,
                             </strong>
                             and
-                            <strong class="text-2xl font-600 text-[#ee7e7d] ml-1">4,020,770</strong>
-                            <strong class="text-[#ee7e7d] font-400 ml-1 text-[21px]">
+                            <strong class="text-2xl font-600 text-[rgb(175,44,94)] ml-1">
+                                4,020,770
+                            </strong>
+                            <strong class="text-[rgb(175,44,94)] font-400 ml-1 text-[21px]">
                                 transmembrane proteins.
                             </strong>
                         </div>
@@ -160,7 +182,7 @@
                     </div>
                 </div>
                 <div class="h-240 flex flex-col items-center">
-                    <div class="mb-10 text-3xl font-600 text-[#3f6212] mt-25">Focus</div>
+                    <div class="mb-10 text-3xl font-600 text-[rgb(175,44,94)] mt-25">Focus</div>
                     <div
                         style="box-shadow: 0 0 64px #cfd5db"
                         class="w-270 h-150 bg-white rounded-2xl"
@@ -253,7 +275,7 @@
                     </div>
                 </div>
                 <el-footer
-                    class="px-20 h-70 bg-[#fb923c] flex flex-col justify-center items-start text-sm"
+                    class="px-20 h-70 bg-[rgb(91,36,59)] text-[rgb(200,200,200)] flex flex-col justify-center items-start text-sm"
                 >
                     <div class="px-10 w-full flex flex-row justify-between leading-relaxed">
                         <div class="flex flex-col">

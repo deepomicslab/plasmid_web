@@ -1,6 +1,6 @@
 <template>
     <n-layout :style="lcStyle">
-        <n-layout-header class="flex justify-center bg-[#fb923c]">
+        <n-layout-header class="flex justify-center bg-[rgb(91,36,59)] text-[rgb(200,200,200)]">
             <SiteHeader :style="hStyle" />
         </n-layout-header>
         <n-layout-content :style="coStyle">
@@ -54,7 +54,7 @@ const coStyle = {
     height: `calc(100vh - ${headerHeight}px)`,
     borderRadius: '5px',
     opacity: 1,
-    'background-color': '#fff0',
+    'background-color': '#fff',
 }
 const dialogVisible = ref(false)
 /*

@@ -278,7 +278,7 @@ const createColumns = (): DataTableColumns<resultRowData> => [
                         type: 'info',
                         text: true,
                         size: 'small',
-                        color: '#3f6212',
+                        color: 'rgb(175,44,94)',
                         onClick: () => {
                             router.push({
                                 path: '/task/result/annopipline/annotation/detail',
@@ -309,7 +309,7 @@ const createColumns = (): DataTableColumns<resultRowData> => [
                         type: 'info',
                         text: true,
                         size: 'small',
-                        color: '#3f6212',
+                        color: 'rgb(175,44,94)',
                         onClick: () => {
                             router.push({
                                 path: '/task/result/comparison/cluster/clusterdetail',
@@ -343,7 +343,7 @@ const createColumns = (): DataTableColumns<resultRowData> => [
                         type: 'info',
                         text: true,
                         size: 'small',
-                        color: '#3f6212',
+                        color: 'rgb(175,44,94)',
                         onClick: () => {
                             router.push({
                                 path: '/task/result/comparison/cluster/clusterdetail',

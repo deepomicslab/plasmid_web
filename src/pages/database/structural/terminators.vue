@@ -2,7 +2,7 @@
     <div class="h-680 flex flex-col py-5 px-1/10">
         <div class="flex flex-row ml-1 my-7">
             <div class="text-4xl font-600">Transcription Terminator Information</div>
-            <el-button round color="#3f6212" class="ml-5 mt-2" @click="godatahelper">
+            <el-button round color="rgb(175,44,94)" class="ml-5 mt-2" @click="godatahelper">
                 Database Helper
             </el-button>
         </div>

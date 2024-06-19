@@ -5,10 +5,10 @@ mt-10 mr-10 w-40 mt-10 mr-10 w-40
             <h1 class="text-5xl m-4 font-700">Database Overview</h1>
 
             <div class="flex flex-row ml-1 my-6">
-                <el-button round color="#3f6212" class="ml-5" @click="godatalist">
+                <el-button round color="rgb(175,44,94)" class="ml-5" @click="godatalist">
                     Total Data
                 </el-button>
-                <el-button round color="#3f6212" class="ml-5" @click="godatahelper">
+                <el-button round color="rgb(175,44,94)" class="ml-5" @click="godatahelper">
                     Database Helper
                 </el-button>
             </div>
@@ -25,7 +25,9 @@ mt-10 mr-10 w-40 mt-10 mr-10 w-40
                             show-separator
                         />
                         <template #label>
-                            <h1 class="text-[#3f6212] text-lg font-700 ml-1">Plasmid Sequences</h1>
+                            <h1 class="text-[rgb(175,44,94)] text-lg font-700 ml-1">
+                                Plasmid Sequences
+                            </h1>
                         </template>
                     </n-statistic>
                 </div>
@@ -38,7 +40,7 @@ mt-10 mr-10 w-40 mt-10 mr-10 w-40
                             show-separator
                         />
                         <template #label>
-                            <h1 class="text-[#3f6212] text-lg font-700">Host Species</h1>
+                            <h1 class="text-[rgb(175,44,94)] text-lg font-700">Host Species</h1>
                         </template>
                     </n-statistic>
                 </div>
@@ -52,7 +54,9 @@ mt-10 mr-10 w-40 mt-10 mr-10 w-40
                             show-separator
                         />
                         <template #label>
-                            <h1 class="text-[#3f6212] text-lg font-700">Annotated Proteins</h1>
+                            <h1 class="text-[rgb(175,44,94)] text-lg font-700">
+                                Annotated Proteins
+                            </h1>
                         </template>
                     </n-statistic>
                 </div>
@@ -65,7 +69,7 @@ mt-10 mr-10 w-40 mt-10 mr-10 w-40
                             show-separator
                         />
                         <template #label>
-                            <h1 class="text-[#3f6212] text-lg font-700">
+                            <h1 class="text-[rgb(175,44,94)] text-lg font-700">
                                 Antimicrobial Resistance Genes
                             </h1>
                         </template>
@@ -80,7 +84,9 @@ mt-10 mr-10 w-40 mt-10 mr-10 w-40
                             show-separator
                         />
                         <template #label>
-                            <h1 class="text-[#3f6212] text-lg font-700">Transmembrane Proteins</h1>
+                            <h1 class="text-[rgb(175,44,94)] text-lg font-700">
+                                Transmembrane Proteins
+                            </h1>
                         </template>
                     </n-statistic>
                 </div>
@@ -95,7 +101,7 @@ mt-10 mr-10 w-40 mt-10 mr-10 w-40
                             show-separator
                         />
                         <template #label>
-                            <h1 class="text-[#3f6212] text-lg font-700">tRNA & tmRNA Genes</h1>
+                            <h1 class="text-[rgb(175,44,94)] text-lg font-700">tRNA & tmRNA Genes</h1>
                         </template>
                     </n-statistic>
                 </div> -->
@@ -108,7 +114,9 @@ mt-10 mr-10 w-40 mt-10 mr-10 w-40
                             show-separator
                         />
                         <template #label>
-                            <h1 class="text-[#3f6212] text-lg font-700">Secondary Metabolism</h1>
+                            <h1 class="text-[rgb(175,44,94)] text-lg font-700">
+                                Secondary Metabolism
+                            </h1>
                         </template>
                     </n-statistic>
                 </div>
@@ -121,7 +129,7 @@ mt-10 mr-10 w-40 mt-10 mr-10 w-40
                             show-separator
                         />
                         <template #label>
-                            <h1 class="text-[#3f6212] text-lg font-700">Signal Peptides</h1>
+                            <h1 class="text-[rgb(175,44,94)] text-lg font-700">Signal Peptides</h1>
                         </template>
                     </n-statistic>
                 </div>
@@ -134,7 +142,7 @@ mt-10 mr-10 w-40 mt-10 mr-10 w-40
                             show-separator
                         />
                         <template #label>
-                            <h1 class="text-[#3f6212] text-lg font-700">Virulent Factors</h1>
+                            <h1 class="text-[rgb(175,44,94)] text-lg font-700">Virulent Factors</h1>
                         </template>
                     </n-statistic>
                 </div>
@@ -147,7 +155,7 @@ mt-10 mr-10 w-40 mt-10 mr-10 w-40
                             show-separator
                         />
                         <template #label>
-                            <h1 class="text-[#3f6212] text-lg font-700">CRISPR</h1>
+                            <h1 class="text-[rgb(175,44,94)] text-lg font-700">CRISPR</h1>
                         </template>
                     </n-statistic>
                 </div>
@@ -160,7 +168,7 @@ mt-10 mr-10 w-40 mt-10 mr-10 w-40
                             show-separator
                         />
                         <template #label>
-                            <h1 class="text-[#3f6212] text-lg font-700">tRNA Genes</h1>
+                            <h1 class="text-[rgb(175,44,94)] text-lg font-700">tRNA Genes</h1>
                         </template>
                     </n-statistic>
                 </div>
@@ -171,7 +179,7 @@ mt-10 mr-10 w-40 mt-10 mr-10 w-40
             <h1 class="text-4xl mt-8 ml-6 font-500">Host Phylum</h1>
             <div class="flex flex-row justify-start w-370 flex-wrap items-start ml-10 mt-6 mb-6">
                 <n-button
-                    class="mt-10 mr-10 w-80 text-[#3f6212] text-xl h-11"
+                    class="mt-10 mr-10 w-80 text-[rgb(175,44,94)] text-xl h-11"
                     tertiary
                     @click="viewhost(`${host}`)"
                     v-for="host in overview_data.hosts"
@@ -186,7 +194,7 @@ mt-10 mr-10 w-40 mt-10 mr-10 w-40
             <h1 class="text-4xl mt-8 ml-6 font-500">Data Source</h1>
             <div class="flex flex-row justify-start w-370 flex-wrap items-start ml-10 mt-6">
                 <n-button
-                    class="mt-10 mr-10 w-80 text-[#3f6212] text-xl h-11"
+                    class="mt-10 mr-10 w-80 text-[rgb(175,44,94)] text-xl h-11"
                     tertiary
                     @click="gobyset(`${datasource.value}`)"
                     v-for="datasource in datasetDict"
@@ -442,7 +450,7 @@ const treecharthandleUpdateValue1 = async (value: string) => {
         toolbox: {
             itemSize: 20,
             iconStyle: {
-                borderColor: '#3f6212',
+                borderColor: 'rgb(175,44,94)',
             },
             feature: {
                 saveAsImage: {},
@@ -507,7 +515,7 @@ const treecharthandleUpdateValue1 = async (value: string) => {
         toolbox: {
             itemSize: 20,
             iconStyle: {
-                borderColor: '#3f6212',
+                borderColor: 'rgb(175,44,94)',
             },
             feature: {
                 saveAsImage: {},
@@ -601,7 +609,7 @@ const treecharthandleUpdateValue1 = async (value: string) => {
         toolbox: {
             itemSize: 20,
             iconStyle: {
-                borderColor: '#3f6212',
+                borderColor: 'rgb(175,44,94)',
             },
             feature: {
                 saveAsImage: {},
@@ -673,7 +681,7 @@ onBeforeMount(async () => {
         toolbox: {
             itemSize: 20,
             iconStyle: {
-                borderColor: '#3f6212',
+                borderColor: 'rgb(175,44,94)',
             },
             feature: {
                 dataView: { readOnly: true },
@@ -715,7 +723,7 @@ onBeforeMount(async () => {
         toolbox: {
             itemSize: 20,
             iconStyle: {
-                borderColor: '#3f6212',
+                borderColor: 'rgb(175,44,94)',
             },
             feature: {
                 dataView: { readOnly: true },
@@ -752,7 +760,7 @@ onBeforeMount(async () => {
         toolbox: {
             itemSize: 20,
             iconStyle: {
-                borderColor: '#3f6212',
+                borderColor: 'rgb(175,44,94)',
             },
             feature: {
                 dataView: { readOnly: true },
@@ -790,7 +798,7 @@ onBeforeMount(async () => {
         toolbox: {
             itemSize: 20,
             iconStyle: {
-                borderColor: '#3f6212',
+                borderColor: 'rgb(175,44,94)',
             },
             feature: {
                 dataView: { readOnly: true },
@@ -826,7 +834,7 @@ onBeforeMount(async () => {
         toolbox: {
             itemSize: 20,
             iconStyle: {
-                borderColor: '#3f6212',
+                borderColor: 'rgb(175,44,94)',
             },
             feature: {
                 saveAsImage: {},
@@ -955,7 +963,7 @@ const godatahelper = () => {
 <style lang="scss" scoped>
 :deep(.n-statistic .n-statistic-value .n-statistic-value__content) {
     font-size: 42px;
-    color: #3f6212;
+    color: rgb(175, 44, 94);
     font-weight: bold;
 }
 </style>

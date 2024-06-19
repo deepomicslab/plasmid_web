@@ -8,11 +8,11 @@
 
     <div class="flex flex-col w-full h-2220 justify-start items-center">
         <div id="meta" class="pt-10">
-            <div class="w-280 border-b-1 border-[#3f6212] pb-3">
-                <div class="text-[40px] text-[#3f6212] font-600">Meta Data Download</div>
+            <div class="w-280 border-b-1 border-[rgb(175,44,94)] pb-3">
+                <div class="text-[40px] text-[rgb(175,44,94)] font-600">Meta Data Download</div>
             </div>
             <div class="w-280 mt-10">
-                <div class="w-280 bg-[#3f6212] text-gray-50 p-4 text-[20px] font-600">
+                <div class="w-280 bg-[rgb(175,44,94)] text-gray-50 p-4 text-[20px] font-600">
                     <div>Phage Meta Data Download</div>
                     <div></div>
                 </div>
@@ -272,7 +272,7 @@
                 </div>
             </div>
             <div class="w-280 mt-10">
-                <div class="w-280 bg-[#3f6212] text-gray-50 p-4 text-[20px] font-600">
+                <div class="w-280 bg-[rgb(175,44,94)] text-gray-50 p-4 text-[20px] font-600">
                     <div>Annotated Protein Meta Data Download</div>
                     <div></div>
                 </div>
@@ -530,7 +530,7 @@
                 </div>
             </div>
             <div class="w-280 mt-10">
-                <div class="w-280 bg-[#3f6212] text-gray-50 p-4 text-[20px] font-600">
+                <div class="w-280 bg-[rgb(175,44,94)] text-gray-50 p-4 text-[20px] font-600">
                     <div>Transcription Terminator Meta Data Download</div>
                     <div></div>
                 </div>
@@ -789,7 +789,7 @@
                 </div>
             </div>
             <div class="w-280 mt-10">
-                <div class="w-280 bg-[#3f6212] text-gray-50 p-4 text-[20px] font-600">
+                <div class="w-280 bg-[rgb(175,44,94)] text-gray-50 p-4 text-[20px] font-600">
                     <div>tRNA & tmRNA Gene Meta Data Download</div>
                     <div></div>
                 </div>
@@ -1048,7 +1048,7 @@
                 </div>
             </div>
             <div class="w-280 mt-10">
-                <div class="w-280 bg-[#3f6212] text-gray-50 p-4 text-[20px] font-600">
+                <div class="w-280 bg-[rgb(175,44,94)] text-gray-50 p-4 text-[20px] font-600">
                     <div>Anti-CRISPR Protein Meta Data Download</div>
                     <div></div>
                 </div>
@@ -1307,7 +1307,7 @@
                 </div>
             </div>
             <div class="w-280 mt-10">
-                <div class="w-280 bg-[#3f6212] text-gray-50 p-4 text-[20px] font-600">
+                <div class="w-280 bg-[rgb(175,44,94)] text-gray-50 p-4 text-[20px] font-600">
                     <div>CRISPR Array Meta Data Download</div>
                     <div></div>
                 </div>
@@ -1566,7 +1566,7 @@
                 </div>
             </div>
             <div class="w-280 mt-10">
-                <div class="w-280 bg-[#3f6212] text-gray-50 p-4 text-[20px] font-600">
+                <div class="w-280 bg-[rgb(175,44,94)] text-gray-50 p-4 text-[20px] font-600">
                     <div>Antimicrobial Resistance Gene Meta Data Download</div>
                     <div></div>
                 </div>
@@ -1752,7 +1752,7 @@
                 </div>
             </div>
             <div class="w-280 mt-10">
-                <div class="w-280 bg-[#3f6212] text-gray-50 p-4 text-[20px] font-600">
+                <div class="w-280 bg-[rgb(175,44,94)] text-gray-50 p-4 text-[20px] font-600">
                     <div>Virulent Factor Meta Data Download</div>
                     <div></div>
                 </div>
@@ -1984,7 +1984,7 @@
                 </div>
             </div>
             <div class="w-280 mt-10">
-                <div class="w-280 bg-[#3f6212] text-gray-50 p-4 text-[20px] font-600">
+                <div class="w-280 bg-[rgb(175,44,94)] text-gray-50 p-4 text-[20px] font-600">
                     <div>Transmembrane Protein Meta Data Download</div>
                     <div></div>
                 </div>
@@ -2244,11 +2244,11 @@
             </div>
         </div>
         <div id="fasta" class="pt-10">
-            <div class="w-280 mt-20 border-b-1 border-[#3f6212] pb-3">
-                <div class="text-[40px] text-[#3f6212] font-600">FASTA File Download</div>
+            <div class="w-280 mt-20 border-b-1 border-[rgb(175,44,94)] pb-3">
+                <div class="text-[40px] text-[rgb(175,44,94)] font-600">FASTA File Download</div>
             </div>
             <div class="w-280 mt-10">
-                <div class="w-280 bg-[#3f6212] text-gray-50 p-4 text-[20px] font-600">
+                <div class="w-280 bg-[rgb(175,44,94)] text-gray-50 p-4 text-[20px] font-600">
                     <div>Phage FASTA File Download</div>
                     <div></div>
                 </div>
@@ -2483,7 +2483,7 @@
                 </div>
             </div>
             <div class="w-280 mt-10">
-                <div class="w-280 bg-[#3f6212] text-gray-50 p-4 text-[20px] font-600">
+                <div class="w-280 bg-[rgb(175,44,94)] text-gray-50 p-4 text-[20px] font-600">
                     <div>Protein FASTA File Download</div>
                     <div></div>
                 </div>
@@ -2719,11 +2719,11 @@
             </div>
         </div>
         <!-- <div id="gbk">
-            <div class="w-280 mt-20 border-b-1 border-[#3f6212] pb-3">
-                <div class="text-[40px] text-[#3f6212] font-600">GBK File Download</div>
+            <div class="w-280 mt-20 border-b-1 border-[rgb(175,44,94)] pb-3">
+                <div class="text-[40px] text-[rgb(175,44,94)] font-600">GBK File Download</div>
             </div>
             <div class="w-280 mt-10">
-                <div class="w-280 bg-[#3f6212] text-gray-50 p-4 text-[20px] font-600">
+                <div class="w-280 bg-[rgb(175,44,94)] text-gray-50 p-4 text-[20px] font-600">
                     <div>Phage GBK File Download</div>
                     <div></div>
                 </div>
@@ -2960,11 +2960,11 @@
             </div>
         </div> -->
         <div id="gff3">
-            <div class="w-280 mt-20 border-b-1 border-[#3f6212] pb-3">
-                <div class="text-[40px] text-[#3f6212] font-600">GFF3 File Download</div>
+            <div class="w-280 mt-20 border-b-1 border-[rgb(175,44,94)] pb-3">
+                <div class="text-[40px] text-[rgb(175,44,94)] font-600">GFF3 File Download</div>
             </div>
             <div class="w-280 mt-10">
-                <div class="w-280 bg-[#3f6212] text-gray-50 p-4 text-[20px] font-600">
+                <div class="w-280 bg-[rgb(175,44,94)] text-gray-50 p-4 text-[20px] font-600">
                     <div>Phage GFF3 File Download</div>
                     <div></div>
                 </div>

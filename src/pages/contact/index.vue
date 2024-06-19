@@ -25,7 +25,7 @@
                             extensive expertise in bioinformatics, clinical pathology, and computer
                             science. If you have any inquiries or require further information,
                             please feel free to reach out to us at
-                            <strong class="text-[#ee7e7d] font-400 mx-1 text-[21px]">
+                            <strong class="text-[rgb(175,44,94)] font-400 mx-1 text-[21px]">
                                 shuaicli@gmail.com.
                             </strong>
                         </div>

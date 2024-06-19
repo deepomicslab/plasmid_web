@@ -325,7 +325,7 @@ const createColumns2 = (): DataTableColumns<alignmentRowData> => [
                         type: 'info',
                         text: true,
                         size: 'small',
-                        color: '#3f6212',
+                        color: 'rgb(175,44,94)',
                         onClick: () => {
                             router.push({
                                 path: '/task/result/annopipline/annotation/detail',
@@ -358,7 +358,7 @@ const createColumns2 = (): DataTableColumns<alignmentRowData> => [
                         type: 'info',
                         text: true,
                         size: 'small',
-                        color: '#3f6212',
+                        color: 'rgb(175,44,94)',
                         onClick: () => {
                             router.push({
                                 path: '/task/result/annopipline/annotation/detail',

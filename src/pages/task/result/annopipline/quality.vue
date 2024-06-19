@@ -398,7 +398,7 @@ const QualityOption = {
     toolbox: {
         itemSize: 20,
         iconStyle: {
-            borderColor: '#3f6212',
+            borderColor: 'rgb(175,44,94)',
         },
         feature: {
             dataView: { readOnly: true },
@@ -432,7 +432,7 @@ const QualityOption = {
 //     toolbox: {
 //         itemSize: 20,
 //         iconStyle: {
-//             borderColor: '#3f6212',
+//             borderColor: 'rgb(175,44,94)',
 //         },
 //         feature: {
 //             dataView: { readOnly: true },

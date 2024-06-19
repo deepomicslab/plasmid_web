@@ -1,8 +1,8 @@
-<div class="w-380 mt-20 border-b-1 border-[#3f6212] pb-3">
-    <div class="text-[40px] text-[#3f6212] font-600">Database API Download</div>
+<div class="w-380 mt-20 border-b-1 border-[rgb(175,44,94)] pb-3">
+    <div class="text-[40px] text-[rgb(175,44,94)] font-600">Database API Download</div>
 </div>
 <div class="w-380 mt-10">
-    <div class="w-380 bg-[#3f6212] text-gray-50 p-4 text-[20px] font-600 flex flex-row">
+    <div class="w-380 bg-[rgb(175,44,94)] text-gray-50 p-4 text-[20px] font-600 flex flex-row">
         <div>Phage FASTA File Download</div>
         <div class="ml-210">URL Example</div>
     </div>
@@ -57,7 +57,7 @@
     </div>
 </div>
 <div class="w-380 mt-10">
-    <div class="w-380 bg-[#3f6212] text-gray-50 p-4 text-[20px] font-600 flex flex-row">
+    <div class="w-380 bg-[rgb(175,44,94)] text-gray-50 p-4 text-[20px] font-600 flex flex-row">
         <div>Protein FASTA File Download</div>
         <div class="ml-210">URL Example</div>
     </div>
@@ -128,7 +128,7 @@
     </div>
 </div>
 <div class="w-380 mt-10">
-    <div class="w-380 bg-[#3f6212] text-gray-50 p-4 text-[20px] font-600 flex flex-row">
+    <div class="w-380 bg-[rgb(175,44,94)] text-gray-50 p-4 text-[20px] font-600 flex flex-row">
         <div>Phage GBK File Download</div>
         <div class="ml-210">URL Example</div>
     </div>
@@ -183,7 +183,7 @@
     </div>
 </div>
 <div class="w-380 mt-10">
-    <div class="w-380 bg-[#3f6212] text-gray-50 p-4 text-[20px] font-600 flex flex-row">
+    <div class="w-380 bg-[rgb(175,44,94)] text-gray-50 p-4 text-[20px] font-600 flex flex-row">
         <div>Phage GFF3 File Download</div>
         <div class="ml-210">URL Example</div>
     </div>

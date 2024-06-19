@@ -34,7 +34,8 @@ import {
 } from '@vicons/fa'
 import { useRouter, RouterLink } from 'vue-router'
 import { NConfigProvider, GlobalThemeOverrides, NIcon, NEllipsis } from 'naive-ui'
-import windi from '@/windi'
+import { rgb } from 'd3'
+// import windi from '@/windi'
 
 // eslint-disable-next-line import/extensions
 import Logo from '@/assets/img/plasmid.png'
@@ -43,12 +44,12 @@ import Logo from '@/assets/img/plasmid.png'
 <script setup lang="ts">
 const themeOverrides: GlobalThemeOverrides = {
     Menu: {
-        itemTextColor: windi.colors.orange,
-        itemIconColor: windi.colors.orange,
-        itemIconColorHover: windi.colors.blue,
-        itemTextColorHover: windi.colors.blue,
-        itemTextColorActive: windi.colors.blue,
-        itemIconColorActive: windi.colors.blue,
+        itemTextColor: rgb(200, 200, 200),
+        itemIconColor: rgb(200, 200, 200),
+        itemIconColorHover: rgb(175, 44, 94),
+        itemTextColorHover: rgb(175, 44, 94),
+        itemTextColorActive: rgb(175, 44, 94),
+        itemIconColorActive: rgb(175, 44, 94),
     },
 }
 

@@ -22,10 +22,10 @@ import windi from '@/windi'
 
 const themeOverrides: GlobalThemeOverrides = {
     common: {
-        primaryColor: windi.colors.orange,
-        primaryColorHover: windi.colors.cyan,
-        primaryColorPressed: windi.colors.cyan,
-        primaryColorSuppl: windi.colors.cyan,
+        primaryColor: windi.colors.fuchsia,
+        primaryColorHover: windi.colors.light,
+        primaryColorPressed: windi.colors.light,
+        primaryColorSuppl: windi.colors.light,
     },
 }
 hljs.registerLanguage('markdown', markdown)
