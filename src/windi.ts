@@ -5,11 +5,11 @@ import { BaseTheme } from 'windicss/types/interfaces'
 const windi: Partial<BaseTheme> = {
     // https://www.tailwindcss.cn/docs/customizing-colors
     colors: {
-        primary: '#e879f9',
-        'primary-dark': '#c026d3',
+        primary: 'rgb(144, 39, 79)',
+        'primary-dark': '#4a044e',
         'primary-darker': '#a21caf',
         'primary-darkest': '#701a75',
-        'primary-light': '#f0abfc',
+        'primary-light': '#9d174d',
         'primary-lighter': '#f5d0fe',
         'primary-lightest': '#fae8ff',
         info: colors.gray['400'],

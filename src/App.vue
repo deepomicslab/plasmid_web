@@ -22,16 +22,18 @@ import windi from '@/windi'
 
 const themeOverrides: GlobalThemeOverrides = {
     common: {
-        primaryColor: windi.colors.fuchsia,
-        primaryColorHover: windi.colors.light,
-        primaryColorPressed: windi.colors.light,
-        primaryColorSuppl: windi.colors.light,
-    },
-    Button: {
-        primaryColor: windi.colors.fuchsia,
-        primaryColorHover: windi.colors.light,
-        primaryColorPressed: windi.colors.light,
-        primaryColorSuppl: windi.colors.light,
+        primaryColor: 'rgb(144, 39, 79)',
+        primaryColorHover: windi.colors['primary-light'],
+        primaryColorPressed: windi.colors['primary-dark'],
+        primaryColorSuppl: windi.colors['primary-light'],
+        infoColor: '#701a75',
+        infoColorHover: '#a21caf',
+        infoColorPressed: '#4a044e',
+        infoColorSuppl: '#a21caf',
+        successColor: '#1e3a8a',
+        successColorHover: '#2563eb',
+        successColorPressed: '#172554',
+        successColorSuppl: '#2563eb',
     },
 }
 hljs.registerLanguage('markdown', markdown)

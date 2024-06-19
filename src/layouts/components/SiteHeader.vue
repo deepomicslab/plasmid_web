@@ -43,13 +43,27 @@ import Logo from '@/assets/img/plasmid.png'
 
 <script setup lang="ts">
 const themeOverrides: GlobalThemeOverrides = {
+    common: {
+        primaryColor: 'rgb(255, 255, 255)',
+        primaryColorHover: 'rgb(255, 255, 255)',
+        primaryColorPressed: 'rgb(255, 255, 255)',
+        primaryColorSuppl: 'rgb(255, 255, 255)',
+        infoColor: '#701a75',
+        infoColorHover: '#a21caf',
+        infoColorPressed: '#4a044e',
+        infoColorSuppl: '#a21caf',
+        successColor: '#1e3a8a',
+        successColorHover: '#2563eb',
+        successColorPressed: '#172554',
+        successColorSuppl: '#2563eb',
+    },
     Menu: {
         itemTextColor: rgb(200, 200, 200),
         itemIconColor: rgb(200, 200, 200),
-        itemIconColorHover: rgb(175, 44, 94),
-        itemTextColorHover: rgb(175, 44, 94),
-        itemTextColorActive: rgb(175, 44, 94),
-        itemIconColorActive: rgb(175, 44, 94),
+        itemIconColorHover: rgb(255, 255, 255),
+        itemTextColorHover: rgb(255, 255, 255),
+        itemTextColorActive: rgb(255, 255, 255),
+        itemIconColorActive: rgb(255, 255, 255),
     },
 }
 
