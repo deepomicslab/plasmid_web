@@ -27,6 +27,12 @@ const themeOverrides: GlobalThemeOverrides = {
         primaryColorPressed: windi.colors.light,
         primaryColorSuppl: windi.colors.light,
     },
+    Button: {
+        primaryColor: windi.colors.fuchsia,
+        primaryColorHover: windi.colors.light,
+        primaryColorPressed: windi.colors.light,
+        primaryColorSuppl: windi.colors.light,
+    },
 }
 hljs.registerLanguage('markdown', markdown)
 </script>
