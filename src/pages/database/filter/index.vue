@@ -126,7 +126,7 @@
                             </el-form-item>
                         </el-col> -->
                         <!-- <el-col :span="0.5" :offset="2"></el-col> -->
-                        <el-col :span="9">
+                        <!-- <el-col :span="9">
                             <el-form-item label="Taxonomy">
                                 <el-tooltip effect="dark" content="Taxonomy" placement="top">
                                     <el-icon class="info-icon"><InfoFilled /></el-icon>
@@ -145,9 +145,9 @@
                                     ></el-option>
                                 </el-select>
                             </el-form-item>
-                        </el-col>
+                        </el-col> -->
                         <!-- <el-col :span="0.5" :offset="2"></el-col> -->
-                        <el-col :span="9">
+                        <!-- <el-col :span="9">
                             <el-form-item label="Sequence Quality">
                                 <el-tooltip
                                     effect="dark"
@@ -170,7 +170,7 @@
                                     ></el-option>
                                 </el-select>
                             </el-form-item>
-                        </el-col>
+                        </el-col> -->
                     </el-row>
                     <el-row class="mt-4" justify="space-around">
                         <!-- <el-col :span="0.5" :offset="2"></el-col> -->
@@ -198,7 +198,7 @@
                             </el-form-item>
                         </el-col>
                         <!-- <el-col :span="0.5" :offset="2"></el-col> -->
-                        <el-col :span="9">
+                        <!-- <el-col :span="9">
                             <el-form-item label="Annotation Ref">
                                 <el-tooltip effect="dark" content="Annotation Ref" placement="top">
                                     <el-icon class="info-icon"><InfoFilled /></el-icon>
@@ -217,26 +217,9 @@
                                     ></el-option>
                                 </el-select>
                             </el-form-item>
-                        </el-col>
-                    </el-row>
-
-                    <el-row class="mt-4">
-                        <!-- <el-col :span="0.5" :offset="2"></el-col> -->
-                        <el-col :span="12">
-                            <el-form-item label="LifeStyle" class="ml-17">
-                                <el-tooltip effect="dark" content="LifeStyle" placement="top">
-                                    <el-icon class="info-icon"><InfoFilled /></el-icon>
-                                </el-tooltip>
-                                <el-radio-group v-model="filterform.lifestyle" class="w-70">
-                                    <el-radio label="virulent" />
-                                    <el-radio label="temperate" />
-                                    <el-radio label="all" />
-                                </el-radio-group>
-                            </el-form-item>
-                        </el-col>
-                        <!-- <el-col :span="0.5" :offset="2"></el-col> -->
-                        <el-col :span="12">
-                            <el-form-item label="GC Content" class="ml-17">
+                        </el-col> -->
+                        <el-col :span="9">
+                            <el-form-item label="GC Content">
                                 <el-tooltip effect="dark" content="GC Content" placement="top">
                                     <el-icon class="info-icon"><InfoFilled /></el-icon>
                                 </el-tooltip>
@@ -258,6 +241,46 @@
                                 <div class="ml-3">%</div>
                             </el-form-item>
                         </el-col>
+                    </el-row>
+
+                    <el-row class="mt-4">
+                        <!-- <el-col :span="0.5" :offset="2"></el-col> -->
+                        <!-- <el-col :span="12">
+                            <el-form-item label="LifeStyle" class="ml-17">
+                                <el-tooltip effect="dark" content="LifeStyle" placement="top">
+                                    <el-icon class="info-icon"><InfoFilled /></el-icon>
+                                </el-tooltip>
+                                <el-radio-group v-model="filterform.lifestyle" class="w-70">
+                                    <el-radio label="virulent" />
+                                    <el-radio label="temperate" />
+                                    <el-radio label="all" />
+                                </el-radio-group>
+                            </el-form-item>
+                        </el-col> -->
+                        <!-- <el-col :span="0.5" :offset="2"></el-col> -->
+                        <!-- <el-col :span="12">
+                            <el-form-item label="GC Content" class="ml-17">
+                                <el-tooltip effect="dark" content="GC Content" placement="top">
+                                    <el-icon class="info-icon"><InfoFilled /></el-icon>
+                                </el-tooltip>
+                                <el-input
+                                    v-model.number="filterform.gcContentS"
+                                    class="w-22"
+                                    type="number"
+                                    min="0"
+                                />
+                                <div class="mx-3">
+                                    <el-icon><Minus /></el-icon>
+                                </div>
+                                <el-input
+                                    v-model.number="filterform.gcContentE"
+                                    class="w-22"
+                                    type="number"
+                                    min="0"
+                                />
+                                <div class="ml-3">%</div>
+                            </el-form-item>
+                        </el-col> -->
                     </el-row>
                     <el-row class="mt-12">
                         <el-col :span="24" class="text-center">

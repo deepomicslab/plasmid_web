@@ -655,7 +655,7 @@ const createColumns = (): DataTableColumns<RowData> => {
             title() {
                 return renderTooltip(
                     h('div', null, { default: () => 'Genome Length (bp)' }),
-                    'phage genome length'
+                    'plasmid genome length'
                 )
             },
             key: 'length',
@@ -667,7 +667,7 @@ const createColumns = (): DataTableColumns<RowData> => {
             title() {
                 return renderTooltip(
                     h('div', null, { default: () => 'GC Content (%)' }),
-                    'phage GC content'
+                    'plasmid GC content'
                 )
             },
             key: 'gc_content',

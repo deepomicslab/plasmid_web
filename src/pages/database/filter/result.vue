@@ -49,13 +49,16 @@
                 mode="horizontal"
                 @select="handleSelectSet"
             >
-                <el-menu-item index="all">All</el-menu-item>
-                <el-menu-item index="phage_protein_NCBI">NCBI</el-menu-item>
-                <el-menu-item index="phage_protein_PhagesDB">PhagesDB</el-menu-item>
-                <el-menu-item index="phage_protein_GPD">GPD</el-menu-item>
-                <el-menu-item index="phage_protein_GVD">GVD</el-menu-item>
-                <el-menu-item index="phage_protein_MGV">MGV</el-menu-item>
-                <el-menu-item index="phage_protein_TemPhD">TemPhD</el-menu-item>
+                <el-menu-item index="-1" class="text-lg">All</el-menu-item>
+                <el-menu-item index="0" class="text-lg">PLSDB</el-menu-item>
+                <el-menu-item index="1" class="text-lg">IMG-PR</el-menu-item>
+                <el-menu-item index="2" class="text-lg">COMPASS</el-menu-item>
+                <el-menu-item index="3" class="text-lg">GenBank</el-menu-item>
+                <el-menu-item index="4" class="text-lg">RefSeq</el-menu-item>
+                <el-menu-item index="5" class="text-lg">EMBL</el-menu-item>
+                <el-menu-item index="6" class="text-lg">Kraken2</el-menu-item>
+                <el-menu-item index="7" class="text-lg">DDBJ</el-menu-item>
+                <el-menu-item index="8" class="text-lg">TPA</el-menu-item>
             </el-menu>
         </div>
         <div v-loading="loading" class="h-420">
@@ -125,7 +128,7 @@
 /* eslint-disable camelcase */
 import type { DataTableColumns, DataTableRowKey } from 'naive-ui'
 import { h } from 'vue'
-import { NButton, NTag, NEllipsis } from 'naive-ui'
+import { NButton, NTag, NEllipsis, NTooltip } from 'naive-ui'
 import {
     CloudDownloadOutline as downicon,
     FunnelOutline,
@@ -142,7 +145,7 @@ const queryStore = useQueryStore()
 
 const pagevalue = ref(1)
 const pageSize = ref(30)
-const datasets = ref('all')
+const datasets = ref('-1')
 const loading = ref(false)
 // const phagedata = useRequest(() => phageService.getPhageList(pagevalue.value, pageSize.value)).data
 const submitdata = new FormData()
@@ -152,8 +155,8 @@ const phagedata = ref()
 
 onBeforeMount(async () => {
     loading.value = true
-    const response = await axios.post(`/phage/filter/`, submitdata, {
-        baseURL: '/api',
+    const response = await axios.post(`/plasmid_filter/`, submitdata, {
+        baseURL: '/api/database',
         timeout: 100000,
         params: {
             page: pagevalue.value,
@@ -176,8 +179,8 @@ const phageList = computed(() => {
 const count = computed(() => phagedata.value?.count)
 const nextPage = async () => {
     loading.value = true
-    const response = await axios.post(`/phage/filter/`, submitdata, {
-        baseURL: '/api',
+    const response = await axios.post(`/plasmid_filter/`, submitdata, {
+        baseURL: '/api/database',
         timeout: 100000,
         params: {
             page: pagevalue.value + 1,
@@ -190,8 +193,8 @@ const nextPage = async () => {
 }
 const prevPage = async () => {
     loading.value = true
-    const response = await axios.post(`/phage/filter/`, submitdata, {
-        baseURL: '/api',
+    const response = await axios.post(`/plasmid_filter/`, submitdata, {
+        baseURL: '/api/database',
         timeout: 100000,
         params: {
             page: pagevalue.value - 1,
@@ -205,8 +208,8 @@ const prevPage = async () => {
 
 const pagechange = async () => {
     loading.value = true
-    const response = await axios.post(`/phage/filter/`, submitdata, {
-        baseURL: '/api',
+    const response = await axios.post(`/plasmid_filter/`, submitdata, {
+        baseURL: '/api/database',
         timeout: 100000,
         params: {
             page: pagevalue.value,
@@ -219,8 +222,8 @@ const pagechange = async () => {
 }
 const pagesizechange = async () => {
     loading.value = true
-    const response = await axios.post(`/phage/filter/`, submitdata, {
-        baseURL: '/api',
+    const response = await axios.post(`/plasmid_filter/`, submitdata, {
+        baseURL: '/api/database',
         timeout: 100000,
         params: {
             page: pagevalue.value,
@@ -238,7 +241,7 @@ const gofilter = () => {
     router.push({ path: '/database/filter' })
 }
 const detail = (row: any) => {
-    router.push({ path: '/database/phage/detail', query: { phageid: row.id } })
+    router.push({ path: '/database/plasmid/detail', query: { plasmid_id: row.id } })
 }
 
 const downloaddialogVisible = ref(false)
@@ -318,16 +321,24 @@ const download = (row: any) => {
     checkedRowKeysRef.value = [row.id]
 }
 type RowData = {
-    id: number
-    Acession_ID: string
-    Data_Sets: string
+    id: string
+    plasmid_id: string
+    source: string
     length: string
     gc_content: any
     host: string
     completeness: string
-    taxonomy: string
+    topology: string
+    mob_type: string
+    mobility: string
     cluster: string
     subcluster: string
+}
+const renderTooltip = (trigger: any, content: any) => {
+    return h(NTooltip, null, {
+        trigger: () => trigger,
+        default: () => content,
+    })
 }
 const rowKey = (row: RowData) => {
     return row.id
@@ -354,58 +365,60 @@ const createColumns = (): DataTableColumns<RowData> => {
             type: 'selection',
         },
         {
-            title: 'ID',
+            title() {
+                return renderTooltip(h('div', null, { default: () => 'ID' }), 'ID')
+            },
             key: 'id',
             sorter: 'default',
             align: 'center',
-            width: 50,
-            fixed: 'left',
-            ellipsis: {
-                tooltip: true,
-            },
+            width: 90,
         },
         {
-            title: 'Phage ID',
-            key: 'Acession_ID',
+            title() {
+                return renderTooltip(h('div', null, { default: () => 'Plasmid ID' }), 'plasmid ID')
+            },
+            key: 'plasmid_id',
             align: 'center',
             fixed: 'left',
             width: 125,
-            ellipsis: {
-                tooltip: true,
-            },
             render(row: any) {
-                return h('div', { style: { width: '130px' } }, [
+                return h('div', null, [
                     h(
                         NButton,
                         {
                             type: 'info',
                             text: true,
                             size: 'small',
+                            style: { width: '100px' },
                             onClick: () => {
-                                window.open(`${row.reference}`)
+                                const id = row.plasmid_id.replace(`${datasetList[row.source]}_`, '')
+                                window.open(`https://www.ncbi.nlm.nih.gov/nuccore/${id}/`)
                             },
                         },
-                        h(
-                            NEllipsis,
-                            { width: '100px' },
-                            {
+                        [
+                            h(NEllipsis, null, {
                                 default: () => {
-                                    return row.Acession_ID
+                                    return row.plasmid_id
                                 },
-                            }
-                        )
+                            }),
+                        ]
                     ),
                 ])
             },
         },
         {
-            title: 'Data Source',
-            key: 'Data_Sets',
+            title() {
+                return renderTooltip(
+                    h('div', null, { default: () => 'Data Source' }),
+                    'plasmid source dataset'
+                )
+            },
+            key: 'source',
             align: 'center',
             width: 110,
             filterOptions: datasetDict,
             filter(value: any, row: any) {
-                return row.Data_Sets === value
+                return row.source === value
             },
             render(row: any) {
                 return h('div', { style: { width: '100px' } }, [
@@ -418,7 +431,7 @@ const createColumns = (): DataTableColumns<RowData> => {
                         },
                         {
                             default: () => {
-                                return datasetList[row.Data_Sets - 1]
+                                return datasetList[row.source]
                             },
                         }
                     ),
@@ -426,17 +439,37 @@ const createColumns = (): DataTableColumns<RowData> => {
             },
         },
         {
-            title: 'Taxonomy',
-            key: 'taxonomy',
+            title() {
+                return renderTooltip(
+                    h('div', null, { default: () => 'Topology' }),
+                    'plasmid topology'
+                )
+            },
+            key: 'topology',
             align: 'center',
             ellipsis: {
                 tooltip: true,
             },
             width: 95,
         },
-
         {
-            title: 'Host',
+            title() {
+                return renderTooltip(h('div', null, { default: () => 'Length' }), 'plasmid length')
+            },
+            key: 'length',
+            align: 'center',
+            ellipsis: {
+                tooltip: true,
+            },
+            width: 95,
+        },
+        {
+            title() {
+                return renderTooltip(
+                    h('div', null, { default: () => 'Host' }),
+                    'plasmid host topology'
+                )
+            },
             key: 'host',
             align: 'center',
             width: 180,
@@ -471,39 +504,35 @@ const createColumns = (): DataTableColumns<RowData> => {
             },
         },
         {
-            title: 'Lifestyle',
-            key: 'lifestyle',
-            align: 'center',
-            width: 100,
-            ellipsis: {
-                tooltip: true,
+            title() {
+                return renderTooltip(
+                    h('div', null, { default: () => 'Completeness' }),
+                    'genome completeness'
+                )
             },
-        },
-        {
-            title: 'Completeness',
             key: 'completeness',
             align: 'center',
             width: 140,
             filterOptions: [
                 {
                     label: 'Medium-quality',
-                    value: 'Medium-quality',
+                    value: 'medium-quality',
                 },
                 {
                     label: 'High-quality',
-                    value: 'High-quality',
+                    value: 'high-quality',
                 },
                 {
                     label: 'Low-quality',
-                    value: 'Low-quality',
+                    value: 'low-quality',
                 },
                 {
                     label: 'Complete',
-                    value: 'Complete',
+                    value: 'complete',
                 },
                 {
                     label: 'Not-determined',
-                    value: 'Not-determined',
+                    value: 'not-determined',
                 },
             ],
             filter(value: any, row: any) {
@@ -525,70 +554,108 @@ const createColumns = (): DataTableColumns<RowData> => {
             },
         },
         {
-            title: 'Genome length(bp)',
+            title() {
+                return renderTooltip(
+                    h('div', null, { default: () => 'Genome Length (bp)' }),
+                    'plasmid genome length'
+                )
+            },
             key: 'length',
             sorter: 'default',
             align: 'center',
             width: 90,
         },
         {
-            title: 'GC Content(%)',
+            title() {
+                return renderTooltip(
+                    h('div', null, { default: () => 'GC Content (%)' }),
+                    'plasmid GC content'
+                )
+            },
             key: 'gc_content',
             sorter: 'default',
             align: 'center',
             width: 90,
         },
         {
-            title: 'Clusters',
+            title() {
+                return renderTooltip(
+                    h('div', null, { default: () => 'MOB_type' }),
+                    'plasmid MOB_type'
+                )
+            },
+            key: 'mob_type',
+            sorter: 'default',
+            align: 'center',
+            width: 90,
+        },
+        {
+            title() {
+                return renderTooltip(
+                    h('div', null, { default: () => 'mobility' }),
+                    'plasmid mobility'
+                )
+            },
+            key: 'mobility',
+            sorter: 'default',
+            align: 'center',
+            width: 90,
+        },
+        {
+            title() {
+                return renderTooltip(h('div', null, { default: () => 'Clusters' }), 'cluster ID')
+            },
             key: 'cluster',
             align: 'center',
             ellipsis: {
                 tooltip: true,
             },
             width: 110,
-            render(row: any) {
-                return h('div', {}, [
-                    h(
-                        NButton,
-                        {
-                            type: 'info',
-                            text: true,
-                            size: 'small',
-                        },
-                        {
-                            default: () => {
-                                return row.cluster
-                            },
-                        }
-                    ),
-                ])
-            },
+            // render(row: any) {
+            //     return h('div', {}, [
+            //         h(
+            //             NButton,
+            //             {
+            //                 type: 'info',
+            //                 text: true,
+            //                 size: 'small',
+            //                 onClick: async () => {
+            //                     const response = await axios.get(`/cluster/detail`, {
+            //                         baseURL: '/api/database',
+            //                         timeout: 10000,
+            //                         params: {
+            //                             clusterid: row.cluster,
+            //                         },
+            //                     })
+            //                     const { id } = response.data
+            //                     router.push({
+            //                         path: '/database/cluster/detail',
+            //                         query: { clusterid: id },
+            //                     })
+            //                 },
+            //             },
+            //             {
+            //                 default: () => {
+            //                     return row.cluster
+            //                 },
+            //             }
+            //         ),
+            //     ])
+            // },
         },
         {
-            title: 'Subclusters',
+            title() {
+                return renderTooltip(
+                    h('div', null, { default: () => 'Subclusters' }),
+                    'subcluster ID'
+                )
+            },
             key: 'subcluster',
             align: 'center',
             ellipsis: {
                 tooltip: true,
             },
             width: 110,
-            render(row: any) {
-                return h('div', {}, [
-                    h(
-                        NButton,
-                        {
-                            type: 'info',
-                            text: true,
-                            size: 'small',
-                        },
-                        {
-                            default: () => {
-                                return row.subcluster
-                            },
-                        }
-                    ),
-                ])
-            },
         },
         {
             title: 'Action',

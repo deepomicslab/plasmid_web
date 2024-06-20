@@ -15,65 +15,41 @@ export const annotationRefOptions = [
 
 export const datasetsOptions = [
     {
-        value: 'Genbank',
-        label: 'Genbank',
+        value: '0',
+        label: 'PLSDB',
     },
 
     {
-        value: 'RefSeq',
+        value: '1',
+        label: 'IMG-PR',
+    },
+    {
+        value: '2',
+        label: 'COMPASS',
+    },
+    {
+        value: '3',
+        label: 'GenBank',
+    },
+    {
+        value: '4',
         label: 'RefSeq',
     },
     {
-        value: 'DDBJ',
-        label: 'DDBJ',
-    },
-    {
-        value: 'EMBL',
+        value: '5',
         label: 'EMBL',
     },
     {
-        value: 'PhagesDB',
-        label: 'PhagesDB',
+        value: '6',
+        label: 'Kraken2',
     },
     {
-        value: 'GPD',
-        label: 'GPD',
+        value: '7',
+        label: 'DDBJ',
     },
     {
-        value: 'GVD',
-        label: 'GVD',
-    },
-    {
-        value: 'GPD',
-        label: 'GPD',
-    },
-    {
-        value: 'MGV',
-        label: 'MGV',
-    },
-    {
-        value: 'TemPhD',
-        label: 'TemPhD',
-    },
-    {
-        value: 'CHVD',
-        label: 'CHVD',
-    },
-    {
-        value: 'IGVD',
-        label: 'IGVD',
-    },
-    {
-        value: 'IMG_VR',
-        label: 'IMG_VR',
-    },
-    {
-        value: 'GOV2',
-        label: 'GOV2',
-    },
-    {
-        value: 'STV',
-        label: 'STV',
+        value: '8',
+        label: 'TPA',
     },
 ]
 export const qualityOptions = [
