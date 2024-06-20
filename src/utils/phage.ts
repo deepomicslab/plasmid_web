@@ -1,4 +1,14 @@
-export const datasetList = ['COMPASS', 'Kraken2']
+export const datasetList = [
+    'PLSDB',
+    'IMG-PR',
+    'COMPASS',
+    'GenBank',
+    'RefSeq',
+    'EMBL',
+    'Kraken2',
+    'DDBJ',
+    'TPA',
+]
 
 export const datasetDict = [
     {
@@ -6,12 +16,40 @@ export const datasetDict = [
         value: -1,
     },
     {
-        label: 'COMPASS',
+        label: 'PLSDB',
         value: 0,
     },
     {
-        label: 'Kraken2',
+        label: 'IMG-PR',
         value: 1,
+    },
+    {
+        label: 'COMPASS',
+        value: 2,
+    },
+    {
+        label: 'GenBank',
+        value: 3,
+    },
+    {
+        label: 'RefSeq',
+        value: 4,
+    },
+    {
+        label: 'EMBL',
+        value: 5,
+    },
+    {
+        label: 'Kraken2',
+        value: 6,
+    },
+    {
+        label: 'DDBJ',
+        value: 7,
+    },
+    {
+        label: 'TPA',
+        value: 8,
     },
 ]
 
