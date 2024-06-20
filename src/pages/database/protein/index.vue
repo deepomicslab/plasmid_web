@@ -491,7 +491,7 @@ const createColumns = (): DataTableColumns<RowData> => [
     {
         title: 'Action',
         key: 'actions',
-        width: '300px',
+        width: '180px',
         align: 'center',
         fixed: 'right',
         render(row: any) {
