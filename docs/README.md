@@ -1,6 +1,6 @@
 # Welcome to PhageScope
 
-[PhageScope](https://phagescope.deepomics.org/) is an online bacteriophage database, including 873,718 phage sequences with comprehensive annotations. PhageScope incorporates automatic analysis and interactive visualization.
+[PhageScope](https://plasmid.deepomics.org/) is an online bacteriophage database, including 873,718 phage sequences with comprehensive annotations. PhageScope incorporates automatic analysis and interactive visualization.
 
 ## Database
 

@@ -47,7 +47,7 @@
                     1. Input Sequence
                     <n-button
                         text
-                        href="https://phagescope.deepomics.org/dataExample/data_demo/sequence.fasta"
+                        href="https://plasmid.deepomics.org/dataExample/data_demo/sequence.fasta"
                         tag="a"
                         target="_blank"
                         type="primary"

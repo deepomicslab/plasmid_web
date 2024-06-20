@@ -56,20 +56,20 @@
                     </div>
 
                     <div class="text-[22px] font-400 mt-13 ml-15 w-[84%] leading-9 text-gray-900">
-                        Welcome to PhageScope! PhageScope is an
+                        Welcome to PlasmidScope! PlasmidScope is an
                         <strong class="text-2xl font-600 text-[#069] ml-1">
-                            online bacteriophage database
+                            online bacterioplasmid database
                         </strong>
                         that offers comprehensive annotations, including completeness assessment,
                         phenotype annotation, taxonomic annotation, structural annotation,
                         functional annotation, and genome comparison.
                     </div>
                     <div class="text-[22px] font-400 mt-10 ml-15 w-[89%] leading-9 text-gray-900">
-                        PhageScope incorporates automatic analysis and interactive visualization for
-                        both curated and customized data.
+                        PlasmidScope incorporates automatic analysis and interactive visualization
+                        for both curated and customized data.
                     </div>
                     <div class="text-[22px] font-400 mt-10 ml-15 w-[89%] leading-9 text-gray-900">
-                        Key features of PhageScope:
+                        Key features of PlasmidScope:
                     </div>
                     <div class="mt-8 ml-25 w-[81%] flex flex-row">
                         <div>
@@ -78,53 +78,71 @@
                             ></div>
                         </div>
                         <div class="text-[21px] font-400 leading-9 text-gray-900">
-                            Curated PhageScope
+                            Curated PlasmidScope
                             <span
-                                herf="https://phagescope.deepomics.org/database"
+                                herf="https://plasmid.deepomics.org/database"
                                 class="text-[21px] font-400"
                             >
                                 database
                             </span>
                             includes
-                            <strong class="text-2xl font-600 text-[#069] ml-1">873,718</strong>
-                            <strong class="text-[#069] font-400 mx-1 text-[21px]">
-                                phage sequences,
+                            <strong class="text-2xl font-600 text-[#069] ml-1">
+                                {{ overview_data.plasmid }}
                             </strong>
-                            with 767,797 nonredundant sequences, from 4,723 host species, harboring
-                            <strong class="text-2xl font-600 text-[#069] ml-1">43,088,582</strong>
+                            <strong class="text-[#069] font-400 mx-1 text-[21px]">
+                                plasmid sequences,
+                            </strong>
+                            harboring
+                            <strong class="text-2xl font-600 text-[#069] ml-1">
+                                {{ overview_data.protein }}
+                            </strong>
                             <strong class="text-[#069] font-400 ml-1 text-[21px]">
                                 annotated proteins,
                             </strong>
-                            <strong class="text-2xl font-600 text-[#069] ml-1">6,462,417</strong>
-                            <strong class="text-[#069] font-400 ml-1 text-[21px]">
-                                terminators,
+                            <strong class="text-2xl font-600 text-[#069] ml-1">
+                                {{ overview_data.host }}
                             </strong>
-                            <strong class="text-2xl font-600 text-[#069] ml-1">691,091</strong>
+                            <strong class="text-[#069] font-400 ml-1 text-[21px]">
+                                host species,
+                            </strong>
+                            <strong class="text-2xl font-600 text-[#069] ml-1">
+                                {{ overview_data.trna }}
+                            </strong>
                             <strong class="text-[#069] font-400 ml-1 text-[21px]">
                                 tRNA genes,
                             </strong>
-                            <strong class="text-2xl font-600 text-[#069] ml-1">11,516</strong>
-                            <strong class="text-[#069] font-400 ml-1 text-[21px]">
-                                tmRNA genes,
+                            <strong class="text-2xl font-600 text-[#069] ml-1">
+                                {{ overview_data.sm }}
                             </strong>
-                            <strong class="text-2xl font-600 text-[#069] ml-1">307,329</strong>
                             <strong class="text-[#069] font-400 ml-1 text-[21px]">
-                                anti-CRISPR proteins,
+                                secondary metabolism,
                             </strong>
-                            <strong class="text-2xl font-600 text-[#069] ml-1">56,652</strong>
+                            <strong class="text-2xl font-600 text-[#069] ml-1">
+                                {{ overview_data.sp }}
+                            </strong>
                             <strong class="text-[#069] font-400 ml-1 text-[21px]">
-                                CRISPR arrays,
+                                signal peptides,
                             </strong>
-                            <strong class="text-2xl font-600 text-[#069] ml-1">41,609</strong>
+                            <strong class="text-2xl font-600 text-[#069] ml-1">
+                                {{ overview_data.crispr }}
+                            </strong>
+                            <strong class="text-[#069] font-400 ml-1 text-[21px]">CRISPR,</strong>
+                            <strong class="text-2xl font-600 text-[#069] ml-1">
+                                {{ overview_data.vf }}
+                            </strong>
                             <strong class="text-[#069] font-400 ml-1 text-[21px]">
                                 virulent factors,
                             </strong>
-                            <strong class="text-2xl font-600 text-[#069] ml-1">2,602</strong>
+                            <strong class="text-2xl font-600 text-[#069] ml-1">
+                                {{ overview_data.arg }}
+                            </strong>
                             <strong class="text-[#069] font-400 ml-1 text-[21px]">
                                 antimicrobial resistance genes,
                             </strong>
                             and
-                            <strong class="text-2xl font-600 text-[#069] ml-1">4,020,770</strong>
+                            <strong class="text-2xl font-600 text-[#069] ml-1">
+                                {{ overview_data.tmh }}
+                            </strong>
                             <strong class="text-[#069] font-400 ml-1 text-[21px]">
                                 transmembrane proteins.
                             </strong>
@@ -139,7 +157,7 @@
                                 class="h-[0.4em] w-[0.4em] rounded-full bg-gray-900 mx-5 mt-3.5"
                             ></div>
                         </div>
-                        Automatic phage annotation and analysis with state-of-the-art tools,
+                        Automatic plasmid annotation and analysis with state-of-the-art tools,
                         including completeness scoring, host assignment, lifestyle prediction,
                         taxonomic classification, ORF and terminator localization, functional gene
                         annotation, genome clustering, and sequence comparison, etc.
@@ -256,7 +274,7 @@
                     <div class="px-10 w-full flex flex-row justify-between leading-relaxed">
                         <div class="flex flex-col">
                             <a class="text-xl mb-3" href="/database">Database</a>
-                            <p><a href="/database/phage">Phage List</a></p>
+                            <p><a href="/database/plasmid">Plasmid List</a></p>
                             <p><a href="/database/host">Host List</a></p>
                             <p><a href="/database/cluster">Cluster List</a></p>
                             <p><a href="/database/protein">Annotated Protein List</a></p>
@@ -327,8 +345,13 @@
 <script setup lang="ts">
 // import { ref, onMounted } from 'vue'
 import { Opportunity } from '@element-plus/icons-vue'
+import axios from 'axios'
 import { useUserIdGenerator } from '@/utils/userIdGenerator'
 import admin from './admin.vue'
+
+const loading = ref(false)
+// eslint-disable-next-line camelcase
+const overview_data = ref({})
 
 const dialogVisible = ref(false)
 
@@ -354,6 +377,22 @@ const goAnalysis = () => {
         path: '/analysis/annopipline',
     })
 }
+
+onBeforeMount(async () => {
+    loading.value = true
+    const response = await axios.get('get_home_overview', {
+        baseURL: '/api/database/',
+        timeout: 100000,
+        // params: {
+        //     page: pagevalue.value,
+        //     pagesize: pageSize.value,
+        //     search: searchinput.value,
+        // },
+    })
+    const { data } = response
+    overview_data.value = data
+    loading.value = false
+})
 
 // onBeforeMount(async () => {
 //     const { isCookieExist } = useUserIdGenerator()

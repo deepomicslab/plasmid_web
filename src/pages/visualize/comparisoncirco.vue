@@ -5,7 +5,7 @@
                 <iframe
                     class="w-375 h-375 ml-25"
                     style="transform: scale(0.65); transform-origin: top left"
-                    src="https://phagescope.deepomics.org/visualDemo/comparisonCirco.svg"
+                    src="https://plasmid.deepomics.org/visualDemo/comparisonCirco.svg"
                 ></iframe>
             </el-scrollbar>
         </div>

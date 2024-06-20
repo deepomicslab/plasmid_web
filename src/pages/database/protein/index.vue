@@ -44,9 +44,15 @@
                 mode="horizontal"
                 @select="handleSelectSet"
             >
-                <!-- <el-menu-item index="phage_protein_NCBI">NCBI</el-menu-item> -->
-                <el-menu-item index="0" class="text-lg">COMPASS</el-menu-item>
-                <el-menu-item index="1" class="text-lg">Kraken2</el-menu-item>
+                <el-menu-item index="0" class="text-lg">PLSDB</el-menu-item>
+                <el-menu-item index="1" class="text-lg">IMG-PR</el-menu-item>
+                <el-menu-item index="2" class="text-lg">COMPASS</el-menu-item>
+                <el-menu-item index="3" class="text-lg">GenBank</el-menu-item>
+                <el-menu-item index="4" class="text-lg">RefSeq</el-menu-item>
+                <el-menu-item index="5" class="text-lg">EMBL</el-menu-item>
+                <el-menu-item index="6" class="text-lg">Kraken2</el-menu-item>
+                <el-menu-item index="7" class="text-lg">DDBJ</el-menu-item>
+                <el-menu-item index="8" class="text-lg">TPA</el-menu-item>
             </el-menu>
         </div>
         <div v-loading="loading" class="h-420">
@@ -139,7 +145,7 @@ const checkedRowKeysRef = ref<DataTableRowKey[]>([])
 function handleCheck(rowKeys: DataTableRowKey[]) {
     checkedRowKeysRef.value = rowKeys
 }
-const dataset = ref('protein')
+const dataset = ref('0')
 type RowData = {
     id: number
     plasmid_id: string
@@ -157,7 +163,7 @@ type RowData = {
 const pagevalue = ref(1)
 const pageSize = ref(30)
 const searchinput = ref('')
-const source = ref('1')
+const source = ref(0)
 
 const proteindata = ref()
 const downloadproteindialogVisible = ref(false)
@@ -173,7 +179,7 @@ const downloadall = () => {
 }
 onBeforeMount(async () => {
     loading.value = true
-    const response = await axios.get(`/${dataset.value}/`, {
+    const response = await axios.get(`/protein/`, {
         baseURL: '/api/database/',
         timeout: 10000,
         params: {
@@ -196,7 +202,7 @@ const count = computed(() => proteindata.value?.count)
 
 const nextPage = async () => {
     loading.value = true
-    const response = await axios.get(`/${dataset.value}/`, {
+    const response = await axios.get(`/protein/`, {
         baseURL: '/api/database/',
         timeout: 10000,
         params: {
@@ -212,7 +218,7 @@ const nextPage = async () => {
 }
 const prevPage = async () => {
     loading.value = true
-    const response = await axios.get(`/${dataset.value}/`, {
+    const response = await axios.get(`/protein/`, {
         baseURL: '/api/database',
         timeout: 10000,
         params: {
@@ -229,7 +235,7 @@ const prevPage = async () => {
 
 const pagechange = async () => {
     loading.value = true
-    const response = await axios.get(`/${dataset.value}/`, {
+    const response = await axios.get(`/protein/`, {
         baseURL: '/api/database',
         timeout: 10000,
         params: {
@@ -245,7 +251,7 @@ const pagechange = async () => {
 }
 const pagesizechange = async () => {
     loading.value = true
-    const response = await axios.get(`/${dataset.value}/`, {
+    const response = await axios.get(`/protein/`, {
         baseURL: '/api/database',
         timeout: 10000,
         params: {
@@ -557,7 +563,7 @@ const columns = createColumns()
 const handleSelectSet = async (key: any) => {
     source.value = key
     loading.value = true
-    const response = await axios.get(`/${dataset.value}/`, {
+    const response = await axios.get(`/protein/`, {
         baseURL: '/api/database',
         timeout: 100000,
         params: {

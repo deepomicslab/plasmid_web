@@ -38,25 +38,25 @@
                     </div>
                     <div class="flex flex-row justify-around w-160 mt-5">
                         <div class="flex flex-col justify-center items-center">
-                            <el-avatar shape="circle" :size="150" fit="fill" src="/png/wrh.jpg" />
-                            <div class="mt-3 text-lg font-500">WANG Ruohan</div>
+                            <el-avatar shape="circle" :size="150" fit="fill" src="/png/lyh.png" />
+                            <div class="mt-3 text-lg font-500">Li Yinhu</div>
+                        </div>
+                        <div class="flex flex-col justify-center items-center">
+                            <el-avatar shape="circle" :size="150" fit="fill" src="/png/fxk.jpg" />
+                            <div class="mt-3 text-lg font-500">Feng Xikang</div>
+                        </div>
+                    </div>
+                    <div class="flex flex-row justify-around w-160 mt-5">
+                        <div class="flex flex-col justify-center items-center">
+                            <el-avatar shape="circle" :size="150" fit="fill" src="/png/cxh.jpg" />
+                            <div class="mt-3 text-lg font-500">Chen Xuhua</div>
                         </div>
                         <div class="flex flex-col justify-center items-center">
                             <el-avatar shape="circle" :size="150" fit="fill" src="/png/ys.jpg" />
                             <div class="mt-3 text-lg font-500">YANG Shuo</div>
                         </div>
                     </div>
-                    <div class="flex flex-row justify-around w-160 mt-5">
-                        <div class="flex flex-col justify-center items-center">
-                            <el-avatar shape="circle" :size="150" fit="fill" src="/png/lzx.jpg" />
-                            <div class="mt-3 text-lg font-500">LIU Zhixuan</div>
-                        </div>
-                        <div class="flex flex-col justify-center items-center">
-                            <el-avatar shape="circle" :size="150" fit="cover" src="/png/zyz.jpg" />
-                            <div class="mt-3 text-lg font-500">ZHANG Yuanzheng</div>
-                        </div>
-                    </div>
-                    <div class="flex flex-row justify-around w-160 mt-5">
+                    <!-- <div class="flex flex-row justify-around w-160 mt-5">
                         <div class="flex flex-col justify-center items-center">
                             <el-avatar shape="circle" :size="150" fit="cover" src="/png/wxy.jpg" />
                             <div class="mt-3 text-lg font-500">WANG Xueying</div>
@@ -65,7 +65,7 @@
                             <el-avatar shape="circle" :size="150" fit="cover" src="/png/xzx.jpg" />
                             <div class="mt-3 text-lg font-500">XU Zixin</div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
