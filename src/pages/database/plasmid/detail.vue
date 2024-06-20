@@ -225,7 +225,7 @@
         </div>
     </div>
 
-    <el-dialog v-model="proteinVisible" title="Protein Detail" width="90%">
+    <el-dialog v-model="proteinVisible" title="" width="90%">
         <proteindetail v-model:proteinInfo="proteinInfo" v-model:dataset="datasets" />
     </el-dialog>
     <el-dialog

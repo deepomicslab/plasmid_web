@@ -15,7 +15,7 @@
                     </el-button>
                 </div>
             </div>
-            <div class="flex flex-row">
+            <!-- <div class="flex flex-row">
                 <div class="mt-2 text-base">Search:</div>
                 <el-input class="w-50 ml-3" size="small" v-model="searchinput">
                     <template #append>
@@ -23,7 +23,7 @@
                     </template>
                 </el-input>
                 <el-button class="mt-1 ml-2" :icon="RefreshRight" circle @click="resetsearch" />
-            </div>
+            </div> -->
         </div>
         <div>
             <el-menu
@@ -174,7 +174,7 @@ import proteindetail from '../protein/detail.vue'
 
 const router = useRouter()
 const loading = ref(false)
-const source = ref(1)
+const source = ref(0)
 const detailVisible = ref(false)
 
 const detailInfo = ref()
@@ -182,7 +182,7 @@ const checkedRowKeysRef = ref<DataTableRowKey[]>([])
 function handleCheck(rowKeys: DataTableRowKey[]) {
     checkedRowKeysRef.value = rowKeys
 }
-const dataset = ref('tmh')
+const dataset = ref('0')
 
 type RowData = {
     id: number

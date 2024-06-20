@@ -10,6 +10,12 @@
                         </template>
                         Download Sequence
                     </el-button>
+                    <el-button href="/js/test.pdb">
+                        <template #icon>
+                            <n-icon><downicon /></n-icon>
+                        </template>
+                        Download PDB Structure File
+                    </el-button>
                 </div>
             </div>
             <el-descriptions class="w-310 text-xl" :column="2" size="large" border>
@@ -195,6 +201,48 @@
             <div class="flex flex-row w-290">
                 <div class="text-2xl font-500 mb-4">Protein Structure</div>
             </div>
+            <div class="flex flex-row w-290">
+                <div id="myViewer">
+                    <pdbe-molstar
+                        custom-data-url="/js/test.pdb"
+                        custom-data-format="pdb"
+                        assembly-id="1"
+                        default-preset="default"
+                        alphafold-view="false"
+                        hide-water="true"
+                        hide-het="false"
+                        hide-non-standard="false"
+                        load-maps="false"
+                        highlight-color-g="255"
+                        highlight-color-b="0"
+                        select-color-g="255"
+                        select-color-b="0"
+                        lighting="glossy"
+                        domain-annotation="true"
+                        validation-annotation="true"
+                        symmetry-annotation="true"
+                        encoding="bcif"
+                        low-precision="true"
+                        subscribe-events="false"
+                        hide-controls="false"
+                        sequence-panel="false"
+                        pdbe-link="true"
+                        loading-overlay="true"
+                        expanded="false"
+                        landscape="false"
+                        reactive="false"
+                    ></pdbe-molstar>
+                    <!-- <link
+                        rel="stylesheet"
+                        type="text/css"
+                        href="https://cdn.jsdelivr.net/npm/pdbe-molstar@3.2.0/build/pdbe-molstar.css"
+                    />
+                    <script
+                        type="text/javascript"
+                        src="https://cdn.jsdelivr.net/npm/pdbe-molstar@3.2.0/build/pdbe-molstar-component.js"
+                    ></script> -->
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -204,6 +252,28 @@ import { CloudDownloadOutline as downicon } from '@vicons/ionicons5'
 import { PropType } from 'vue'
 import { COGCategoryDict } from '@/utils/phage'
 // import { TypeDict } from '@/utils/annotation'
+onMounted(async () => {
+    const script1 = document.createElement('script')
+    script1.src = 'https://cdn.jsdelivr.net/npm/babel-polyfill/dist/polyfill.min.js'
+    document.body.appendChild(script1)
+    const script2 = document.createElement('script')
+    script2.src =
+        'https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs/webcomponents-lite.js'
+    document.body.appendChild(script2)
+    const script3 = document.createElement('script')
+    script3.src =
+        'https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js'
+    document.body.appendChild(script3)
+    const script4 = document.createElement('script')
+    script4.src = 'https://cdn.jsdelivr.net/npm/pdbe-molstar@3.2.0/build/pdbe-molstar-component.js'
+    document.body.appendChild(script4)
+
+    const style = document.createElement('link')
+    style.href = 'https://cdn.jsdelivr.net/npm/pdbe-molstar@3.2.0/build/pdbe-molstar.css'
+    style.type = 'text/css'
+    style.rel = 'stylesheet'
+    document.body.appendChild(style)
+})
 
 const props = defineProps({
     proteinInfo: Object as PropType<any>,
@@ -231,3 +301,12 @@ const downloadprotein = () => {
     URL.revokeObjectURL(url)
 }
 </script>
+<style>
+#myViewer {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    overflow: scroll;
+    /* margin: 20px; */
+}
+</style>

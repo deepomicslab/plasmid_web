@@ -14,7 +14,17 @@
                 </el-button>
             </div>
         </div>
-
+        <div>
+            <el-menu
+                :default-active="dataset"
+                class="el-menu-demo"
+                mode="horizontal"
+                @select="handleSelectSet"
+            >
+                <el-menu-item index="0" class="text-lg">COMPASS</el-menu-item>
+                <el-menu-item index="1" class="text-lg">Kraken2</el-menu-item>
+            </el-menu>
+        </div>
         <div v-loading="loading" class="h-420">
             <n-data-table :columns="columns" :data="phageList" :max-height="1600" />
         </div>
@@ -140,7 +150,9 @@ import { FunnelOutline, ChevronBack, ChevronForward } from '@vicons/ionicons5'
 const crisprVisible = ref(false)
 const pagevalue = ref(1)
 const pageSize = ref(30)
-
+const source = ref(0)
+const dataset = ref('0')
+const searchinput = ref('')
 const loading = ref(false)
 // const downloaddialogVisible = ref(false)
 
@@ -153,6 +165,12 @@ onBeforeMount(async () => {
     const response = await axios.get(`/crispr/`, {
         baseURL: '/api/database',
         timeout: 100000,
+        params: {
+            page: pagevalue.value,
+            pagesize: pageSize.value,
+            search: searchinput.value,
+            source: source.value,
+        },
     })
     crisprdata.value = response.data
     loading.value = false
@@ -171,6 +189,8 @@ const nextPage = async () => {
         params: {
             page: pagevalue.value + 1,
             pagesize: pageSize.value,
+            search: searchinput.value,
+            source: source.value,
         },
     })
     const { data } = response
@@ -185,6 +205,8 @@ const prevPage = async () => {
         params: {
             page: pagevalue.value - 1,
             pagesize: pageSize.value,
+            search: searchinput.value,
+            source: source.value,
         },
     })
     const { data } = response
@@ -200,6 +222,8 @@ const pagechange = async () => {
         params: {
             page: pagevalue.value,
             pagesize: pageSize.value,
+            search: searchinput.value,
+            source: source.value,
         },
     })
     const { data } = response
@@ -214,13 +238,31 @@ const pagesizechange = async () => {
         params: {
             page: pagevalue.value,
             pagesize: pageSize.value,
+            search: searchinput.value,
+            source: source.value,
         },
     })
     const { data } = response
     crisprdata.value = data
     loading.value = false
 }
-
+const handleSelectSet = async (key: any) => {
+    source.value = key
+    loading.value = true
+    const response = await axios.get('/crispr/', {
+        baseURL: '/api/database',
+        timeout: 100000,
+        params: {
+            page: pagevalue.value,
+            pagesize: pageSize.value,
+            search: searchinput.value,
+            source: source.value,
+        },
+    })
+    const { data } = response
+    crisprdata.value = data
+    loading.value = false
+}
 const router = useRouter()
 
 const renderTooltip = (trigger: any, content: any) => {
