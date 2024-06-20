@@ -540,21 +540,21 @@ const createColumns = (): DataTableColumns<RowData> => [
                         },
                         { default: () => 'Detail' }
                     ),
-                    h(
-                        NButton,
-                        {
-                            strong: true,
-                            tertiary: true,
-                            size: 'small',
-                            type: 'success',
-                            onClick: () => {
-                                window.open(
-                                    `https://alphafold.ebi.ac.uk/search/text/${row.sequence}/`
-                                )
-                            },
-                        },
-                        { default: () => 'Structure' }
-                    ),
+                    // h(
+                    //     NButton,
+                    //     {
+                    //         strong: true,
+                    //         tertiary: true,
+                    //         size: 'small',
+                    //         type: 'success',
+                    //         onClick: () => {
+                    //             window.open(
+                    //                 `https://alphafold.ebi.ac.uk/search/text/${row.sequence}/`
+                    //             )
+                    //         },
+                    //     },
+                    //     { default: () => 'Structure' }
+                    // ),
                 ]
             )
         },

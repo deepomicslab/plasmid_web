@@ -94,7 +94,7 @@
             </n-pagination>
         </div>
     </div>
-    <el-dialog v-model="proteinVisible" title="Protein Detail" width="90%">
+    <el-dialog v-model="proteinVisible" title="" width="90%">
         <proteindetail
             v-if="proteinVisible"
             v-model:proteinInfo="proteinInfo"
@@ -519,21 +519,21 @@ const createColumns = (): DataTableColumns<RowData> => [
                         },
                         { default: () => 'Detail' }
                     ),
-                    h(
-                        NButton,
-                        {
-                            strong: true,
-                            tertiary: true,
-                            size: 'small',
-                            type: 'success',
-                            onClick: () => {
-                                window.open(
-                                    `https://alphafold.ebi.ac.uk/search/text/${row.sequence}/`
-                                )
-                            },
-                        },
-                        { default: () => 'Structure' }
-                    ),
+                    // h(
+                    //     NButton,
+                    //     {
+                    //         strong: true,
+                    //         tertiary: true,
+                    //         size: 'small',
+                    //         type: 'success',
+                    //         onClick: () => {
+                    //             window.open(
+                    //                 `https://alphafold.ebi.ac.uk/search/text/${row.sequence}/`
+                    //             )
+                    //         },
+                    //     },
+                    //     { default: () => 'Structure' }
+                    // ),
                     h(
                         NButton,
                         {
