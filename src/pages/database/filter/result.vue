@@ -2,7 +2,7 @@
     <div class="h-550 flex flex-col py-5 px-20">
         <div class="flex flex-row ml-1 my-7">
             <div class="text-4xl font-600">Filter Result</div>
-            <el-button round color="rgb(175,44,94)" class="ml-5 mt-2" @click="godatahelper">
+            <el-button round color="#069" class="ml-5 mt-2" @click="godatahelper">
                 Database Helper
             </el-button>
         </div>

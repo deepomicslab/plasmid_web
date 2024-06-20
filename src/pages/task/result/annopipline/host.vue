@@ -220,7 +220,7 @@ const hostTypeOptions = {
     toolbox: {
         itemSize: 20,
         iconStyle: {
-            borderColor: 'rgb(175,44,94)',
+            borderColor: 'rgb(18,49,73)',
         },
         feature: {
             dataView: { readOnly: true },

@@ -430,7 +430,7 @@ const baseOption = {
     toolbox: {
         itemSize: 20,
         iconStyle: {
-            borderColor: 'rgb(175,44,94)',
+            borderColor: 'rgb(18,49,73)',
         },
         feature: {
             dataView: { readOnly: true },
@@ -479,7 +479,7 @@ const baseOption2 = {
     toolbox: {
         itemSize: 20,
         iconStyle: {
-            borderColor: 'rgb(175,44,94)',
+            borderColor: 'rgb(18,49,73)',
         },
         feature: {
             dataView: { readOnly: true },

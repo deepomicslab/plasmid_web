@@ -22,10 +22,10 @@
                     >
                         View Demo Result
                     </el-button>
-                    <el-button round size="large" color="rgb(175,44,94)" @click="gosubmithelper">
+                    <el-button round size="large" color="#069" @click="gosubmithelper">
                         Submission Helper
                     </el-button>
-                    <el-button round size="large" color="rgb(175,44,94)" class="ml-5">
+                    <el-button round size="large" color="#069" class="ml-5">
                         <a
                             href="https://github.com/deepomicslab/PhageScope/issues"
                             target="_blank"
@@ -36,7 +36,7 @@
                     </el-button>
                 </div>
                 <div class="text-lg font-500 ml-20 mt-3 w-9/10 flex flex-row">
-                    <el-icon class="text-lg mt-1 mr-2 text-[rgb(175,44,94)]"><InfoFilled /></el-icon>
+                    <el-icon class="text-lg mt-1 mr-2 text-[#069]"><InfoFilled /></el-icon>
                     It takes a few minutes to
                     <p class="text-[#EE7E7D] mx-2">RUN DEMO.</p>
                     Click
@@ -86,7 +86,7 @@
                                 class="w-180 bg-[#9ab4c5]"
                             >
                                 <template #icon>
-                                    <el-icon class="text-lg mt-2 text-[rgb(175,44,94)]">
+                                    <el-icon class="text-lg mt-2 text-[#069]">
                                         <InfoFilled />
                                     </el-icon>
                                 </template>
@@ -215,7 +215,7 @@
                                                         </div>
                                                         <div>
                                                             <el-icon
-                                                                class="text-xl text-[rgb(175,44,94)] mt-1 ml-2"
+                                                                class="text-xl text-[#069] mt-1 ml-2"
                                                                 v-if="
                                                                     data.key !== 'phenotype' &&
                                                                     data.key !== 'Functional'
@@ -240,7 +240,7 @@
                                             class="text-lg font-500 flex flex-row items-center text-red-400"
                                         >
                                             Click
-                                            <el-icon class="text-[rgb(175,44,94)] mx-3 text-2xl">
+                                            <el-icon class="text-[#069] mx-3 text-2xl">
                                                 <Edit />
                                             </el-icon>
                                             to view description.
@@ -390,7 +390,7 @@
                         <div class="mt-20 flex flex-row justify-center w-17/20 ml-5">
                             <el-button
                                 size="large"
-                                color="rgb(175,44,94)"
+                                color="#069"
                                 :width="90"
                                 class="text-white hover:text-white focus:text-white active:text-white text-2xl"
                                 @click="submit"

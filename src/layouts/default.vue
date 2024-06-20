@@ -1,6 +1,6 @@
 <template>
     <n-layout :style="lcStyle">
-        <n-layout-header class="flex justify-center bg-[rgb(91,36,59)] text-[rgb(200,200,200)]">
+        <n-layout-header class="flex justify-center bg-[rgb(18,49,73)] text-[rgb(200,200,200)]">
             <SiteHeader :style="hStyle" />
         </n-layout-header>
         <n-layout-content :style="coStyle">

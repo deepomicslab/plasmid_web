@@ -18,22 +18,21 @@ import { NConfigProvider, GlobalThemeOverrides } from 'naive-ui'
 <script setup lang="ts">
 import hljs from 'highlight.js/lib/core'
 import markdown from 'highlight.js/lib/languages/markdown'
-import windi from '@/windi'
 
 const themeOverrides: GlobalThemeOverrides = {
     common: {
-        primaryColor: 'rgb(144, 39, 79)',
-        primaryColorHover: windi.colors['primary-light'],
-        primaryColorPressed: windi.colors['primary-dark'],
-        primaryColorSuppl: windi.colors['primary-light'],
-        infoColor: '#701a75',
-        infoColorHover: '#a21caf',
-        infoColorPressed: '#4a044e',
-        infoColorSuppl: '#a21caf',
+        primaryColor: '#059669',
+        primaryColorHover: '#064e3b',
+        primaryColorPressed: '#6ee7b7',
+        primaryColorSuppl: '#064e3b',
+        infoColor: '#069',
+        infoColorHover: '#164e63',
+        infoColorPressed: '#06b6d4',
+        infoColorSuppl: '#164e63',
         successColor: '#1e3a8a',
-        successColorHover: '#2563eb',
-        successColorPressed: '#172554',
-        successColorSuppl: '#2563eb',
+        successColorHover: '#134e4a',
+        successColorPressed: '#0d9488',
+        successColorSuppl: '#134e4a',
     },
 }
 hljs.registerLanguage('markdown', markdown)

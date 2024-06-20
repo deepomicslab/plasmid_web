@@ -2,7 +2,7 @@ export const datasetsOption = {
     toolbox: {
         itemSize: 20,
         iconStyle: {
-            borderColor: 'rgb(175,44,94)',
+            borderColor: 'rgb(18,49,73)',
         },
         feature: {
             dataView: { readOnly: true },
@@ -61,7 +61,7 @@ export const QualityOption = {
     toolbox: {
         itemSize: 20,
         iconStyle: {
-            borderColor: 'rgb(175,44,94)',
+            borderColor: 'rgb(18,49,73)',
         },
         feature: {
             dataView: { readOnly: true },
@@ -96,7 +96,7 @@ export const Hostnumber = {
     toolbox: {
         itemSize: 20,
         iconStyle: {
-            borderColor: 'rgb(175,44,94)',
+            borderColor: 'rgb(18,49,73)',
         },
         feature: {
             dataView: { readOnly: true },
@@ -141,7 +141,7 @@ export const lifestyleoption = {
     toolbox: {
         itemSize: 20,
         iconStyle: {
-            borderColor: 'rgb(175,44,94)',
+            borderColor: 'rgb(18,49,73)',
         },
         feature: {
             dataView: { readOnly: true },
@@ -179,7 +179,7 @@ export const datasetspieOption = {
     toolbox: {
         itemSize: 20,
         iconStyle: {
-            borderColor: 'rgb(175,44,94)',
+            borderColor: 'rgb(18,49,73)',
         },
         feature: {
             dataView: { readOnly: true },
@@ -231,7 +231,7 @@ export const qualitypieOption = {
     toolbox: {
         itemSize: 20,
         iconStyle: {
-            borderColor: 'rgb(175,44,94)',
+            borderColor: 'rgb(18,49,73)',
         },
         feature: {
             dataView: { readOnly: true },
@@ -276,7 +276,7 @@ export const hostTypeOptions = {
     toolbox: {
         itemSize: 20,
         iconStyle: {
-            borderColor: 'rgb(175,44,94)',
+            borderColor: 'rgb(18,49,73)',
         },
         feature: {
             dataView: { readOnly: true },

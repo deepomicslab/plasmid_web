@@ -2,7 +2,7 @@
     <div class="h-630 flex flex-col py-10 px-30">
         <div class="flex flex-row ml-1 my-7">
             <div class="text-4xl font-600">Host Information</div>
-            <el-button round color="rgb(175,44,94)" class="ml-5 mt-2" @click="godatahelper">
+            <el-button round color="#069" class="ml-5 mt-2" @click="godatahelper">
                 Database Helper
             </el-button>
         </div>
@@ -186,7 +186,7 @@ const resetChecked = () => {
 //     toolbox: {
 //         itemSize: 20,
 //         iconStyle: {
-//             borderColor: 'rgb(175,44,94)',
+//             borderColor: 'rgb(18,49,73)',
 //         },
 //         feature: {
 //             saveAsImage: {},
@@ -251,7 +251,7 @@ const resetChecked = () => {
 //     toolbox: {
 //         itemSize: 20,
 //         iconStyle: {
-//             borderColor: 'rgb(175,44,94)',
+//             borderColor: 'rgb(18,49,73)',
 //         },
 //         feature: {
 //             saveAsImage: {},
@@ -345,7 +345,7 @@ const resetChecked = () => {
 //     toolbox: {
 //         itemSize: 20,
 //         iconStyle: {
-//             borderColor: 'rgb(175,44,94)',
+//             borderColor: 'rgb(18,49,73)',
 //         },
 //         feature: {
 //             saveAsImage: {},

@@ -191,11 +191,11 @@
                 v-model="sequence"
             />
         </div>
-        <!-- <div class="w-290 mt-6">
+        <div class="w-290 mt-6">
             <div class="flex flex-row w-290">
                 <div class="text-2xl font-500 mb-4">Protein Structure</div>
             </div>
-        </div> -->
+        </div>
     </div>
 </template>
 <script setup lang="ts">
