@@ -237,7 +237,7 @@
         <div>
             <el-checkbox-group v-model="checkList" :max="1">
                 <el-checkbox label="Download FASTA Data" />
-                <!-- <el-checkbox label="Download GBK Data" /> -->
+                <el-checkbox label="Download GBK Data" />
                 <el-checkbox label="Download GFF3 Data" />
                 <el-checkbox label="Download Meta Data" />
             </el-checkbox-group>
@@ -339,16 +339,28 @@ const downloadrequest = async () => {
         })
     } else {
         if (checkList.value.includes('Download Meta Data')) {
-            window.open(`/api/phage/meta/?plasmid_id=${checkedRowKeysRef.value[0]}`, '_blank')
+            window.open(
+                `/api/database/download_plasmid_meta/?plasmid_id=${checkedRowKeysRef.value[0]}`,
+                '_blank'
+            )
         }
         if (checkList.value.includes('Download FASTA Data')) {
-            window.open(`/api/phage/fasta/?plasmid_id=${checkedRowKeysRef.value[0]}`, '_blank')
+            window.open(
+                `/api/database/download_plasmid_fasta/?plasmid_id=${checkedRowKeysRef.value[0]}`,
+                '_blank'
+            )
         }
         if (checkList.value.includes('Download GFF3 Data')) {
-            window.open(`/api/phage/gff/?plasmid_id=${checkedRowKeysRef.value[0]}`, '_blank')
+            window.open(
+                `/api/database/download_plasmid_gff/?plasmid_id=${checkedRowKeysRef.value[0]}`,
+                '_blank'
+            )
         }
         if (checkList.value.includes('Download GBK Data')) {
-            window.open(`/api/phage/gbk/?plasmid_id=${checkedRowKeysRef.value[0]}`, '_blank')
+            window.open(
+                `/api/database/download_plasmid_gbk/?plasmid_id=${checkedRowKeysRef.value[0]}`,
+                '_blank'
+            )
         }
     }
 }
