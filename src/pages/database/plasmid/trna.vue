@@ -26,7 +26,7 @@
         <div class="text-2xl font-500 my-10">Annotated Genome Map with TRNA</div>
         <div
             style="box-shadow: 0 0 64px #cfd5db"
-            class="w-310 h-320 ml-15"
+            class="w-310 h-300 ml-15"
             v-if="trnaList.length !== 0"
         >
             <trnacirco />
