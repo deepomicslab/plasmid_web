@@ -291,7 +291,7 @@ const sequence = computed(() => {
     return props.proteinInfo.sequence
 })
 const downloadprotein = () => {
-    const filename = `${props.proteinInfo.Protein_id}.fasta`
+    const filename = `${props.proteinInfo.protein_id}.fasta`
     const blob = new Blob([sequence.value], { type: 'text/plain;charset=utf-8' })
     const url = URL.createObjectURL(blob)
     const link = document.createElement('a')

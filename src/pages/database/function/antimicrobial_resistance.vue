@@ -146,7 +146,7 @@
             />
         </div>
     </el-dialog>
-    <el-dialog v-model="proteinInfoVisible" title="Protein Informatioin Detail" width="90%">
+    <el-dialog v-model="proteinInfoVisible" title="" width="90%">
         <proteindetail
             v-if="proteinInfoVisible"
             v-model:proteinInfo="proteinInfo"
