@@ -88,7 +88,17 @@ function handleCheck(rowKeys: DataTableRowKey[]) {
 }
 
 const downloadselected = () => {
-    window.open(`/api/download/cluster/fasta/?clusterids=${checkedRowKeysRef.value}`, '_blank')
+    if (checkedRowKeysRef.value.length === 0) {
+        window.$message.warning('Please select data', {
+            closable: true,
+            duration: 5000,
+        })
+    } else {
+        window.open(
+            `/api/database/download_cluster_fasta/?clusterids=${checkedRowKeysRef.value}`,
+            '_blank'
+        )
+    }
 }
 
 type RowData = {
@@ -207,7 +217,7 @@ const resetsearch = () => {
     }
 }
 const download = (row: any) => {
-    window.open(`/api/download/cluster/fasta/?clusterid=${row.id}`, '_blank')
+    window.open(`/api/database/download_cluster_fasta/?clusterid=${row.id}`, '_blank')
 }
 const renderTooltip = (trigger: any, content: any) => {
     return h(NTooltip, null, {

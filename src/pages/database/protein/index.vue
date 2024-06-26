@@ -8,7 +8,7 @@
         </div>
         <div class="flex flex-row justify-between mb-4">
             <div class="mt-1.5 ml-1">
-                <el-dropdown class="mx-4">
+                <!-- <el-dropdown class="mx-4">
                     <el-button>
                         <template #icon>
                             <n-icon><downicon /></n-icon>
@@ -24,7 +24,7 @@
                             </el-dropdown-item>
                         </el-dropdown-menu>
                     </template>
-                </el-dropdown>
+                </el-dropdown> -->
             </div>
 
             <div class="flex flex-row">
@@ -129,7 +129,7 @@ import type { DataTableColumns, DataTableRowKey } from 'naive-ui'
 import { h } from 'vue'
 import { NButton, NTag, NTooltip } from 'naive-ui'
 import { Search, RefreshRight } from '@element-plus/icons-vue'
-import { CloudDownloadOutline as downicon, ChevronBack, ChevronForward } from '@vicons/ionicons5'
+// import { CloudDownloadOutline as downicon, ChevronBack, ChevronForward } from '@vicons/ionicons5'
 import axios from 'axios'
 import _ from 'lodash'
 import { COGCategoryDict } from '@/utils/phage'
@@ -169,14 +169,14 @@ const proteindata = ref()
 const downloadproteindialogVisible = ref(false)
 
 const proteincheckList = ref(['Download FASTA'])
-const downloadselected = () => {
-    downloadproteindialogVisible.value = true
-    downloadtype.value = 'selected'
-}
-const downloadall = () => {
-    downloadproteindialogVisible.value = true
-    downloadtype.value = 'all'
-}
+// const downloadselected = () => {
+//     downloadproteindialogVisible.value = true
+//     downloadtype.value = 'selected'
+// }
+// const downloadall = () => {
+//     downloadproteindialogVisible.value = true
+//     downloadtype.value = 'all'
+// }
 onBeforeMount(async () => {
     loading.value = true
     const response = await axios.get(`/protein/`, {

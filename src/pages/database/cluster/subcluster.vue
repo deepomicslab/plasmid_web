@@ -53,16 +53,23 @@
         <div class="flex flex-row justify-between mb-4">
             <div class="flex flex-row w-200">
                 <div class="text-4xl font-500 mb-8">Plasmid Members</div>
-                <div class="mt-1.5 ml-4">
-                    <n-dropdown trigger="hover" :options="dropdownoptions" :show-arrow="true">
-                        <n-button>
-                            Download
-                            <template #icon>
-                                <n-icon><downicon /></n-icon>
-                            </template>
-                        </n-button>
-                    </n-dropdown>
-                </div>
+                <el-dropdown class="mx-4 mt-2">
+                    <el-button type="primary">
+                        <template #icon>
+                            <n-icon><downicon /></n-icon>
+                        </template>
+                        Download Sequence
+                        <el-icon class="el-icon--right"><arrow-down /></el-icon>
+                    </el-button>
+                    <template #dropdown>
+                        <el-dropdown-menu>
+                            <!-- <el-dropdown-item @click="downloadall">All Data</el-dropdown-item> -->
+                            <el-dropdown-item @click="downloadselected">
+                                Selected Data
+                            </el-dropdown-item>
+                        </el-dropdown-menu>
+                    </template>
+                </el-dropdown>
             </div>
 
             <!-- <div class="w-70 h-9 flex flex-row">
@@ -78,9 +85,31 @@
                 :pagination="pagination"
                 :scroll-x="1550"
                 :max-height="1600"
+                @update:checked-row-keys="handleCheck"
             />
         </div>
     </div>
+    <el-dialog
+        v-model="downloaddialogVisible"
+        title="Select download data type"
+        width="30%"
+        align-center
+    >
+        <div>
+            <el-checkbox-group v-model="checkList" :max="1">
+                <el-checkbox label="Download FASTA Data" />
+                <el-checkbox label="Download GBK Data" />
+                <el-checkbox label="Download GFF3 Data" />
+                <el-checkbox label="Download Meta Data" />
+            </el-checkbox-group>
+        </div>
+        <template #footer>
+            <span class="dialog-footer">
+                <el-button @click="downloaddialogVisible = false">Cancel</el-button>
+                <el-button type="primary" @click="downloadrequest">Download</el-button>
+            </span>
+        </template>
+    </el-dialog>
 </template>
 
 <script setup lang="ts">
@@ -90,19 +119,19 @@ import { NButton, NTag, NEllipsis } from 'naive-ui'
 import axios from 'axios'
 // import _ from 'lodash'
 //
-import { CloudDownloadOutline as downicon } from '@vicons/ionicons5'
+// import { CloudDownloadOutline as downicon } from '@vicons/ionicons5'
 import { datasetDict, datasetList } from '@/utils/phage'
 
-const dropdownoptions = [
-    {
-        label: 'Selected Data',
-        key: 'SelectedData',
-    },
-    {
-        label: 'All Data',
-        key: 'All Datau',
-    },
-]
+// const dropdownoptions = [
+//     {
+//         label: 'Selected Data',
+//         key: 'SelectedData',
+//     },
+//     // {
+//     //     label: 'All Data',
+//     //     key: 'All Datau',
+//     // },
+// ]
 const router = useRouter()
 const route = useRoute()
 const subclusterdata = ref([
@@ -176,9 +205,101 @@ const pagination = reactive({
 const rowKey = (row: any) => {
     return row.id
 }
+const downloaddialogVisible = ref(false)
+const downloadtype = ref('')
+const checkList = ref([] as any[])
+const checkedRowKeysRef = ref<DataTableRowKey[]>([])
+function handleCheck(rowKeys: DataTableRowKey[]) {
+    checkedRowKeysRef.value = rowKeys
+}
+
+const downloadrequest = async () => {
+    if (checkList.value.length === 0) {
+        window.$message.warning('Please select download data type', {
+            closable: true,
+            duration: 5000,
+        })
+    } else if (downloadtype.value === 'selected') {
+        if (checkList.value.includes('Download FASTA Data')) {
+            window.open(
+                `/api/database/download_plasmid_fasta/?plasmid_ids=${checkedRowKeysRef.value}`,
+                '_blank'
+            )
+        }
+        if (checkList.value.includes('Download GFF3 Data')) {
+            console.log('88888')
+            window.open(
+                `/api/database/download_plasmid_gff/?plasmid_ids=${checkedRowKeysRef.value}`,
+                '_blank'
+            )
+        }
+        if (checkList.value.includes('Download GBK Data')) {
+            window.open(
+                `/api/database/download_plasmid_gbk/?plasmid_ids=${checkedRowKeysRef.value}`,
+                '_blank'
+            )
+        }
+        if (checkList.value.includes('Download Meta Data')) {
+            window.open(
+                `/api/database/download_plasmid_meta/?plasmid_ids=${checkedRowKeysRef.value}`,
+                '_blank'
+            )
+        }
+    } else if (downloadtype.value === 'single') {
+        if (checkList.value.includes('Download Meta Data')) {
+            window.open(
+                `/api/database/download_plasmid_meta/?plasmid_id=${checkedRowKeysRef.value[0]}`,
+                '_blank'
+            )
+        }
+        if (checkList.value.includes('Download FASTA Data')) {
+            window.open(
+                `/api/database/download_plasmid_fasta/?plasmid_id=${checkedRowKeysRef.value[0]}`,
+                '_blank'
+            )
+        }
+        if (checkList.value.includes('Download GFF3 Data')) {
+            window.open(
+                `/api/database/download_plasmid_gff/?plasmid_id=${checkedRowKeysRef.value[0]}`,
+                '_blank'
+            )
+        }
+        if (checkList.value.includes('Download GBK Data')) {
+            window.open(
+                `/api/database/download_plasmid_gbk/?plasmid_id=${checkedRowKeysRef.value[0]}`,
+                '_blank'
+            )
+        }
+    } else {
+        if (checkList.value.includes('Download Meta Data')) {
+            window.open(`/api/database/download_plasmid_meta/`, '_blank')
+        }
+        if (checkList.value.includes('Download FASTA Data')) {
+            window.open(`/api/database/download_plasmid_fasta/`, '_blank')
+        }
+        if (checkList.value.includes('Download GFF3 Data')) {
+            window.open(`/api/database/download_plasmid_gff/`, '_blank')
+        }
+        if (checkList.value.includes('Download GBK Data')) {
+            window.open(`/api/database/download_plasmid_gbk/`, '_blank')
+        }
+    }
+}
+const downloadselected = () => {
+    if (checkedRowKeysRef.value.length === 0) {
+        window.$message.warning('Please select data', {
+            closable: true,
+            duration: 5000,
+        })
+    } else {
+        downloaddialogVisible.value = true
+        downloadtype.value = 'selected'
+    }
+}
 const download = (row: any) => {
-    console.log(row)
-    window.open('http://localhost:8328/public/dataExample/data_demo/data.zip')
+    downloadtype.value = 'single'
+    downloaddialogVisible.value = true
+    checkedRowKeysRef.value = [row.id]
 }
 const detail = (row: any) => {
     router.push({ path: '/database/plasmid/detail', query: { plasmid_id: row.id } })
