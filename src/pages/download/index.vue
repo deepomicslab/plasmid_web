@@ -36,7 +36,7 @@
                                 </template>
 
                                 <a
-                                    :href="`https://plasmid.deepomics.org/files/${source}/data/${source}.plasmid_list.xls`"
+                                    :href="`https://plasmidapi.deepomics.org/api/database/files/${source}/data/${source}.plasmid_list.xls`"
                                     target="_blank"
                                     class="btn"
                                 >
@@ -669,29 +669,6 @@
                             class="w-160 border-r-1 border-gray-700 h-13 flex-row flex pl-4 items-center text-[19px]"
                         >
                             {{ source }} Plasmid GFF3 File
-                        </div>
-                        <div class="w-120 flex flex-row items-center justify-start">
-                            <n-button class="ml-10 w-23 h-7 text-lg" text>
-                                <template #icon>
-                                    <n-icon class="text-lg">
-                                        <Download />
-                                    </n-icon>
-                                </template>
-                                <a
-                                    href="https://plasmidapi.deepomics.org/fasta/phage_sequence/phage_gff3/Genbank.gff3"
-                                    target="_blank"
-                                    class="btn"
-                                >
-                                    Click to Download
-                                </a>
-                            </n-button>
-                        </div>
-                    </div>
-                    <div class="w-280 border-1 border-gray-700 h-13 flex flex-row">
-                        <div
-                            class="w-160 border-r-1 border-gray-700 h-13 flex-row flex pl-4 items-center text-[19px]"
-                        >
-                            RefSeq Plasmid GFF3 File
                         </div>
                         <div class="w-120 flex flex-row items-center justify-start">
                             <n-button class="ml-10 w-23 h-7 text-lg" text>
