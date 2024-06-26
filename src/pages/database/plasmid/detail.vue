@@ -378,7 +378,7 @@ onBeforeMount(async () => {
     phageStore.phageaccid = data.plasmid_id
     const response2 = await axios.get(`/protein`, {
         baseURL: '/api/database',
-        timeout: 10000,
+        timeout: 100000,
         params: {
             pagesize: 100000000,
             plasmid_id: plasmid_id.value,
@@ -391,7 +391,7 @@ onBeforeMount(async () => {
 
     const response3 = await axios.get(`get_plasmid_fasta/${plasmid_id.value}/`, {
         baseURL: '/api/database/',
-        timeout: 10000,
+        timeout: 100000,
     })
 
     phageStore.phagefastadata = response3.data
