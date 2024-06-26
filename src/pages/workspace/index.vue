@@ -63,8 +63,8 @@ onBeforeMount(async () => {
     const CookieExist = ref(isCookieExist())
     if (CookieExist.value) {
         loading.value = true
-        const response = await axios.get(`/tasks/list/`, {
-            baseURL: '/api',
+        const response = await axios.get(`/task_list/`, {
+            baseURL: '/api/analysis',
             timeout: 10000,
             params: {
                 userid: userid.value,
@@ -180,8 +180,8 @@ const refresh = async (event: any) => {
     ts.blur()
     loading.value = true
 
-    const response = await axios.get(`/tasks/list/`, {
-        baseURL: '/api',
+    const response = await axios.get(`/task_list/`, {
+        baseURL: '/api/analysis',
         timeout: 50000,
         params: {
             userid: userid.value,

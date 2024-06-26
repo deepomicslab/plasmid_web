@@ -32,7 +32,7 @@
                         </template>
                     </el-dropdown>
 
-                    <el-select
+                    <!-- <el-select
                         v-model="showredundancy"
                         placeholder="Select show redundancy"
                         class="mb-1"
@@ -47,7 +47,7 @@
                             :label="item.label"
                             :value="item.value"
                         ></el-option>
-                    </el-select>
+                    </el-select> -->
                 </div>
             </div>
 
@@ -177,17 +177,17 @@ import {
     ChevronForward,
     CloudDownloadOutline as downicon,
 } from '@vicons/ionicons5'
-import { Search, RefreshRight, ArrowDown, InfoFilled, Switch } from '@element-plus/icons-vue'
+import { Search, RefreshRight, ArrowDown, InfoFilled } from '@element-plus/icons-vue'
 import _ from 'lodash'
 import axios from 'axios'
 import filterview from '../filter/index.vue'
 import { datasetDict, datasetList } from '@/utils/phage'
 
-const showredundancy = ref('Show Redundancy')
+// const showredundancy = ref('Show Redundancy')
 const pagevalue = ref(1)
 const pageSize = ref(30)
 const datasets = ref('-1')
-const seqnum = ref('873,718')
+const seqnum = ref('0')
 const loading = ref(false)
 const searchinput = ref('')
 const source = ref('-1')
@@ -197,16 +197,16 @@ const phagedata = ref()
 
 const phageurl = ref(`/plasmid/`)
 const route = useRoute()
-const redundancyoptions = [
-    {
-        value: 'Show Redundancy',
-        label: 'Show Redundancy',
-    },
-    {
-        value: 'Hide Redundancy',
-        label: 'Hide Redundancy',
-    },
-]
+// const redundancyoptions = [
+//     {
+//         value: 'Show Redundancy',
+//         label: 'Show Redundancy',
+//     },
+//     {
+//         value: 'Hide Redundancy',
+//         label: 'Hide Redundancy',
+//     },
+// ]
 
 onBeforeMount(async () => {
     if (route.query?.dataset) {
@@ -550,17 +550,17 @@ const createColumns = (): DataTableColumns<RowData> => {
             },
             width: 95,
         },
-        {
-            title() {
-                return renderTooltip(h('div', null, { default: () => 'Length' }), 'plasmid length')
-            },
-            key: 'length',
-            align: 'center',
-            ellipsis: {
-                tooltip: true,
-            },
-            width: 95,
-        },
+        // {
+        //     title() {
+        //         return renderTooltip(h('div', null, { default: () => 'Length' }), 'plasmid length')
+        //     },
+        //     key: 'length',
+        //     align: 'center',
+        //     ellipsis: {
+        //         tooltip: true,
+        //     },
+        //     width: 95,
+        // },
         {
             title() {
                 return renderTooltip(
@@ -837,20 +837,20 @@ const godatahelper = () => {
     })
 }
 
-const redundchange = async () => {
-    loading.value = true
-    const response = await axios.get('/plasmid/', {
-        baseURL: '/api/database',
-        timeout: 100000,
-        params: {
-            source: source.value,
-            page: pagevalue.value,
-            pagesize: pageSize.value,
-        },
-    })
-    const { data } = response
-    seqnum.value = data.count
-    phagedata.value = data
-    loading.value = false
-}
+// const redundchange = async () => {
+//     loading.value = true
+//     const response = await axios.get('/plasmid/', {
+//         baseURL: '/api/database',
+//         timeout: 100000,
+//         params: {
+//             source: source.value,
+//             page: pagevalue.value,
+//             pagesize: pageSize.value,
+//         },
+//     })
+//     const { data } = response
+//     seqnum.value = data.count
+//     phagedata.value = data
+//     loading.value = false
+// }
 </script>

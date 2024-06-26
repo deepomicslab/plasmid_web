@@ -29,7 +29,7 @@
                     </el-button>
                     <el-button round size="large" color="#069" class="ml-5">
                         <a
-                            href="https://github.com/deepomicslab/PhageScope/issues"
+                            href="https://github.com/deepomicslab/PlasmidScope/issues"
                             target="_blank"
                             class="btn"
                         >
@@ -63,7 +63,7 @@
                     <div class="ml-5">
                         <n-radio-group v-model:value="inputtype">
                             <n-radio-button value="upload">UPLOAD FILE</n-radio-button>
-                            <n-radio-button value="enter">ENTER Phage ID</n-radio-button>
+                            <n-radio-button value="enter">ENTER Plasmid ID</n-radio-button>
                             <n-radio-button value="paste">PASTE SEQUENCE</n-radio-button>
                         </n-radio-group>
                     </div>
@@ -114,7 +114,7 @@
                     >
                         <div class="text-lg flex flex-row mb-2">
                             Enter the
-                            <p class="text-red-400 mx-2">Phage IDs</p>
+                            <p class="text-red-400 mx-2">Plasmid IDs</p>
                             that already exist in the database, separated by
                             <p class="text-red-400 mx-2 font-900">' ; '</p>
                         </div>
@@ -128,7 +128,7 @@
                                 size="large"
                             >
                                 <n-form-item
-                                    label="Phage IDs"
+                                    label="Plasmid IDs"
                                     path="phage"
                                     :validation-status="validationstatus"
                                     :show-require-mark="true"
@@ -137,7 +137,7 @@
                                         <n-input
                                             size="large"
                                             round
-                                            placeholder="Phage ID"
+                                            placeholder="Plasmid ID"
                                             clearable
                                             v-model:value="inputformValue.phage"
                                         ></n-input>
@@ -344,7 +344,7 @@ const submit = async () => {
             submitdata.append('phageid', JSON.stringify(idlist.value))
             precheck.value = true
         } else {
-            window.$message.error('The number of Phage IDs you entered is 0.', {
+            window.$message.error('The number of Plasmid IDs you entered is 0.', {
                 closable: true,
                 duration: 5000,
             })

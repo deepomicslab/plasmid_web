@@ -111,7 +111,7 @@
 <script setup lang="ts">
 import type { MenuOption, GlobalThemeOverrides } from 'naive-ui'
 import { RouterLink } from 'vue-router'
-import { NEllipsis } from 'naive-ui'
+// import { NEllipsis } from 'naive-ui'
 
 const themeOverrides: GlobalThemeOverrides = {
     Menu: {
@@ -146,125 +146,120 @@ const menuOptions: MenuOption[] = [
                 RouterLink,
                 {
                     to: {
-                        path: '/analysis/annopipline',
+                        path: '/analysis/annopipline/',
                     },
                 },
-                { default: () => 'Genome Annotation' }
+                { default: () => 'Plasmid Annotation' }
             ),
-        key: '/analysis/annopipline',
+        key: '/analysis/annopipline/',
         children: [
             {
-                label: 'Completeness Assessment',
-                key: '/analysis/annopipline/quality',
+                label: 'ORF prediction & Protein Classification',
+                key: '/analysis/annopipline/structural/annotation',
             },
             {
-                label: () =>
-                    h(
-                        RouterLink,
-                        {
-                            to: {
-                                path: '/analysis/annopipline/phenotype',
-                            },
-                        },
-                        { default: () => 'Phenotype Annotation' }
-                    ),
-                key: '/analysis/annopipline/phenotype',
-                children: [
-                    {
-                        label: 'Host Assignment',
-                        key: '/analysis/annopipline/phenotype/host',
-                    },
-                    {
-                        label: 'Lifestyle Prediction',
-                        key: '/analysis/annopipline/phenotype/lifestyle',
-                    },
-                ],
+                label: 'tRNA & tmRNA prediction',
+                key: '/analysis/annopipline/functional/trna',
             },
             {
-                label: () =>
-                    h(
-                        RouterLink,
-                        {
-                            to: {
-                                path: '/analysis/annopipline/structural',
-                            },
-                        },
-                        { default: () => 'Structural Annotation' }
-                    ),
-                key: '/analysis/annopipline/structural',
-                children: [
-                    {
-                        label: () =>
-                            h(NEllipsis, null, {
-                                default: () => 'ORF prediction & Protein Classification',
-                            }),
-                        key: '/analysis/annopipline/structural/annotation',
-                    },
-                    {
-                        label: () =>
-                            h(NEllipsis, null, {
-                                default: () => 'Transcription Terminator Annotation',
-                            }),
-                        key: '/analysis/annopipline/structural/terminators',
-                    },
-                ],
+                label: 'Virulence factor & Antibiotic resistance gene annotation',
+                key: '/analysis/annopipline/functional/arvf',
             },
             {
-                label: 'Taxonomic Annotation',
-                key: '/analysis/annopipline/taxonomic',
+                label: 'Transmembrane protein annotation',
+                key: '/analysis/annopipline/functional/trans',
             },
-            {
-                label: () =>
-                    h(
-                        RouterLink,
-                        {
-                            to: {
-                                path: '/analysis/annopipline/functional',
-                            },
-                        },
-                        { default: () => 'Functional Annotation' }
-                    ),
-                key: '/analysis/annopipline/functional',
-                children: [
-                    {
-                        label: () =>
-                            h(NEllipsis, null, {
-                                default: () => 'tRNA & tmRNA Gene Annotation',
-                            }),
-                        key: '/analysis/annopipline/functional/trna',
-                    },
+            // {
+            //     label: () =>
+            //         h(
+            //             RouterLink,
+            //             {
+            //                 to: {
+            //                     path: '/analysis/annopipline/phenotype',
+            //                 },
+            //             },
+            //             { default: () => 'Phenotype Annotation' }
+            //         ),
+            //     key: '/analysis/annopipline/phenotype',
+            //     children: [
+            //         {
+            //             label: 'Host Assignment',
+            //             key: '/analysis/annopipline/phenotype/host',
+            //         },
+            //         {
+            //             label: 'Lifestyle Prediction',
+            //             key: '/analysis/annopipline/phenotype/lifestyle',
+            //         },
+            //     ],
+            // },
 
-                    {
-                        label: () =>
-                            h(NEllipsis, null, {
-                                default: () => 'Anti-CRISPR Protein Annotation',
-                            }),
-                        key: '/analysis/annopipline/functional/anti',
-                    },
-                    {
-                        label: () =>
-                            h(NEllipsis, null, {
-                                default: () => 'CRISPR Array Annotation',
-                            }),
-                        key: '/analysis/annopipline/functional/crispr',
-                    },
-                    {
-                        label: () =>
-                            h(NEllipsis, null, {
-                                default: () =>
-                                    'Virulent Factor & Antimicrobial Resistance Gene Detection',
-                            }),
-                        key: '/analysis/annopipline/functional/arvf',
-                    },
-                    {
-                        label: () =>
-                            h(NEllipsis, null, {
-                                default: () => 'Transmembrane Protein Annotation',
-                            }),
-                        key: '/analysis/annopipline/functional/trans',
-                    },
-                ],
-            },
+            // {
+            //     label: () =>
+            //         h(
+            //             RouterLink,
+            //             {
+            //                 to: {
+            //                     path: '/analysis/annopipline/structural',
+            //                 },
+            //             },
+            //             { default: () => 'Structural Annotation' }
+            //         ),
+            //     key: '/analysis/annopipline/structural',
+            //     children: [
+            //         {
+            //             label: 'ORF prediction & Protein Classification',
+            //             key: '/analysis/annopipline/structural/annotation',
+            //         },
+            //         {
+            //             label: 'Transcription Terminator Annotation',
+            //             key: '/analysis/annopipline/structural/terminators',
+            //         },
+            //     ],
+            // },
+            // {
+            //     label: 'Taxonomic Annotation',
+            //     key: '/analysis/annopipline/taxonomic',
+            // },
+            // {
+            //     label: () =>
+            //         h(
+            //             RouterLink,
+            //             {
+            //                 to: {
+            //                     path: '/analysis/annopipline/functional',
+            //                 },
+            //             },
+            //             { default: () => 'Functional Annotation' }
+            //         ),
+            //     key: '/analysis/annopipline/functional',
+            //     children: [
+            //         {
+            //             label: 'tRNA & tmRNA Gene Annotation',
+            //             key: '/analysis/annopipline/functional/trna',
+            //         },
+
+            //         {
+            //             label: 'Anti-CRISPR Protein Annotation',
+            //             key: '/analysis/annopipline/functional/anti',
+            //         },
+            //         {
+            //             label: 'CRISPR Array Annotation',
+            //             key: '/analysis/annopipline/functional/crispr',
+            //         },
+            //         {
+            //             label: () =>
+            //                 h(NEllipsis, null, {
+            //                     default: () =>
+            //                         'Virulent Factor & Antimicrobial Resistance Gene Detection',
+            //                 }),
+            //             key: '/analysis/annopipline/functional/arvf',
+            //         },
+            //         {
+            //             label: 'Transmembrane Protein Annotation',
+            //             key: '/analysis/annopipline/functional/trans',
+            //         },
+            //     ],
+            // },
         ],
     },
 
@@ -277,20 +272,16 @@ const menuOptions: MenuOption[] = [
                         path: '/analysis/comparison',
                     },
                 },
-                { default: () => 'Genome Comparison' }
+                { default: () => 'Plasmid Comparison' }
             ),
         key: '/analysis/comparison',
         children: [
-            {
-                label: 'Sequence Clustering',
-                key: '/analysis/comparison/clustering',
-            },
             {
                 label: 'Sequence Alignment',
                 key: '/analysis/comparison/alignment',
             },
             {
-                label: 'Comparative Tree Construction',
+                label: 'Phylogentic Anaysis',
                 key: '/analysis/comparison/phylogenetic',
             },
         ],
