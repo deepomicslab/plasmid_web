@@ -10,7 +10,7 @@
                         </template>
                         Download Sequence
                     </el-button>
-                    <el-button href="/js/test.pdb">
+                    <el-button @click="downloadpdb">
                         <template #icon>
                             <n-icon><downicon /></n-icon>
                         </template>
@@ -204,7 +204,7 @@
             <div class="flex flex-row w-290">
                 <div id="myViewer">
                     <pdbe-molstar
-                        custom-data-url="/js/test.pdb"
+                        :custom-data-url="`/api/database/download_protein_pdb/?protein_id=${props.proteinInfo.id}`"
                         custom-data-format="pdb"
                         assembly-id="1"
                         default-preset="default"
@@ -299,6 +299,10 @@ const downloadprotein = () => {
     link.download = filename
     link.click()
     URL.revokeObjectURL(url)
+}
+
+const downloadpdb = () => {
+    window.open(`/api/database/download_protein_pdb/?protein_id=${props.proteinInfo.id}`, '_blank')
 }
 </script>
 <style>
