@@ -170,7 +170,7 @@ onBeforeMount(async () => {
 
     const response = await axios.get(`/get_plasmid_crisprs/`, {
         baseURL: '/api/database/',
-        timeout: 10000,
+        timeout: 100000,
         params: {
             plasmid_id: phageStore.plasmid_id,
         },

@@ -159,7 +159,7 @@ onBeforeMount(async () => {
     if (type.value === 'cluster') {
         const response = await axios.get(`/tasks/detail/`, {
             baseURL: '/api',
-            timeout: 10000,
+            timeout: 100000,
             params: {
                 taskid: taskid.value,
             },
@@ -167,7 +167,7 @@ onBeforeMount(async () => {
         taskdata.value = response.data
         const response2 = await axios.get(`tasks/result/modules/`, {
             baseURL: '/api',
-            timeout: 10000,
+            timeout: 100000,
             params: {
                 module: 'alignment',
                 taskid: taskid.value,
@@ -179,7 +179,7 @@ onBeforeMount(async () => {
     } else {
         const response = await axios.get(`/tasks/detail/`, {
             baseURL: '/api',
-            timeout: 10000,
+            timeout: 100000,
             params: {
                 taskid: taskid.value,
             },
@@ -187,7 +187,7 @@ onBeforeMount(async () => {
         taskdata.value = response.data
         const response2 = await axios.get(`tasks/result/modules/`, {
             baseURL: '/api',
-            timeout: 10000,
+            timeout: 100000,
             params: {
                 module: 'alignment',
                 taskid: taskid.value,
@@ -453,7 +453,7 @@ const seeresult = async () => {
         if (type.value === 'cluster') {
             const response2 = await axios.get(`tasks/result/modules/`, {
                 baseURL: '/api',
-                timeout: 10000,
+                timeout: 100000,
                 params: {
                     module: 'alignment',
                     taskid: taskid.value,
@@ -465,7 +465,7 @@ const seeresult = async () => {
         } else {
             const response2 = await axios.get(`tasks/result/modules/`, {
                 baseURL: '/api',
-                timeout: 10000,
+                timeout: 100000,
                 params: {
                     module: 'alignment',
                     taskid: taskid.value,

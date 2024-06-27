@@ -94,7 +94,7 @@ onBeforeMount(async () => {
     loading.value = true
     const response = await axios.get(`phage/transprotein/`, {
         baseURL: '/api',
-        timeout: 10000,
+        timeout: 100000,
         params: {
             phageid: phageStore.phageid,
         },

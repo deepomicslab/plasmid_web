@@ -65,7 +65,7 @@ onBeforeMount(async () => {
         loading.value = true
         const response = await axios.get(`/task_list/`, {
             baseURL: '/api/analysis',
-            timeout: 10000,
+            timeout: 100000,
             params: {
                 userid: userid.value,
             },

@@ -342,7 +342,7 @@ const createColumns = (): DataTableColumns<crisprRowData> => [
                         onClick: async () => {
                             const response = await axios.get(`/plasmid/${row.plasmid}`, {
                                 baseURL: '/api/database',
-                                timeout: 10000,
+                                timeout: 100000,
                             })
                             const plasmid_id = response.data.id
                             router.push({

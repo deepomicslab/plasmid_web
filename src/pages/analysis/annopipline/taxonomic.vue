@@ -244,7 +244,7 @@ const confirmids = async () => {
         checkdata.append('phageids', inputformValue.value.phage)
         const response = await axios.post(`/analyze/inputcheck/`, checkdata, {
             baseURL: '/api',
-            timeout: 10000,
+            timeout: 100000,
         })
         const res = response.data
         idlist.value = res.idlist
@@ -377,7 +377,7 @@ const submit = async () => {
         submitdata.append('inputtype', inputtype.value)
         const response = await axios.post(`/analyze/pipline/`, submitdata, {
             baseURL: '/api',
-            timeout: 10000,
+            timeout: 100000,
         })
         const { data } = response
         if (data.status === 'Success') {
@@ -411,7 +411,7 @@ const submitdemo = async () => {
         submitdata.append('inputtype', inputtype.value)
         const response = await axios.post(`/analyze/pipline/`, submitdata, {
             baseURL: '/api',
-            timeout: 10000,
+            timeout: 100000,
         })
         const { data } = response
         if (data.status === 'Success') {

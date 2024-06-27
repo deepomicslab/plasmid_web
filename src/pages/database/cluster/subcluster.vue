@@ -150,7 +150,7 @@ onBeforeMount(async () => {
     const subclusterid = computed(() => route.query?.subclusterid as unknown as number)
     const response = await axios.get(`/subcluster/${subclusterid.value}`, {
         baseURL: '/api/database',
-        timeout: 10000,
+        timeout: 100000,
         // params: {
         //     subclusterid: subclusterid.value,
         // },
@@ -160,7 +160,7 @@ onBeforeMount(async () => {
 
     const responses2 = await axios.get(`/get_subcluster_plasmids/`, {
         baseURL: '/api/database',
-        timeout: 10000,
+        timeout: 100000,
         params: {
             subcluster_id: subclusterid.value,
         },

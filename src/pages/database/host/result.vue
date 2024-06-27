@@ -137,7 +137,7 @@ onBeforeMount(async () => {
     loading.value = true
     const response = await axios.post(`/hosts/filter/`, submitdata, {
         baseURL: '/api',
-        timeout: 10000,
+        timeout: 100000,
         params: {
             page: pagevalue.value,
             pagesize: pageSize.value,
@@ -161,7 +161,7 @@ const nextPage = async () => {
     loading.value = true
     const response = await axios.post(`/hosts/filter/`, submitdata, {
         baseURL: '/api',
-        timeout: 10000,
+        timeout: 100000,
         params: {
             page: pagevalue.value + 1,
             pagesize: pageSize.value,
@@ -175,7 +175,7 @@ const prevPage = async () => {
     loading.value = true
     const response = await axios.post(`/hosts/filter/`, submitdata, {
         baseURL: '/api',
-        timeout: 10000,
+        timeout: 100000,
         params: {
             page: pagevalue.value - 1,
             pagesize: pageSize.value,
@@ -190,7 +190,7 @@ const pagechange = async () => {
     loading.value = true
     const response = await axios.post(`/hosts/filter/`, submitdata, {
         baseURL: '/api',
-        timeout: 10000,
+        timeout: 100000,
         params: {
             page: pagevalue.value,
             pagesize: pageSize.value,
@@ -204,7 +204,7 @@ const pagesizechange = async () => {
     loading.value = true
     const response = await axios.post(`/hosts/filter/`, submitdata, {
         baseURL: '/api',
-        timeout: 10000,
+        timeout: 100000,
         params: {
             page: pagevalue.value,
             pagesize: pageSize.value,

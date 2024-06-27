@@ -353,7 +353,7 @@ onBeforeMount(async () => {
     taskresultdata.value = response.data
     const response2 = await axios.get(`/tasks/detail/`, {
         baseURL: '/api',
-        timeout: 10000,
+        timeout: 100000,
         params: {
             taskid: taskid.value,
         },

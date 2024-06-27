@@ -69,7 +69,7 @@ onBeforeMount(async () => {
         if (props.type === 'cluster'){
             const response = await axios.get(`tasks/result/tree/`, 
             {
-                baseURL: '/api',timeout: 10000,
+                baseURL: '/api',timeout: 100000,
                 params: {
                     clsuter_id: props.clusterid as string,
                     taskid: props.task_id as string,
@@ -82,7 +82,7 @@ onBeforeMount(async () => {
         else if (props.type === 'tree'){
             const response = await axios.get(`tasks/result/tree/`, 
                 {
-                    baseURL: '/api',timeout: 10000,
+                    baseURL: '/api',timeout: 100000,
                     params: {
                         taskid: props.task_id as string,
                     },
@@ -100,7 +100,7 @@ onBeforeMount(async () => {
 
         const response = await axios.get(`/cluster/tree`, {
             baseURL: '/api',
-            timeout: 10000,
+            timeout: 100000,
             params: {
                 id: props.clusterid as string,
             },

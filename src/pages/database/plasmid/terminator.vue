@@ -92,7 +92,7 @@ onBeforeMount(async () => {
     } else {
         const response = await axios.get(`/phage/terminator/`, {
             baseURL: '/api',
-            timeout: 10000,
+            timeout: 100000,
             params: {
                 phageid: phageStore.phageid,
             },

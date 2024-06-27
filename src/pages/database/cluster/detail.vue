@@ -215,7 +215,7 @@ const alignmentdata = ref({
 onBeforeMount(async () => {
     const respons = await axios.get(`/cluster/${clusterid.value}`, {
         baseURL: '/api/database',
-        timeout: 10000,
+        timeout: 100000,
         // params: {
         //     id: clusterid.value,
         // },
@@ -227,7 +227,7 @@ onBeforeMount(async () => {
     loadPhage.value = true
     // const respons4 = await axios.get(`/cluster/tree`, {
     //     baseURL: '/api',
-    //     timeout: 10000,
+    //     timeout: 100000,
     //     params: {
     //         id: clusterid.value,
     //     },
@@ -238,7 +238,7 @@ onBeforeMount(async () => {
     // }
     const response = await axios.get(`/subcluster`, {
         baseURL: '/api/database',
-        timeout: 10000,
+        timeout: 100000,
         params: {
             pagesize: 100000000,
             cluster_id: clusterid.value,
@@ -249,7 +249,7 @@ onBeforeMount(async () => {
 
     const responses2 = await axios.get(`/get_cluster_plasmids/`, {
         baseURL: '/api/database',
-        timeout: 10000,
+        timeout: 100000,
         params: {
             cluster_id: clusterid.value,
         },
@@ -261,7 +261,7 @@ onBeforeMount(async () => {
 
     // const responses3 = await axios.get(`cluster/heatmap`, {
     //     baseURL: '/api',
-    //     timeout: 10000,
+    //     timeout: 100000,
     //     params: {
     //         clusterid: clusterid.value,
     //     },
@@ -726,7 +726,7 @@ const subclustercolumns = createsubclusterColumns()
 //     phageStore.alignmentloaded = false
 //     const response2 = await axios.get(`cluster/alignment`, {
 //         baseURL: '/api',
-//         timeout: 10000,
+//         timeout: 100000,
 //         params: {
 //             id: clusterid.value,
 //         },
@@ -796,7 +796,7 @@ const seeresult = async () => {
         phageStore.alignmentloaded = false
         const response2 = await axios.get(`cluster/alignment`, {
             baseURL: '/api',
-            timeout: 10000,
+            timeout: 100000,
             params: {
                 id: clusterid.value,
                 plasmid_ids: checkedRowKeysRef2.value.join(', '),

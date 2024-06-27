@@ -197,7 +197,7 @@ const createColumns = (): DataTableColumns<trnaRowData> => [
                         onClick: async () => {
                             const response = await axios.get(`/phage/detail`, {
                                 baseURL: '/api',
-                                timeout: 10000,
+                                timeout: 100000,
                                 params: {
                                     accid: row.Phage_id,
                                 },
@@ -336,7 +336,7 @@ const createColumns = (): DataTableColumns<trnaRowData> => [
                             onClick: async () => {
                                 const response = await axios.get(`/phage/detail`, {
                                     baseURL: '/api',
-                                    timeout: 10000,
+                                    timeout: 100000,
                                     params: {
                                         accid: row.Phage_id,
                                     },
@@ -344,7 +344,7 @@ const createColumns = (): DataTableColumns<trnaRowData> => [
                                 const phageid = response.data.id
                                 const response3 = await axios.get(`phage/fasta/`, {
                                     baseURL: '/api',
-                                    timeout: 10000,
+                                    timeout: 100000,
                                     params: {
                                         phageid,
                                     },

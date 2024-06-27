@@ -377,7 +377,7 @@ onBeforeMount(async () => {
     phageStore.plasmid_id = plasmid_id.value
     const response = await axios.get(`/plasmid/${plasmid_id.value}/`, {
         baseURL: '/api/database',
-        timeout: 10000,
+        timeout: 100000,
         // params: {
         //     id: plasmid_id.value,
         // },

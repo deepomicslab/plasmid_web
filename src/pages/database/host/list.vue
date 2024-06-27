@@ -127,7 +127,7 @@ onBeforeMount(async () => {
     loading.value = true
     const response = await axios.get('/host_view/', {
         baseURL: '/api/database',
-        timeout: 10000,
+        timeout: 100000,
         params: {
             host: host.value,
             rank: rank.value,
@@ -148,7 +148,7 @@ const nextPage = async () => {
     loading.value = true
     const response = await axios.get('/host_view/', {
         baseURL: '/api/database',
-        timeout: 10000,
+        timeout: 100000,
         params: {
             host: host.value,
             rank: rank.value,
@@ -164,7 +164,7 @@ const prevPage = async () => {
     loading.value = true
     const response = await axios.get('/host_view/', {
         baseURL: '/api/database',
-        timeout: 10000,
+        timeout: 100000,
         params: {
             host: host.value,
             rank: rank.value,
@@ -181,7 +181,7 @@ const pagechange = async () => {
     loading.value = true
     const response = await axios.get('/host_view/', {
         baseURL: '/api/database',
-        timeout: 10000,
+        timeout: 100000,
         params: {
             host: host.value,
             rank: rank.value,
@@ -197,7 +197,7 @@ const pagesizechange = async () => {
     loading.value = true
     const response = await axios.get('/host_view/', {
         baseURL: '/api/database',
-        timeout: 10000,
+        timeout: 100000,
         params: {
             host: host.value,
             rank: rank.value,

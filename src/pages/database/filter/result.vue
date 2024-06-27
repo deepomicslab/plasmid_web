@@ -622,7 +622,7 @@ const createColumns = (): DataTableColumns<RowData> => {
             //                 onClick: async () => {
             //                     const response = await axios.get(`/cluster/detail`, {
             //                         baseURL: '/api/database',
-            //                         timeout: 10000,
+            //                         timeout: 100000,
             //                         params: {
             //                             clusterid: row.cluster,
             //                         },

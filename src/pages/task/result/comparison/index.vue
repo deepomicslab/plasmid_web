@@ -319,7 +319,7 @@ const downloadtsv = () => {
 const download = async (row: any) => {
     const response = await axios.get(`/tasks/result/phagefasta/`, {
         baseURL: '/api',
-        timeout: 10000,
+        timeout: 100000,
         params: {
             taskid: taskid.value,
             phageid: row.Acession_ID,

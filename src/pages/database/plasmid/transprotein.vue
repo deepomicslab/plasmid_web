@@ -118,7 +118,7 @@ onBeforeMount(async () => {
     } else {
         const response = await axios.get(`/tmh/`, {
             baseURL: '/api/database/',
-            timeout: 10000,
+            timeout: 100000,
             params: {
                 pagesize: 100000000,
                 plasmid_id: phageStore.plasmid_id,
@@ -130,7 +130,7 @@ onBeforeMount(async () => {
 
     const response = await axios.get(`/get_plasmid_tmhs/`, {
         baseURL: '/api/database/',
-        timeout: 10000,
+        timeout: 100000,
         params: {
             plasmid_id: phageStore.plasmid_id,
         },

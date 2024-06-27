@@ -281,7 +281,7 @@ const submit = async () => {
     if (precheck.value) {
         const response = await axios.post(`/analyze/clusterpipline/`, submitdata, {
             baseURL: '/api',
-            timeout: 10000,
+            timeout: 100000,
         })
         const { data } = response
         if (data.status === 'Success') {
@@ -316,7 +316,7 @@ const submitdemo = async () => {
         submitdata.append('inputtype', inputtype.value)
         const response = await axios.post(`/analyze/clusterpipline/`, submitdata, {
             baseURL: '/api',
-            timeout: 10000,
+            timeout: 100000,
         })
         const { data } = response
         if (data.status === 'Success') {

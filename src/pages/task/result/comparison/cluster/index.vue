@@ -166,7 +166,7 @@ onBeforeMount(async () => {
     clusterStore.dataload = false
     const response = await axios.get(`/tasks/detail/`, {
         baseURL: '/api',
-        timeout: 10000,
+        timeout: 100000,
         params: {
             taskid: taskid.value,
         },
@@ -175,7 +175,7 @@ onBeforeMount(async () => {
 
     const response2 = await axios.get(`tasks/result/modules/`, {
         baseURL: '/api',
-        timeout: 10000,
+        timeout: 100000,
         params: {
             module: 'cluster',
             taskid: taskid.value,
@@ -205,7 +205,7 @@ onBeforeMount(async () => {
     annlist.value = _.filter(clusterdata.value, { cluster: tree_value.value })
     const response3 = await axios.get(`tasks/result/tree/`, {
         baseURL: '/api',
-        timeout: 10000,
+        timeout: 100000,
         params: {
             clsuter_id: 'all',
             taskid: taskid.value,
@@ -229,7 +229,7 @@ const clusterchange = async (value: string) => {
     tree_value.value = value
     const response = await axios.get(`tasks/result/tree/`, {
         baseURL: '/api',
-        timeout: 10000,
+        timeout: 100000,
         params: {
             clsuter_id: value,
             taskid: taskid.value,

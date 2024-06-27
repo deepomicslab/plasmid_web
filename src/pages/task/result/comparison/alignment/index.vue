@@ -191,7 +191,7 @@ onBeforeMount(async () => {
     phageStore.alignmentloaded = false
     const response = await axios.get(`/tasks/detail/`, {
         baseURL: '/api',
-        timeout: 10000,
+        timeout: 100000,
         params: {
             taskid: taskid.value,
         },
@@ -200,7 +200,7 @@ onBeforeMount(async () => {
 
     const response2 = await axios.get(`tasks/result/modules/`, {
         baseURL: '/api',
-        timeout: 10000,
+        timeout: 100000,
         params: {
             module: 'alignment',
             taskid: taskid.value,
@@ -453,7 +453,7 @@ const seeresult = async () => {
         phageStore.alignmentloaded = false
         const response2 = await axios.get(`tasks/result/modules/`, {
             baseURL: '/api',
-            timeout: 10000,
+            timeout: 100000,
             params: {
                 module: 'alignment',
                 taskid: taskid.value,

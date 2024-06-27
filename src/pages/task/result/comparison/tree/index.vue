@@ -130,7 +130,7 @@ onBeforeMount(async () => {
     clusterStore.dataload = false
     const response = await axios.get(`/tasks/detail/`, {
         baseURL: '/api',
-        timeout: 10000,
+        timeout: 100000,
         params: {
             taskid: taskid.value,
         },
@@ -138,7 +138,7 @@ onBeforeMount(async () => {
     taskdata.value = response.data
     const response2 = await axios.get(`tasks/result/tree/`, {
         baseURL: '/api',
-        timeout: 10000,
+        timeout: 100000,
         params: {
             taskid: taskid.value,
         },

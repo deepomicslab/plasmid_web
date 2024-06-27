@@ -124,7 +124,7 @@ const loadNode = async (node: Node, resolve: () => void) => {
     } else {
         const response2 = await axios.get(`/host_node/`, {
             baseURL: '/api/database',
-            timeout: 10000,
+            timeout: 100000,
             params: {
                 rank: level.value[node.level],
                 node: node.label,
@@ -402,7 +402,7 @@ const resetChecked = () => {
 onBeforeMount(async () => {
     const response = await axios.get(`/host_node/`, {
         baseURL: '/api/database',
-        timeout: 10000,
+        timeout: 100000,
         params: {
             rank: 'Phylum',
         },

@@ -228,7 +228,7 @@ onBeforeMount(async () => {
     phageStore.heatmaploaded = false
     const response2 = await axios.get(`/tasks/detail/`, {
         baseURL: '/api',
-        timeout: 10000,
+        timeout: 100000,
         params: {
             taskid: taskid.value,
         },
@@ -237,7 +237,7 @@ onBeforeMount(async () => {
     taskdata.value = data2
     const response = await axios.get(`/tasks/result/phage/`, {
         baseURL: '/api',
-        timeout: 10000,
+        timeout: 100000,
         params: {
             taskid: taskid.value,
         },
@@ -305,7 +305,7 @@ const downloadtsv = () => {
 const download = async (row: any) => {
     const response = await axios.get(`/tasks/result/phagefasta/`, {
         baseURL: '/api',
-        timeout: 10000,
+        timeout: 100000,
         params: {
             taskid: taskid.value,
             phageid: row.Acession_ID,
