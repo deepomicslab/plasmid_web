@@ -33,7 +33,7 @@
             </div>
         </n-layout-sider>
         <el-scrollbar ref="scrollbarRef" class="w-full">
-            <div class="w-full flex flex-col justify-start h-700 bg-[#f8f9fa]">
+            <div class="w-full flex flex-col justify-start h-760 bg-[#f8f9fa]">
                 <div class="h-220 flex flex-col">
                     <div class="flex flex-row border-b-1 border-[rgb(18,49,73)] ml-13 w-290 pb-6">
                         <div class="text-5xl font-700 mt-20 text-[#069]">PlasmidScope</div>
@@ -175,41 +175,41 @@
                         etc.
                     </div>
                 </div>
-                <div class="h-240 flex flex-col items-center">
+                <div class="h-359 flex flex-col items-center">
                     <div class="mb-10 text-3xl font-600 text-[#069] mt-25">Focus</div>
                     <div
                         style="box-shadow: 0 0 64px #cfd5db"
-                        class="w-270 h-150 bg-white rounded-2xl"
+                        class="w-297 h-259 bg-white rounded-2xl"
                     >
                         <div>
                             <el-carousel
-                                height="600px"
+                                height="1036px"
                                 width="1080px"
                                 arrow="always"
                                 indicator-position="outside"
                                 :autoplay="false"
                             >
                                 <el-carousel-item>
-                                    <div class="w-270 h-150">
+                                    <div class="w-297 h-259">
                                         <el-image
-                                            src="/png/databasevis.png"
-                                            class="image w-270 h-150"
+                                            src="/png/Plasmid_database.pdf"
+                                            class="image w-297 h-259"
                                             z-index="100"
                                         />
                                     </div>
                                 </el-carousel-item>
                                 <el-carousel-item>
                                     <div
-                                        class="w-270 h-150 flex flex-row items-center justify-center"
+                                        class="w-297 h-259 flex flex-row items-center justify-center"
                                     >
                                         <el-image
-                                            src="/png/analysisvis.png"
-                                            class="image w-270 h-150"
+                                            src="/png/Plasmid_analysis.pdf"
+                                            class="image w-297 h-259"
                                             z-index="100"
                                         />
                                     </div>
                                 </el-carousel-item>
-                                <el-carousel-item>
+                                <!-- <el-carousel-item>
                                     <div
                                         class="w-270 h-150 flex flex-row items-center justify-center"
                                     >
@@ -219,7 +219,7 @@
                                             z-index="100"
                                         />
                                     </div>
-                                </el-carousel-item>
+                                </el-carousel-item> -->
                             </el-carousel>
                         </div>
                     </div>
@@ -324,7 +324,7 @@
                         </div>
                     </div>
                     <el-divider color="black" />
-                    <div>2023 &copy; City University of Hong Kong. All rights reserved.</div>
+                    <div>2024 &copy; City University of Hong Kong. All rights reserved.</div>
                 </el-footer>
             </div>
         </el-scrollbar>
