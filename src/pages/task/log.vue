@@ -144,8 +144,8 @@ const fetchData = async () => {
     consoleloading.value = true
     let module
     if (props.enableTab || props.enableTable) {
-        const response2 = await axios.get(`/tasks/detail/`, {
-            baseURL: '/api',
+        const response2 = await axios.get(`/view_task_detail/`, {
+            baseURL: '/api/analysis',
             timeout: 100000,
             params: {
                 taskid: taskid.value,
@@ -165,8 +165,8 @@ const fetchData = async () => {
         module = moduleName.value
     }
 
-    const response3 = await axios.get(`/tasks/detail/log/`, {
-        baseURL: '/api',
+    const response3 = await axios.get(`/view_task_log/`, {
+        baseURL: '/api/analysis',
         timeout: 100000,
         params: {
             taskid: taskid.value,
@@ -188,8 +188,8 @@ watch(taskid, async () => {
 
 const handletabClick = async (tab: any) => {
     consoleloading.value = true
-    const response3 = await axios.get(`/tasks/detail/log/`, {
-        baseURL: '/api',
+    const response3 = await axios.get(`/view_task_log/`, {
+        baseURL: '/api/analysis',
         timeout: 100000,
         params: {
             taskid: taskid.value,
