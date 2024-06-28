@@ -366,8 +366,8 @@ const submit = async () => {
         submitdata.append('userid', userid.value)
         //submitdata.append('user', 'demo')
         submitdata.append('inputtype', inputtype.value)
-        const response = await axios.post(`/analyze/pipline/`, submitdata, {
-            baseURL: '/api',
+        const response = await axios.post(`/submit_task/`, submitdata, {
+            baseURL: '/api/analysis',
             timeout: 100000,
         })
         const { data } = response
