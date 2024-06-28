@@ -336,7 +336,18 @@ const overview_data = ref({
         vf: 62662,
         crispr: 10088,
     },
-    hosts: [],
+    hosts: [
+        'Pseudomonadota',
+        'Bacillota',
+        'Bacteroidota',
+        'Actinomycetota',
+        'Spirochaetota',
+        'Cyanobacteriota',
+        'Campylobacterota',
+        'Euryarchaeota',
+        'Deinococcota',
+        'Fusobacteriota',
+    ],
     datasources: {
         sources: [],
         counts: [],
@@ -460,7 +471,7 @@ const treecharthandleUpdateValue1 = async (value: string) => {
         },
         title: {
             text: 'Plasmid Host Taxonomy',
-            left: 'center',
+            left: 'left',
         },
         tooltip: {
             trigger: 'item',
@@ -512,7 +523,7 @@ const treecharthandleUpdateValue1 = async (value: string) => {
     const sunburstOption: echarts.EChartsOption = {
         title: {
             text: 'Plasmid Host Taxonomy',
-            left: 'center',
+            left: 'left',
         },
         toolbox: {
             itemSize: 20,
@@ -606,7 +617,7 @@ const treecharthandleUpdateValue1 = async (value: string) => {
     const treeoption = {
         title: {
             text: 'Plasmid Host Taxonomy',
-            left: 'center',
+            left: 'left',
         },
         toolbox: {
             itemSize: 20,
