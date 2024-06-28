@@ -324,7 +324,18 @@ import { datasetDict } from '@/utils/phage'
 const loading = ref(false)
 // eslint-disable-next-line camelcase
 const overview_data = ref({
-    overview: {},
+    overview: {
+        plasmid: 953438,
+        host: 14382,
+        protein: 39172224,
+        trna: 109510,
+        arg: 80591,
+        sm: 32127,
+        sp: 75349,
+        tmh: 81339,
+        vf: 62662,
+        crispr: 10088,
+    },
     hosts: [],
     datasources: {
         sources: [],
