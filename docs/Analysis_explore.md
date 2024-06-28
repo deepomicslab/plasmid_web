@@ -1,13 +1,13 @@
-# How to perform PhageScope analyses
+# How to perform PlasmidScope analyses
 
-PhageScope supplies automatic analysis workflows for users to study their customized phages efficiently. The workflow encompasses pipelines for genome annotation and genome comparison analysis. Click ``Analysis`` on the navigation bar to get started.   
+PlasmidScope supplies automatic analysis workflows for users to study their customized plasmids efficiently. The workflow encompasses pipelines for genome annotation and genome comparison analysis. Click ``Analysis`` on the navigation bar to get started.   
 
 ## Genome Annotation
 Click ``Genome Annotation`` button and perform genome annotation. Users can run demo data or directly view demo results. We also provide the example inputs.  
 
 <div align=center><img src="/Ana_figures/annotation_input.png" width="800"></div>
 
-To input phage sequences, users can upload their FASTA file with single or multiple phage sequences, enter the phage ID in PhageScope database, or paste the sequence directly. Then users can select the analysis modules according to their needs. Brief introductions to the modules are provided for reference.   
+To input plasmid sequences, users can upload their FASTA file with single or multiple plasmid sequences, enter the plasmid ID in PlasmidScope database, or paste the sequence directly. Then users can select the analysis modules according to their needs. Brief introductions to the modules are provided for reference.   
 
 <div align=center><img src="/Ana_figures/annotation_modules.png" width="800"></div>
 
@@ -19,11 +19,11 @@ When the task is completed, the status would change from ``Running`` to ``Succes
 
 <div align=center><img src="/Ana_figures/annotation_result1.png" width="800"></div>
 
-An overview of the analysis results for all the inputed phages are provided on the page with downloadable tables and visualizations. Users can click their selected modules above to obtain more details.
+An overview of the analysis results for all the inputed plasmids are provided on the page with downloadable tables and visualizations. Users can click their selected modules above to obtain more details.
 
 <div align=center><img src="/Ana_figures/annotation_result2.png" width="800"></div>
 
-Users can click the ``Detail`` button to check the annotation results and visualizations for the individual phage.  
+Users can click the ``Detail`` button to check the annotation results and visualizations for the individual plasmid.  
 
 <div align=center><img src="/Ana_figures/annotation_ind1.png" width="800"></div>
 
@@ -31,7 +31,7 @@ Users can click the ``Detail`` button to check the annotation results and visual
 
 
 ## Genome Comparison
-For genome comparison, users should upload FASTA file with multiple phage sequences or paste multiple sequences to the text fields.  
+For genome comparison, users should upload FASTA file with multiple plasmid sequences or paste multiple sequences to the text fields.  
 
 <div align=center><img src="/Ana_figures/comparison_input.png" width="800"></div>
 
@@ -39,7 +39,7 @@ Then users can select specific modules to perform analyses.
 
 <div align=center><img src="/Ana_figures/comparison_modules.png" width="800"></div>
 
-PhageScope provides an option for users to incorporate the curated phages into genome comparison pipelines. Filtering options are available to select the curated sequences for comparison based on specific criteria such as sequence quality, length range, and phage lifestyle.
+PlasmidScope provides an option for users to incorporate the curated plasmids into genome comparison pipelines. Filtering options are available to select the curated sequences for comparison based on specific criteria such as sequence quality, length range, and  lifestyle.
 
 <div align=center><img src="/Ana_figures/comparison_withdb.png" width="800"></div>
 
@@ -47,7 +47,7 @@ After the task is completed, users can get access to the genome comparison resul
 
 <div align=center><img src="/Ana_figures/comparison_result1.png" width="800"></div>
 
-In our demonstration, we showcase the query phages (shown in red), as well as the phages from the PhageScope database that are clustered together with queries (shown in blue).  
+In our demonstration, we showcase the query plasmids (shown in red), as well as the plasmids from the PlasmidScope database that are clustered together with queries (shown in blue).  
 
 <div align=center><img src="/Ana_figures/comparison_result2.png" width="800"></div>
 

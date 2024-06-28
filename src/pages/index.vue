@@ -58,11 +58,11 @@
                     <div class="text-[22px] font-400 mt-13 ml-15 w-[84%] leading-9 text-gray-900">
                         Welcome to PlasmidScope! PlasmidScope is an
                         <strong class="text-2xl font-600 text-[#069] ml-1">
-                            online bacterioplasmid database
+                            online plasmid database
                         </strong>
-                        that offers comprehensive annotations, including completeness assessment,
-                        phenotype annotation, taxonomic annotation, structural annotation,
-                        functional annotation, and genome comparison.
+                        that offers comprehensive annotations, including mobility assessment,
+                        completeness assessment, phenotype annotation, structural annotation,
+                        functional annotation, protein structure prediction, and genome comparison.
                     </div>
                     <div class="text-[22px] font-400 mt-10 ml-15 w-[89%] leading-9 text-gray-900">
                         PlasmidScope incorporates automatic analysis and interactive visualization
@@ -109,13 +109,13 @@
                                 {{ overview_data.trna }}
                             </strong>
                             <strong class="text-[#069] font-400 ml-1 text-[21px]">
-                                tRNA genes,
+                                tRNA & tmRNA,
                             </strong>
                             <strong class="text-2xl font-600 text-[#069] ml-1">
                                 {{ overview_data.sm }}
                             </strong>
                             <strong class="text-[#069] font-400 ml-1 text-[21px]">
-                                secondary metabolism,
+                                secondary metabolites,
                             </strong>
                             <strong class="text-2xl font-600 text-[#069] ml-1">
                                 {{ overview_data.sp }}
@@ -126,18 +126,20 @@
                             <strong class="text-2xl font-600 text-[#069] ml-1">
                                 {{ overview_data.crispr }}
                             </strong>
-                            <strong class="text-[#069] font-400 ml-1 text-[21px]">CRISPR,</strong>
+                            <strong class="text-[#069] font-400 ml-1 text-[21px]">
+                                CRISPR-CAS systems,
+                            </strong>
                             <strong class="text-2xl font-600 text-[#069] ml-1">
                                 {{ overview_data.vf }}
                             </strong>
                             <strong class="text-[#069] font-400 ml-1 text-[21px]">
-                                virulent factors,
+                                virulence factors,
                             </strong>
                             <strong class="text-2xl font-600 text-[#069] ml-1">
                                 {{ overview_data.arg }}
                             </strong>
                             <strong class="text-[#069] font-400 ml-1 text-[21px]">
-                                antimicrobial resistance genes,
+                                antibiotic resistance genes,
                             </strong>
                             and
                             <strong class="text-2xl font-600 text-[#069] ml-1">
@@ -158,9 +160,9 @@
                             ></div>
                         </div>
                         Automatic plasmid annotation and analysis with state-of-the-art tools,
-                        including completeness scoring, host assignment, lifestyle prediction,
-                        taxonomic classification, ORF and terminator localization, functional gene
-                        annotation, genome clustering, and sequence comparison, etc.
+                        including mobility assessment, completeness scoring, ORF prediction,
+                        functional gene annotation, tRNA & tmRNA prediction, plasmid clustering,
+                        protein structure prediction, sequence comparison, etc.
                     </div>
                     <div
                         class="text-[21px] font-400 mt-8 ml-25 w-[80%] leading-9 text-gray-900 flex flex-row"

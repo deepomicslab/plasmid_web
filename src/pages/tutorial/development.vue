@@ -1,7 +1,7 @@
 <template>
     <div class="w-full h-full bg-white">
         <iframe
-            src="http://localhost:8328/public/docs/development/index.html"
+            src="http://localhost:8873/public/docs/development/index.html"
             class="w-full h-full"
         ></iframe>
     </div>

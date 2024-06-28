@@ -1,9 +1,9 @@
 -   Overview
-    -   [Introduction](/)
+    -   [Introduction](/README.md)
     -   [Contact us](/contact.md)
 -   Database
     -   [Database introduction](/Database_introduction.md)
-    -   [Database explore](/Database_explore.md)
+    -   [Database exploration](/Database_explore.md)
     -   [Database download](/Database_download.md)
 -   Analysis
     -   [Analysis introduction](/Analysis_introduction.md)

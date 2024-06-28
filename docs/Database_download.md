@@ -1,216 +1,175 @@
-# How to download PhageScope datasets
+# How to download PlasmidScope datasets
 
-## Phage sequence download
+## Plasmid sequence download
 <div align=center><img src="/DB_figures/phage_list_download.png" width="1000"></div>
 
-Users could be directed to the ``Phage List`` interface by clicking ``Database`` on the navigation bar. On the ``Phage List`` interface, users could scroll through the list of phages, use the ``sequence filter`` to find specific phages.  
+Users could be directed to the ``Plasmid List`` interface by clicking ``Database`` on the navigation bar. On the ``Plasmid List`` interface, users could scroll through the list of plasmids, use the ``sequence filter`` to find specific plasmids.
  
 <div align=center><img src="/DB_figures/sequence_filter.png" width="1000"></div>
 
-After selecting the phages, please click on the ``Download`` button. A popup would appear, allowing users to choose the desired format for download. Phage sequences and information are provided in **FASTA**, **GFF3**, **GBK**, and **tabular** (Meta data) format. The phage sequences and information will be saved to users' device in the chosen format.  
+After selecting the plasmids, please click on the ``Download`` button. A popup would appear, allowing users to choose the desired format for download. plasmid sequences and information are provided in **FASTA**, **GFF3**, **GBK**, and **tabular** (Meta data) format. The plasmid sequences and information will be saved to users' device in the chosen format.
 
 <div align=center><img src="/DB_figures/datatype_selection.png" width="1000"></div>
 
 ## Batch download 
-PhageScope also provides a batch download interface for users to retrieve data, including the phage metadata, protein metadata, transcription terminator metadata, tRNA & tmRNA gene metadata, anti-CRISPR protein metadata, CRISPR array metadata, transmembrane protein metadata, phage sequences in fasta format, protein sequences in fasta format, phage annotations in gbk/gff3 file. Users could click ``Download`` on the navigation bar to enter the download interface.  
+PlasmidScope also provides a batch download interface for users to retrieve data, including the plasmid metadata, protein metadata, secondary metabolism metadata, tRNA & tmRNA gene metadata, CRISPR-Cas system metadata, signal peptides metadata, antimicrobial resistance gene metadata, virulence factor metadata, transmembrane protein metadata, plasmid sequences in fasta format, plasmid annotations in gbk/gff3 file. Users could click ``Download`` on the navigation bar to enter the download interface.
 
 <div align=center><img src="/DB_figures/download_interface.png" width="1000"></div>
 
 ### Meta data download
-#### Phage meta data download
-+ ``All Phage Meta Data``: The metadata for all the 873,718 phages. Each row gives the information for a phage; The columns give information about phage ID (Phage\_ID), phage genome length (Length), phage GC content (GC\_content), the taxonomy (Taxonomy), genome completeness (Completeness), phage host taxonomy (Host), phage lifestyle (Lifestyle), cluster ID (Cluster), subcluster ID (Subcluster), and the phage source dataset (Phage\_source).
-+ ``RefSeq Phage Meta Data``: The metadata for the 4,637 phages from RefSeq. 
-+ ``Genbank Phage Meta Data``: The metadata for the 2,086 phages from Genbank. 
-+ ``EMBL Phage Meta Data``: The metadata for the 156 phages from EMBL. 
-+ ``DDBJ Phage Meta Data``: The metadata for the 290 phages from DDBJ. 
-+ ``PhagesDB Meta Data``: The metadata for the 3,754 phages from PhagesDB. 
-+ ``GPD Phage Meta Data``: The metadata for the 142,809 phages from GPD. 
-+ ``GVD Phage Meta Data``: The metadata for the 31,402 phages from GVD. 
-+ ``MGV Phage Meta Data``: The metadata for the 189,680 phages from MGV. 
-+ ``TemPhD Phage Meta Data``: The metadata for the 66,823 phages from TemPhD. 
-+ ``CHVD Phage Meta Data``: The metadata for the 44,935 phages from CHVD. 
-+ ``IGVD Phage Meta Data``: The metadata for the 10,021 phages from IGVD. 
-+ ``IMG_VR Phage Meta Data``: The metadata for the 177,361 phages from IMG\_VR. 
-+ ``GOV2 Phage Meta Data``: The metadata for the 195,699 phages from GOV2. 
-+ ``STV Phage Meta Data``: The metadata for the 4,065 phages from STV. 
+#### Plasmid meta data download
+The metadata for all the 953,438 plasmids. Each row gives the information for a plasmid; The columns give information about plasmid ID (Plasmid\_ID), plasmid genome length (Size), plasmid GC content (GC), genome completeness (Completeness), plasmid host taxonomy (Host), plasmid predicted mobility (Predicted\_Mobility), primary cluster ID (Primary\_Cluster\_ID), subcluster ID (Secondary\_Cluster\_ID), and the plasmid source dataset (Data\_Source).
+
++ ``PLSDB plasmid Meta Data``: The metadata for the 50,554 plasmids from PLSDB.
++ ``IMG-PR plasmid Meta Data``: The metadata for the 699,973 plasmids from IMG\-PR.
++ ``COMPASS plasmid Meta Data``: The metadata for the 12,084 plasmids from COMPASS.
++ ``Genbank plasmid Meta Data``: The metadata for the 92,310 plasmids from Genbank.
++ ``RefSeq plasmid Meta Data``: The metadata for the 86,009 plasmids from RefSeq.
++ ``EMBL plasmid Meta Data``: The metadata for the 6,267 plasmids from EMBL.
++ ``Kraken2 plasmid Meta Data``: The metadata for the 898 plasmids from Kraken2.
++ ``DDBJ plasmid Meta Data``: The metadata for the 5,336 plasmids from DDBJ.
++ ``TPA plasmid Meta Data``: The metadata for the 7 plasmids from TPA.
 
 #### Annotated protein meta data download
-+ ``All Phage Annotated Protein Meta Data``: The metadata for all the 43,088,582 annotated proteins. Each row gives the information for a protein; The columns give information about phage ID (Phage\_ID), the protein source (Protein\_source), the annotation source (Function\_prediction\_source), the protein start site on the genome (Start), the protein stop site on the genome(Stop), the strand encoding the protein (Strand), protein ID (Protein\_ID), protein product (Product), protein classification with keyword search (Protein\_classification), the molecular mass of protein (Molecular\_weight), the aromaticity value (Aromaticity), the instability index (Instability\_index), the isoelectric point (Isoelectric\_point), the fraction of helix (Helix\_fraction), the fraction of turn (Turn\_fraction), the fraction of sheet (Sheet\_fraction), the molar extinction coefficient assuming cysteines reduced (Reduced\_coefficient), the molar extinction coefficient assuming cystines residues Cys-Cys-bond (Oxidized\_coefficient), and the phage source dataset (Phage\_source).
-+ ``RefSeq Phage Annotated Protein Meta Data``: The metadata for the 481,897 annotated proteins from RefSeq.
-+ ``Genbank Phage Annotated Protein Meta Data``: The metadata for the 217,870 annotated proteins from Genbank.
-+ ``EMBL Phage Annotated Protein Meta Data``: The metadata for the 11,116 annotated proteins from EMBL.
-+ ``DDBJ Phage Annotated Protein Meta Data``: The metadata for the 17,391 annotated proteins from DDBJ.
-+ ``PhagesDB Phage Annotated Protein Meta Data``: The metadata for the 351,898 annotated proteins from PhagesDB.
-+ ``GVD Phage Annotated Protein Meta Data``: The metadata for the 746,146 annotated proteins from GVD.
-+ ``GPD Phage Annotated Protein Meta Data``: The metadata for the 7,616,044 annotated proteins from GPD.
-+ ``MGV Phage Annotated Protein Meta Data``: The metadata for the 10,517,011 annotated proteins from MGV.
-+ ``TemPhD Phage Annotated Protein Meta Data``: The metadata for the 3,465,586 annotated proteins from TemPhD.
-+ ``CHVD Phage Annotated Protein Meta Data``: The metadata for the 1,945,943 annotated proteins from CHVD.
-+ ``IGVD Phage Annotated Protein Meta Data``: The metadata for the 339,921 annotated proteins from IGVD.
-+ ``IMG_VR Phage Annotated Protein Meta Data``: The metadata for the 12,036,448 annotated proteins from IMG/VR.
-+ ``GOV2 Phage Annotated Protein Meta Data``: The metadata for the 5,189,318 annotated proteins from GOV2.
-+ ``STV Phage Annotated Protein Meta Data``: The metadata for the 151,993 annotated proteins from STV.
+The metadata for all the 39,172,224 annotated proteins. Each row gives the information for a protein; The columns give information about plasmid ID (Plasmid_ID), the protein source (Orf Prediction Source), the annotation source (Function Prediction Source), the protein start site on the genome (Start), the protein stop site on the genome(End), the strand encoding the protein (Strand), protein ID (Protein\_ID), protein product (Product), protein classification with COG category (COG\_category), annotation of EC number (EC_number), annotation of COG ID (COG\_id), annotation of GO database (GOs), annotation of KEGG database (KEGG\_ko, KEGG\_Pathway, KEGG\_Module, KEGG\_Reaction, KEGG\_rclasss, BRITE, KEGG\_TC), annotation of CAZy database (CAZy), annotaion of  BiGG database (BiGG\_Reaction), annotation of Pfam database (PFAMs), the protein sequence (Sequence), and the plasmid source dataset (Source).
 
-#### Transcription terminator meta data download
-+ ``All Phage Transcription Terminator Meta Data``: The metadata for all the 6,462,417 transcription terminators. Each row gives the information for a transcription terminator; The columns give information about phage ID (Phage\_ID), transcription terminator (Terminator), the terminator start site on the genome (Start), the terminator stop site on the genome (Stop), strand sense (Sense), type of region the terminator is in (Loc) ('G' = in the interior of a gene (at least 50bp from an end), 'F' = between two +strand genes, 'R' = between two -strand genes, 'T' = between the ends of a +strand gene and a -strand gene, 'H' = between the starts of a +strand gene and a -strand gene, 'N' = none of the above (for the start and end of the DNA)), confidence score (Confidence), and the phage source dataset (Phage\_source).
-+ ``RefSeq Phage Transcription Terminator Meta Data``: The metadata for the 68,049 transcription terminators from RefSeq.
-+ ``Genbank Phage Transcription Terminator Meta Data``: The metadata for the 27,598 transcription terminators from Genbank.
-+ ``EMBL Phage Transcription Terminator Meta Data``: The metadata for the 1,728 transcription terminators from EMBL.
-+ ``DDBJ Phage Transcription Terminator Meta Data``: The metadata for the 1.638 transcription terminators from DDBJ.
-+ ``PhagesDB Phage Transcription Terminator Meta Data``: The metadata for the 36,638 transcription terminators from PhagesDB.
-+ ``GVD Phage Transcription Terminator Meta Data``: The metadata for the 130,092 transcription terminators from GVD.
-+ ``GPD Phage Transcription Terminator Meta Data``: The metadata for the 1,189,436 transcription terminators from GPD.
-+ ``MGV Phage Transcription Terminator Meta Data``: The metadata for the 1,838,272 transcription terminators from MGV.
-+ ``TemPhD Phage Transcription Terminator Meta Data``: The metadata for the 619,095 transcription terminators from TemPhD.
-+ ``CHVD Phage Transcription Terminator Meta Data``: The metadata for the 341,236 transcription terminators from CHVD.
-+ ``IGVD Phage Transcription Terminator Meta Data``: The metadata for the 49,718 transcription terminators from IGVD.
-+ ``IMG_VR Phage Transcription Terminator Meta Data``: The metadata for the 1,822,288 transcription terminators from IMG/VR.
-+ ``GOV2 Phage Transcription Terminator Meta Data``: The metadata for the 327,755 transcription terminators from GOV2.
-+ ``STV Phage Transcription Terminator Meta Data``: The metadata for the 8,874 transcription terminators from STV.
++ ``PLSDB plasmid Annotated Protein Meta Data``: The metadata for the 5,602,537 annotated proteins from PLSDB.
++ ``IMG-PR plasmid Annotated Protein Meta Data``: The metadata for the 17,485,233 annotated proteins from IMG-PR.
++ ``COMPASS plasmid Annotated Protein Meta Data``: The metadata for the 1,368,450 annotated proteins from COMPASS.
++ ``GenBank plasmid Annotated Protein Meta Data``: The metadata for the 6,566,461 annotated proteins from GenBank.
++ ``RefSeq plasmid Annotated Protein Meta Data``: The metadata for the 7,248,129 annotated proteins from RefSeq.
++ ``EMBL plasmid Annotated Protein Meta Data``: The metadata for the 385,958 annotated proteins from EMBL.
++ ``Kraken2 plasmid Annotated Protein Meta Data``: The metadata for the 53,329 annotated proteins from Kraken2.
++ ``DDBJ plasmid Annotated Protein Meta Data``: The metadata for the 461,401 annotated proteins from DDBJ.
++ ``TPA plasmid Annotated Protein Meta Data``: The metadata for the 726 annotated proteins from TPA.
 
-#### tRNA & tmRNA gene meta data download
-+ ``All Phage tRNA & tmRNA Gene Meta Data``: The metadata for all the 1,298,181 tRNA & tmRNA genes predicted with Aragorn and tRNAscan-SE. Each row gives the information for a t(m)RNA gene; The columns give information about the phage ID (Phage\_ID), t(m)RNA ID (t(m)RNA\_ID), the binding amino acid (t(m)RNA), the t(m)RNA start site on the genome (Start), the t(m)RNA stop site on the genome (Stop), the strand (Strand), the length of t(m)RNA (Length), the permuted information (Permuted), the t(m)RNA sequence (Sequence), and the phage source dataset (Phage\_source).
-+ ``RefSeq Phage tRNA & tmRNA Gene Meta Data``: The metadata for the 25,612 tRNA & tmRNA genes from RefSeq.
-+ ``Genbank Phage tRNA & tmRNA Gene Meta Data``: The metadata for the 9,782 tRNA & tmRNA genes from Genbank.
-+ ``EMBL Phage tRNA & tmRNA Gene Meta Data``: The metadata for the 559 tRNA & tmRNA genes from EMBL.
-+ ``DDBJ Phage tRNA & tmRNA Gene Meta Data``: The metadata for the 215 tRNA & tmRNA genes from DDBJ.
-+ ``PhagesDB Phage tRNA & tmRNA Gene Meta Data``: The metadata for the 22,135 tRNA & tmRNA genes from PhagesDB.
-+ ``GVD Phage tRNA & tmRNA Gene Meta Data``: The metadata for the 22,889 tRNA & tmRNA genes from GVD.
-+ ``GPD Phage tRNA & tmRNA Gene Meta Data``: The metadata for the 310,394 tRNA & tmRNA genes from GPD.
-+ ``MGV Phage tRNA & tmRNA Gene Meta Data``: The metadata for the 441,765 tRNA & tmRNA genes from MGV.
-+ ``TemPhD Phage tRNA & tmRNA Gene Meta Data``: The metadata for the 44,888 tRNA & tmRNA genes from TemPhD.
-+ ``CHVD Phage tRNA & tmRNA Gene Meta Data``: The metadata for the 25,488 tRNA & tmRNA genes from CHVD.
-+ ``IGVD Phage tRNA & tmRNA Gene Meta Data``: The metadata for the 6,540 tRNA & tmRNA genes from IGVD.
-+ ``IMG_VR Phage tRNA & tmRNA Gene Meta Data``: The metadata for the 330,751 tRNA & tmRNA genes from IMG/VR.
-+ ``GOV2 Phage tRNA & tmRNA Gene Meta Data``: The metadata for the 52,319 tRNA & tmRNA genes from GOV2.
-+ ``STV Phage tRNA & tmRNA Gene Meta Data``: The metadata for the 4,844 tRNA & tmRNA genes from STV.
+#### Secondary Metabolism meta data download
+The metadata for all the 44,551 secondary metabolism region predicted by antiSMASH. Each row gives the information for a secondary metabolism region; The columns give information about the plasmid ID (Plasmid\_ID),  secondary metabolism region number (Region), the region start site on the genome (Start), the region stop site on the genome (End), the most similar known cluster for predicted region (Mosr similar known cluster), and the similarity among predicted region and known cluster (Similarity).
 
-#### Anti-CRISPR protein meta data download
-+ ``All Phage Anti-CRISPR Protein Meta Data``: The metadata for all the 307,329 anti-CRISPR proteins. Each row gives the information for an anti-CRISPR protein; The columns give information about the phage ID (Phage\_ID), protein ID (Protein\_ID), annotation source (Source), and the phage source dataset (Phage\_source).
-+ ``RefSeq Phage Anti-CRISPR Protein Meta Data``: The metadata for the 115,583 anti-CRISPR proteins from RefSeq.
-+ ``Genbank Phage Anti-CRISPR Protein Meta Data``: The metadata for the 54,816 anti-CRISPR proteins from Genbank.
-+ ``EMBL Phage Anti-CRISPR Protein Meta Data``: The metadata for the 2,807 anti-CRISPR proteins from EMBL.
-+ ``DDBJ Phage Anti-CRISPR Protein Meta Data``: The metadata for the 4,803 anti-CRISPR proteins from DDBJ.
-+ ``PhagesDB Phage Anti-CRISPR Protein Meta Data``: The metadata for the 48 anti-CRISPR proteins from PhagesDB.
-+ ``GVD Phage Anti-CRISPR Protein Meta Data``: The metadata for the 4,882 anti-CRISPR proteins from GVD.
-+ ``GPD Phage Anti-CRISPR Protein Meta Data``: The metadata for the 26,249 anti-CRISPR proteins from GPD.
-+ ``MGV Phage Anti-CRISPR Protein Meta Data``: The metadata for the 24,692 anti-CRISPR proteins from MGV.
-+ ``TemPhD Phage Anti-CRISPR Protein Meta Data``: The metadata for the 7,497 anti-CRISPR proteins from TemPhD.
-+ ``CHVD Phage Anti-CRISPR Protein Meta Data``: The metadata for the 7,256 anti-CRISPR proteins from CHVD.
-+ ``IGVD Phage Anti-CRISPR Protein Meta Data``: The metadata for the 1,523 anti-CRISPR proteins from IGVD.
-+ ``IMG_VR Phage Anti-CRISPR Protein Meta Data``: The metadata for the 20,338 anti-CRISPR proteins from IMG/VR.
-+ ``GOV2 Phage Anti-CRISPR Protein Meta Data``: The metadata for the 36,246 anti-CRISPR proteins from GOV2.
-+ ``STV Phage Anti-CRISPR Protein Meta Data``: The metadata for the 589 anti-CRISPR proteins from STV.
++ ``PLSDB plasmid Secondary Metabolism Meta Data``: The metadata for the 9,010 secondary metabolism regions from PLSDB.
++ ``IMG-PR plasmid Secondary Metabolism Meta Data``: The metadata for the 27,000 secondary metabolism regions from IMG-PR.
++ ``COMPASS plasmid Secondary Metabolism Meta Data``: The metadata for the 1,913 secondary metabolism regions from COMPASS.
++ ``GenBank plasmid Secondary Metabolism Meta Data``: The metadata for the 12,424 secondary metabolism regions from GenBank.
++ ``RefSeq plasmid Secondary Metabolism Meta Data``: The metadata for the 12,188 secondary metabolism regions from RefSeq.
++ ``EMBL plasmid Secondary Metabolism Meta Data``: The metadata for the 452 secondary metabolism regions from EMBL.
++ ``Kraken2 plasmid Secondary Metabolism e Meta Data``: The metadata for the 82 secondary metabolism regions genes from Kraken2.
++ ``DDBJ plasmid Secondary Metabolism e Meta Data``: The metadata for the 666 secondary metabolism regions from DDBJ.
++ ``TPA plasmid Secondary Metabolism Meta Data``: The metadata for the 2 secondary metabolism regions from TPA.
 
-#### CRISPR array meta data download
-+ ``All Phage CRISPR Array Meta Data``: The metadata for all the 56,652 CRISPR arrays. Each row gives the information for a CRISPR array; The columns give information about the Phage\_ID, Duplicated\_Spacers, CRISPR\_ID, CRISPR\_Start, CRISPR\_End, CRISPR\_Length, Potential\_Orientation (AT%), CRISPRDirection Consensus\_Repeat, Repeat\_ID (CRISPRdb), Nb\_CRISPRs\_with\_same\_Repeat (CRISPRdb), Repeat\_Length, Spacers\_Nb, Mean\_size\_Spacers, Standard\_Deviation\_Spacers, Nb\_Repeats\_matching\_Consensus, Ratio\_Repeats\_match/TotalRepeat, Conservation\_Repeats (% identity), EBcons\_Repeats, Conservation\_Spacers (% identity), EBcons\_Spacers  Repeat\_Length\_plus\_mean\_size\_Spacers, Ratio\_Repeat/mean\_Spacers\_Length, CRISPR\_found\_in\_DB (if sequence IDs are similar), Evidence\_Level, and Phage\_source.
-+ ``RefSeq Phage CRISPR Array Meta Data``: The metadata for the 523 CRISPR arrays from RefSeq. 
-+ ``Genbank Phage CRISPR Array Meta Data``: The metadata for the 245 CRISPR arrays from Genbank. 
-+ ``EMBL Phage CRISPR Array Meta Data``: The metadata for the 17 CRISPR arrays from EMBL. 
-+ ``DDBJ Phage CRISPR Array Meta Data``: The metadata for the 30 CRISPR arrays from DDBJ. 
-+ ``PhagesDB Phage CRISPR Array Meta Data``: The metadata for the 294 CRISPR arrays from PhagesDB. 
-+ ``GVD Phage CRISPR Array Meta Data``: The metadata for the 1,373 CRISPR arrays from GVD. 
-+ ``GPD Phage CRISPR Array Meta Data``: The metadata for the 9,448 CRISPR arrays from GPD. 
-+ ``MGV Phage CRISPR Array Meta Data``: The metadata for the 16,096 CRISPR arrays from MGV. 
-+ ``TemPhD Phage CRISPR Array Meta Data``: The metadata for the 4,446 CRISPR arrays from TemPhD. 
-+ ``CHVD Phage CRISPR Array Meta Data``: The metadata for the 2,587 CRISPR arrays from CHVD. 
-+ ``IGVD Phage CRISPR Array Meta Data``: The metadata for the 410 CRISPR arrays from IGVD. 
-+ ``IMG_VR Phage CRISPR Array Meta Data``: The metadata for the 11,182 CRISPR arrays from IMG/VR. 
-+ ``GOV2 Phage CRISPR Array Meta Data``: The metadata for the 9,839 CRISPR arrays from GOV2. 
-+ ``STV Phage CRISPR Array Meta Data``: The metadata for the 162 CRISPR arrays from STV. 
+#### tRNA & tmRNA meta data download
+The metadata for all the 109,510 tRNAs & tmRNAs predicted with Aragorn. Each row gives the information for a t(m)RNA gene; The columns give information about the plasmid ID (Plasmid\_ID), t(m)RNA ID (tRNA\_ID), the t(m)RNA type (tRNA Type), the t(m)RNA start site on the genome (Start), the t(m)RNA stop site on the genome (End), the strand (Strand), the length of t(m)RNA (Length), and the t(m)RNA sequence (Sequence).
 
-#### Virulent factor meta data download
-+ ``All Phage Virulent Factor Meta Data``: The metadata for all the 41,609 virulent factors. Each row gives the information for a virulent factor; The columns give information about the phage ID (Phage\_ID), protein ID (Protein\_ID), aligned protein ID in VFDB (Aligned\_Protein\_in\_VFDB), and the phage source dataset (Phage\_source)..
-+ ``RefSeq Phage Virulent Factor Meta Data``: The metadata for the 276 virulent factors from RefSeq.
-+ ``Genbank Phage Virulent Factor Meta Data``: The metadata for the 83 virulent factors from Genbank.
-+ ``EMBL Phage Virulent Factor Meta Data``: The metadata for the 11 virulent factors from EMBL.
-+ ``DDBJ Phage Virulent Factor Meta Data``: The metadata for the 40 virulent factors from DDBJ.
-+ ``GVD Phage Virulent Factor Meta Data``: The metadata for the 74 virulent factors from GVD.
-+ ``GPD Phage Virulent Factor Meta Data``: The metadata for the 805 virulent factors from GPD.
-+ ``MGV Phage Virulent Factor Meta Data``: The metadata for the 195 virulent factors from MGV.
-+ ``TemPhD Phage Virulent Factor Meta Data``: The metadata for the 21,865 virulent factors from TemPhD.
-+ ``CHVD Phage Virulent Factor Meta Data``: The metadata for the 408 virulent factors from CHVD.
-+ ``IGVD Phage Virulent Factor Meta Data``: The metadata for the 7 virulent factors from IGVD.
-+ ``IMG_VR Phage Virulent Factor Meta Data``: The metadata for the 17,835 virulent factors from IMG/VR.
-+ ``GOV2 Phage Virulent Factor Meta Data``: The metadata for the 10 virulent factors from GOV2.
++ ``PLSDB plasmid tRNA & tmRNA Gene Meta Data``: The metadata for the 14,385 tRNA & tmRNA genes from PLSDB.
++ ``IMG-PR plasmid tRNA & tmRNA Gene Meta Data``: The metadata for the 53,599 tRNA & tmRNA genes from IMG-PR.
++ ``COMPASS plasmid tRNA & tmRNA Gene Meta Data``: The metadata for the 2,685 tRNA & tmRNA genes from COMPASS.
++ ``GenBank plasmid tRNA & tmRNA Gene Meta Data``: The metadata for the 17,241 tRNA & tmRNA genes from GenBank.
++ ``RefSeq plasmid tRNA & tmRNA Gene Meta Data``: The metadata for the 18,939 tRNA & tmRNA genes from RefSeq.
++ ``EMBL plasmid tRNA & tmRNA Gene Meta Data``: The metadata for the 1,206 tRNA & tmRNA genes from EMBL.
++ ``Kraken2 plasmid tRNA & tmRNA Gene Meta Data``: The metadata for the 179 tRNA & tmRNA genes from Kraken2.
++ ``DDBJ plasmid tRNA & tmRNA Gene Meta Data``: The metadata for the 1,275 tRNA & tmRNA genes from DDBJ.
++ ``TPA plasmid tRNA & tmRNA Gene Meta Data``: The metadata for the 1 tRNA & tmRNA genes from TPA.
 
-#### Antimicrobial resistance gene meta data download
-+ ``All Phage Antimicrobial Resistance Gene Meta Data``: The metadata for all the 2,602 antimicrobial resistance genes. Each row gives the information for an antimicrobial resistance gene; The columns give information about the phage ID (Phage\_ID), protein ID (Protein\_ID), aligned protein ID in CARD (Aligned\_Protein\_in\_CARD), and the phage source dataset (Phage\_source).
-+ ``RefSeq Phage Antimicrobial Resistance Gene Meta Data``: The metadata for the 10 antimicrobial resistance genes from RefSeq.
-+ ``Genbank Phage Antimicrobial Resistance Gene Meta Data``: The metadata for the 7 antimicrobial resistance genes from Genbank.
-+ ``GVD Phage Antimicrobial Resistance Gene Meta Data``: The metadata for the 35 antimicrobial resistance genes from GVD.
-+ ``GPD Phage Antimicrobial Resistance Gene Meta Data``: The metadata for the 245 antimicrobial resistance genes from GPD.
-+ ``MGV Phage Antimicrobial Resistance Gene Meta Data``: The metadata for the 37 antimicrobial resistance genes from MGV.
-+ ``TemPhD Phage Antimicrobial Resistance Gene Meta Data``: The metadata for the 1,670 antimicrobial resistance genes from TemPhD.
-+ ``CHVD Phage Antimicrobial Resistance Gene Meta Data``: The metadata for the 88 antimicrobial resistance genes from CHVD.
-+ ``IGVD Phage Antimicrobial Resistance Gene Meta Data``: The metadata for the 4 antimicrobial resistance genes from IGVD.
-+ ``IMG_VR Phage Antimicrobial Resistance Gene Meta Data``: The metadata for the 505 antimicrobial resistance genes from IMG/VR.
-+ ``GOV2 Phage Antimicrobial Resistance Gene Meta Data``: The metadata for the 1 antimicrobial resistance genes from GOV2.
+#### CRISPR-Cas meta data download
+The metadata for all the 10,088 CRISPR-Cas systems. Each row gives the information for a CRISPR-Cas system; The columns give information about the Plasmid\_ID, Cas\_ID,  Cac\_start, Cac\_end, the subtype of Cas (Cas\_Subtype), CRISPR\_ID, CRISPR\_start, CRISPR\_end, the subtype of CRISPR (CRISPR_Subtype), the CRISPR\-Cac consenus prediction (CRISPR\-Cas Consenus Prediction), the sequence of consenus repeat (Consensus Repeat Sequence), and the Cas genes (Cas Genes).
+
++ ``PLSDB plasmid CRISPR-Cas Meta Data``: The metadata for the 1,482 CRISPR-Cas systems from PLSDB.
++ ``IMG-PR plasmid CRISPR-Cas Meta Data``: The metadata for the 3,653 CRISPR-Cas systems from IMG-PR.
++ ``COMPASS plasmid CRISPR-Cas Meta Data``: The metadata for the 489 CRISPR-Cas systems from COMPASS.
++ ``GenBank plasmid CRISPR-Cas Meta Data``: The metadata for the 1,967 CRISPR-Cas systems from GenBank.
++ ``RefSeq plasmid CRISPR-Cas Meta Data``: The metadata for the 2,079 CRISPR-Cas systems from RefSeq.
++ ``EMBL plasmid CRISPR-Cas Meta Data``: The metadata for the 88 CRISPR-Cas systems from EMBL.
++ ``Kraken2 plasmid CRISPR-Cas Meta Data``: The metadata for the 13 CRISPR-Cas systems from Kraken2.
++ ``DDBJ plasmid CRISPR-Cas Meta Data``: The metadata for the 317 CRISPR-Cas systems from DDBJ.
+
+#### Signal peptides meta data download
+The metadata for all the 75,349 signal peptides. Each row gives the information for a signal peptides; The columns give information about the Plasmid\_ID, Protein\_ID,  the protein start site on the genome (Start), the protein stop site on the genome(End), the strand encoding the protein (Strand), the protein product (Product), the predicted type of signal peptides (Prediction), the ration of other type of protein (OTHER), the ration of SP type of signal peptide (SP(Sec/SPI)), the ration of LIPO type of signal peptide (LIPO(Sec/SPII)), the ration of TAT type of signal peptide (TAT(Tat/SPI)), the ration of TATLIPO type of signal peptide (TATLIPO(Tat/SPII)), the ration of PILIN type of signal peptide (PILIN(Sec/SPIII)), the position of CS (CS position), and the probability of CS position (Probability of CS Position).
+
++ ``PLSDB plasmid Signal peptides Meta Data``: The metadata for the 570,217 signal peptides from PLSDB.
++ ``IMG-PR plasmid Signal peptides Meta Data``: The metadata for the 1,921,273 signal peptides from IMG-PR.
++ ``COMPASS plasmid Signal peptides Meta Data``: The metadata for the 130,636 signal peptides from COMPASS.
++ ``GenBank plasmid Signal peptides Meta Data``: The metadata for the 706,271 signal peptides from GenBank.
++ ``RefSeq plasmid Signal peptides Meta Data``: The metadata for the 721,644 signal peptides from RefSeq.
++ ``EMBL plasmid Signal peptides Meta Data``: The metadata for the 72,047 signal peptides from EMBL.
++ ``Kraken2 plasmid Signal peptides Meta Data``: The metadata for the 5,304 signal peptides from Kraken2.
++ ``DDBJ plasmid Signal peptides Meta Data``: The metadata for the 45,449 signal peptides from DDBJ.
++ ``TPA plasmid Signal peptides Meta Data``: The metadata for the 38 signal peptides from TPA.
+
+#### Antibiotic resistance gene meta data download
+The metadata for all the 80,591 antibiotic resistance genes annotated by RGI. Each row gives the information for an antibiotic resistance gene; The columns give information about the Pasmid_ID, Protein_ID, the protein source (Orf Prediction Source), the protein start site on the genome (Start), the protein stop site on the genome(End), the strand encoding the protein (Strand), the product of protein (Product),  RGI detection paradigm (Cut\_Off), the identifier of HSP (HSP_identifier), ARO term of top hit in CARD (Best\_Hit\_ARO), percent identity of match to top hit in CARD(Best\_identities), ARO accession of match to top hit in CARD (ARO), ARO categorization in CARD (Drug\_Class), the resistance mechanism of aligned protein (Resistance Mechanism), the AMR gene family of aligned protein (AMR Gene Family), the antibiotics of aligned protein (Antibiotic), and the aligned protein sequence (Sequence).
+
++ ``PLSDB plasmid Antibiotic Resistance Gene Meta Data``: The metadata for the 4,507,567 antibiotic resistance genes from PLSDB.
++ ``IMG-PR plasmid Antibiotic Resistance Gene Meta Data``: The metadata for the 14,076,411 antibiotic resistance genes from IMG-PR.
++ ``COMPASS plasmid Antibiotic Resistance Gene Meta Data``: The metadata for the 1,085,253 antibiotic resistance genes from COMPASS.
++ ``GenBank plasmid Antibiotic Resistance Gene Meta Data``: The metadata for the 5,306,293 antibiotic resistance genes from GenBank.
++ ``RefSeq plasmid Antibiotic Resistance Gene Meta Data``: The metadata for the 6,535,081 antibiotic resistance genes from RefSeq.
++ ``EMBL plasmid Antibiotic Resistance Gene Meta Data``: The metadata for the 312,031 antibiotic resistance genes from EMBL.
++ ``Kraken2 plasmid Antibiotic Resistance Gene Meta Data``: The metadata for the 42,956 antibiotic resistance genes from Kraken2.
++ ``DDBJ plasmid Antibiotic Resistance Gene Meta Data``: The metadata for the 374,778 antibiotic resistance genes from DDBJ.
++ ``TPA plasmid Antibiotic Resistance Gene Meta Data``: The metadata for the 583 antibiotic resistance genes from TPA.
+
+#### Virulence factor meta data download
+The metadata for all the 62,662 virulence factors. Each row gives the information for a virulence factor; The columns give information about the Plasmid\_ID, Protein\_ID, the protein source (Orf Prediction Source), the protein start site on the genome (Start), the protein stop site on the genome(End), the strand encoding the protein (Strand), aligned protein ID in VFDB (VFSeq\_ID) aligned identity (Identity), aligned e-value (E\-value), aligned gene name in VFDB (Gene\_Name), aligned protein product in VFDB (Product), aligned VFID in VFDB (VFID), aligned virulent factor name in VFDB (VF\_Name),  aligned virulent factor full name in VFDB (VF\_FullName), aligned protein VFCID in VFDB (VFCID), VF category of aligned virulent factor classified by VFDB (Vfcategory), the characteristics of aligned virulent factor (Characteristics), and the sequence of aligned protein (Sequence).
+
++ ``PLSDB plasmid Virulence Factor Meta Data``: The metadata for the 94,889 virulence factors from PLSDB.
++ ``IMG-PR plasmid Virulence Factor Meta Data``: The metadata for the 165,704 virulence factors from IMG-PR.
++ ``COMPASS plasmid Virulence Factor Meta Data``: The metadata for the 21,045 virulence factors from COMPASS.
++ ``GenBank plasmid Virulence Factor Meta Data``: The metadata for the 112,683 virulence factors from GenBank.
++ ``RefSeq plasmid Virulence Factor Meta Data``: The metadata for the 107,525 virulence factors from RefSeq.
++ ``EMBL plasmid Virulence Factor Meta Data``: The metadata for the 4,997 virulence factors from EMBL.
++ ``Kraken2 plasmid Virulence Factor Meta Data``: The metadata for the 816 virulence factors from Kraken2.
++ ``DDBJ plasmid Virulence Factor Meta Data``: The metadata for the 6,831 virulence factors from DDBJ.
++ ``TPA plasmid Virulence Factor Meta Data``: The metadata for the 13 virulence factors from TPA.
 
 #### Transmembrane protein meta data download
-+ ``All Phage Transmembrane Protein Meta Data``: The metadata for all the 4,020,770 transmembrane proteins. Each row gives the information for a transmembrane protein; The columns give information about the phage ID (Phage\_ID), protein ID (Protein\_ID), protein length (Length), the number of predicted transmembrane helices (PredictedTMHsNumber), the expected number of amino acids intransmembrane helices (ExpnumberofAAsinTMHs), the expected number of amino acids in transmembrane helices in the first 60 amino acids of the protein (Expnumberfirst60AAs), the total probability that the N-term is on the cytoplasmic side of the membrane (TotalprobofNin), a warning that is produced when "Exp number, first 60 AAs" is larger than 10 (POSSIBLENterm), Insidesource, Insidestart, Insideend, TMhelixsource, TMhelixstart, TMhelixend, Outsidesource, Outsidestart, Outsideend, and the phage source dataset (Phage\_source).
-+ ``RefSeq Phage Transmembrane Protein Meta Data``: The metadata for the 43,567 transmembrane proteins from RefSeq. 
-+ ``Genbank Phage Transmembrane Protein Meta Data``: The metadata for the 20,549 transmembrane proteins from Genbank. 
-+ ``EMBL Phage Transmembrane Protein Meta Data``: The metadata for the 1,023 transmembrane proteins from EMBL. 
-+ ``DDBJ Phage Transmembrane Protein Meta Data``: The metadata for the 1,559 transmembrane proteins from DDBJ. 
-+ ``PhagesDB Phage Transmembrane Protein Meta Data``: The metadata for the 32,227 transmembrane proteins from PhagesDB. 
-+ ``GVD Phage Transmembrane Protein Meta Data``: The metadata for the 80,967 transmembrane proteins from GVD. 
-+ ``GPD Phage Transmembrane Protein Meta Data``: The metadata for the 741,785 transmembrane proteins from GPD. 
-+ ``MGV Phage Transmembrane Protein Meta Data``: The metadata for the 830,363 transmembrane proteins from MGV. 
-+ ``TemPhD Phage Transmembrane Protein Meta Data``: The metadata for the 437,596 transmembrane proteins from TemPhD.
-+ ``CHVD Phage Transmembrane Protein Meta Data``: The metadata for the 198,934 transmembrane proteins from CHVD.
-+ ``IGVD Phage Transmembrane Protein Meta Data``: The metadata for the 33,306 transmembrane proteins from IGVD.
-+ ``IMG_VR Phage Transmembrane Protein Meta Data``: The metadata for the 1,200,538 transmembrane proteins from IMG/VR.
-+ ``GOV2 Phage Transmembrane Protein Meta Data``: The metadata for the 384,232 transmembrane proteins from GOV2.
-+ ``STV Phage Transmembrane Protein Meta Data``: The metadata for the 14,124 transmembrane proteins from STV.
+The metadata for all the 81,339 transmembrane proteins. Each row gives the information for a transmembrane protein; The columns give information about the Plasmid\_ID, Protein\_ID, the protein start site on the genome (Start), the protein stop site on the genome(End), the strand encoding the protein (Strand), protein length (Length), the number of predicted transmembrane helices (Number of predicted TMHs), the annotation source (Source), the position of transmembrane helices (Position), the start site (start), the stop site (end), the expected number of amino acids intransmembrane helices (Exp number of AAs in TMHs), the expected number of amino acids in transmembrane helices in the first 60 amino acids of the protein (Exp number, first 60 AAs), and the total probability that the N-term is on the cytoplasmic side of the membrane (Total prob of N\-in).
+
++ ``PLSDB plasmid Transmembrane Protein Meta Data``: The metadata for the 1,345,494 transmembrane proteins from PLSDB.
++ ``IMG-PR plasmid Transmembrane Protein Meta Data``: The metadata for the 3,221,059 transmembrane proteins from IMG-PR.
++ ``COMPASS plasmid Transmembrane Protein Meta Data``: The metadata for the 465,289 transmembrane proteins from COMPASS.
++ ``GenBank plasmid Transmembrane Protein Meta Data: The metadata for the 1,313,235 transmembrane proteins from GenBank.
++ ``RefSeq plasmid Transmembrane Protein Meta Data``: The metadata for the 1,311,177 transmembrane proteins from RefSeq.
++ ``EMBL plasmid Transmembrane Protein Meta Data``: The metadata for the 76,271 transmembrane proteins from EMBL.
++ ``Kraken2 plasmid Transmembrane Protein Meta Data``: The metadata for the 10,749 transmembrane proteins from Kraken2.
++ ``DDBJ plasmid Transmembrane Protein Meta Data``: The metadata for the 83,828 transmembrane proteins from DDBJ.
++ ``TPA plasmid Transmembrane Protein Meta Data``: The metadata for the 129 transmembrane proteins from TPA.
 
 ## FASTA file download
-### Phage FASTA file download
-+ ``RefSeq Phage FASTA File``: Phage sequences from RefSeq in FASTA format.
-+ ``Genbank Phage FASTA File``: Phage sequences from Genbank in FASTA format.
-+ ``EMBL Phage FASTA File``: Phage sequences from EMBL in FASTA format.
-+ ``DDBJ Phage FASTA File``: Phage sequences from DDBJ in FASTA format.
-+ ``PhagesDB Phage FASTA File``: Phage sequences from PhagesDB in FASTA format.
-+ ``GPD Phage FASTA File``: Phage sequences from GPD in FASTA format.
-+ ``GVD Phage FASTA File``: Phage sequences from GVD in FASTA format.
-+ ``MGV Phage FASTA File``: Phage sequences from MGV in FASTA format.
-+ ``TemPhD Phage FASTA File``: Phage sequences from TemPhD in FASTA format.
-+ ``CHVD Phage FASTA File``: Phage sequences from CHVD in FASTA format.
-+ ``IGVD Phage FASTA File``: Phage sequences from IGVD in FASTA format.
-+ ``IMG_VR Phage FASTA File``: Phage sequences from IMG/VR in FASTA format.
-+ ``GOV2 Phage FASTA File``: Phage sequences from GOV2 in FASTA format.
-+ ``STV Phage FASTA File``: Phage sequences from STV in FASTA format.
+### Plasmid FASTA file download
 
-### Protein FASTA file download 
-+ ``RefSeq Protein FASTA File``: Protein sequences from RefSeq in FASTA format.
-+ ``Genbank Protein FASTA File``: Protein sequences from Genbank in FASTA format.
-+ ``EMBL Protein FASTA File``: Protein sequences from EMBL in FASTA format.
-+ ``DDBJ Protein FASTA File``: Protein sequences from DDBJ in FASTA format.
-+ ``PhagesDB Protein FASTA File``: Protein sequences from PhagesDB in FASTA format.
-+ ``GPD Protein FASTA File``: Protein sequences from GPD in FASTA format.
-+ ``GVD Protein FASTA File``: Protein sequences from GVD in FASTA format.
-+ ``MGV Protein FASTA File``: Protein sequences from MGV in FASTA format.
-+ ``TemPhD Protein FASTA File``: Protein sequences from TemPhD in FASTA format.
-+ ``CHVD Protein FASTA File``: Protein sequences from CHVD in FASTA format.
-+ ``IGVD Protein FASTA File``: Protein sequences from IGVD in FASTA format.
-+ ``IMG_VR Protein FASTA File``: Protein sequences from IMG/VR in FASTA format.
-+ ``GOV2 Protein FASTA File``: Protein sequences from GOV2 in FASTA format.
-+ ``STV Protein FASTA File``: Protein sequences from STV in FASTA format.
++ ``PLSDB plasmid FASTA File``: plasmid sequences from PLSDB in FASTA format.
++ ``IMG-PR plasmid FASTA File``: plasmid sequences from IMG-PR in FASTA format.
++ ``COMPASS plasmid FASTA File``: plasmid sequences from COMPASS in FASTA format.
++ ``GenBank plasmid FASTA File``: plasmid sequences from GenBank in FASTA format.
++ ``RefSeq plasmid FASTA File``: plasmid sequences from RefSeq in FASTA format.
++ ``EMBL plasmid FASTA File``: plasmid sequences from EMBL in FASTA format.
++ ``Kraken2 plasmid FASTA File``: plasmid sequences from Kraken2 in FASTA format.
++ ``DDBJ plasmid FASTA File``: plasmid sequences from DDBJ in FASTA format.
++ ``TPA plasmid FASTA File``: plasmid sequences from TPA in FASTA format.
+
+## GBK file download
+### Plasmid GBK file download
+
++ ``PLSDB plasmid GBK File``: plasmid sequences from PLSDB in GBK format.
++ ``IMG-PR plasmid GBK File``: plasmid sequences from IMG-PR in GBK format.
++ ``COMPASS plasmid GBK File``: plasmid sequences from COMPASS in GBK format.
++ ``GenBank plasmid GBK File``: plasmid sequences from GenBank in GBK format.
++ ``RefSeq plasmid GBK File``: plasmid sequences from RefSeq in GBK format.
++ ``EMBL plasmid GBK File``: plasmid sequences from EMBL in GBK format.
++ ``Kraken2 plasmid GBK File``: plasmid sequences from Kraken2 in GBK format.
++ ``DDBJ plasmid GBK File``: plasmid sequences from DDBJ in GBK format.
++ ``TPA plasmid GBK File``: plasmid sequences from TPA in GBK format.
 
 ## GFF3 file download
-### Phage GFF3 File Download
-+ ``RefSeq Phage GFF3 File``: Phage annotations from RefSeq in GFF3 format.
-+ ``Genbank Phage GFF3 File``: Phage annotations from Genbank in GFF3 format.
-+ ``EMBL Phage GFF3 File``: Phage annotations from EMBL in GFF3 format.
-+ ``DDBJ Phage GFF3 File``: Phage annotations from DDBJ in GFF3 format.
-+ ``PhagesDB Phage GFF3 File``: Phage annotations from PhagesDB in GFF3 format.
-+ ``GPD Phage GFF3 File``: Phage annotations from GPD in GFF3 format.
-+ ``GVD Phage GFF3 File``: Phage annotations from GVD in GFF3 format.
-+ ``MGV Phage GFF3 File``: Phage annotations from MGV in GFF3 format.
-+ ``TemPhD Phage GFF3 File``: Phage annotations from TemPhD in GFF3 format.
-+ ``CHVD Phage GFF3 File``: Phage annotations from CHVD in GFF3 format.
-+ ``IGVD Phage GFF3 File``: Phage annotations from IGVD in GFF3 format.
-+ ``IMG_VR Phage GFF3 File``: Phage annotations from IMG/VR in GFF3 format.
-+ ``GOV2 Phage GFF3 File``: Phage annotations from GOV2 in GFF3 format.
-+ ``STV Phage GFF3 File``: Phage annotations from STV in GFF3 format.
+### Plasmid GFF3 File Download
+
++ ``PLSDB plasmid GFF3 File``: plasmid sequences from PLSDB in GFF3 format.
++ ``IMG-PR plasmid GFF3 File``: plasmid sequences from IMG-PR in GFF3 format.
++ ``COMPASS plasmid GFF3 File``: plasmid sequences from COMPASS in GFF3 format.
++ ``GenBank plasmid GFF3 File``: plasmid sequences from GenBank in GFF3 format.
++ ``RefSeq plasmid GFF3 File``: plasmid sequences from RefSeq in GFF3 format.
++ ``EMBL plasmid GFF3 File``: plasmid sequences from EMBL in GFF3 format.
++ ``Kraken2 plasmid GFF3 File``: plasmid sequences from Kraken2 in GFF3 format.
++ ``DDBJ plasmid GFF3 File``: plasmid sequences from DDBJ in GFF3 format.
++ ``TPA plasmid GFF3 File``: plasmid sequences from TPA in GFF3 format.
+
 

@@ -1,104 +1,98 @@
 # Welcome to PhageScope database
 
 
-<div align=center><img src="/Figures/database.png" width="80%"></div>
+<div align=center><img src="/Figures/Plasmid_database.png" width="80%"></div>
 
 ## Data description
-PhageScope database contains **873,718** phage sequences from various sources, including **4,637** sequences from **RefSeq** [1], **2,086** sequences from **Genbank** [2], **156** sequences from **EMBL** [3], **290** sequences from **DDBJ** [4], **3,754** sequences from **PhagesDB** [5], **195,699** sequences from **GOV2** [6], **31,402** sequences from **GVD** [7], **142,809** sequences from **GPD** [8], **189,680** sequences from **MGV** [9], **44,935** sequences from **CHVD** [10], **4,065** sequences from **STV** [11], **66,823** sequences from **TemPhD** [12], **10,021** sequences from **IGVD** [13], **177,361** sequences from **IMG/VR** [14].     
+PlasmidScope integrates **953,438** plasmids from various databases, including **86,009** plasmids from **RefSeq** [1], **92,310** plasmids from **Genbank** [2], **6,267** plasmids from **EMBL** [3], **5,336** plasmids from **DDBJ** [4], **7** plasmids from **TPA** [5], **50,554** plasmids from **PLSDB** [6], **699,973** plasmids from **IMG/PR** [7], **12,084** plasmids from **COMPASS** [8], **898** plasmids from **Kraken2** [9].
 
-Applying multiple state-of-the-art tools to analysing the phage sequences, we obtained **comprehensive annotations** for the phages.
-
-### Phage completeness
-Phage completeness refers to the extent to which a phage genome has been sequenced and assembled. The quality and completeness of the collected phages vary considerably.  
-
-We applied **CheckV** [15] to the phage sequences, which estimates the sequence completeness according to the reference genome length. According to the CheckV results, 72,668 sequences are **complete** (100% completeness), 300,137 sequences with **high-quality** (>90% completeness), 212,175 sequences with **medium-quality** (50-90% completeness), 267,050 sequences with **low-quality** (0-50% completeness), with the remaining 21,688 sequences not-determined.
+Applying multiple state-of-the-art tools to analyzing the plasmid sequences, we obtained **comprehensive annotations** for the plasmids.
 
 ### Host information
-Host information indicates the organism(s) that a phage is known to infect or interact with. Knowing the host range of phage can help researchers identify potential targets for phage therapies or study the coevolution between phages and their hosts.  
+Host information indicates the organism(s) that a plasmid exists in or extracts from. Knowing the host range of plasmids can help researchers understand the impacts of the plasmids on the physiological features of the hosts or identify the communications among the hosts.
 
-Among the 873,718 phages, the host information of **530,085** phages is available from the data submitters. We used these phage sequences to create a local nucleotide database and aligned other phages with the database via **BLASTN** [16], adhering to a stringent e-value threshold of less than 1e-5 to narrow down the matches to the most reliable results. The host taxonomy of the hit with the lowest e-value was returned as the predicted taxonomy for **124,446** phages. For the rest **219,187** phages, we employed **DeepHost** [17], a tool predicting phage host via a convolutional neural network, with the model retrained from phages with given host annotation. We provided the whole taxonomy ranks for the host with the information from **NCBI taxonomy database** [18]. 
+To obtain the host information, we extracted the related information from the background of plasmids **manually with text mining**. Among the **953,438** plasmids, the host information of **530,875** plasmids (55.86%) is available from the data submitters, while the other **422,563** plasmids (44.32%) are unavailable. In addition, we provided the complete taxonomy ranks for the host with the information from **NCBI taxonomy database** [10].
 
-### Phage lifestyle
-Phage lifestyle refers to the way in which a phage interacts with its host organism. It can be classified as either lytic or temperate. Lytic phages infect and rapidly lyse (destroy) the host cells to release progeny phages, while temperate phages can switch between a lytic and a lysogenic cycle, integrating their genetic material into the host genome. Understanding the phage lifestyle helps in predicting the potential impact of phages on their host organisms and studying the mechanisms underlying their interactions.  
+### Topology
+The topological structure of a plasmid can significantly influence its behavior, replication, stability, and interaction with the hosts. 
 
-The phages from the TemPhD dataset are temperate phages according to their phage mining pipeline. As for the remaining phages, we utilized **Graphage** [19], which integrates sequence information and 206 lysogeny-associated proteins to predict their phage lifestyle. Overall, the PhageScope database consists of **553,688 virulent phages** and **320,030 temperate** phages.
+According to the topological structures, plasmids can be divided into four types: circular plasmid, linear plasmid, plasmids with direct terminal repeats, and plasmids with inverted terminal repeats. Circular plasmids are the most common and typically the most stable, while linear plasmids and those with terminal repeats have specialized mechanisms to ensure their maintenance and function within the host. To obtain the topological information, we extracted the related information from the background of plasmids **manually with text mining**. Overall, PlasmidScope contains **183,970 circular plasmids** (19.30%), **623,451 linear plasmids** (65.39%), **142,805 plasmids with direct terminal repeats** (14.98%), and **3,212 plasmids with inverted terminal repeats** (0.33%).
 
-### ORF & annotated protein
-ORF stands for Open Reading Frame and represents a region of DNA that has the potential to be translated into a protein. In PhageScope, Information about ORFs and annotated proteins provides insights into the predicted genes and their corresponding proteins within the phage genomes. These annotations are crucial for understanding the genetic content of phages, identifying potential virulence factors, and exploring the functional diversity encoded in their genomes.  
+### Mobility
+The mobility of a plasmid refers to its ability to transfer from one bacterial cell to another. This is a key feature in horizontal gene transfer, contributing to the spread of genetic traits such as antibiotic resistance, virulence factors, and metabolic capabilities among bacterial populations. The mobility of plasmids reflects their ability to transfer between cells, significantly influencing bacterial adaptability, gene dissemination, and evolutionary dynamics. 
 
-The phage sequences from RefSeq, Genbank, EMBL, and DDBJ come with these genetic features annotated. For the phages sourced from PhagesDB, GVD, GPD, MGV, and TemPhD, we first applied **Prodigal** [20] to identify the ORFs and obtained **43,088,582** proteins, and then employed **eggNOG-mapper** [21] to annotate the protein functions by assigning orthology. For proteins that lacked hits, we iteratively applied **mmseqs** [22] to detect homology from the PHROG database [23], and then annotated the proteins with the functional information from the homology. The proteins were categorized into ten types, including **lysis**, **integration**, **replication**, **tRNA-related**, **regulation**, **packaging**, **assembly**, **infection**, **immune**, and **hypothetical**, based on key word searches.
+According to the types of mobility, we divided the plasmids into conjugative plasmids, mobilizable plasmids, and non-mobilizable plasmids. PlasmidScope adopted the **MOB suite** [11] to deduce the mobility of the plasmids. In summary, PlasmidScope identified **88,309 conjugative plasmids** (9.26%), **720,975 mobilizable plasmids** (75.62%), and 144,154 **non-mobilizable plasmids** (15.12%).
 
-### Terminators
-Terminators are specific DNA sequences that indicate the end of a gene or a functional genetic region. The annotation of terminators provides information about the locations where the genes or functional regions within the phage genomes end. This information is valuable for accurately determining the boundaries of genes, regulatory regions, or other functional elements in the phage genomes.  
+### Completeness
+Plasmid completeness refers to the extent to which a plasmid genome has been achieved. The quality and completeness of the collected plasmids vary considerably.
 
-We employed **TransTermHP** [24] to predict transcription terminators within the phage genomes, resulting in a comprehensive collection of **6,462,417** terminators derived from the phage sequences.  
+To obtain reliable completeness information, we extracted the information on plasmid genome completeness from the background of plasmids manually with text mining. According to the statistical results, **340,490 sequences** (35.71%) are complete plasmids and **612,948 sequences** (64.29%) are incomplete plasmids.
 
-### Taxonomy
-To determine the taxonomic classification for phages, 30,553 taxonomy-specific VOGs from eight taxonomical groups were selected as the marker genes. For each phage, we applied HMMsearch to align its encoded proteins to the VOGs and assigned it to the taxonomical group with the most HMM hits.  
+### ORF prediction & protein annotation
+ORF stands for Open Reading Frame and represents a region of DNA that has the potential to be translated into a protein. In PlasmidScope, information about ORFs and annotated proteins provides insights into the predicted genes and their corresponding proteins within the plasmid genomes. These annotations are crucial for the understanding of the genetic content of plasmids, identifying potential virulence factors, antibiotic resistance genes, secondary metabolites, etc.
 
-### tRNA & tmRNA genes
-tRNA and tmRNA genes encode RNA molecules that play essential roles in protein synthesis and quality control, respectively. The identification and annotation of tRNA and tmRNA genes indicate the presence of these functional elements within the phage genomes. By studying these genes, users can gain insights into the phage's ability to manipulate the host's protein synthesis machinery and potentially identify mechanisms to evade host defenses or manipulate host cellular functions.  
+The plasmids from RefSeq, Genbank, EMBL, DDBJ, and TPA contained the annotated genetic features. For the plasmids collected from PLSDB, IMG-PR, COMPASS, and Kraken2, we first applied **Prokka** [12] to identify the ORFs, and then employed **eggNOG-mapper** [13] to annotate the protein functions by assigning orthologs. A total of **39,172,224 proteins** were identified, which were categorized into **26 types**, including carbohydrate transport and metabolism, posttranslational modification, cell cycle control, etc.
 
-We applied **ARAGORN** [25] and **tRNAscan-SE** [26] to detect tRNA and tmRNA genes in phage sequences, leading to the delineation of **691,091 tRNA** genes and **11,516 tmRNA genes**. 
+### Virulence factors and antibiotic resistance genes
+Virulence factors (VFs) are molecules produced by pathogens that enhance their ability to cause disease. VFs help the pathogen invade the host, evade the immune system, and obtain nutrients from the host. Antibiotic resistance genes (ARGs) encode proteins that enable bacteria to survive in the presence of antibiotics. The presence of virulence factors and antibiotic resistance genes on plasmids could enhance bacterial adaptability, pathogenicity, and survival, contributing to the spread of infectious diseases and complicating their treatment.
 
-### Anti-CRISPR proteins
-Anti-CRISPR proteins are viral proteins that can inhibit the activity of CRISPR-Cas systems, which are bacterial defense mechanisms against phage infections. The annotation of anti-CRISPR proteins provides information on the presence and diversity of such proteins within the phage genomes. Understanding these proteins can shed light on the coevolutionary arms race between phages and bacteria and potentially offer insights into the development of strategies to overcome bacterial CRISPR-mediated immunity.  
+PlasmidScope employed **Diamond** [14] and **Virulence Factor Database** [15] to identify VFs on plasmids, resulting in a collection of **62,662 VFs** which can be categorized into **14 classes**, including invasion, immune modulation, adherence, etc. In addition, PlasmidScope adopted **RGI** [16] and **Comprehensive Antibiotic Resistance Database** [17] to identify ARGs, leading to **80,591 ARGs** which can be categorized into **70 drug-resistance classes**, including cephalosporin, fluoroquinolone antibiotic, aminoglycoside, etc. 
 
-To obtain comprehensive Anti-CRISPR annotations, we incorporate multiple tools to identify anti-CRISPR proteins from the PhageScope database. We first collected the anti-CRIPSR proteins from **Anti-CRISPRdb** [27] to create a local nucleotide database and aligned phage protein sequences with the database via **mmseqs** [22], with stringent criteria for reliable alignment (identity > 80% and coverage > 40%) employed to identify anti-CRISPR proteins.  
+### tRNAs & tmRNAs
+tRNA (transfer RNA) and tmRNA (transfer-messenger RNA) on plasmids play significant roles in enhancing protein synthesis, maintaining translational efficiency, and ensuring cellular quality control. Their presence can confer a variety of physiological advantages to the host, including protein production enhancement, stress response, and genetic flexibility, which contribute to bacterial adaptability and survival in diverse environments.
 
-To expand the search for novel anti-CRISPR proteins, we also incorporated **AcRanker** [28], a machine learning tool, to predict novel anti-CRISPR proteins. AcRanker assigns a rank to candidate proteins based on their likelihood of being an anti-CRISPR protein. To ensure confidence in the annotations, only candidate proteins ranking higher than at least 50% of the proteins from Anti-CRISPRdb were considered as annotated anti-CRISPR proteins.  
+PlasmidScope applied **ARAGORN** [18] to detect tRNA and tmRNA genes in plasmid sequences, leading to the delineation of **108,597 tRNA** and **913 tmRNA**.
 
-By integrating these methodologies, a total of **307,329** anti-CRISPR proteins were identified within the phage genomes.
+### CRISPR-Cas systems
+The CRISPR-Cas (Clustered Regularly Interspaced Short Palindromic Repeats and CRISPR-associated proteins) system is a form of adaptive immunity found in bacteria and archaea. It provides hosts with a defense mechanism against invading genetic elements such as viruses (bacteriophages) and plasmids. In addition, the CRISPR-Cas system on plasmids regulates horizontal gene transfer and enhances bacterial adaptability, offering powerful tools for synthetic biology and biotechnology.
 
-### CRISPR arrays
-CRISPR array is a characteristic feature of bacterial genomes and acts as an adaptive immune system against phages and other foreign nucleic acids. The annotation of CRISPR arrays indicates the presence of these arrays within the phage genomes associated with bacteria. This information helps in understanding the interplay between phages and bacterial immune systems, identifying potential sources of phage resistance, and studying the dynamics of phage-bacteria coevolution.  
+PlasmidScope used **CRISPRCasTyper** [19] to identify CRISPR-Cas systems on plasmids, and discovered a total of **10,088 CRISPR-CAS systems** distributed in 953,438 plasmids. PlasmidScope provide the type and location of the CRISPR and CAS for each CRISPR-Cas system, along with their sequences for further analysis.
 
-In order to investigate the CRISPR array contained within the PhageScope database, **CRISPRCasFinder** [29] was employed with the objective of identifying the clustered regularly interspaced short palindromic repeats (CRISPRs) present in the phage sequences. The resulting collection of **56,652** CRISPR arrays, accompanied by their **corresponding spacer information**, has been made available within the PhageScope database.
+### Secondary metabolites
+Secondary metabolites encoded by genes on plasmids can provide natural cyclic peptides with significant clinical applications, influencing the host's survival, competitiveness, and interactions with the environment. They can provide advantages in terms of antibiotic production, nutrient acquisition, defense against predators and competitors, symbiotic interactions, and environmental adaptation. The presence of these genes on plasmids also allows for their rapid spread through horizontal gene transfer, promoting the evolution and diversification of microbial populations.
 
-### Virulent factors and Antimicrobial resistance genes
-The identification of virulent factors and antimicrobial resistance genes is essential for understanding the pathogenicity and antimicrobial susceptibility patterns of microorganisms.  
+PlasmidScope employed **antiSMASH** [20] to identify the secondary metabolites within the plasmids. The resulting collection of **32,127 secondary metabolites** has been made available within the PlasmidScope database, which was divided into **74 biosynthetic gene clusters types** including non-ribosomal peptide synthetases, type I and type II polyketide synthases, the ribosomally synthesised and post-translationally modified peptide, etc.
 
-We employed **mmseqs** [22] to conduct homology search for the phage proteins against **VFDB** [30] and **CARD** [31]. Virulence factor or antimicrobial resistance genes are identified on phage genomes if the match meets the thresholds of > 80% identity and > 40% coverage, which results in **41,609** virulent factors and **2,602** antimicrobial resistance genes.  
+### Signal peptides
+Signal peptides are short amino acid sequences typically found at the N-terminus of a newly synthesized protein. They serve as "address tags" that direct the protein to its correct location within the cell or for secretion outside the cell. The presence of signal peptide-encoding genes on plasmids facilitates the rapid spread of virulence factors and antibiotic resistance genes through horizontal gene transfer, promoting adaptation and survival of hosts in diverse environments.
+
+PlasmidScope applied **SignalP** [21] to identify the signal peptides among the predicted proteins. In summary, a total of **75,349** proteins were identified as signal peptides, which can be categorized into **five types**, including metallo-beta-lactamase type 2, mercuric transport protein periplasmic component, cation efflux system protein CusC, etc.
 
 ### Transmembrane proteins
-Transmembrane proteins are proteins that span the lipid bilayer of cell membranes. The annotation of transmembrane proteins provides information on the presence and characteristics of such proteins within the phage genomes. These annotations offer insights into the potential interactions between phages and host cell membranes, their roles in phage infection and release, and the exploitation of host cellular processes by phages.  
+Transmembrane proteins are proteins that span the lipid bilayer of cell membranes. The annotation of transmembrane proteins provides information on the presence and characteristics of such proteins within the plasmid genomes. These annotations offer insights into the potential interactions between plasmid and host cell membrane and their roles in plasmid infection and release.
 
-We applied **TMHMM** [32] to the phage protein sequences from the PhageScope database. A total of **4,020,770** proteins were identified as helical membrane proteins, exhibiting **1-48 transmembrane helices**. The resultant set of transmembrane proteins, coupled with their corresponding **topology information**, has been made accessible through the PhageScope database.
+PlasmidScope applied **TMHMM** [22] to detect the transmembrane proteins among the predicted proteins. A total of **81,339** proteins were identified as helical membrane proteins, exhibiting **1-48 transmembrane helices**. The resultant set of transmembrane proteins, coupled with their corresponding **topology information**, has been made accessible through the PlasmidScope database.
+
+### Transmembrane proteins
+Protein structure is fundamental to the proper function, stability, specificity, and regulation of proteins. It plays a critical role in health and disease, biotechnology, and the effectiveness of plasmid-encoded proteins. Understanding and maintaining proper protein structure is essential for harnessing the full potential of proteins in biological systems and applications.
+
+PlasmidScope applied **ESMFold** [23] to predict the structure of the **39,172,224** proteins. The predicted protein structure can be viewed on PlasmidScope, which also supports the download of the PDB structure file. 
+
 
 ### Comparative genomic studies
-Comparative genomic studies, including sequence clustering, sequence alignment, and comparative tree construction, are also provided for the curated phages.
+Comparative genomic studies, including sequence alignment and comparative tree construction, are also provided for the curated plasmids.
 
-
-## Citation
-[1] O'Leary N A, Wright M W, Brister J R, et al. Reference sequence (RefSeq) database at NCBI: current status, taxonomic expansion, and functional annotation[J]. Nucleic acids research, 2016, 44(D1): D733-D745.  
-[2] Benson D A, Cavanaugh M, Clark K, et al. GenBank[J]. Nucleic acids research, 2018, 46(Database issue): D41.  
-[3] Kanz C, Aldebert P, Althorpe N, et al. The EMBL nucleotide sequence database[J]. Nucleic acids research, 2005, 33(suppl\_1): D29-D33.  
-[4] Ogasawara O, Kodama Y, Mashima J, et al. DDBJ Database updates and computational infrastructure enhancement[J]. Nucleic acids research, 2020, 48(D1): D45-D50.  
-[5] Russell D A, Hatfull G F. PhagesDB: the actinobacteriophage database[J]. Bioinformatics, 2017, 33(5): 784-786.  
-[6] Gregory A C, Zayed A A, Concei??o-Neto N, et al. Marine DNA viral macro-and microdiversity from pole to pole[J]. Cell, 2019, 177(5): 1109-1123. e14.  
-[7] Gregory A C, Zablocki O, Zayed A A, et al. The gut virome database reveals age-dependent patterns of virome diversity in the human gut[J]. Cell host & microbe, 2020, 28(5): 724-740. e8.   
-[8] Camarillo-Guerrero L F, Almeida A, Rangel-Pineros G, et al. Massive expansion of human gut bacteriophage diversity[J]. Cell, 2021, 184(4): 1098-1109. e9.  
-[9] Nayfach S, Paez-Espino D, Call L, et al. Metagenomic compendium of 189,680 DNA viruses from the human gut microbiome[J]. Nature microbiology, 2021, 6(7): 960-970.  
-[10] Tisza M J, Buck C B. A catalog of tens of thousands of viruses from human metagenomes reveals hidden associations with chronic diseases[J]. Proceedings of the National Academy of Sciences, 2021, 118(23): e2023202118.  
-[11] Santos-Medellin C, Zinke L A, Ter Horst A M, et al. Viromes outperform total metagenomes in revealing the spatiotemporal patterns of agricultural soil viral communities[J]. The ISME journal, 2021, 15(7): 1956-1970.  
-[12] Zhang X, Wang R, Xie X, et al. Mining bacterial NGS data vastly expands the complete genomes of temperate phages[J]. NAR Genomics and Bioinformatics, 2022, 4(3): lqac057.  
-[13] Shah S A, Deng L, Thorsen J, et al. Expanding known viral diversity in the healthy infant gut[J]. Nature Microbiology, 2023: 1-13.  
-[14] Camargo A P, Nayfach S, Chen I M A, et al. IMG/VR v4: an expanded database of uncultivated virus genomes within a framework of extensive functional, taxonomic, and ecological metadata[J]. Nucleic acids research, 2023, 51(D1): D733-D743.  
-[15] Nayfach S, Camargo A P, Schulz F, et al. CheckV assesses the quality and completeness of metagenome-assembled viral genomes[J]. Nature biotechnology, 2021, 39(5): 578-585.  
-[16] Altschul S F, Gish W, Miller W, et al. Basic local alignment search tool[J]. Journal of molecular biology, 1990, 215(3): 403-410.  
-[17] Wang R, Zhang X, Wang J, et al. DeepHost: phage host prediction with convolutional neural network[J]. Briefings in Bioinformatics, 2022, 23(1): bbab385.  
-[18] Federhen S. The NCBI taxonomy database[J]. Nucleic acids research, 2012, 40(D1): D136-D143.i 
-[19] WANG R, Ng Y K, Zhang X, et al. A graph representation of gapped patterns in phage sequences for graph convolutional network[J]. bioRxiv, 2022: 2022.08. 22.504727.  
-[20] Hyatt D, Chen G L, LoCascio P F, et al. Prodigal: prokaryotic gene recognition and translation initiation site identification[J]. BMC bioinformatics, 2010, 11(1): 1-11.    
-[21] Cantalapiedra C P, Hernandez-Plaza A, Letunic I, et al. eggNOG-mapper v2: functional annotation, orthology assignments, and domain prediction at the metagenomic scale[J]. Molecular biology and evolution, 2021, 38(12): 5825-5829.  
-[22] Steinegger M, Sding J. MMseqs2 enables sensitive protein sequence searching for the analysis of massive data sets[J]. Nature biotechnology, 2017, 35(11): 1026-1028.  
-[23] Terzian P, Olo Ndela E, Galiez C, et al. PHROG: families of prokaryotic virus proteins clustered using remote homology[J]. NAR Genomics and Bioinformatics, 2021, 3(3): lqab067. 
-[24] Ermolaeva M D, Khalak H G, White O, et al. Prediction of transcription terminators in bacterial genomes[J]. Journal of molecular biology, 2000, 301(1): 27-33.  
-[25] Laslett D, Canback B. ARAGORN, a program to detect tRNA genes and tmRNA genes in nucleotide sequences[J]. Nucleic acids research, 2004, 32(1): 11-16.  
-[26] Lowe T M, Eddy S R. tRNAscan-SE: a program for improved detection of transfer RNA genes in genomic sequence[J]. Nucleic acids research, 1997, 25(5): 955-964.  
-[27] Dong C, Hao G F, Hua H L, et al. Anti-CRISPRdb: a comprehensive online resource for anti-CRISPR proteins[J]. Nucleic acids research, 2018, 46(D1): D393-D398.  
-[28] Eitzinger S, Asif A, Watters K E, et al. Machine learning predicts new anti-CRISPR proteins[J]. Nucleic acids research, 2020, 48(9): 4698-4708.  
-[29] Couvin D, Bernheim A, Toffano-Nioche C, et al. CRISPRCasFinder, an update of CRISRFinder, includes a portable version, enhanced performance and integrates search for Cas proteins[J]. Nucleic acids research, 2018, 46(W1): W246-W251.  
-[30] Chen L, Yang J, Yu J, et al. VFDB: a reference database for bacterial virulence factors[J]. Nucleic acids research, 2005, 33(suppl\_1): D325-D328.  
-[31] McArthur A G, Waglechner N, Nizam F, et al. The comprehensive antibiotic resistance database[J]. Antimicrobial agents and chemotherapy, 2013, 57(7): 3348-3357.  
-[32] Krogh A, Larsson B, Von Heijne G, et al. Predicting transmembrane protein topology with a hidden Markov model: application to complete genomes[J]. Journal of molecular biology, 2001, 305(3): 567-580.
+## References
+[1] O'Leary N A, Wright M W, Brister J R, et al. Reference sequence (RefSeq) database at NCBI: current status, taxonomic expansion, and functional annotation[J]. Nucleic acids research, 2016, 44(D1): D733-D745.
+[2] Benson D A, Cavanaugh M, Clark K, et al. GenBank[J]. Nucleic acids research, 2018, 46(Database issue): D41.
+[3] Kanz C, Aldebert P, Althorpe N, et al. The EMBL nucleotide sequence database[J]. Nucleic acids research, 2005, 33(suppl_1): D29-D33.
+[4] Ogasawara O, Kodama Y, Mashima J, et al. DDBJ Database updates and computational infrastructure enhancement[J]. Nucleic acids research, 2020, 48(D1): D45-D50.
+[5] Guy C, Kirsty B, Rolf A, et al. Evidence standards in experimental and inferential INSDC Third Party Annotation data[J]. Omics: a journal of integrative biology vol. 10,2 (2006): 105-13.
+[6] Georges PS, Anna H, Pascal H, et al. PLSDB: advancing a comprehensive database of bacterial plasmids[J]. ucleic Acids Research, 2022, 50(D1): D273–D278.
+[7] Antonio PC, Lee C, Simon R, et al. IMG/PR: a database of plasmids from genomes and metagenomes with rich annotations and metadata[J].Nucleic acids research, 2022, 52(D1): Volume 52: D164–D173.
+[8] Douarre PE, Mallet L, Radomski N, et al. Analysis of COMPASS, a New Comprehensive Plasmid Database Revealed Prevalence of Multireplicon and Extensive Diversity of IncF Plasmids[J]. Frontiers in Microbiology, 2020, 11: 10.3389/fmicb.2020.00483.
+[9] Lu J, Rincon N, Wood DE, et al. Metagenome analysis using the Kraken software suite[J]. Nature Protocol, 2022, 17, 2815–2839.
+[10] Federhen S. The NCBI taxonomy database[J]. Nucleic acids research, 2012, 40(D1): D136-D143.
+[11] James R, Kyrylo B, Justin S, et al. Universal whole-sequence-based plasmid typing and its utility to prediction of host range and epidemiological surveillance[J]. Microbial genomics, 2020, 6(10): mgen000435.
+[12] Torsten Seemann. Prokka: rapid prokaryotic genome annotation[J]. Bioinformatics, 2014, 30(14): 2068-9.
+[13] Cantalapiedra C P, Hernandez-Plaza A, Letunic I, et al. eggNOG-mapper v2: functional annotation, orthology assignments, and domain prediction at the metagenomic scale[J]. Molecular biology and evolution, 2021, 38(12): 5825-5829.
+[14] Buchfink B, Reuter K, Drost HG. Sensitive protein alignments at tree-of-life scale using DIAMOND [J]. Nature Methods, 2021, 18: 366–368. 
+[15] Chen L, Yang J, Yu J, et al. VFDB: a reference database for bacterial virulence factors[J]. Nucleic acids research, 2005, 33(suppl_1): D325-D328.
+[16] McArthur A G, Waglechner N, Nizam F, et al. The comprehensive antibiotic resistance database[J]. Antimicrobial agents and chemotherapy, 2013, 57(7): 3348-3357.
+[17] Brian P A, William H, Romeo C,  et al. CARD 2023: expanded curation, support for machine learning, and resistome prediction at the Comprehensive Antibiotic Resistance Database[J]. Nucleic acids research, (2023), 51(D1): D690-D699.
+[18] Laslett D, Canback B. ARAGORN, a program to detect tRNA genes and tmRNA genes in nucleotide sequences[J]. Nucleic acids research, 2004, 32(1): 11-16.
+[19] Jakob R, Rafael PR, David MM, et al. CRISPRCasTyper: Automated Identification, Annotation, and Classification of CRISPR-Cas Loci[J]. The CRISPR journal, 2020, 3(6): 462-469. 
+[20] Kai B, Simon S, Hannah EA, et al. antiSMASH 7.0: new and improved predictions for detection, regulation, chemical structures and visualization[J]. Nucleic acids research, 2023, 51(W1): W46-W50.
+[21] Felix T, José JAA, Alexander RJ, et al. SignalP 6.0 predicts all five types of signal peptides using protein language models[J]. Nature biotechnology, 2022, 40(7): 1023-1025.
+[22] Krogh A, Larsson B, Von Heijne G, et al. Predicting transmembrane protein topology with a hidden Markov model: application to complete genomes[J]. Journal of molecular biology, 2001, 305(3): 567-580.
+[23] Zeming L, Halil A, Roshan R, et al. Evolutionary-scale prediction of atomic-level protein structure with a language model[J]. Science, 2023, 379(6637): 1123-1130.

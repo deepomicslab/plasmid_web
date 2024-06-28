@@ -1,23 +1,22 @@
-# Welcome to PhageScope
+# Welcome to PlasmidScope
 
-[PhageScope](https://plasmid.deepomics.org/) is an online bacteriophage database, including 873,718 phage sequences with comprehensive annotations. PhageScope incorporates automatic analysis and interactive visualization.
+[PlasmidScope](https://plasmid.deepomics.org/) is an online plasmid database, including 953,438 plasmid sequences with comprehensive annotations. PlasmidScope incorporates automatic analysis and interactive visualization.
 
 ## Database
 
-We have performed an exhaustive search for phage sequences across multiple public repositories (such as RefSeq, Genbank, EMBL, and DDBJ) and published datasets (such as PhagesDB, GOV2, GVD, GPD, MGV, CHVD, STV, TemPhD, IGVD and IMG/VR). As a result, we have gathered a dataset comprising 873,718 phage sequences, only a tiny fraction of which have annotation information available, such as host taxonomy, lifestyle, and genetic features.
+We have collected the plasmids across multiple public repositories and datasets to facilitate a complete plasmid database. As a result, we have integrated a dataset comprising 953,438 plasmid sequences collected from nine databases, including RefSeq, Genbank, EMBL, DDBJ, TPA, PLSDB, COMPASS, Kraken2, and IMG-PR.
 
-To provide comprehensive and accurate annotations for the collected phage sequences, we applied fifteen state-of-the-art tools to give completeness assessment, phenotype annotation (host and lifestyle), structural annotation (ORFs, proteins, and terminators), taxonomic annotation, functional annotation (tRNA & tmRNA, Anti-CRISPR protein, CRISPR array, virulent factors, antimicrobial resistance genes, and transmembrane proteins), and sequence comparison (genome clustering, sequence alignment, and comparative tree) for the phage sequences. The 873,718 phage sequences, along with their annotated information, are available in PhageScope. 
+To provide comprehensive and accurate annotations for the integrated plasmid database, we applied fifteen state-of-the-art tools to perform mobility assessment, completeness assessment, host annotation, plasmid clustering, structural annotation (ORFs, tRNA, tmRNA, and CRISPR-CAS system), functional annotation (virulence factors, antibiotic resistance genes, signal peptides, transmembrane proteins), protein structure prediction, and sequence comparison (sequence alignment, and comparative tree) for the plasmids. All of the 953,438 plasmids and their annotated information are available in PlasmidScope.
 
-![image](/Figures/database.png)
+![image](/Figures/Plasmid_database.png)
 
 ## Analysis
+PlasmidScope provides online analyzing modules for users to analyze their customized data. Users can upload single or multiple plasmid sequences in fasta format and perform annotation with the selected module(s). The analyzing modules can be divided into two sections: First, plasmid annotation, including ORF prediction & protein classification, tRNA & tmRNA annotation, Virulent factor & antimicrobial resistance gene detection, and Transmembrane protein annotation; Second, plasmid comparison, including Sequence alignment and Phylogenetic analysis. PlasmidScope performs automatic analysis and returns results that can be visualized and downloaded.
 
-We also provide annotation pipelines for users to analyze their customized data. Users can upload single or multiple phage sequences in fasta format and run the complete or partial annotation steps. The complete workflow includes completeness assessment, phenotype annotation, structural annotation, taxonomic annotation, and functional annotation, as described above. For multiple sequences, genome comparison pipelines, including sequence clustering, sequence alignment, and comparative tree construction, are provided. PhageScope platform performs automatic analysis and returns results that can be visualized and downloaded.  
-
-![image](/Figures/analysis.png)
+![image](/Figures/Plasmid_analysis.png)
 
 ## Visualization
 
-Additionally, PhageScope supports interactive visualization of the curated database and customized analysis results. Specifically, PhageScope generates completeness and phenotype distribution charts, graphical annotation, multiple sequence alignment visualizations, and comparative tree visualizations. All visualizations can be downloaded in high-quality publication-ready format.  
+PlasmidScope supports interactive visualization of the curated database and customized analysis results. Specifically, PlasmidScope generates completeness and phenotype distribution charts, graphical annotation, multiple sequence alignment visualizations, and comparative tree visualizations. All visualizations can be downloaded in high-quality publication-ready format.  
 
 ![image](/Figures/visualization.png)
