@@ -6,38 +6,36 @@
                     <div class="text-4xl text-[#253959] leading-12">
                         Virulent Factor & Antimicrobial Resistance Gene Detection
                     </div>
-                    <div class="w-290 mt-7">
-                        <el-button
-                            round
-                            size="large"
-                            color="#EE7E7D"
-                            class="text-white hover:text-white focus:text-white active:text-white ml-20"
-                            @click="submitdemo"
+                    <el-button
+                        round
+                        size="large"
+                        color="#EE7E7D"
+                        class="text-white hover:text-white focus:text-white active:text-white ml-20"
+                        @click="submitdemo"
+                    >
+                        Run Demo
+                    </el-button>
+                    <el-button
+                        round
+                        size="large"
+                        color="#EE7E7D"
+                        class="ml-5 text-white hover:text-white focus:text-white active:text-white"
+                        @click="godemo"
+                    >
+                        View Demo Result
+                    </el-button>
+                    <el-button round size="large" color="#069" @click="gosubmithelper">
+                        Submission Helper
+                    </el-button>
+                    <el-button round size="large" color="#069" class="ml-5">
+                        <a
+                            href="https://github.com/deepomicslab/plasmid_web/issues"
+                            target="_blank"
+                            class="btn"
                         >
-                            Run Demo
-                        </el-button>
-                        <el-button
-                            round
-                            size="large"
-                            color="#EE7E7D"
-                            class="ml-5 text-white hover:text-white focus:text-white active:text-white"
-                            @click="godemo"
-                        >
-                            View Demo Result
-                        </el-button>
-                        <el-button round size="large" color="#3f6212" @click="gosubmithelper">
-                            Submission Helper
-                        </el-button>
-                        <el-button round size="large" color="#3f6212" class="ml-5">
-                            <a
-                                href="https://github.com/deepomicslab/PhageScope/issues"
-                                target="_blank"
-                                class="btn"
-                            >
-                                Report bug
-                            </a>
-                        </el-button>
-                    </div>
+                            Report bug
+                        </a>
+                    </el-button>
                 </div>
                 <div class="text-lg font-500 ml-20 mt-3 w-9/10 flex flex-row">
                     It takes a few minutes to
@@ -50,7 +48,7 @@
                     1. Input Sequence
                     <n-button
                         text
-                        href="https://plasmid.deepomics.org/dataExample/data_demo/sequence.fasta"
+                        href="https://plasmid.deepomics.org/dataExample/data_demo/plasmid.fasta"
                         tag="a"
                         target="_blank"
                         type="primary"

@@ -3,7 +3,7 @@
         <el-scrollbar class="w-full" ref="scrollbarRef">
             <div class="flex flex-col h-400">
                 <div class="font-600 ml-20 mt-16 flex flex-row border-b-2 w-9/10 pb-5">
-                    <div class="text-4xl text-[#253959]">Comparative Tree Construction</div>
+                    <div class="text-4xl text-[#253959]">Phylogentic Anaysis</div>
                     <el-button
                         round
                         size="large"
@@ -27,7 +27,7 @@
                     </el-button>
                     <el-button round size="large" color="#069" class="ml-5">
                         <a
-                            href="https://github.com/deepomicslab/PhageScope/issues"
+                            href="https://github.com/deepomicslab/plasmid_web/issues"
                             target="_blank"
                             class="btn"
                         >

@@ -146,7 +146,7 @@ const menuOptions: MenuOption[] = [
                 RouterLink,
                 {
                     to: {
-                        path: '/analysis/annopipline/',
+                        path: '/analysis/annopipline/structural/annotation',
                     },
                 },
                 { default: () => 'Plasmid Annotation' }
@@ -269,7 +269,7 @@ const menuOptions: MenuOption[] = [
                 RouterLink,
                 {
                     to: {
-                        path: '/analysis/comparison',
+                        path: '/analysis/comparison/alignment',
                     },
                 },
                 { default: () => 'Plasmid Comparison' }

@@ -2,8 +2,8 @@
     <div class="flex flex-col w-full">
         <el-scrollbar class="w-full" ref="scrollbarRef">
             <div class="flex flex-col h-400">
-                <div class="font-600 ml-10 mt-16 flex flex-row border-b-2 w-19/20 pb-5">
-                    <div class="text-4xl text-[#253959]">
+                <div class="font-600 ml-20 mt-16 flex flex-row border-b-2 w-9/10 pb-5">
+                    <div class="text-4xl text-[#253959] leading-12">
                         ORF prediction & Protein Classification
                     </div>
                     <el-button
@@ -48,7 +48,7 @@
                     1. Input Sequence
                     <n-button
                         text
-                        href="https://plasmid.deepomics.org/dataExample/data_demo/sequence.fasta"
+                        href="https://plasmid.deepomics.org/dataExample/data_demo/plasmid.fasta"
                         tag="a"
                         target="_blank"
                         type="primary"
@@ -156,7 +156,7 @@
                         </div>
                         <div class="flex flex-row">
                             <p class="text-red-400 mx-2">Example:</p>
-                            M14428.1;MGV-GENOME-0091953;AJ969242.1
+                            PLSDB_NZ_CP035950.1;COMPASS_NZ_CP011350.1;IMGPR_plasmid_2757320406_000001
                         </div>
                         <div v-show="inputfeedback.length !== 0" class="mt-5">
                             <n-alert :type="validationstatus">
@@ -236,12 +236,12 @@ const confirmids = async () => {
     console.log(idlist.value)
     const checkdata = new FormData()
     if (inputformValue.value.phage.length === 0) {
-        inputfeedback.value = 'Please input phage id'
+        inputfeedback.value = 'Please input plasmid id'
         validationstatus.value = 'error'
     } else {
-        checkdata.append('phageids', inputformValue.value.phage)
-        const response = await axios.post(`/analyze/inputcheck/`, checkdata, {
-            baseURL: '/api',
+        checkdata.append('plasmidids', inputformValue.value.phage)
+        const response = await axios.post(`/check_plasmid_ids/`, checkdata, {
+            baseURL: '/api/analysis',
             timeout: 100000,
         })
         const res = response.data
@@ -257,7 +257,7 @@ const examplechange = async () => {
     console.log(exampleSwicth.value)
     if (exampleSwicth.value) {
         const fileURL = new URL(
-            '../../../../../public/dataExample/data_demo/sequence.fasta',
+            '../../../../../public/dataExample/data_demo/plasmid.fasta',
             import.meta.url
         )
         const response = await fetch(fileURL)
@@ -341,7 +341,7 @@ const submit = async () => {
     } else {
         if (isconfirmed.value){
             if (idlist.value.length > 0) {
-            submitdata.append('phageid', JSON.stringify(idlist.value))
+            submitdata.append('plasmidid', JSON.stringify(idlist.value))
             precheck.value = true
         } else {
             window.$message.error('The number of Plasmid IDs you entered is 0.', {

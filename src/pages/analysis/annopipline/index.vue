@@ -27,7 +27,7 @@
                     </el-button>
                     <el-button round size="large" color="#069" class="ml-5">
                         <a
-                            href="https://github.com/deepomicslab/PhageScope/issues"
+                            href="https://github.com/deepomicslab/plasmid_web/issues"
                             target="_blank"
                             class="btn"
                         >
