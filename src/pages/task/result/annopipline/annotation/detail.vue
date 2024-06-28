@@ -2,7 +2,7 @@
     <div class="flex flex-col mx-1/10 justify-start">
         <div class="w-300 mt-18 ml-10">
             <div class="flex flex-row w-380 border-b-2 border-gray-300 pb-4 mb-10">
-                <div class="text-4xl font-500">Phage Informtion</div>
+                <div class="text-4xl font-500">Plasmid Informtion</div>
                 <!-- <div class="mt-1.5 ml-10">
                     <el-button class="ml-5">
                         <template #icon>
@@ -21,7 +21,7 @@
             >
                 <el-descriptions-item>
                     <template #label>
-                        <div class="cell-item">Phage ID</div>
+                        <div class="cell-item">Plasmid ID</div>
                     </template>
                     {{ phagedetail.Acession_ID }}
                 </el-descriptions-item>
@@ -221,8 +221,8 @@ onBeforeMount(async () => {
     phageStore.phageid = phageid.value
     phagedetailloading.value = true
     proteinloading.value = true
-    const responsetask = await axios.get(`/tasks/detail/`, {
-        baseURL: '/api',
+    const responsetask = await axios.get(`/view_task_detail/`, {
+        baseURL: '/api/analysis',
         timeout: 100000,
         params: {
             taskid: taskid.value,
@@ -247,8 +247,8 @@ onBeforeMount(async () => {
     if (taskdata.value.results.modulelist.includes('anticrispr')) {
         moduelshowdict.value.anticrispr = true
     }
-    const response = await axios.get(`/tasks/result/phage/detail/`, {
-        baseURL: '/api',
+    const response = await axios.get(`/view_task_result_plasmid_detail/`, {
+        baseURL: '/api/analysis',
         timeout: 100000,
         params: {
             phageid: phageid.value,
@@ -259,16 +259,16 @@ onBeforeMount(async () => {
     phagedata.value = data.results
     phagedetailloading.value = false
     phageStore.phagedataloaded = false
-    const response1 = await axios.get(`/tasks/result/phagefasta/`, {
-        baseURL: '/api',
+    const response1 = await axios.get(`/view_task_result_plasmid_fasta/`, {
+        baseURL: '/api/analysis',
         timeout: 100000,
         params: {
             phageid: phageid.value,
             taskid: taskid.value,
         },
     })
-    const response2 = await axios.get(`/tasks/result/proteins/`, {
-        baseURL: '/api',
+    const response2 = await axios.get(`/view_task_result_proteins/`, {
+        baseURL: '/api/analysis',
         timeout: 100000,
         params: {
             phageid: phageid.value,

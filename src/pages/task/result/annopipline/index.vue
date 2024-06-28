@@ -179,7 +179,7 @@
         </div>
 
         <div class="flex flex-row my-5">
-            <div class="text-4xl ml-1 font-600">Submitted Phages</div>
+            <div class="text-4xl ml-1 font-600">Submitted Plasmids</div>
             <div class="mt-1.5 felx flex-row justify-start items-center ml-5">
                 <el-button @click="downloadtsv">
                     <template #icon>
@@ -197,7 +197,7 @@
                 <el-table-column prop="id" label="ID" fixed align="center"></el-table-column>
                 <el-table-column
                     prop="Acession_ID"
-                    label="Phage ID"
+                    label="Plasmid ID"
                     fixed
                     width="400"
                     align="center"
@@ -347,8 +347,8 @@ onBeforeMount(async () => {
     loading.value = true
     phageStore.heatmaploaded = false
 
-    const response = await axios.get(`/tasks/result/phage/`, {
-        baseURL: '/api',
+    const response = await axios.get(`/view_task_result/`, {
+        baseURL: '/api/analysis',
         timeout: 100000,
         params: {
             taskid: taskid.value,
@@ -356,8 +356,8 @@ onBeforeMount(async () => {
     })
     phagedata.value = response.data
     phageStore.taskphagelist = phagedata.value.results
-    const response2 = await axios.get(`/tasks/detail/`, {
-        baseURL: '/api',
+    const response2 = await axios.get(`/view_task_detail/`, {
+        baseURL: '/api/analysis',
         timeout: 100000,
         params: {
             taskid: taskid.value,
@@ -368,8 +368,8 @@ onBeforeMount(async () => {
 
     loading.value = false
 
-    const response3 = await axios.get(`/tasks/result/proteins/`, {
-        baseURL: '/api',
+    const response3 = await axios.get(`/view_task_result_proteins/`, {
+        baseURL: '/api/analysis',
         timeout: 100000,
         params: {
             taskid: taskid.value,

@@ -3,9 +3,16 @@
         <div class="flex flex-col my-2 w-200 mt-20">
             <div class="text-4xl mt-5 font-600 text-center">Task Query</div>
             <div class="flex flex-col mt-5 justify-center items-center">
-                <el-input size="small" placeholder="Please enter your task ID" class="w-170 h-10 s">
+                <el-input
+                    size="small"
+                    placeholder="Please enter your task ID"
+                    class="w-170 h-10 s"
+                    v-model="searchinput"
+                >
                     <template #append>
-                        <el-button type="primary" :icon="Search">Search</el-button>
+                        <el-button type="primary" :icon="Search" @click="filtersearch">
+                            Search
+                        </el-button>
                     </template>
                 </el-input>
                 <div class="text-lg text-gray-600 mt-2">
@@ -47,6 +54,7 @@ import { NButton, NTag } from 'naive-ui'
 import {} from '@vicons/ionicons5'
 import { Search, Refresh } from '@element-plus/icons-vue' /* RefreshRight */
 import axios from 'axios'
+import _ from 'lodash'
 import { useUserIdGenerator } from '@/utils/userIdGenerator'
 import log from '../task/log.vue'
 
@@ -55,6 +63,12 @@ const loading = ref(false)
 const taskdata = ref([] as any[])
 const dialogVisible = ref(false)
 const taskid = ref('')
+const searchinput = ref('')
+const filtersearch = () => {
+    taskdata.value = _.filter(taskdata.value, obj => {
+        return JSON.stringify(obj.id).includes(searchinput.value)
+    })
+}
 onBeforeMount(async () => {
     const { isCookieExist, userId, getUserIdFromCookie } = useUserIdGenerator()
 

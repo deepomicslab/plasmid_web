@@ -176,8 +176,8 @@ const onClick = () => {
     dialogVisible.value = true
 }
 onBeforeMount(async () => {
-    const response = await axios.get(`/tasks/detail/`, {
-        baseURL: '/api',
+    const response = await axios.get(`/view_task_detail/`, {
+        baseURL: '/api/analysis',
         timeout: 100000,
         params: {
             taskid: taskid.value,
