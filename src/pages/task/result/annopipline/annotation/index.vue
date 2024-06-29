@@ -226,8 +226,8 @@ const taskdata = ref({
 onBeforeMount(async () => {
     loading.value = true
     phageStore.heatmaploaded = false
-    const response2 = await axios.get(`/tasks/detail/`, {
-        baseURL: '/api',
+    const response2 = await axios.get(`/view_task_detail/`, {
+        baseURL: '/api/analysis',
         timeout: 100000,
         params: {
             taskid: taskid.value,
@@ -235,8 +235,8 @@ onBeforeMount(async () => {
     })
     const data2 = response2.data
     taskdata.value = data2
-    const response = await axios.get(`/tasks/result/phage/`, {
-        baseURL: '/api',
+    const response = await axios.get(`/view_task_result_plasmid_detail/`, {
+        baseURL: '/api/analysis',
         timeout: 100000,
         params: {
             taskid: taskid.value,
@@ -247,8 +247,8 @@ onBeforeMount(async () => {
     phageStore.taskphagelist = phagedata.value.results
     loading.value = false
 
-    const response3 = await axios.get(`/tasks/result/proteins/`, {
-        baseURL: '/api',
+    const response3 = await axios.get(`/view_task_result_proteins/`, {
+        baseURL: '/api/analysis',
         timeout: 100000,
         params: {
             taskid: taskid.value,
@@ -263,7 +263,7 @@ const taskdetail = computed(() => {
 })
 
 const baseurl = computed(() => {
-    return `https://phageapi.deepomics.org/tasks/result/download/${taskdetail.value.uploadpath}/output/rawdata/annotation/`
+    return `https://plasmidapi.deepomics.org/api/analysis/download_task_result_output_file/${taskdetail.value.uploadpath}/output/rawdata/annotation/`
 })
 
 const phageList = computed(() => {
@@ -303,7 +303,7 @@ const downloadtsv = () => {
     }
 }
 const download = async (row: any) => {
-    const response = await axios.get(`/tasks/result/phagefasta/`, {
+    const response = await axios.get(`/view_task_result_plasmid_fasta/`, {
         baseURL: '/api',
         timeout: 100000,
         params: {
