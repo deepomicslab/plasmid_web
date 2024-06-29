@@ -28,7 +28,7 @@ These modules return the identified items, along with their related information,
 The genome comparison analysis module of PlasmidScope allows users to compare and analyze multiple plasmid genomes. It provides various analysis and visualization functions to explore the genetic variations and evolutionary relationships among these genomes. PlasmidScope provides an option for users to incorporate the curated plasmids into genome comparison pipelines.
 
 #### Sequence clustering
-This module groups phage genomes based on their sequence similarity with **mmseqs** [8], identifying clusters of phages that share common genetic characteristics. ``min-seq-id 0.9`` and ``-c 0.9`` are required to form **subclusters**, and the representative sequences for subclusters are grouped into **clusters** with the hyperparameters ``min-seq-id 0.6`` and ``-c 0.75``.
+This module groups plasmid genomes based on their sequence similarity with **mmseqs** [8], identifying clusters of plasmids that share common genetic characteristics. ``min-seq-id 0.9`` and ``-c 0.9`` are required to form **subclusters**, and the representative sequences for subclusters are grouped into **clusters** with the hyperparameters ``min-seq-id 0.6`` and ``-c 0.75``.
 
 #### Sequence alignment
 This module compares the protein sequences of multiple plasmid genomes to identify regions of similarity. The **protein sequences from the annotation files** are extracted and compared with each other with **BLASTP** [1]. The **alignment identity and coverage** are returned for visualization. This analysis helps in locating conserved regions, detecting sequence variations, and finding potential functional elements.

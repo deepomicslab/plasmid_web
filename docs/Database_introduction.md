@@ -1,4 +1,4 @@
-# Welcome to PhageScope database
+# Welcome to PlasmidScope database
 
 
 <div align=center><img src="/Figures/Plasmid_database.png" width="80%"></div>
@@ -44,7 +44,7 @@ tRNA (transfer RNA) and tmRNA (transfer-messenger RNA) on plasmids play signific
 PlasmidScope applied **ARAGORN** [18] to detect tRNA and tmRNA genes in plasmid sequences, leading to the delineation of **108,597 tRNA** and **913 tmRNA**.
 
 ### CRISPR-Cas systems
-The CRISPR-Cas (Clustered Regularly Interspaced Short Palindromic Repeats and CRISPR-associated proteins) system is a form of adaptive immunity found in bacteria and archaea. It provides hosts with a defense mechanism against invading genetic elements such as viruses (bacteriophages) and plasmids. In addition, the CRISPR-Cas system on plasmids regulates horizontal gene transfer and enhances bacterial adaptability, offering powerful tools for synthetic biology and biotechnology.
+The CRISPR-Cas (Clustered Regularly Interspaced Short Palindromic Repeats and CRISPR-associated proteins) system is a form of adaptive immunity found in bacteria and archaea. It provides hosts with a defense mechanism against invading genetic elements such as viruses (bacterioplasmids) and plasmids. In addition, the CRISPR-Cas system on plasmids regulates horizontal gene transfer and enhances bacterial adaptability, offering powerful tools for synthetic biology and biotechnology.
 
 PlasmidScope used **CRISPRCasTyper** [19] to identify CRISPR-Cas systems on plasmids, and discovered a total of **10,088 CRISPR-CAS systems** distributed in 953,438 plasmids. PlasmidScope provide the type and location of the CRISPR and CAS for each CRISPR-Cas system, along with their sequences for further analysis.
 

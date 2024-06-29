@@ -118,7 +118,7 @@
             </el-descriptions-item>
         </el-descriptions>
         <div class="flex flex-row my-5 mt-15 ml-10">
-            <div class="text-3xl ml-1 font-500">Submitted Phages</div>
+            <div class="text-3xl ml-1 font-500">Submitted Plasmids</div>
             <div class="mt-1.5 felx flex-row justify-start items-center ml-5">
                 <el-button @click="downloadtsv">
                     <template #icon>
@@ -128,7 +128,7 @@
                 </el-button>
             </div>
             <div class="text-lg text-gray-500 ml-6 mt-3">
-                Please click the Detail to view single phage information
+                Please click the Detail to view single plasmid information
             </div>
         </div>
         <div v-loading="loading" class="w-400 mt-1">
@@ -235,7 +235,7 @@ onBeforeMount(async () => {
     })
     const data2 = response2.data
     taskdata.value = data2
-    const response = await axios.get(`/view_task_result_plasmid_detail/`, {
+    const response = await axios.get(`/view_task_result/`, {
         baseURL: '/api/analysis',
         timeout: 100000,
         params: {

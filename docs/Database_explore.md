@@ -12,7 +12,7 @@ The interface also provides overview visualizations, such as bar plot, pie chart
 
 <div align=center><img src="/DB_figures/overview3.png" width="1000"></div>
 
-## Phage List
+## Plasmid List
 <div align=center><img src="/DB_figures/phage_list.png" width="1000"></div>
 
 The "Plasmid List" interface allows users to access and download plasmid sequences and meta information.
