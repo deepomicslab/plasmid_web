@@ -67,9 +67,9 @@
                 </el-descriptions-item>
                 <el-descriptions-item>
                     <template #label>
-                        <div class="cell-item">GC Content(%)</div>
+                        <div class="cell-item">GC Content</div>
                     </template>
-                    {{ parseFloat(phagedetail.gc_content).toFixed(2) }}%
+                    {{ parseFloat(phagedetail.gc_content).toFixed(2) }}
                 </el-descriptions-item>
                 <el-descriptions-item>
                     <template #label>

@@ -689,7 +689,7 @@ const createColumns = (): DataTableColumns<RowData> => {
         {
             title() {
                 return renderTooltip(
-                    h('div', null, { default: () => 'GC Content (%)' }),
+                    h('div', null, { default: () => 'GC Content ' }),
                     'plasmid GC content'
                 )
             },

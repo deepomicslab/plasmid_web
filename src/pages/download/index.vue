@@ -163,7 +163,7 @@
                 <div class="w-280 border-1 border-gray-700">
                     <div
                         class="w-280 border-1 border-gray-700 h-13 flex flex-row"
-                        v-for="source in datasetList"
+                        v-for="source in datasetList3"
                         :key="source"
                     >
                         <div
@@ -710,6 +710,17 @@ const datasetList = [
     'TPA',
 ]
 const datasetList2 = [
+    'PLSDB',
+    'IMG-PR',
+    'COMPASS',
+    'GenBank',
+    'RefSeq',
+    'EMBL',
+    'Kraken2',
+    'DDBJ',
+    'TPA',
+]
+const datasetList3 = [
     'PLSDB',
     'IMG-PR',
     'COMPASS',
