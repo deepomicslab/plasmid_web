@@ -6,8 +6,8 @@
 </template>
 
 <script setup lang="ts">
-const basepath = 'http://localhost:8873/#/'
-// const basepath = 'https://phagewebdoc.deepomics.org/#/'
+// const basepath = 'http://localhost:8873/#/'
+const basepath = 'https://plasmiddoc.deepomics.org/#/'
 const route = useRoute()
 const type = computed(() => route.query?.type as string)
 const url = computed(() => {
