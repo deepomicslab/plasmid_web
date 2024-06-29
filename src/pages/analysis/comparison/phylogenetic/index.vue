@@ -47,7 +47,7 @@
                     1. Input Sequence
                     <n-button
                         text
-                        href="https://plasmid.deepomics.org/dataExample/data_demo/cluster_demo.fasta"
+                        href="https://plasmid.deepomics.org/dataExample/data_demo/plasmid.fasta"
                         tag="a"
                         target="_blank"
                         type="primary"
@@ -189,7 +189,7 @@ const examplechange = async () => {
     console.log(exampleSwicth.value)
     if (exampleSwicth.value) {
         const fileURL = new URL(
-            '../../../../../public/dataExample/data_demo/cluster_demo.fasta',
+            '../../../../../public/dataExample/data_demo/plasmid.fasta',
             import.meta.url
         )
         const response = await fetch(fileURL)
@@ -279,8 +279,8 @@ const submit = async () => {
     } 
 
     if (precheck.value) {
-        const response = await axios.post(`/analyze/clusterpipline/`, submitdata, {
-            baseURL: '/api',
+        const response = await axios.post(`/submit_cluster_task/`, submitdata, {
+            baseURL: '/api/analysis',
             timeout: 100000,
         })
         const { data } = response
@@ -314,8 +314,8 @@ const submitdemo = async () => {
         submitdata.append('userid', userid.value)
         //submitdata.append('user', 'demo')
         submitdata.append('inputtype', inputtype.value)
-        const response = await axios.post(`/analyze/clusterpipline/`, submitdata, {
-            baseURL: '/api',
+        const response = await axios.post(`/submit_cluster_task/`, submitdata, {
+            baseURL: '/api/analysis',
             timeout: 100000,
         })
         const { data } = response

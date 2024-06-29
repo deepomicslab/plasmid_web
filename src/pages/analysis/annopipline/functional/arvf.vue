@@ -63,7 +63,7 @@
                     <div class="ml-5">
                         <n-radio-group v-model:value="inputtype">
                             <n-radio-button value="upload">UPLOAD FILE</n-radio-button>
-                            <n-radio-button value="enter">ENTER Phage ID</n-radio-button>
+                            <n-radio-button value="enter">ENTER Plasmid ID</n-radio-button>
                             <n-radio-button value="paste">PASTE SEQUENCE</n-radio-button>
                         </n-radio-group>
                     </div>
@@ -114,7 +114,7 @@
                     >
                         <div class="text-lg flex flex-row mb-2">
                             Enter the
-                            <p class="text-red-400 mx-2">Phage IDs</p>
+                            <p class="text-red-400 mx-2">Plasmid IDs</p>
                             that already exist in the database, separated by
                             <p class="text-red-400 mx-2 font-900">' ; '</p>
                         </div>
@@ -156,7 +156,7 @@
                         </div>
                         <div class="flex flex-row">
                             <p class="text-red-400 mx-2">Example:</p>
-                            M14428.1;MGV-GENOME-0091953;AJ969242.1
+                            PLSDB_NZ_CP035950.1;COMPASS_NZ_CP011350.1;IMGPR_plasmid_2757320406_000001
                         </div>
                         <div v-show="inputfeedback.length !== 0" class="mt-5">
                             <n-alert :type="validationstatus">
@@ -200,7 +200,7 @@
                 <div class="mt-20 flex flex-row justify-center">
                     <el-button
                         size="large"
-                        color="#3f6212"
+                        color="#069"
                         :width="70"
                         class="text-white hover:text-white focus:text-white active:text-white text-2xl"
                         @click="submit"
@@ -241,8 +241,8 @@ const confirmids = async () => {
         validationstatus.value = 'error'
     } else {
         checkdata.append('phageids', inputformValue.value.phage)
-        const response = await axios.post(`/analyze/inputcheck/`, checkdata, {
-            baseURL: '/api',
+        const response = await axios.post(`/check_plasmid_ids/`, checkdata, {
+            baseURL: '/api/analysis',
             timeout: 100000,
         })
         const res = response.data
@@ -258,7 +258,7 @@ const examplechange = async () => {
     console.log(exampleSwicth.value)
     if (exampleSwicth.value) {
         const fileURL = new URL(
-            '../../../../../public/dataExample/data_demo/sequence.fasta',
+            '../../../../../public/dataExample/data_demo/plasmid.fasta',
             import.meta.url
         )
         const response = await fetch(fileURL)
@@ -349,7 +349,7 @@ const submit = async () => {
             submitdata.append('phageid', JSON.stringify(idlist.value))
             precheck.value = true
         } else {
-            window.$message.error('The number of Phage IDs you entered is 0.', {
+            window.$message.error('The number of Plasmid IDs you entered is 0.', {
                 closable: true,
                 duration: 5000,
             })
@@ -370,8 +370,8 @@ const submit = async () => {
         submitdata.append('userid', userid.value)
         //submitdata.append('user', 'demo')
         submitdata.append('inputtype', inputtype.value)
-        const response = await axios.post(`/analyze/pipline/`, submitdata, {
-            baseURL: '/api',
+        const response = await axios.post(`/submit_task/`, submitdata, {
+            baseURL: '/api/analysis',
             timeout: 100000,
         })
         const { data } = response
@@ -403,8 +403,8 @@ const submitdemo = async () => {
         submitdata.append('userid', userid.value)
         //submitdata.append('user', 'demo')
         submitdata.append('inputtype', inputtype.value)
-        const response = await axios.post(`/analyze/pipline/`, submitdata, {
-            baseURL: '/api',
+        const response = await axios.post(`/submit_task/`, submitdata, {
+            baseURL: '/api/analysis',
             timeout: 100000,
         })
         const { data } = response

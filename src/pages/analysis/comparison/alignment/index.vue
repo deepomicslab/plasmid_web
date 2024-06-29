@@ -46,7 +46,7 @@
                     1. Input Sequence
                     <n-button
                         text
-                        href="https://plasmid.deepomics.org/dataExample/data_demo/alignment_demo.fasta"
+                        href="https://plasmid.deepomics.org/dataExample/data_demo/plasmid.fasta"
                         tag="a"
                         target="_blank"
                         type="primary"
@@ -185,7 +185,7 @@ const examplechange = async () => {
     console.log(exampleSwicth.value)
     if (exampleSwicth.value) {
         const fileURL = new URL(
-            '../../../../../public/dataExample/data_demo/alignment_demo.fasta',
+            '../../../../../public/dataExample/data_demo/plasmid.fasta',
             import.meta.url
         )
         const response = await fetch(fileURL)
@@ -272,7 +272,7 @@ const submit = async () => {
             submitdata.append('phageid', pastefile.value)
             precheck.value = true
         } else {
-            window.$message.error('Please input phageid', {
+            window.$message.error('Please input plasmidid', {
                 closable: true,
                 duration: 5000,
             })
@@ -285,8 +285,8 @@ const submit = async () => {
         submitdata.append('userid', userid.value)
         submitdata.append('neednum', '2')
         submitdata.append('inputtype', inputtype.value)
-        const response = await axios.post(`/analyze/clusterpipline/`, submitdata, {
-            baseURL: '/api',
+        const response = await axios.post(`/submit_cluster_task/`, submitdata, {
+            baseURL: '/api/analysis',
             timeout: 100000,
         })
         const { data } = response
@@ -311,15 +311,15 @@ const submitdemo = async () => {
     submitdata.append('modulelist', JSON.stringify(modulelist.value))
     submitdata.append('rundemo', 'true')
     // /home/platform/phage_db/phage_api/demo_file/alignment_demo.fasta
-    submitdata.append('demopath', 'alignment_demo.fasta')
+    submitdata.append('demopath', 'plasmid.fasta')
     const precheck = ref(true)
     if (precheck.value) {
         submitdata.append('analysistype', 'Sequence Alignment')
         submitdata.append('userid', userid.value)
         //submitdata.append('user', 'demo')
         submitdata.append('inputtype', inputtype.value)
-        const response = await axios.post(`/analyze/clusterpipline/`, submitdata, {
-            baseURL: '/api',
+        const response = await axios.post(`/submit_cluster_task/`, submitdata, {
+            baseURL: '/api/analysis',
             timeout: 100000,
         })
         const { data } = response

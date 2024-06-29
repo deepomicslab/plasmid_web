@@ -154,7 +154,7 @@ const menuOptions: MenuOption[] = [
         key: '/analysis/annopipline/',
         children: [
             {
-                label: 'ORF prediction & Protein Classification',
+                label: 'ORF prediction & Protein classification',
                 key: '/analysis/annopipline/structural/annotation',
             },
             {

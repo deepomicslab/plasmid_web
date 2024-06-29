@@ -4,7 +4,7 @@
             <div class="flex flex-col h-400">
                 <div class="font-600 ml-20 mt-16 flex flex-row border-b-2 w-9/10 pb-5">
                     <div class="text-4xl text-[#253959] leading-12">
-                        ORF prediction & Protein Classification
+                        ORF prediction & Protein classification
                     </div>
                     <el-button
                         round
