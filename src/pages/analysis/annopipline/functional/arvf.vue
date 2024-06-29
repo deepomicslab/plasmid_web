@@ -396,7 +396,7 @@ const submitdemo = async () => {
     const submitdata = new FormData()
     submitdata.append('modulelist', JSON.stringify(modulelist.value))
     submitdata.append('rundemo', 'true')
-    submitdata.append('demopath', 'arvf_demo.fasta')
+    submitdata.append('demopath', 'plasmid.fasta')
     const precheck = ref(true)
     if (precheck.value) {
         submitdata.append('analysistype', 'Virulent Factor & Antimicrobial Resistance Gene Detection')

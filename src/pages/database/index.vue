@@ -98,19 +98,6 @@
                         </template>
                     </n-statistic>
                 </div> -->
-                <div class="w-65 ml-3">
-                    <n-statistic>
-                        <n-number-animation
-                            ref="numberAnimationInstRef"
-                            :from="0"
-                            :to="+`${overview_data.overview.sm}`"
-                            show-separator
-                        />
-                        <template #label>
-                            <h1 class="text-[#069] text-lg font-700">Secondary Metabolism</h1>
-                        </template>
-                    </n-statistic>
-                </div>
                 <div class="w-50">
                     <n-statistic>
                         <n-number-animation
@@ -121,6 +108,19 @@
                         />
                         <template #label>
                             <h1 class="text-[#069] text-lg font-700">Signal Peptides</h1>
+                        </template>
+                    </n-statistic>
+                </div>
+                <div class="w-65 ml-3">
+                    <n-statistic>
+                        <n-number-animation
+                            ref="numberAnimationInstRef"
+                            :from="0"
+                            :to="+`${overview_data.overview.sm}`"
+                            show-separator
+                        />
+                        <template #label>
+                            <h1 class="text-[#069] text-lg font-700">Secondary Metabolism</h1>
                         </template>
                     </n-statistic>
                 </div>
