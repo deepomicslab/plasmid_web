@@ -242,7 +242,6 @@ const createColumns = (): DataTableColumns<RowData> => {
             title: 'Task ID',
             key: 'id',
             align: 'center',
-            sorter: 'default',
             defaultSortOrder: 'ascend',
             width: 80,
         },
@@ -337,6 +336,7 @@ const createColumns = (): DataTableColumns<RowData> => {
             title: 'Created Time',
             key: 'created_at',
             align: 'center',
+            sorter: 'default',
             width: 100,
         },
         {

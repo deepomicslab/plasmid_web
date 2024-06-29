@@ -189,7 +189,7 @@
                 </el-button>
             </div>
             <div class="text-lg text-gray-500 ml-6 mt-3">
-                Please click the Detail to view single phage information
+                Please click the Detail to view single plasmid information
             </div>
         </div>
         <div v-loading="loading" class="w-400 mt-1">
@@ -564,8 +564,8 @@ const downloadtsv = () => {
     }
 }
 const download = async (row: any) => {
-    const response = await axios.get(`/tasks/result/phagefasta/`, {
-        baseURL: '/api',
+    const response = await axios.get(`/view_task_result_plasmid_fasta/`, {
+        baseURL: '/api/analysis',
         timeout: 100000,
         params: {
             taskid: taskid.value,
