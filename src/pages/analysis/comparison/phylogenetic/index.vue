@@ -341,7 +341,7 @@ const godemo = () => {
     router.push({ path: '/task/result/comparison/tree', query: { taskid: 82 } })
 }
 const gosubmithelper = () => {
-    router.push({ path: '/tutorial', query: { type: 'analysis' } })
+    router.push({ path: '/tutorial', query: { type: 'Analysis_introduction' } })
 }
 </script>
 

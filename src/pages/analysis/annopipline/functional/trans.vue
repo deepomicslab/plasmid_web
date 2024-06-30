@@ -426,7 +426,7 @@ onBeforeMount(() => {
     userid.value = userId.value as string
 })
 const gosubmithelper = () => {
-    router.push({ path: '/tutorial', query: { type: 'analysis' } })
+    router.push({ path: '/tutorial', query: { type: 'Analysis_introduction' } })
 }
 </script>
 
