@@ -172,7 +172,7 @@ import { COGCategoryDict } from '@/utils/phage'
 // import { dataset } from '@/utils/phage'
 import proteindetail from '../../../../database/protein/detail.vue'
 import annotation from '../../../../visualize/components/annotation.vue'
-// import circo from '../../../../visualize/components/circo.vue'
+import circo from '../../../../visualize/components/circo.vue'
 // import term from '../../../../database/phage/terminator.vue'
 // import trna from '../../../../database/phage/trna.vue'
 // import crispr from '../../../../database/phage/crispr.vue'
@@ -355,7 +355,7 @@ const createColumns = (): DataTableColumns<RowData> => [
                             let info = ''
                             Array.from(row.cog_category).forEach(element => {
                                 // eslint-disable-next-line no-const-assign
-                                info += `${COGCategoryDict[element]}, `
+                                info += `${COGCategoryDict[element]} `
                             })
                             return info
                             // console.log(row.cog_category, '-----------')
