@@ -17,7 +17,7 @@ Users have the flexibility to perform either **single** or **multiple** analyses
 These annotations provide valuable insights into the genome structure, genetic content, and functional diversity encoded in plasmid genomes.
 
 #### Functional annotation
-+ tRNA & tmRNA genes: tRNA and tmRNA genes, essential for protein synthesis and quality control, respectively, are detected using **ARAGORN** [4].
++ tRNAs & tmRNAs: tRNAs and tmRNAs are essential for protein synthesis and quality control, respectively. They are detected using **ARAGORN** [4].
 + Virulence factor annotation: Virulence factors are identified on plasmid protein sequences by **Diamond** [10] against **VFDB** [5] with identity > 60% and coverage > 40%.
 + Antibiotic resistance gene annotation: **RGI** [11] is applied on plasmid protein sequences against **CARD** [6] for antimicrobial resistance genes based on homology and SNP models.
 + Transmembrane protein annotation: Transmembrane proteins, which span cell membranes, are detected using **TMHMM** [7].
@@ -28,7 +28,7 @@ These modules return the identified items, along with their related information,
 The genome comparison analysis module of PlasmidScope allows users to compare and analyze multiple plasmid genomes. It provides various analysis and visualization functions to explore the genetic variations and evolutionary relationships among these genomes. PlasmidScope provides an option for users to incorporate the curated plasmids into genome comparison pipelines.
 
 #### Sequence clustering
-This module groups plasmid genomes based on their sequence similarity with **mmseqs** [8], identifying clusters of plasmids that share common genetic characteristics. ``min-seq-id 0.9`` and ``-c 0.9`` are required to form **subclusters**, and the representative sequences for subclusters are grouped into **clusters** with the hyperparameters ``min-seq-id 0.6`` and ``-c 0.75``.
+This module groups plamid genomes based on their sequence similarity with **mmseqs** [8], identifying clusters of plasmids that share common genetic characteristics. ``min-seq-id 0.9`` and ``-c 0.9`` are required to form **subclusters**, and the representative sequences for subclusters are grouped into **clusters** with the hyperparameters ``min-seq-id 0.6`` and ``-c 0.75``.
 
 #### Sequence alignment
 This module compares the protein sequences of multiple plasmid genomes to identify regions of similarity. The **protein sequences from the annotation files** are extracted and compared with each other with **BLASTP** [1]. The **alignment identity and coverage** are returned for visualization. This analysis helps in locating conserved regions, detecting sequence variations, and finding potential functional elements.
@@ -46,5 +46,5 @@ This module constructs a comparative tree that represents the sequence similarit
 [7] Krogh A, Larsson B, Von Heijne G, et al. Predicting transmembrane protein topology with a hidden Markov model: application to complete genomes[J]. Journal of molecular biology, 2001, 305(3): 567-580.
 [8] Zielezinski A, Vinga S, Almeida J, et al. Alignment-free sequence comparison: benefits, applications, and tools[J]. Genome biology, 2017, 18: 1-17.
 [9] Saitou N, Nei M. The neighbor-joining method: a new method for reconstructing phylogenetic trees[J]. Molecular biology and evolution, 1987, 4(4): 406-425.
-[10] Buchfink B, Reuter K, Drost HG. Sensitive protein alignments at tree-of-life scale using DIAMOND. Nat Methods. 2021;18(4):366-368. doi:10.1038/s41592-021-01101-x
-[11] Alcock BP, Huynh W, Chalil R, et al. CARD 2023: expanded curation, support for machine learning, and resistome prediction at the Comprehensive Antibiotic Resistance Database. Nucleic Acids Res. 2023;51(D1):D690-D699. doi:10.1093/nar/gkac920
+[10] Buchfink B, Reuter K, Drost HG. Sensitive protein alignments at tree-of-life scale using DIAMOND[J]. Nature Methods, 2021, 18(4):366-368. 
+[11] Alcock BP, Huynh W, Chalil R, et al. CARD 2023: expanded curation, support for machine learning, and resistome prediction at the Comprehensive Antibiotic Resistance Database[J]. Nucleic Acids Research. 2023, 51(D1):D690-D699.

@@ -1,6 +1,6 @@
 # How to perform PlasmidScope analyses
 
-PlasmidScope supplies automatic analysis workflows for users to study their customized plasmids efficiently. The workflow encompasses pipelines for genome annotation and genome comparison analysis. Click ``Analysis`` on the navigation bar to get started.   
+PlasmidScope supplies online analysis workflows for users to study their customized plasmids efficiently. The workflow encompasses pipelines for genome annotation and genome comparison analysis. Click ``Analysis`` on the navigation bar to get started.   
 
 ## Genome Annotation
 Click ``Genome Annotation`` button and perform genome annotation. Users can run demo data or directly view demo results. We also provide the example inputs.  

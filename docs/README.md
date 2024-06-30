@@ -15,8 +15,8 @@ PlasmidScope provides online analyzing modules for users to analyze their custom
 
 ![image](/Figures/Plasmid_analysis.png)
 
-<!-- ## Visualization
+## Visualization
 
 PlasmidScope supports interactive visualization of the curated database and customized analysis results. Specifically, PlasmidScope generates completeness and phenotype distribution charts, graphical annotation, multiple sequence alignment visualizations, and comparative tree visualizations. All visualizations can be downloaded in high-quality publication-ready format.  
 
-![image](/Figures/visualization.png) -->
+![image](/Figures/visualization.png)

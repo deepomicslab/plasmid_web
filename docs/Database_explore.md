@@ -13,7 +13,7 @@ The interface also provides overview visualizations, such as bar plot, pie chart
 <div align=center><img src="/DB_figures/overview3.png" width="1000"></div>
 
 ## Plasmid List
-<div align=center><img src="/DB_figures/phage_list.png" width="1000"></div>
+<div align=center><img src="/DB_figures/plasmid_list.png" width="1000"></div>
 
 The "Plasmid List" interface allows users to access and download plasmid sequences and meta information.
 
@@ -76,12 +76,12 @@ The "Functional Annotation Data" interface provides access to the functional ele
 The "Secondary Metabolism Information" interface provides access to the types and locations of the secondary metabolites derived from the plasmid genomes.
 
 ### Signal Peptides List
-<div align=center><img src="/DB_figures/singalp_list1.png" width="1000"></div>
+<div align=center><img src="/DB_figures/signalp_list1.png" width="1000"></div>
 
 + Detail: Access the basic information of the chosen signal peptides.
 + View Protein: View and download the detailed information of the selected protein.
 
-<div align=center><img src="/DB_figures/singalp_list2.png" width="1000"></div>
+<div align=center><img src="/DB_figures/signalp_list2.png" width="1000"></div>
 
 ### Virulence Factor List
 <div align=center><img src="/DB_figures/vf_list.png" width="1000"></div>
