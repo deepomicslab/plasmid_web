@@ -25,82 +25,85 @@ const bottomMargin = ref(500)
 
 // Different protein class has different color
 const chooseColor = (d, flag) => {
-        let color = ''
-        // when d is protein_class
-        if (flag == 1) {
-            switch (d) {
-                case 'assembly':
-                    color = '#45bf43'
-                    break
-                case 'infection':
-                    color = '#5490F8'
-                    break
-                case 'hypothetical':
-                    color = '#29cbce'
-                    break
-                case 'immune':
-                    color = '#DF3AD2'
-                    break
-                case 'integration':
-                    color = '#9dc6e7'
-                    break
-                case 'replication':
-                    color = '#0FF0BF'
-                    break
-                case 'packaging':
-                    color = '#9343f0'
-                    break
-                case 'lysis':
-                    color = '#ec364e'
-                    break
-                case 'tRNA':
-                    color = '#90ed7d'
-                    break
-                case 'regulation':
-                    color = '#445d8f'
-                    break
-                // case "unsorted": color="#FB8679"; break;
-                // case "mix": color="#FFEE76"; break;
-            }
-            return color
-        }
-        // when d is final
-        switch (d.class) {
-            case 'assembly':
-                color = '#45bf43'
-                break
-            case 'infection':
-                color = '#5490F8'
-                break
-            case 'hypothetical':
-                color = '#29cbce'
-                break
-            case 'immune':
-                color = '#DF3AD2'
-                break
-            case 'integration':
-                color = '#9dc6e7'
-                break
-            case 'replication':
-                color = '#0FF0BF'
-                break
-            case 'packaging':
-                color = '#9343f0'
-                break
-            case 'lysis':
-                color = '#ec364e'
-                break
-            case 'tRNA':
-                color = '#90ed7d'
-                break
-            case 'regulation':
-                color = '#445d8f'
-                break
-            // case "unsorted": color="#FB8679"; break;
-            // case "mix": color="#FFEE76"; break;
-        }
-        return color
-    }
+    return TypeDict[d].color
+}
+// const chooseColor = (d, flag) => {
+//         let color = ''
+//         // when d is protein_class
+//         if (flag == 1) {
+//             switch (d) {
+//                 case 'assembly':
+//                     color = '#45bf43'
+//                     break
+//                 case 'infection':
+//                     color = '#5490F8'
+//                     break
+//                 case 'hypothetical':
+//                     color = '#29cbce'
+//                     break
+//                 case 'immune':
+//                     color = '#DF3AD2'
+//                     break
+//                 case 'integration':
+//                     color = '#9dc6e7'
+//                     break
+//                 case 'replication':
+//                     color = '#0FF0BF'
+//                     break
+//                 case 'packaging':
+//                     color = '#9343f0'
+//                     break
+//                 case 'lysis':
+//                     color = '#ec364e'
+//                     break
+//                 case 'tRNA':
+//                     color = '#90ed7d'
+//                     break
+//                 case 'regulation':
+//                     color = '#445d8f'
+//                     break
+//                 // case "unsorted": color="#FB8679"; break;
+//                 // case "mix": color="#FFEE76"; break;
+//             }
+//             return color
+//         }
+//         // when d is final
+//         switch (d.class) {
+//             case 'assembly':
+//                 color = '#45bf43'
+//                 break
+//             case 'infection':
+//                 color = '#5490F8'
+//                 break
+//             case 'hypothetical':
+//                 color = '#29cbce'
+//                 break
+//             case 'immune':
+//                 color = '#DF3AD2'
+//                 break
+//             case 'integration':
+//                 color = '#9dc6e7'
+//                 break
+//             case 'replication':
+//                 color = '#0FF0BF'
+//                 break
+//             case 'packaging':
+//                 color = '#9343f0'
+//                 break
+//             case 'lysis':
+//                 color = '#ec364e'
+//                 break
+//             case 'tRNA':
+//                 color = '#90ed7d'
+//                 break
+//             case 'regulation':
+//                 color = '#445d8f'
+//                 break
+//             // case "unsorted": color="#FB8679"; break;
+//             // case "mix": color="#FFEE76"; break;
+//         }
+//         return color
+//     }
 
 
 
@@ -108,18 +111,19 @@ const chooseColor = (d, flag) => {
 
 // Labels of columns
 // const protein_class = proteinType
-const protein_class = [
-    'hypothetical',
-    'infection',
-    'assembly',
-    'replication',
-    'packaging',
-    'lysis',
-    'regulation',
-    'immune',
-    'integration',
-    'tRNA',
-] 
+// const protein_class = [
+//     'hypothetical',
+//     'infection',
+//     'assembly',
+//     'replication',
+//     'packaging',
+//     'lysis',
+//     'regulation',
+//     'immune',
+//     'integration',
+//     'tRNA',
+// ] 
+const protein_class = proteinType
 
 const loaded =computed(()=>phageStore.heatmaploaded)
 
@@ -294,17 +298,17 @@ watch(loaded,()=>{
     phageStore.taskproteinlist.forEach(function (d) {
             let x = d.phageid
             delete d['phageid']
-            let cl = _.split(d.Protein_function_classification, ';')
-            if (cl[0] == 'unsorted') {
-            } else {
-                for (let i = 0; i < cl.length - 1; i++) {
-                    let y = cl[i]
-                    count.push({
-                        x: x,
-                        y: y,
-                    })
-                }
+            let cl = _.split(d.cog_category, '')
+            // if (cl[0] == 'S') {
+            // } else {
+            for (let i = 0; i < cl.length - 1; i++) {
+                let y = TypeDict[cl[i]].name
+                count.push({
+                    x: x,
+                    y: y,
+                })
             }
+            // }
         })
 
         // create a list 'cbcount' in the format {"Phage_Acession_ID:protein_class": the number}
@@ -342,7 +346,7 @@ watch(loaded,()=>{
         }
 
         // calculate the max value for each row
-        let protein_class_max = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        let protein_class_max = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         final.forEach(function (d) {
             switch (d.class) {
                 case 'hypothetical':

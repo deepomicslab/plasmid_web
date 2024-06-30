@@ -11,5 +11,5 @@
 
 <script setup lang="ts">
 // @ts-nocheck
-import heatmap from './components/heatmap.vue'
+import heatmap from './components/heatmap.vue.bk'
 </script>
