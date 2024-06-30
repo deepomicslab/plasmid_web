@@ -18,9 +18,26 @@
 import * as d3 from 'd3'
 import _ from 'lodash'
 // import { Operation } from '@element-plus/icons-vue'
-import { TypeDict, coverageDict, identityDict, proteinType } from '@/utils/annotation'
+import { coverageDict, identityDict } from '@/utils/annotation'
 
 import { usePhageStore } from '@/store/phage'
+
+const TypeDict = {
+    lysis: { color: '#ec364e', abbr: 'Lys', name: 'Lysis' },
+    integration: { color: '#9dc6e7', abbr: 'Int', name: 'Integration' },
+    replication: { color: '#0FF0BF', abbr: 'Rep', name: 'Replication' },
+    tRNA_related: { color: '#90ed7d ', abbr: 'tRNA-related', name: 'tRNA-related' },
+    regulation: { color: '#445d8f', abbr: 'Reg', name: 'Regulation' },
+    packaging: { color: '#9343f0', abbr: 'Pkg', name: 'Packaging' },
+    assembly: { color: '#45bf43', abbr: 'Asm', name: 'Assembly' },
+    infection: { color: '#5490F8', abbr: 'Inf', name: 'Infection' },
+    immune: { color: '#DF3AD2', abbr: 'Imm', name: 'Immune' },
+    mix: { color: '#ff6500', abbr: 'Mix', name: 'Mix' },
+    hypothetical: { color: '#29cbce', abbr: 'Hyp', name: 'Hypothetical' },
+    unsorted: { color: '#ffa235', abbr: 'Uns', name: 'Unsorted' },
+}
+
+const proteinType = Object.keys(TypeDict)
 
 const width = ref(1280)
 const height = ref(900)
