@@ -106,15 +106,15 @@ const menuOptions: MenuOption[] = [
                 key: '/database/function',
                 children: [
                     {
-                        label: 'tRNA & tmRNA Gene List',
+                        label: 'tRNAs & tmRNAs List',
                         key: '/database/function/trna',
                     },
                     {
-                        label: 'CRISPR List',
+                        label: 'CRIRSPR-CAS systems List',
                         key: '/database/function/crispr',
                     },
                     {
-                        label: 'Secondary Metabolism List',
+                        label: 'Secondary Metabolites List',
                         key: '/database/function/sm',
                     },
                     {
@@ -122,11 +122,11 @@ const menuOptions: MenuOption[] = [
                         key: '/database/function/sp',
                     },
                     {
-                        label: 'Virulent Factor List',
+                        label: 'Virulence Factors List',
                         key: '/database/function/virulent',
                     },
                     {
-                        label: 'Antimicrobial Resistance Gene List',
+                        label: 'Antibiotic Resistance Genes List',
                         key: '/database/function/antimicrobial_resistance',
                     },
                     {

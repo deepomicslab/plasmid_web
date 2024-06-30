@@ -65,7 +65,7 @@
                         />
                         <template #label>
                             <h1 class="text-[#069] text-lg font-700">
-                                Antimicrobial Resistance Genes
+                                Antibiotic Resistance Genes
                             </h1>
                         </template>
                     </n-statistic>
@@ -98,7 +98,7 @@
                         </template>
                     </n-statistic>
                 </div> -->
-                <div class="w-50">
+                <div class="w-65">
                     <n-statistic>
                         <n-number-animation
                             ref="numberAnimationInstRef"
@@ -111,7 +111,7 @@
                         </template>
                     </n-statistic>
                 </div>
-                <div class="w-65 ml-3">
+                <div class="w-50 ml-3">
                     <n-statistic>
                         <n-number-animation
                             ref="numberAnimationInstRef"
@@ -120,7 +120,7 @@
                             show-separator
                         />
                         <template #label>
-                            <h1 class="text-[#069] text-lg font-700">Secondary Metabolism</h1>
+                            <h1 class="text-[#069] text-lg font-700">Secondary Metabolites</h1>
                         </template>
                     </n-statistic>
                 </div>
@@ -133,7 +133,7 @@
                             show-separator
                         />
                         <template #label>
-                            <h1 class="text-[#069] text-lg font-700">Virulent Factors</h1>
+                            <h1 class="text-[#069] text-lg font-700">Virulence Factors</h1>
                         </template>
                     </n-statistic>
                 </div>
@@ -146,7 +146,7 @@
                             show-separator
                         />
                         <template #label>
-                            <h1 class="text-[#069] text-lg font-700">CRISPR</h1>
+                            <h1 class="text-[#069] text-lg font-700">CRIRSPR-CAS systems</h1>
                         </template>
                     </n-statistic>
                 </div>
@@ -159,7 +159,7 @@
                             show-separator
                         />
                         <template #label>
-                            <h1 class="text-[#069] text-lg font-700">tRNA Genes</h1>
+                            <h1 class="text-[#069] text-lg font-700">tRNAs & tmRNAs</h1>
                         </template>
                     </n-statistic>
                 </div>

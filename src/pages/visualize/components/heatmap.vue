@@ -294,8 +294,8 @@ watch(loaded,()=>{
     phageStore.taskproteinlist.forEach(function (d) {
             let x = d.phageid
             delete d['phageid']
-            let cl = _.split(d.Protein_function_classification, ';')
-            if (cl[0] == 'unsorted') {
+            let cl = _.split(d.cog_category, '')
+            if (cl[0] == 'S') {
             } else {
                 for (let i = 0; i < cl.length - 1; i++) {
                     let y = cl[i]

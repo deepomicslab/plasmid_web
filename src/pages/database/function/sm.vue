@@ -1,7 +1,7 @@
 <template>
     <div class="h-680 flex flex-col py-10 px-30">
         <div class="flex flex-row ml-1 my-7">
-            <div class="text-4xl font-600">Secondary Metabolism Information</div>
+            <div class="text-4xl font-600">Secondary Metabolites Information</div>
             <el-button round color="#069" class="ml-5 mt-2" @click="godatahelper">
                 Database Helper
             </el-button>
