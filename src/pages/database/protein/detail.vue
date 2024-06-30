@@ -303,7 +303,7 @@ const downloadprotein = () => {
 
 const downloadpdb = () => {
     window.open(
-        `/api/database/download_protein_pdb/?protein_id=${props.proteinInfo.id}&protein_id=${props.proteinInfo.sequence}`,
+        `/api/database/download_protein_pdb/?protein_id=${props.proteinInfo.id}&sequence=${props.proteinInfo.sequence}`,
         '_blank'
     )
 }
