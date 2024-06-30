@@ -202,7 +202,7 @@
                 <div class="text-2xl font-500 mb-4">Protein Structure</div>
             </div>
             <div class="flex flex-row w-290">
-                <div id="myViewer" :key="`${props.proteinInfo.id}`">
+                <div id="myViewer" :key="`${props.proteinInfo.sequence}`">
                     <pdbe-molstar
                         :custom-data-url="`/api/database/download_protein_pdb/?protein_id=${props.proteinInfo.id}&sequence=${props.proteinInfo.sequence}&`"
                         custom-data-format="pdb"
