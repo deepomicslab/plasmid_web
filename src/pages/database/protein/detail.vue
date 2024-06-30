@@ -204,7 +204,7 @@
             <div class="flex flex-row w-290">
                 <div id="myViewer" :key="`${props.proteinInfo.id}`">
                     <pdbe-molstar
-                        :custom-data-url="`/api/database/download_protein_pdb/?protein_id=${props.proteinInfo.id}`"
+                        :custom-data-url="`/api/database/download_protein_pdb/?protein_id=${props.proteinInfo.id}&sequence=${props.proteinInfo.sequence}&`"
                         custom-data-format="pdb"
                         assembly-id="1"
                         default-preset="default"
@@ -302,7 +302,10 @@ const downloadprotein = () => {
 }
 
 const downloadpdb = () => {
-    window.open(`/api/database/download_protein_pdb/?protein_id=${props.proteinInfo.id}`, '_blank')
+    window.open(
+        `/api/database/download_protein_pdb/?protein_id=${props.proteinInfo.id}&protein_id=${props.proteinInfo.sequence}`,
+        '_blank'
+    )
 }
 </script>
 <style>
