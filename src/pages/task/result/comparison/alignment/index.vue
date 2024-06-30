@@ -189,7 +189,7 @@ const switchmap = () => {
 onBeforeMount(async () => {
     loading.value = true
     phageStore.alignmentloaded = false
-    const response = await axios.get(`/view_task_result/`, {
+    const response = await axios.get(`/view_task_detail/`, {
         baseURL: '/api/analysis',
         timeout: 100000,
         params: {
