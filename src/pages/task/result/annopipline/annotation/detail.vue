@@ -167,6 +167,7 @@ import { CloudDownloadOutline as di } from '@vicons/ionicons5'
 import { ArrowDown } from '@element-plus/icons-vue'
 import axios from 'axios'
 import { NButton, NTag } from 'naive-ui'
+import { COGCategoryDict } from '@/utils/phage'
 
 // import { dataset } from '@/utils/phage'
 import proteindetail from '../../../../database/protein/detail.vue'
@@ -315,7 +316,12 @@ type RowData = {
     Protein_function_classification: string
     start_point: string
     end_point: string
+    Strand: string
     strand: string
+    plasmid_id: string
+    cog_category: string
+    start: string
+    end: string
 }
 const rowKey = (row: RowData) => {
     return row.id
@@ -332,90 +338,32 @@ const createColumns = (): DataTableColumns<RowData> => [
 
     {
         title: 'Function classification',
-        key: 'Protein_function_classification',
+        key: 'cog_category',
         align: 'center',
         width: '200px',
-        filterOptions: [
-            {
-                label: 'hypothetical',
-                value: 'hypothetical',
-            },
-            {
-                label: 'infection',
-                value: 'infection',
-            },
-            {
-                label: 'assembly',
-                value: 'assembly',
-            },
-            {
-                label: 'unsorted',
-                value: 'unsorted',
-            },
-            {
-                label: 'replication',
-                value: 'replication',
-            },
-            {
-                label: 'packaging',
-                value: 'packaging',
-            },
-            {
-                label: 'lysis',
-                value: 'lysis',
-            },
-            {
-                label: 'regulation',
-                value: 'regulation',
-            },
-            {
-                label: 'immune',
-                value: 'immune',
-            },
-            {
-                label: 'integration',
-                value: 'integration',
-            },
-            {
-                label: 'tRNA',
-                value: 'tRNA',
-            },
-            {
-                label: 'mix',
-                value: 'mix',
-            },
-        ],
-        filter(value: any, row: any) {
-            return row.Protein_function_classification.includes(value)
-        },
         render(row: any) {
-            const tagnode = []
-            const classlist = row.Protein_function_classification.split(';').slice(
-                0,
-                -1
-            ) as string[]
-            classlist.forEach((item, index) => {
-                tagnode.push(
-                    h(
-                        NTag,
-                        {
-                            size: 'small',
-                            type: 'info',
+            return h('span', { style: { width: '300px', overflow: 'auto' } }, [
+                h(
+                    'span',
+                    {
+                        type: 'info',
+                        size: 'small',
+                        round: true,
+                    },
+                    {
+                        default: () => {
+                            let info = ''
+                            Array.from(row.cog_category).forEach(element => {
+                                // eslint-disable-next-line no-const-assign
+                                info += `${COGCategoryDict[element]}, `
+                            })
+                            return info
+                            // console.log(row.cog_category, '-----------')
+                            // return COGCategoryDict[row.cog_category]
                         },
-                        {
-                            default: () => {
-                                return classlist[index]
-                            },
-                        }
-                    )
-                )
-            })
-
-            return h(
-                'div',
-                { style: { width: '200px', display: 'flex', justifyContent: 'space-around' } },
-                tagnode
-            )
+                    }
+                ),
+            ])
         },
     },
     {
@@ -492,7 +440,6 @@ const createColumns = (): DataTableColumns<RowData> => [
                             size: 'small',
                             type: 'info',
                             onClick: () => {
-                                console.log(row)
                                 proteinInfo.value = row
                                 proteinVisible.value = true
                             },

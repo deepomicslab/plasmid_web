@@ -194,7 +194,7 @@
                                 <el-carousel-item>
                                     <div class="w-297 h-259">
                                         <el-image
-                                            src="/png/Plasmid_database.pdf"
+                                            src="/png/Plasmid_database.jpg"
                                             class="image w-297 h-259"
                                             z-index="100"
                                         />
@@ -205,7 +205,7 @@
                                         class="w-297 h-259 flex flex-row items-center justify-center"
                                     >
                                         <el-image
-                                            src="/png/Plasmid_analysis.pdf"
+                                            src="/png/Plasmid_analysis.jpg"
                                             class="image w-297 h-259"
                                             z-index="100"
                                         />
