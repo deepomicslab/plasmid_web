@@ -204,8 +204,8 @@ const onClick = () => {
 onBeforeMount(async () => {
     loading.value = true
 
-    const response2 = await axios.get(`/tasks/detail/`, {
-        baseURL: '/api',
+    const response2 = await axios.get(`/view_task_detail/`, {
+        baseURL: '/api/analysis',
         timeout: 100000,
         params: {
             taskid: taskid.value,
@@ -214,8 +214,8 @@ onBeforeMount(async () => {
     const data2 = response2.data
     taskdata.value = data2
 
-    const response = await axios.get(`tasks/result/modules/`, {
-        baseURL: '/api',
+    const response = await axios.get(`/view_task_result_modules/`, {
+        baseURL: '/api/analysis',
         timeout: 100000,
         params: {
             module: 'trna',
@@ -384,6 +384,6 @@ const createColumns2 = (): DataTableColumns<trnaRowData> => [
 const columns2 = createColumns2()
 
 const trna_resulturl = computed(() => {
-    return `https://phageapi.deepomics.org/tasks/result/download/${taskdetail.value.uploadpath}/output/rawdata/trna/trna.fasta`
+    return `https://plasmidapi.deepomics.org/tasks/result/download/${taskdetail.value.uploadpath}/output/rawdata/trna/trna.fasta`
 })
 </script>
