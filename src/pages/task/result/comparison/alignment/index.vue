@@ -96,7 +96,7 @@
                 <el-popover placement="right" :width="400" trigger="click">
                     <template #reference>
                         <el-button class="ml-10 mt-1" type="primary">
-                            Select Phage to view result
+                            Select Plasmid to view result
                         </el-button>
                     </template>
                     <n-data-table
@@ -189,8 +189,8 @@ const switchmap = () => {
 onBeforeMount(async () => {
     loading.value = true
     phageStore.alignmentloaded = false
-    const response = await axios.get(`/tasks/detail/`, {
-        baseURL: '/api',
+    const response = await axios.get(`/view_task_result/`, {
+        baseURL: '/api/analysis',
         timeout: 100000,
         params: {
             taskid: taskid.value,
@@ -198,8 +198,8 @@ onBeforeMount(async () => {
     })
     taskdata.value = response.data
 
-    const response2 = await axios.get(`tasks/result/modules/`, {
-        baseURL: '/api',
+    const response2 = await axios.get(`/view_task_result_modules/`, {
+        baseURL: '/api/analysis',
         timeout: 100000,
         params: {
             module: 'alignment',
@@ -220,8 +220,8 @@ const taskdetail = computed(() => {
 
 const resulturl = computed(() => {
     return {
-        blast: `https://phageapi.deepomics.org/tasks/result/download/${taskdetail.value.uploadpath}/output/rawdata/alignment/blast_result.txt`,
-        circle: `https://phageapi.deepomics.org/tasks/result/download/${taskdetail.value.uploadpath}/output/rawdata/alignment/comparison_link_circle.csv`,
+        blast: `https://plasmidapi.deepomics.org/api/analysis/download_task_result_output_file/${taskdetail.value.uploadpath}/output/rawdata/alignment/blast_result.txt`,
+        circle: `https://plasmidapi.deepomics.org/api/analysis/download_task_result_output_file/${taskdetail.value.uploadpath}/output/rawdata/alignment/comparison_link_circle.csv`,
     }
 })
 
@@ -277,7 +277,7 @@ const createColumns = (): DataTableColumns<orderListRowData> => [
         width: '100px',
     },
     {
-        title: 'Phage ID',
+        title: 'Plasmid ID',
         key: 'phage_id',
         align: 'center',
         ellipsis: {
@@ -309,7 +309,7 @@ const createColumns2 = (): DataTableColumns<alignmentRowData> => [
         align: 'center',
     },
     {
-        title: 'Source_Phage_ID',
+        title: 'Source_Plasmid_ID',
         key: 'Source_Phage_ID',
         align: 'center',
         width: '240px',
@@ -343,7 +343,7 @@ const createColumns2 = (): DataTableColumns<alignmentRowData> => [
         },
     },
     {
-        title: 'Target_Phage_ID',
+        title: 'Target_Plasmid_ID',
         key: 'Target_Phage_ID',
         align: 'center',
         width: '240px',
@@ -445,14 +445,14 @@ const columns3 = createColumns2()
 
 const seeresult = async () => {
     if (checkedRowKeysRef.value.length === 0) {
-        window.$message.warning('Please select phage ids', {
+        window.$message.warning('Please select plasmid ids', {
             closable: true,
             duration: 5000,
         })
     } else {
         phageStore.alignmentloaded = false
-        const response2 = await axios.get(`tasks/result/modules/`, {
-            baseURL: '/api',
+        const response2 = await axios.get(`/view_task_result_modules/`, {
+            baseURL: '/api/analysis',
             timeout: 100000,
             params: {
                 module: 'alignment',

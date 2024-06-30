@@ -368,13 +368,13 @@ const taskdetail = computed(() => {
 })
 /// home/platform/phage_db/phage_api/workspace/user_task/1688296838_3083/output/rawdata/quality/checkv_result.txt
 const checkv_resulturl = computed(() => {
-    return `https://phageapi.deepomics.org/tasks/result/download/${taskdetail.value.uploadpath}/output/rawdata/quality/checkv_result.txt`
+    return `https://plasmidapi.deepomics.org/api/analysis/download_task_result_output_file/${taskdetail.value.uploadpath}/output/rawdata/quality/checkv_result.txt`
 })
 const completenessurl = computed(() => {
-    return `https://phageapi.deepomics.org/tasks/result/download/${taskdetail.value.uploadpath}/output/rawdata/quality/completeness.tsv`
+    return `https://plasmidapi.deepomics.org/api/analysis/download_task_result_output_file/${taskdetail.value.uploadpath}/output/rawdata/quality/completeness.tsv`
 })
 const qualityurl = computed(() => {
-    return `https://phageapi.deepomics.org/tasks/result/download/${taskdetail.value.uploadpath}/output/rawdata/quality/quality_summary.tsv`
+    return `https://plasmidapi.deepomics.org/api/analysis/download_task_result_output_file/${taskdetail.value.uploadpath}/output/rawdata/quality/quality_summary.tsv`
 })
 
 const completenesList = computed(() => {

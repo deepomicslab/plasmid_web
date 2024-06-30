@@ -85,7 +85,7 @@
         </el-descriptions>
         <div class="flex flex-row justify-between mt-10 mb-4 ml-10">
             <div class="flex flex-row w-200">
-                <div class="text-3xl font-500">Phage List</div>
+                <div class="text-3xl font-500">Plasmid List</div>
             </div>
         </div>
         <div v-loading="loading" class="w-330 mt-1 ml-10">
@@ -93,7 +93,7 @@
                 <el-table-column prop="id" label="ID" fixed align="center"></el-table-column>
                 <el-table-column
                     prop="Acession_ID"
-                    label="Phage ID"
+                    label="Plasmid ID"
                     fixed
                     width="450"
                     align="center"
@@ -146,7 +146,7 @@
             <el-descriptions-item label="Protein ID">
                 {{ proteinInfo.Protein_id }}
             </el-descriptions-item>
-            <el-descriptions-item label="Phage ID">
+            <el-descriptions-item label="Plasmid ID">
                 {{ proteinInfo.Phage_Acession_ID }}
             </el-descriptions-item>
             <el-descriptions-item label="Length">{{ proteinInfo.Length }}</el-descriptions-item>
@@ -232,8 +232,8 @@ const onClick = () => {
 onBeforeMount(async () => {
     loading.value = true
 
-    const response2 = await axios.get(`/tasks/detail/`, {
-        baseURL: '/api',
+    const response2 = await axios.get(`/view_task_detail/`, {
+        baseURL: '/api/analysis',
         timeout: 100000,
         params: {
             taskid: taskid.value,
@@ -243,16 +243,16 @@ onBeforeMount(async () => {
     taskdata.value = data2
     loading.value = false
 
-    const response1 = await axios.get(`/tasks/result/phage/`, {
-        baseURL: '/api',
+    const response1 = await axios.get(`/view_task_result/`, {
+        baseURL: '/api/analysis',
         timeout: 100000,
         params: {
             taskid: taskid.value,
         },
     })
     phagedata.value = response1.data
-    const response = await axios.get(`tasks/result/modules/`, {
-        baseURL: '/api',
+    const response = await axios.get(`/view_task_result_modules/`, {
+        baseURL: '/api/analysis',
         timeout: 100000,
         params: {
             module: 'transmembrane',
@@ -281,10 +281,10 @@ const taskdetail = computed(() => {
 })
 
 const transmembraneurl = computed(() => {
-    return `https://phageapi.deepomics.org/tasks/result/download/${taskdetail.value.uploadpath}/output/result/transmembrane.tsv`
+    return `https://plasmidapi.deepomics.org/api/analysis/download_task_result_output_file/${taskdetail.value.uploadpath}/output/result/transmembrane.tsv`
 })
 const resulturl = computed(() => {
-    return `https://phageapi.deepomics.org/tasks/result/download/${taskdetail.value.uploadpath}/output/rawdata/transmembrane/result.txt`
+    return `https://plasmidapi.deepomics.org/api/analysis/download_task_result_output_file/${taskdetail.value.uploadpath}/output/rawdata/transmembrane/result.txt`
 })
 const proteinList = computed(() => {
     if (transmembranedata.value.length === 0) {
@@ -327,7 +327,7 @@ type RowData = {
 }
 const createColumns = (): DataTableColumns<RowData> => [
     {
-        title: 'Phage ID',
+        title: 'Plasmid ID',
         key: 'Phage_Acession_ID',
         align: 'center',
         ellipsis: {
@@ -392,8 +392,8 @@ const createColumns = (): DataTableColumns<RowData> => [
 ]
 const columns = createColumns()
 const download = async (row: any) => {
-    const response = await axios.get(`/tasks/result/phagefasta/`, {
-        baseURL: '/api',
+    const response = await axios.get(`/view_task_result_plasmid_fasta/`, {
+        baseURL: '/api/analysis',
         timeout: 100000,
         params: {
             taskid: taskid.value,

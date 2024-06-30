@@ -306,7 +306,7 @@ const router = useRouter()
 const godemo = () => {
     router.push({
         path: '/task/result/annopipline/arvf',
-        query: { taskid: 204 },
+        query: { taskid: 12 },
     })
 }
 

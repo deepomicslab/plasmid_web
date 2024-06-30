@@ -213,15 +213,15 @@ const taskdetail = computed(() => {
 })
 const blasturl = computed(() => {
     if (type.value === 'cluster') {
-        return `https://phageapi.deepomics.org/tasks/result/download/${taskdetail.value.uploadpath}/output/rawdata/alignment/${clusterid.value}/blast_result.txt`
+        return `https://plasmidapi.deepomics.org/api/analysis/download_task_result_output_file/${taskdetail.value.uploadpath}/output/rawdata/alignment/${clusterid.value}/blast_result.txt`
     }
-    return `https://phageapi.deepomics.org/tasks/result/download/${taskdetail.value.uploadpath}/output/rawdata/alignment/${subclusterid.value}/blast_result.txt`
+    return `https://plasmidapi.deepomics.org/api/analysis/download_task_result_output_file/${taskdetail.value.uploadpath}/output/rawdata/alignment/${subclusterid.value}/blast_result.txt`
 })
 const phagelistsorturl = computed(() => {
     if (type.value === 'cluster') {
-        return `https://phageapi.deepomics.org/tasks/result/download/${taskdetail.value.uploadpath}/output/rawdata/alignment/${clusterid.value}/phage_list_sort.txt`
+        return `https://plasmidapi.deepomics.org/api/analysis/download_task_result_output_file/${taskdetail.value.uploadpath}/output/rawdata/alignment/${clusterid.value}/phage_list_sort.txt`
     }
-    return `https://phageapi.deepomics.org/tasks/result/download/${taskdetail.value.uploadpath}/output/rawdata/alignment/${subclusterid.value}/phage_list_sort.txt`
+    return `https://plasmidapi.deepomics.org/api/analysis/download_task_result_output_file/${taskdetail.value.uploadpath}/output/rawdata/alignment/${subclusterid.value}/phage_list_sort.txt`
 })
 
 const pagination = reactive({

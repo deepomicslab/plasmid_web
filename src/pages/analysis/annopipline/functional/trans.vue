@@ -300,7 +300,7 @@ const remove = () => {
 const router = useRouter()
 
 const godemo = () => {
-    router.push({ path: '/task/result/annopipline/trans', query: { taskid: 56 } })
+    router.push({ path: '/task/result/annopipline/trans', query: { taskid: 11 } })
 }
 
 const modulelist = ref({

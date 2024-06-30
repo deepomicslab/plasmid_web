@@ -303,7 +303,7 @@ const router = useRouter()
 const godemo = () => {
     router.push({
         path: '/task/result/annopipline/trna',
-        query: { taskid: 108 },
+        query: { taskid: 10 },
     })
 }
 

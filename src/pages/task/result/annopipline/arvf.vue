@@ -185,8 +185,8 @@ onBeforeMount(async () => {
     })
     taskdata.value = response.data
     console.log(taskdata.value)
-    const response2 = await axios.get(`tasks/result/modules/`, {
-        baseURL: '/api',
+    const response2 = await axios.get(`/view_task_result_modules/`, {
+        baseURL: '/api/analysis',
         timeout: 100000,
         params: {
             module: 'arvf',
@@ -200,8 +200,8 @@ onBeforeMount(async () => {
 
 const urldict = computed(() => {
     return {
-        argr: `https://phageapi.deepomics.org/tasks/result/download/${taskdata.value.results.uploadpath}/output/rawdata/arvf/antimicrobial_resistance_gene_result/antimicrobial_resistance_gene_results.tsv`,
-        vfr: `https://phageapi.deepomics.org/tasks/result/download/${taskdata.value.results.uploadpath}/output/rawdata/arvf/virulence_factor_result/virulent_factor_results.tsv`,
+        argr: `https://plasmidapi.deepomics.org/api/analysis/download_task_result_output_file/${taskdata.value.results.uploadpath}/output/rawdata/arvf/antimicrobial_resistance_gene_result/antimicrobial_resistance_gene_results.tsv`,
+        vfr: `https://plasmidapi.deepomics.org/api/analysis/download_task_result_output_file/${taskdata.value.results.uploadpath}/output/rawdata/arvf/virulence_factor_result/virulent_factor_results.tsv`,
     }
 })
 
@@ -227,7 +227,7 @@ type crisprRowData = {
 }
 const createColumns = (): DataTableColumns<crisprRowData> => [
     {
-        title: 'Phage ID',
+        title: 'Plasmid ID',
         key: 'Phage_id',
         align: 'center',
         sorter: 'default',
@@ -281,7 +281,7 @@ const createColumns = (): DataTableColumns<crisprRowData> => [
                                 })
                             },
                         },
-                        { default: () => 'View Phage' }
+                        { default: () => 'View Plasmid' }
                     ),
                 ]
             )
@@ -292,7 +292,7 @@ const columns = createColumns()
 
 const createColumns2 = (): DataTableColumns<crisprRowData> => [
     {
-        title: 'Phage ID',
+        title: 'Plasmid ID',
         key: 'Phage_id',
         align: 'center',
         sorter: 'default',
@@ -346,7 +346,7 @@ const createColumns2 = (): DataTableColumns<crisprRowData> => [
                                 })
                             },
                         },
-                        { default: () => 'View Phage' }
+                        { default: () => 'View Plasmid' }
                     ),
                 ]
             )

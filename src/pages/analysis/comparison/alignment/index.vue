@@ -231,7 +231,7 @@ const remove = () => {
 const router = useRouter()
 
 const godemo = () => {
-    router.push({ path: '/task/result/comparison/alignment', query: { taskid: 91 } })
+    router.push({ path: '/task/result/comparison/alignment', query: { taskid: 13 } })
 }
 
 const modulelist = ref({

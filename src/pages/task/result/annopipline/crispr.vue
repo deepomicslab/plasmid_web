@@ -317,8 +317,8 @@ const pagination = reactive({
 /// home/platform/phage_db/phage_api/workspace/user_task/1690810085_6563/output/rawdata/crispr/output/TSV/CRISPR-Cas_summary.tsv
 const urldict = computed(() => {
     return {
-        summary: `https://phageapi.deepomics.org/tasks/result/download/${taskdetail.value.uploadpath}/output/rawdata/crispr/output/TSV/CRISPR-Cas_summary.tsv`,
-        report: `https://phageapi.deepomics.org/tasks/result/download/${taskdetail.value.uploadpath}/output/rawdata/crispr/output/TSV/Crisprs_REPORT.tsv`,
+        summary: `https://plasmidapi.deepomics.org/api/analysis/download_task_result_output_file/${taskdetail.value.uploadpath}/output/rawdata/crispr/output/TSV/CRISPR-Cas_summary.tsv`,
+        report: `https://plasmidapi.deepomics.org/api/analysis/download_task_result_output_file/${taskdetail.value.uploadpath}/output/rawdata/crispr/output/TSV/Crisprs_REPORT.tsv`,
     }
 })
 

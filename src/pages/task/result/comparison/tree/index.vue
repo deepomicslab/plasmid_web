@@ -128,16 +128,16 @@ const taskdata = ref({
 
 onBeforeMount(async () => {
     clusterStore.dataload = false
-    const response = await axios.get(`/tasks/detail/`, {
-        baseURL: '/api',
+    const response = await axios.get(`/view_task_detail/`, {
+        baseURL: '/api/analaysis',
         timeout: 100000,
         params: {
             taskid: taskid.value,
         },
     })
     taskdata.value = response.data
-    const response2 = await axios.get(`tasks/result/tree/`, {
-        baseURL: '/api',
+    const response2 = await axios.get(`/view_task_result_tree/`, {
+        baseURL: '/api/analysis',
         timeout: 100000,
         params: {
             taskid: taskid.value,
@@ -151,10 +151,10 @@ const taskdetail = computed(() => {
 })
 /// home/platform/phage_db/phage_api/workspace/user_task/1690162280_8759/output/rawdata/tree/sequence.phy
 const treeurl = computed(() => {
-    return `https://phageapi.deepomics.org/tasks/result/download/${taskdetail.value.uploadpath}/output/rawdata/tree/sequence.phy`
+    return `https://plasmidapi.deepomics.org/api/analysis/download_task_result_output_file/${taskdetail.value.uploadpath}/output/rawdata/tree/sequence.phy`
 })
 /// home/platform/phage_db/phage_api/workspace/user_task/1690162280_8759/output/rawdata/tree/alfree_output.txt
 const alfree_outputurl = computed(() => {
-    return `https://phageapi.deepomics.org/tasks/result/download/${taskdetail.value.uploadpath}/output/rawdata/tree/alfree_output.txt`
+    return `https://plasmidapi.deepomics.org/api/analysis/download_task_result_output_file/${taskdetail.value.uploadpath}/output/rawdata/tree/alfree_output.txt`
 })
 </script>

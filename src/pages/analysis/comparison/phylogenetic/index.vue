@@ -338,7 +338,7 @@ const submitdemo = async () => {
 const router = useRouter()
 
 const godemo = () => {
-    router.push({ path: '/task/result/comparison/tree', query: { taskid: 82 } })
+    router.push({ path: '/task/result/comparison/tree', query: { taskid: 14 } })
 }
 const gosubmithelper = () => {
     router.push({ path: '/tutorial', query: { type: 'Analysis_introduction' } })

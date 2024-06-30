@@ -384,6 +384,6 @@ const createColumns2 = (): DataTableColumns<trnaRowData> => [
 const columns2 = createColumns2()
 
 const trna_resulturl = computed(() => {
-    return `https://plasmidapi.deepomics.org/tasks/result/download/${taskdetail.value.uploadpath}/output/rawdata/trna/trna.fasta`
+    return `https://plasmidapi.deepomics.org/api/analysis/download_task_result_output_file/${taskdetail.value.uploadpath}/output/rawdata/trna/trna.fasta`
 })
 </script>

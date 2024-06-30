@@ -376,7 +376,7 @@ const columns = createColumns()
 
 const downloadtsv = () => {
     window.open(
-        `https://phageapi.deepomics.org/tasks/result/download/${taskdetail.value.uploadpath}/output/rawdata/cluster/result.txt`
+        `https://plasmidapi.deepomics.org/api/analysis/download_task_result_output_file/${taskdetail.value.uploadpath}/output/rawdata/cluster/result.txt`
     )
 }
 </script>

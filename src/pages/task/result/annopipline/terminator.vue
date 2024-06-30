@@ -167,8 +167,8 @@ const taskdetail = computed(() => {
 })
 const urldict = computed(() => {
     return {
-        transterm_output_tt: `https://phageapi.deepomics.org/tasks/result/download/${taskdetail.value.uploadpath}/output/rawdata/terminator/transterm_output.tt`,
-        transterm_output_txt: `https://phageapi.deepomics.org/tasks/result/download/${taskdetail.value.uploadpath}/output/rawdata/terminator/transterm_output.txt`,
+        transterm_output_tt: `https://plasmidapi.deepomics.org/api/analysis/download_task_result_output_file/${taskdetail.value.uploadpath}/output/rawdata/terminator/transterm_output.tt`,
+        transterm_output_txt: `https://plasmidapi.deepomics.org/api/analysis/download_task_result_output_file/${taskdetail.value.uploadpath}/output/rawdata/terminator/transterm_output.txt`,
     }
 })
 

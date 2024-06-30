@@ -214,7 +214,7 @@ onBeforeMount(async () => {
 /// home/platform/phage_db/phage_api/workspace/user_task/1692022627_3133/output/rawdata/anticrispr/acr_result.txt
 const urldict = computed(() => {
     return {
-        acr: `https://phageapi.deepomics.org/tasks/result/download/${taskdata.value.results.uploadpath}/output/rawdata/anticrispr/acr_result.txt`,
+        acr: `https://plasmidapi.deepomics.org/api/analysis/download_task_result_output_file/${taskdata.value.results.uploadpath}/output/rawdata/anticrispr/acr_result.txt`,
     }
 })
 const complete = (comp: any) => {
