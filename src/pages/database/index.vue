@@ -103,11 +103,11 @@
                         <n-number-animation
                             ref="numberAnimationInstRef"
                             :from="0"
-                            :to="+`${overview_data.overview.sp}`"
+                            :to="+`${overview_data.overview.trna}`"
                             show-separator
                         />
                         <template #label>
-                            <h1 class="text-[#069] text-lg font-700">Signal Peptides</h1>
+                            <h1 class="text-[#069] text-lg font-700">tRNAs & tmRNAs</h1>
                         </template>
                     </n-statistic>
                 </div>
@@ -155,11 +155,11 @@
                         <n-number-animation
                             ref="numberAnimationInstRef"
                             :from="0"
-                            :to="+`${overview_data.overview.trna}`"
+                            :to="+`${overview_data.overview.sp}`"
                             show-separator
                         />
                         <template #label>
-                            <h1 class="text-[#069] text-lg font-700">tRNAs & tmRNAs</h1>
+                            <h1 class="text-[#069] text-lg font-700">Signal Peptides</h1>
                         </template>
                     </n-statistic>
                 </div>
