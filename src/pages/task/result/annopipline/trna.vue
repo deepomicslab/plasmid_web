@@ -170,7 +170,7 @@
         <template #footer>
             <div class="dialog-footer">
                 <el-button @click="trnaVisible = false">Cancel</el-button>
-                <el-button type="primary">Download</el-button>
+                <el-button @click="downloadprotein" type="primary">Download</el-button>
             </div>
         </template>
     </el-dialog>
@@ -201,6 +201,7 @@ const trnadata = ref([] as any)
 const onClick = () => {
     dialogVisible.value = true
 }
+
 onBeforeMount(async () => {
     loading.value = true
 
@@ -237,7 +238,16 @@ const trnaInfo = ref({
     permutation: '',
     seq: '',
 })
-
+const downloadprotein = () => {
+    const filename = `${trnaInfo.value.trna_id}.fasta`
+    const blob = new Blob([trnaInfo.value.seq], { type: 'text/plain;charset=utf-8' })
+    const url = URL.createObjectURL(blob)
+    const link = document.createElement('a')
+    link.href = url
+    link.download = filename
+    link.click()
+    URL.revokeObjectURL(url)
+}
 const trnaList = computed(() => trnadata.value)
 const trnas = computed(() => {
     return trnaList.value.length
