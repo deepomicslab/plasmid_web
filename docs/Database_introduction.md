@@ -72,26 +72,26 @@ PlasmidScope applied **ESMFold** [23] to predict the structure of the **39,172,2
 Comparative genomic studies, including sequence alignment and comparative tree construction, are also provided for the curated plasmids.
 
 ## References
-[1] O'Leary N A, Wright M W, Brister J R, et al. Reference sequence (RefSeq) database at NCBI: current status, taxonomic expansion, and functional annotation[J]. Nucleic acids research, 2016, 44(D1): D733-D745.
-[2] Benson D A, Cavanaugh M, Clark K, et al. GenBank[J]. Nucleic acids research, 2018, 46(Database issue): D41.
-[3] Kanz C, Aldebert P, Althorpe N, et al. The EMBL nucleotide sequence database[J]. Nucleic acids research, 2005, 33(suppl_1): D29-D33.
-[4] Ogasawara O, Kodama Y, Mashima J, et al. DDBJ Database updates and computational infrastructure enhancement[J]. Nucleic acids research, 2020, 48(D1): D45-D50.
-[5] Guy C, Kirsty B, Rolf A, et al. Evidence standards in experimental and inferential INSDC Third Party Annotation data[J]. Omics: a journal of integrative biology,2006, 10(2): 105-113.
-[6] Georges PS, Anna H, Pascal H, et al. PLSDB: advancing a comprehensive database of bacterial plasmids[J]. Nucleic Acids Research, 2022, 50(D1): D273–D278.
-[7] Antonio PC, Lee C, Simon R, et al. IMG/PR: a database of plasmids from genomes and metagenomes with rich annotations and metadata[J]. Nucleic acids research, 2022, 52(D1): Volume 52: D164–D173.
-[8] Douarre PE, Mallet L, Radomski N, et al. Analysis of COMPASS, a New Comprehensive Plasmid Database Revealed Prevalence of Multireplicon and Extensive Diversity of IncF Plasmids[J]. Frontiers in Microbiology, 2020, 11: 10.3389/fmicb.2020.00483.
-[9] Lu J, Rincon N, Wood DE, et al. Metagenome analysis using the Kraken software suite[J]. Nature Protocol, 2022, 17, 2815–2839.
-[10] Federhen S. The NCBI taxonomy database[J]. Nucleic acids research, 2012, 40(D1): D136-D143.
-[11] James R, Kyrylo B, Justin S, et al. Universal whole-sequence-based plasmid typing and its utility to prediction of host range and epidemiological surveillance[J]. Microbial genomics, 2020, 6(10): mgen000435.
-[12] Torsten Seemann. Prokka: rapid prokaryotic genome annotation[J]. Bioinformatics, 2014, 30(14): 2068-9.
-[13] Cantalapiedra C P, Hernandez-Plaza A, Letunic I, et al. eggNOG-mapper v2: functional annotation, orthology assignments, and domain prediction at the metagenomic scale[J]. Molecular biology and evolution, 2021, 38(12): 5825-5829.
-[14] Buchfink B, Reuter K, Drost HG. Sensitive protein alignments at tree-of-life scale using DIAMOND [J]. Nature Methods, 2021, 18: 366–368. 
-[15] Chen L, Yang J, Yu J, et al. VFDB: a reference database for bacterial virulence factors[J]. Nucleic acids research, 2005, 33(suppl_1): D325-D328.
-[16] McArthur A G, Waglechner N, Nizam F, et al. The comprehensive antibiotic resistance database[J]. Antimicrobial agents and chemotherapy, 2013, 57(7): 3348-3357.
-[17] Brian P A, William H, Romeo C,  et al. CARD 2023: expanded curation, support for machine learning, and resistome prediction at the Comprehensive Antibiotic Resistance Database[J]. Nucleic acids research, (2023), 51(D1): D690-D699.
-[18] Laslett D, Canback B. ARAGORN, a program to detect tRNA genes and tmRNA genes in nucleotide sequences[J]. Nucleic acids research, 2004, 32(1): 11-16.
-[19] Jakob R, Rafael PR, David MM, et al. CRISPRCasTyper: Automated Identification, Annotation, and Classification of CRISPR-Cas Loci[J]. The CRISPR journal, 2020, 3(6): 462-469. 
-[20] Kai B, Simon S, Hannah EA, et al. antiSMASH 7.0: new and improved predictions for detection, regulation, chemical structures and visualization[J]. Nucleic acids research, 2023, 51(W1): W46-W50.
-[21] Felix T, José JAA, Alexander RJ, et al. SignalP 6.0 predicts all five types of signal peptides using protein language models[J]. Nature biotechnology, 2022, 40(7): 1023-1025.
-[22] Krogh A, Larsson B, Von Heijne G, et al. Predicting transmembrane protein topology with a hidden Markov model: application to complete genomes[J]. Journal of molecular biology, 2001, 305(3): 567-580.
-[23] Zeming L, Halil A, Roshan R, et al. Evolutionary-scale prediction of atomic-level protein structure with a language model[J]. Science, 2023, 379(6637): 1123-1130.
+[1] O'Leary N A, Wright M W, Brister J R, et al. Reference sequence (RefSeq) database at NCBI: current status, taxonomic expansion, and functional annotation[J]. Nucleic acids research, 2016, 44(D1): D733-D745.<br>
+[2] Benson D A, Cavanaugh M, Clark K, et al. GenBank[J]. Nucleic acids research, 2018, 46(Database issue): D41.<br>
+[3] Kanz C, Aldebert P, Althorpe N, et al. The EMBL nucleotide sequence database[J]. Nucleic acids research, 2005, 33(suppl_1): D29-D33.<br>
+[4] Ogasawara O, Kodama Y, Mashima J, et al. DDBJ Database updates and computational infrastructure enhancement[J]. Nucleic acids research, 2020, 48(D1): D45-D50.<br>
+[5] Guy C, Kirsty B, Rolf A, et al. Evidence standards in experimental and inferential INSDC Third Party Annotation data[J]. Omics: a journal of integrative biology,2006, 10(2): 105-113.<br>
+[6] Georges PS, Anna H, Pascal H, et al. PLSDB: advancing a comprehensive database of bacterial plasmids[J]. Nucleic Acids Research, 2022, 50(D1): D273–D278.<br>
+[7] Antonio PC, Lee C, Simon R, et al. IMG/PR: a database of plasmids from genomes and metagenomes with rich annotations and metadata[J]. Nucleic acids research, 2022, 52(D1): Volume 52: D164–D173.<br>
+[8] Douarre PE, Mallet L, Radomski N, et al. Analysis of COMPASS, a New Comprehensive Plasmid Database Revealed Prevalence of Multireplicon and Extensive Diversity of IncF Plasmids[J]. Frontiers in Microbiology, 2020, 11: 10.3389/fmicb.2020.00483.<br>
+[9] Lu J, Rincon N, Wood DE, et al. Metagenome analysis using the Kraken software suite[J]. Nature Protocol, 2022, 17, 2815–2839.<br>
+[10] Federhen S. The NCBI taxonomy database[J]. Nucleic acids research, 2012, 40(D1): D136-D143.<br>
+[11] James R, Kyrylo B, Justin S, et al. Universal whole-sequence-based plasmid typing and its utility to prediction of host range and epidemiological surveillance[J]. Microbial genomics, 2020, 6(10): mgen000435.<br>
+[12] Torsten Seemann. Prokka: rapid prokaryotic genome annotation[J]. Bioinformatics, 2014, 30(14): 2068-9.<br>
+[13] Cantalapiedra C P, Hernandez-Plaza A, Letunic I, et al. eggNOG-mapper v2: functional annotation, orthology assignments, and domain prediction at the metagenomic scale[J]. Molecular biology and evolution, 2021, 38(12): 5825-5829.<br>
+[14] Buchfink B, Reuter K, Drost HG. Sensitive protein alignments at tree-of-life scale using DIAMOND [J]. Nature Methods, 2021, 18: 366–368. <br>
+[15] Chen L, Yang J, Yu J, et al. VFDB: a reference database for bacterial virulence factors[J]. Nucleic acids research, 2005, 33(suppl_1): D325-D328.<br>
+[16] McArthur A G, Waglechner N, Nizam F, et al. The comprehensive antibiotic resistance database[J]. Antimicrobial agents and chemotherapy, 2013, 57(7): 3348-3357.<br>
+[17] Brian P A, William H, Romeo C,  et al. CARD 2023: expanded curation, support for machine learning, and resistome prediction at the Comprehensive Antibiotic Resistance Database[J]. Nucleic acids research, (2023), 51(D1): D690-D699.<br>
+[18] Laslett D, Canback B. ARAGORN, a program to detect tRNA genes and tmRNA genes in nucleotide sequences[J]. Nucleic acids research, 2004, 32(1): 11-16.<br>
+[19] Jakob R, Rafael PR, David MM, et al. CRISPRCasTyper: Automated Identification, Annotation, and Classification of CRISPR-Cas Loci[J]. The CRISPR journal, 2020, 3(6): 462-469. <br>
+[20] Kai B, Simon S, Hannah EA, et al. antiSMASH 7.0: new and improved predictions for detection, regulation, chemical structures and visualization[J]. Nucleic acids research, 2023, 51(W1): W46-W50.<br>
+[21] Felix T, José JAA, Alexander RJ, et al. SignalP 6.0 predicts all five types of signal peptides using protein language models[J]. Nature biotechnology, 2022, 40(7): 1023-1025.<br>
+[22] Krogh A, Larsson B, Von Heijne G, et al. Predicting transmembrane protein topology with a hidden Markov model: application to complete genomes[J]. Journal of molecular biology, 2001, 305(3): 567-580.<br>
+[23] Zeming L, Halil A, Roshan R, et al. Evolutionary-scale prediction of atomic-level protein structure with a language model[J]. Science, 2023, 379(6637): 1123-1130.<br>
