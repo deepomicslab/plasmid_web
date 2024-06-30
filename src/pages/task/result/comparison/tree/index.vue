@@ -129,7 +129,7 @@ const taskdata = ref({
 onBeforeMount(async () => {
     clusterStore.dataload = false
     const response = await axios.get(`/view_task_detail/`, {
-        baseURL: '/api/analaysis',
+        baseURL: '/api/analysis',
         timeout: 100000,
         params: {
             taskid: taskid.value,

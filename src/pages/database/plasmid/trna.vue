@@ -128,8 +128,8 @@ onBeforeMount(async () => {
     loading.value = true
     phageStore.trnaloaded = false
     if (props.type === 'taskresult') {
-        const response3 = await axios.get(`tasks/result/phage/trnas/`, {
-            baseURL: '/api/database',
+        const response3 = await axios.get(`view_task_trnas/`, {
+            baseURL: '/api/analysis/',
             timeout: 100000,
             params: {
                 plasmid_id: phageStore.plasmid_id,

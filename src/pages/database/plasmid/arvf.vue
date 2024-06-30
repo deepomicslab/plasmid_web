@@ -75,8 +75,8 @@ onBeforeMount(async () => {
     loading.value = true
     phageStore.arvfloaded = false
     if (props.type === 'taskresult') {
-        const response = await axios.get(`tasks/result/phage/arvgs/`, {
-            baseURL: '/api',
+        const response = await axios.get(`view_task_result_arvgs/`, {
+            baseURL: '/api/analysis/',
             timeout: 100000,
             params: {
                 phageid: phageStore.phageid,

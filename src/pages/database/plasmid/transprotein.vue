@@ -106,8 +106,8 @@ onBeforeMount(async () => {
     loading.value = true
     phageStore.transproteinloaded = false
     if (props.type === 'taskresult') {
-        const response = await axios.get(`tasks/result/phage/transmembranes/`, {
-            baseURL: '/api',
+        const response = await axios.get(`view_task_result_transmembranes/`, {
+            baseURL: '/api/analysis/',
             timeout: 100000,
             params: {
                 phageid: phageStore.phageid,
