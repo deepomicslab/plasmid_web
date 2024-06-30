@@ -118,12 +118,16 @@
             </div>
             <div
                 style="box-shadow: 0 0 64px #cfd5db"
-                class="w-310 h-200 mt-5 ml-10"
+                class="w-310 h-250 mt-5 ml-10 mb-20"
                 v-show="annoshow"
             >
                 <annotation />
             </div>
-            <div style="box-shadow: 0 0 64px #cfd5db" class="w-310" v-show="!annoshow">
+            <div
+                style="box-shadow: 0 0 64px #cfd5db"
+                class="w-350 h-300 ml-2 mt-5 mb-20"
+                v-show="!annoshow"
+            >
                 <circo />
             </div>
         </div>
