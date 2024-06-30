@@ -28,7 +28,7 @@
                         </template>
                     </n-statistic>
                 </div>
-                <div class="w-50">
+                <div class="w-60">
                     <n-statistic>
                         <n-number-animation
                             ref="numberAnimationInstRef"
@@ -70,7 +70,7 @@
                         </template>
                     </n-statistic>
                 </div>
-                <div class="w-65">
+                <div class="w-55">
                     <n-statistic>
                         <n-number-animation
                             ref="numberAnimationInstRef"
@@ -85,20 +85,7 @@
                 </div>
             </div>
             <div class="flex flex-row mt-12">
-                <!-- <div class="w-70 ml-8">
-                    <n-statistic>
-                        <n-number-animation
-                            ref="numberAnimationInstRef"
-                            :from="0"
-                            :to="397896"
-                            show-separator
-                        />
-                        <template #label>
-                            <h1 class="text-[#069] text-lg font-700">tRNA & tmRNA Genes</h1>
-                        </template>
-                    </n-statistic>
-                </div> -->
-                <div class="w-65">
+                <div class="w-65 ml-3">
                     <n-statistic>
                         <n-number-animation
                             ref="numberAnimationInstRef"
@@ -111,7 +98,7 @@
                         </template>
                     </n-statistic>
                 </div>
-                <div class="w-50 ml-3">
+                <div class="w-60">
                     <n-statistic>
                         <n-number-animation
                             ref="numberAnimationInstRef"
@@ -150,7 +137,7 @@
                         </template>
                     </n-statistic>
                 </div>
-                <div class="w-65">
+                <div class="w-55">
                     <n-statistic>
                         <n-number-animation
                             ref="numberAnimationInstRef"
