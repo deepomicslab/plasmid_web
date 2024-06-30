@@ -423,7 +423,7 @@ const echartDom2 = ref<HTMLElement | null>(null)
 
 const baseOption = {
     title: {
-        text: 'Phage Quality Tier Distribution',
+        text: 'Plasmid Quality Tier Distribution',
         left: 'center',
     },
     tooltip: {},
@@ -449,7 +449,7 @@ const baseOption = {
     yAxis: {},
     series: [
         {
-            name: 'Phages',
+            name: 'Plamisds',
             type: 'bar',
             data: [6, 19, 3, 2, 1],
         },
@@ -457,7 +457,7 @@ const baseOption = {
 }
 const baseOption1 = {
     title: {
-        text: 'Phage Lifestyle',
+        text: 'PLasmid Lifestyle',
     },
     tooltip: {},
     series: [

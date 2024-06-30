@@ -136,7 +136,7 @@
                 <el-table-column prop="id" label="ID" fixed align="center"></el-table-column>
                 <el-table-column
                     prop="Acession_ID"
-                    label="Phage ID"
+                    label="Plasmid ID"
                     fixed
                     width="450"
                     align="center"
