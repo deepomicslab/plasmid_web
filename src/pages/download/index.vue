@@ -720,15 +720,5 @@ const datasetList2 = [
     'DDBJ',
     'TPA',
 ]
-const datasetList3 = [
-    'PLSDB',
-    'IMG-PR',
-    'COMPASS',
-    'GenBank',
-    'RefSeq',
-    'EMBL',
-    'Kraken2',
-    'DDBJ',
-    'TPA',
-]
+const datasetList3 = ['PLSDB', 'IMG-PR', 'COMPASS', 'GenBank', 'RefSeq', 'EMBL', 'Kraken2', 'DDBJ']
 </script>
