@@ -3,7 +3,7 @@
         <el-scrollbar class="w-full" ref="scrollbarRef" v-loading="loading">
             <div class="flex flex-col h-430">
                 <div class="font-600 ml-20 mt-16 flex flex-row border-b-2 w-9/10 pb-5">
-                    <div class="text-4xl text-[#253959]">Genome Annotation</div>
+                    <div class="text-4xl text-[#253959]">Plasmid Annotation</div>
                     <el-button
                         round
                         size="large"
@@ -58,7 +58,7 @@
                             1. Input Sequence
                             <n-button
                                 text
-                                href="https://plasmid.deepomics.org/dataExample/data_demo/sequence.fasta"
+                                href="https://plasmid.deepomics.org/dataExample/data_demo/plasmid.fasta"
                                 tag="a"
                                 target="_blank"
                                 type="primary"
@@ -74,7 +74,7 @@
                                     <n-radio-group v-model:value="inputtype">
                                         <n-radio-button value="upload">UPLOAD FILE</n-radio-button>
                                         <n-radio-button value="enter">
-                                            ENTER Phage ID
+                                            ENTER Plasmid ID
                                         </n-radio-button>
                                         <n-radio-button value="paste">
                                             PASTE SEQUENCE
@@ -137,7 +137,7 @@
                                 >
                                     <div class="text-lg flex flex-row mb-2">
                                         Enter the
-                                        <p class="text-red-400 mx-2">Phage IDs</p>
+                                        <p class="text-red-400 mx-2">Plasmid IDs</p>
                                         that already exist in the database, separated by
                                         <p class="text-red-400 mx-2 font-900">' ; '</p>
                                     </div>
@@ -178,7 +178,7 @@
                                     </div>
                                     <div class="flex flex-row">
                                         <p class="text-red-400 mx-2">Example:</p>
-                                        M14428.1;MGV-GENOME-0091953;AJ969242.1
+                                        PLSDB_NZ_CP035950.1;COMPASS_NZ_CP011350.1;IMGPR_plasmid_2757320406_000001
                                     </div>
                                     <div v-show="inputfeedback.length !== 0" class="mt-5">
                                         <n-alert :type="validationstatus">
@@ -469,12 +469,12 @@ const isconfirmed = ref(false)
 const confirmids = async () => {
     const checkdata = new FormData()
     if (inputformValue.value.phage.length === 0) {
-        inputfeedback.value = 'Please input phage id'
+        inputfeedback.value = 'Please input plasmid id'
         validationstatus.value = 'error'
     } else {
-        checkdata.append('phageids', inputformValue.value.phage)
-        const response = await axios.post(`/analyze/inputcheck/`, checkdata, {
-            baseURL: '/api',
+        checkdata.append('plasmidids', inputformValue.value.phage)
+        const response = await axios.post(`/check_plasmid_ids/`, checkdata, {
+            baseURL: '/api/analysis',
             timeout: 100000,
         })
         const res = response.data
@@ -490,7 +490,7 @@ const examplechange = async () => {
     console.log(exampleSwicth.value)
     if (exampleSwicth.value) {
         const fileURL = new URL(
-            '../../../../../public/dataExample/data_demo/sequence.fasta',
+            '../../../../../public/dataExample/data_demo/plasmid.fasta',
             import.meta.url
         )
         const response = await fetch(fileURL)
@@ -571,81 +571,25 @@ const handleCheckChange = (data: any, isCheck: any) => {
 const data: Tree[] = [
     {
         id: 1,
-        label: 'Completeness Assessment',
-        key: 'quality',
+        label: 'ORF prediction & Protein classification',
+        key: 'annotation',
     },
     {
         id: 2,
-        label: 'Phenotype Annotation',
-        key: 'phenotype',
-        children: [
-            {
-                id: 21,
-                label: 'Host Assignment',
-                key: 'host',
-            },
-            {
-                id: 22,
-                label: 'Lifestyle Prediction',
-                key: 'lifestyle',
-            },
-        ],
+        label: 'tRNA & tmRNA prediction',
+        key: 'trna',
     },
     {
         id: 3,
-        label: 'Structural Annotation',
-        key: 'phenotype',
-        children: [
-            {
-                id: 31,
-                label: 'ORF prediction & Protein Classification',
-                key: 'annotation',
-            },
-            {
-                id: 32,
-                label: 'Transcription Terminator Annotation',
-                key: 'terminator',
-            },
-        ],
+        label: 'Virulence factor & Antibiotic resistance gene annotation',
+        key: 'arvf',
     },
 
     {
-        id: 6,
-        label: 'Taxonomic Annotation',
-        key: 'taxonomic',
-    },
-    {
         id: 4,
-        label: 'Functional Annotation',
-        key: 'Functional',
-        children: [
-            {
-                id: 41,
-                label: 'tRNA & tmRNA Gene Annotation',
-                key: 'trna',
-            },
-            {
-                id: 42,
-                label: 'Anti-CRISPR Protein Annotation',
-                key: 'anticrispr',
-            },
-            {
-                id: 43,
-                label: 'CRISPR Array Annotation',
-                key: 'crispr',
-            },
-            {
-                id: 45,
-                label: 'Virulent Factor & Antimicrobial Resistance Gene Detection',
-                key: 'arvf',
-            },
-            {
-                id: 44,
-                label: 'Transmembrane  Protein Annotation',
-                key: 'transmembrane',
-            },
-        ],
-    },
+        label: 'Transmembrane protein annotation',
+        key: 'transmembrane',
+    }
 ]
 
 const defaultProps = {
@@ -777,13 +721,13 @@ const submit = async () => {
     }
 
     if (precheck.value) {
-        submitdata.append('analysistype', 'Annotation Pipline')
+        submitdata.append('analysistype', 'Plasmid Annotation Pipline')
         submitdata.append('userid', userid.value)
         //submitdata.append('userid', 'demo')
 
         submitdata.append('inputtype', inputtype.value)
-        const response = await axios.post(`/analyze/pipline/`, submitdata, {
-            baseURL: '/api',
+        const response = await axios.post(`/submit_task/`, submitdata, {
+            baseURL: '/api/analysis',
             timeout: 100000,
         })
         const { data } = response
@@ -811,26 +755,27 @@ const submitdemo = async () => {
     const precheck = ref(true)
     modulelist.value = {
         annotation: true,
-        quality: true,
-        host: true,
-        lifestyle: true,
+        quality: false,
+        host: false,
+        lifestyle: false,
         trna: true,
-        anticrispr: true,
-        crispr: true,
+        anticrispr: false,
+        crispr: false,
         transmembrane: true,
-        terminator: true,
+        terminator: false,
         arvf: true,
-        taxonomic: true,
+        taxonomic: false,
+        terminator: false,
     }
     submitdata.append('modulelist', JSON.stringify(modulelist.value))
     if (precheck.value) {
-        submitdata.append('analysistype', 'Annotation Pipline')
+        submitdata.append('analysistype', 'Plasmid Annotation Pipline')
         submitdata.append('userid', userid.value)
         //submitdata.append('userid', 'demo')
 
         submitdata.append('inputtype', inputtype.value)
-        const response = await axios.post(`/analyze/pipline/`, submitdata, {
-            baseURL: '/api',
+        const response = await axios.post(`/submit_task/`, submitdata, {
+            baseURL: '/api/analysis',
             timeout: 100000,
         })
         const { data } = response
@@ -860,7 +805,7 @@ const godemo = () => {
     router.push({ path: '/task/result/annopipline', query: { taskid: 111 } })
 }
 const gosubmithelper = () => {
-    router.push({ path: '/tutorial', query: { type: 'analysis' } })
+    router.push({ path: '/tutorial', query: { type: 'Analysis_introduction' } })
 }
 </script>
 

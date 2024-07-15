@@ -3,7 +3,7 @@
         <el-scrollbar class="w-full" ref="scrollbarRef" v-loading="loading">
             <div class="flex flex-col h-550">
                 <div class="font-600 ml-20 mt-16 flex flex-row border-b-2 w-9/10 pb-5">
-                    <div class="text-4xl text-[#253959]">Genome Comparison</div>
+                    <div class="text-4xl text-[#253959]">Plasmid Comparison</div>
                     <el-button
                         round
                         size="large"
@@ -56,7 +56,7 @@
                             1. Input Sequence
                             <n-button
                                 text
-                                href="https://plasmid.deepomics.org/dataExample/data_demo/cluster_demo.fasta"
+                                href="https://plasmid.deepomics.org/dataExample/data_demo/plasmid.fasta"
                                 tag="a"
                                 target="_blank"
                                 type="primary"
@@ -279,7 +279,7 @@
                                         </div>
                                         <div v-if="showDescription == 'tree'">
                                             <div :class="descriptionTitleClass">
-                                                Comparative tree construction
+                                                Phylogentic Anaysis
                                             </div>
                                             <div :class="descrptionContentClass">
                                                 Alfpy is applied to calculate the genome distance
@@ -292,7 +292,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="font-600 text-3xl mt-10 flex flex-row items-end h-12">
+                        <!-- <div class="font-600 text-3xl mt-10 flex flex-row items-end h-12">
                             <div class="font-600 text-3xl pb-1">
                                 3. Compare with PhageScope Database"
                             </div>
@@ -386,7 +386,7 @@
                                     </el-form-item>
                                 </el-form>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="mt-20 flex flex-row justify-center w-17/20 ml-5">
                             <el-button
                                 size="large"
@@ -407,11 +407,11 @@
 <script setup lang="ts">
 // @ts-nocheck
 import type { UploadFileInfo } from 'naive-ui'
-import { InfoFilled, Edit, Minus } from '@element-plus/icons-vue'
+import { InfoFilled, Edit } from '@element-plus/icons-vue'
 import axios from 'axios'
 import _ from 'lodash'
 import { useUserIdGenerator } from '@/utils/userIdGenerator'
-import { datasetsOptions, qualityOptions } from '@/utils/filteroption'
+// import { datasetsOptions, qualityOptions } from '@/utils/filteroption'
 
 const fileList = ref<UploadFileInfo[]>([])
 const submitfile = ref<File>()
@@ -423,22 +423,22 @@ const loading = ref(false)
 const descrptionContentClass = ref('text-justify text-lg leading-relaxed tracking-wide')
 const descriptionTitleClass = ref('text-xl mb-5 font-800 text-left')
 const exampleSwicth = ref(false)
-const allseq = ref(true)
+// const allseq = ref(true)
 const selectseq = ref(false)
 
-const filterform = ref({
-    quality: '',
-    datasets: [],
-    LengthS: 0,
-    LengthE: 5,
-    lifestyle: 'all',
-})
+// const filterform = ref({
+//     quality: '',
+//     datasets: [],
+//     LengthS: 0,
+//     LengthE: 5,
+//     lifestyle: 'all',
+// })
 
 const examplechange = async () => {
     console.log(exampleSwicth.value)
     if (exampleSwicth.value) {
         const fileURL = new URL(
-            '../../../../../public/dataExample/data_demo/cluster_demo.fasta',
+            '../../../../../public/dataExample/data_demo/plasmid.fasta',
             import.meta.url
         )
         const response = await fetch(fileURL)
@@ -521,19 +521,19 @@ const handleCheckChange = (data: any, isCheck: any) => {
 }
 
 const data: Tree[] = [
+    // {
+    //     id: 1,
+    //     label: 'Sequence Clustering',
+    //     key: 'cluster',
+    // },
     {
         id: 1,
-        label: 'Sequence Clustering',
-        key: 'cluster',
-    },
-    {
-        id: 2,
-        label: 'Comparison Alignment',
+        label: 'Sequence Alignment',
         key: 'alignment',
     },
     {
-        id: 3,
-        label: 'Comparative Tree Construction',
+        id: 2,
+        label: 'Phylogentic Anaysis',
         key: 'tree',
     }, 
     
@@ -649,8 +649,8 @@ const submit = async () => {
         //submitdata.append('userid', 'demo')
 
         submitdata.append('inputtype', inputtype.value)
-        const response = await axios.post(`/analyze/clusterpipline/`, submitdata, {
-            baseURL: '/api',
+        const response = await axios.post(`/submit_cluster_task/`, submitdata, {
+            baseURL: '/api/analysis',
             timeout: 100000,
         })
         const { data } = response
@@ -679,7 +679,7 @@ const submitdemo = async () => {
     modulelist.value = {
         annotation: true,
         alignment: true,
-        cluster: true,
+        cluster: false,
         tree: true,
     }
     submitdata.append('modulelist', JSON.stringify(modulelist.value))
@@ -690,8 +690,8 @@ const submitdemo = async () => {
         //submitdata.append('userid', 'demo')
 
         submitdata.append('inputtype', inputtype.value)
-        const response = await axios.post(`/analyze/clusterpipline/`, submitdata, {
-            baseURL: '/api',
+        const response = await axios.post(`/submit_cluster_task/`, submitdata, {
+            baseURL: '/api/analysis',
             timeout: 100000,
         })
         const { data } = response
@@ -721,7 +721,7 @@ const godemo = () => {
     router.push({ path: '/task/result/comparison', query: { taskid: 237 } })
 }
 const gosubmithelper = () => {
-    router.push({ path: '/tutorial', query: { type: 'analysis' } })
+    router.push({ path: '/tutorial', query: { type: 'Analysis_introduction' } })
 }
 </script>
 

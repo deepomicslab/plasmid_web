@@ -237,10 +237,10 @@ const confirmids = async () => {
     console.log(idlist.value)
     const checkdata = new FormData()
     if (inputformValue.value.phage.length === 0) {
-        inputfeedback.value = 'Please input phage id'
+        inputfeedback.value = 'Please input plasmid id'
         validationstatus.value = 'error'
     } else {
-        checkdata.append('phageids', inputformValue.value.phage)
+        checkdata.append('plasmidids', inputformValue.value.phage)
         const response = await axios.post(`/check_plasmid_ids/`, checkdata, {
             baseURL: '/api/analysis',
             timeout: 100000,
