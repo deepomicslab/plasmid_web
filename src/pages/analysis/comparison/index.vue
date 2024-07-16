@@ -718,7 +718,7 @@ onBeforeMount(() => {
     userid.value = userId.value as string
 })
 const godemo = () => {
-    router.push({ path: '/task/result/comparison', query: { taskid: 237 } })
+    router.push({ path: '/task/result/comparison', query: { taskid: 17 } })
 }
 const gosubmithelper = () => {
     router.push({ path: '/tutorial', query: { type: 'Analysis_introduction' } })

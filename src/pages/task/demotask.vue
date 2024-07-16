@@ -6,7 +6,7 @@
             style="box-shadow: 0 0 34px #cfd5db"
         >
             <div class="text-3xl font-700 mt-10 w-150 text-center pb-4">
-                Annotation Pipline
+                Annotation Pipeline
                 <el-tag size="large" type="success">finish</el-tag>
             </div>
             <div class="flex flex-row justify-start mt-6 w-full">

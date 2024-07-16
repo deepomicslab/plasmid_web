@@ -229,8 +229,8 @@ onBeforeMount(async () => {
     loading.value = true
     phageStore.heatmaploaded = false
 
-    const response2 = await axios.get(`/tasks/detail/`, {
-        baseURL: '/api',
+    const response2 = await axios.get(`/view_task_result/`, {
+        baseURL: '/api/analysis',
         timeout: 100000,
         params: {
             taskid: taskid.value,
@@ -239,8 +239,8 @@ onBeforeMount(async () => {
     taskdata.value = response2.data
     taskStore.taskdetail = taskdata.value
 
-    const response = await axios.get(`/tasks/result/phage/`, {
-        baseURL: '/api',
+    const response = await axios.get(`/view_task_detail/`, {
+        baseURL: '/api/analysis',
         timeout: 100000,
         params: {
             taskid: taskid.value,
@@ -251,8 +251,8 @@ onBeforeMount(async () => {
     phageStore.taskphagelist = phagedata.value.results
     loading.value = false
 
-    const response3 = await axios.get(`/tasks/result/proteins/`, {
-        baseURL: '/api',
+    const response3 = await axios.get(`/view_task_result_proteins/`, {
+        baseURL: '/api/analysis',
         timeout: 100000,
         params: {
             taskid: taskid.value,
@@ -279,7 +279,7 @@ const annodetail = (row: any) => {
 }
 
 const relatedphagecount = computed(() => {
-    return _.filter(phagedata.value?.results, { source: 'PhageScope Database' }).length
+    return _.filter(phagedata.value?.results, { source: 'PlasmidScope Database' }).length
 })
 // const gosubmodule = (key: any) => {
 //     router.push({

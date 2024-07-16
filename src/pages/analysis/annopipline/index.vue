@@ -721,7 +721,7 @@ const submit = async () => {
     }
 
     if (precheck.value) {
-        submitdata.append('analysistype', 'Plasmid Annotation Pipline')
+        submitdata.append('analysistype', 'Plasmid Annotation Pipeline')
         submitdata.append('userid', userid.value)
         //submitdata.append('userid', 'demo')
 
@@ -769,7 +769,7 @@ const submitdemo = async () => {
     }
     submitdata.append('modulelist', JSON.stringify(modulelist.value))
     if (precheck.value) {
-        submitdata.append('analysistype', 'Plasmid Annotation Pipline')
+        submitdata.append('analysistype', 'Plasmid Annotation Pipeline')
         submitdata.append('userid', userid.value)
         //submitdata.append('userid', 'demo')
 
@@ -802,7 +802,7 @@ onBeforeMount(() => {
     userid.value = userId.value as string
 })
 const godemo = () => {
-    router.push({ path: '/task/result/annopipline', query: { taskid: 111 } })
+    router.push({ path: '/task/result/annopipline', query: { taskid: 16 } })
 }
 const gosubmithelper = () => {
     router.push({ path: '/tutorial', query: { type: 'Analysis_introduction' } })

@@ -114,7 +114,7 @@ const router = useRouter()
 
 const viewdetail = (row: any) => {
     if (row.status === 'Success') {
-        if (row.analysis_type === 'Annotation Pipline') {
+        if (row.analysis_type === 'Plasmid Annotation Pipeline') {
             router.push({ path: '/task/result/annopipline', query: { taskid: row.id } })
         }
         if (row.analysis_type === 'Phenotype Annotation') {
@@ -263,8 +263,8 @@ const createColumns = (): DataTableColumns<RowData> => {
             width: 100,
             filterOptions: [
                 {
-                    label: 'Annotation Pipline',
-                    value: 'Annotation Pipline',
+                    label: 'Annotation Pipeline',
+                    value: 'Annotation Pipeline',
                 },
                 {
                     label: 'Completeness Analysis',
