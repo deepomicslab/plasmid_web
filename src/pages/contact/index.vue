@@ -14,35 +14,66 @@
 
                         <div class="text-5xl font-700 text-[#3e5294] mt-10">Our Team</div>
                     </div>
-
                     <div style="box-shadow: 0 0 64px #cfd5db" class="w-150 h-170 mt-15">
                         <div
                             class="text-[21px] px-19.5 py-16 leading-12 mt-5 text-justify text-gray-700"
                         >
-                            We are a diverse team of talented undergraduate students, Ph.D.
-                            candidates, and postdoctoral researchers, led by Dr. Shuai Cheng LI at
-                            the City University of Hong Kong. Our team comprises individuals with
-                            extensive expertise in bioinformatics, clinical pathology, and computer
-                            science. If you have any inquiries or require further information,
-                            please feel free to reach out to us at
+                            We are a diverse team of talented research assistants, Ph.D. candidates,
+                            and assistant investigators, led by Dr. CHEN Yu at the Shenzhen
+                            Institute of Advanced Technology and Dr. LI Shuai Cheng at the City
+                            University of Hong Kong. Our team comprises individuals with extensive
+                            molecular biology, bioinformatics, and computer science expertise. If
+                            you have any inquiries or require further information, please feel free
+                            to reach out to us at
                             <strong class="text-[#069] font-400 mx-1 text-[21px]">
-                                shuaicli@gmail.com.
+                                yu.chen@siat.ac.cn
                             </strong>
+                            or
+                            <strong class="text-[#069] font-400 mx-1 text-[21px]">
+                                shuaicli@gmail.com
+                            </strong>
+                            .
                         </div>
                     </div>
                 </div>
                 <div class="w-160 flex flex-col justify-start items-center ml-15">
-                    <div class="flex flex-col justify-center items-center">
-                        <el-avatar shape="circle" :size="150" fit="fill" src="/png/lsc.jpg" />
-                        <div class="mt-3 text-lg font-500">LI Shuaicheng</div>
-                    </div>
+                    <div class="text-3xl font-500 text-[#3e5294] mt-10">PI</div>
                     <div class="flex flex-row justify-around w-160 mt-5">
                         <div class="flex flex-col justify-center items-center">
-                            <el-avatar shape="circle" :size="150" fit="fill" src="/png/lyh.png" />
+                            <el-avatar
+                                shape="circle"
+                                :size="150"
+                                fit="fill"
+                                src="/png/cy.jpg"
+                                style="background-color: #fff"
+                            />
+                            <div class="mt-3 text-lg font-500">CHEN Yu</div>
+                        </div>
+                        <div class="flex flex-col justify-center items-center">
+                            <el-avatar shape="circle" :size="150" fit="fill" src="/png/lsc.jpg" />
+                            <div class="mt-3 text-lg font-500">LI Shuai Cheng</div>
+                        </div>
+                    </div>
+                    <div class="text-3xl font-500 text-[#3e5294] mt-10">Team</div>
+                    <div class="flex flex-row justify-around w-160 mt-5">
+                        <div class="flex flex-col justify-center items-center">
+                            <el-avatar
+                                shape="circle"
+                                :size="150"
+                                fit="fill"
+                                src="/png/lyh.png"
+                                style="background-color: #fff"
+                            />
                             <div class="mt-3 text-lg font-500">Li Yinhu</div>
                         </div>
                         <div class="flex flex-col justify-center items-center">
-                            <el-avatar shape="circle" :size="150" fit="fill" src="/png/fxk.jpg" />
+                            <el-avatar
+                                shape="circle"
+                                :size="150"
+                                fit="fill"
+                                src="/png/fxk.jpg"
+                                style="background-color: #fff"
+                            />
                             <div class="mt-3 text-lg font-500">Feng Xikang</div>
                         </div>
                     </div>
