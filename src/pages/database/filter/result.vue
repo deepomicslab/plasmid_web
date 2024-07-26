@@ -59,6 +59,7 @@
                 <el-menu-item index="6" class="text-lg">Kraken2</el-menu-item>
                 <el-menu-item index="7" class="text-lg">DDBJ</el-menu-item>
                 <el-menu-item index="8" class="text-lg">TPA</el-menu-item>
+                <el-menu-item index="9" class="text-lg">mMGEs</el-menu-item>
             </el-menu>
         </div>
         <div v-loading="loading" class="h-420">
@@ -110,7 +111,7 @@
         <div>
             <el-checkbox-group v-model="checkList" :max="1">
                 <el-checkbox label="Download FASTA Data" />
-                <!-- <el-checkbox label="Download GBK Data" /> -->
+                <el-checkbox label="Download GBK Data" />
                 <el-checkbox label="Download GFF3 Data" />
                 <el-checkbox label="Download Meta Data" />
             </el-checkbox-group>
