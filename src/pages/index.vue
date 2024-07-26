@@ -354,16 +354,16 @@ import admin from './admin.vue'
 const loading = ref(false)
 // eslint-disable-next-line camelcase
 const overview_data = ref({
-    plasmid: 953438,
+    plasmid: 1045930,
     host: 14382,
-    protein: 39172224,
-    trna: 109510,
-    arg: 32240953,
-    sm: 63737,
-    sp: 4142979,
-    tmh: 8672432,
-    vf: 514503,
-    crispr: 10088,
+    protein: 40250759,
+    trna: 118171,
+    arg: 33114247,
+    sm: 65008,
+    sp: 4239609,
+    tmh: 9133791,
+    vf: 534898,
+    crispr: 10470,
 })
 
 const dialogVisible = ref(false)

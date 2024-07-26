@@ -708,6 +708,7 @@ const datasetList = [
     'Kraken2',
     'DDBJ',
     'TPA',
+    'mMGEs',
 ]
 const datasetList2 = [
     'PLSDB',
@@ -719,6 +720,17 @@ const datasetList2 = [
     'Kraken2',
     'DDBJ',
     'TPA',
+    'mMGEs',
 ]
-const datasetList3 = ['PLSDB', 'IMG-PR', 'COMPASS', 'GenBank', 'RefSeq', 'EMBL', 'Kraken2', 'DDBJ']
+const datasetList3 = [
+    'PLSDB',
+    'IMG-PR',
+    'COMPASS',
+    'GenBank',
+    'RefSeq',
+    'EMBL',
+    'Kraken2',
+    'DDBJ',
+    'mMGEs',
+]
 </script>

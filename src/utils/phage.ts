@@ -8,6 +8,7 @@ export const datasetList = [
     'Kraken2',
     'DDBJ',
     'TPA',
+    'mMGEs',
 ]
 
 export const datasetDict = [
@@ -50,6 +51,10 @@ export const datasetDict = [
     {
         label: 'TPA',
         value: 8,
+    },
+    {
+        label: 'mMGEs',
+        value: 9,
     },
 ]
 

@@ -122,6 +122,10 @@ export const subclusterOptions = [
 ]
 export const hostTypeOptions = [
     {
+        value: 'Pseudomonadota',
+        label: 'Pseudomonadota',
+    },
+    {
         value: 'Bacillota',
         label: 'Bacillota',
     },
@@ -130,24 +134,8 @@ export const hostTypeOptions = [
         label: 'Bacteroidota',
     },
     {
-        value: 'Pseudomonadota',
-        label: 'Pseudomonadota',
-    },
-    {
-        value: 'Thermodesulfobacteriota',
-        label: 'Thermodesulfobacteriota',
-    },
-    {
-        value: 'Campylobacterota',
-        label: 'Campylobacterota',
-    },
-    {
-        value: 'Verrucomicrobiota',
-        label: 'Verrucomicrobiota',
-    },
-    {
-        value: 'Fusobacteriota',
-        label: 'Fusobacteriota',
+        value: 'Actinomycetota',
+        label: 'Actinomycetota',
     },
     {
         value: 'Spirochaetota',
@@ -158,8 +146,20 @@ export const hostTypeOptions = [
         label: 'Cyanobacteriota',
     },
     {
-        value: 'Synergistota',
-        label: 'Synergistota',
+        value: 'Campylobacterota',
+        label: 'Campylobacterota',
+    },
+    {
+        value: 'Euryarchaeota',
+        label: 'Euryarchaeota',
+    },
+    {
+        value: 'Deinococcota',
+        label: 'Deinococcota',
+    },
+    {
+        value: 'Fusobacteriota',
+        label: 'Fusobacteriota',
     },
 ]
 export const taxonomyOptions = [

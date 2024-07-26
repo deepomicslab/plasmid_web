@@ -90,6 +90,7 @@
                 <el-menu-item index="6" class="text-lg">Kraken2</el-menu-item>
                 <el-menu-item index="7" class="text-lg">DDBJ</el-menu-item>
                 <el-menu-item index="8" class="text-lg">TPA</el-menu-item>
+                <el-menu-item index="9" class="text-lg">mMGEs</el-menu-item>
             </el-menu>
             <div class="flex flex-row mt-7 text-[16px] font-400">
                 <div># Plasmid Sequences</div>
