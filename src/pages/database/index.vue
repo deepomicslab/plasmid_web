@@ -758,6 +758,7 @@ onBeforeMount(async () => {
             left: 'center',
         },
         toolbox: {
+            left: 'left',
             itemSize: 20,
             iconStyle: {
                 borderColor: 'rgb(18,49,73)',
@@ -772,7 +773,7 @@ onBeforeMount(async () => {
         },
         legend: {
             orient: 'vertical',
-            left: 'left',
+            left: 'right',
             textStyle: {
                 fontSize: 16,
             },
@@ -796,6 +797,7 @@ onBeforeMount(async () => {
             left: 'center',
         },
         toolbox: {
+            left: 'left',
             itemSize: 20,
             iconStyle: {
                 borderColor: 'rgb(18,49,73)',
@@ -809,7 +811,7 @@ onBeforeMount(async () => {
             trigger: 'item',
         },
         legend: {
-            left: 'left',
+            left: 'right',
             width: 50,
             orient: 'horizontal',
             itemHeight: 14,
