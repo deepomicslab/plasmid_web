@@ -11,37 +11,115 @@ import * as d3 from 'd3'
 import _ from 'lodash'
 import { TypeDict, proteinType } from '@/utils/annotation'
 import { usePhageStore } from '@/store/phage'
-import { COGCategoryDict2 } from '@/utils/phage'
 
 const phageStore = usePhageStore()
 
-const Width = ref(1500)
-const Height = ref(1400)
-const width = ref(1200)
-const height = ref(1000)
+const Width = ref(1300)
+const Height = ref(1000)
+const width = ref(700)
+const height = ref(500)
 const leftMargin = ref(200)
 const rightMargin = ref(200)
 const topMargin = ref(30)
-const bottomMargin = ref(200)
+const bottomMargin = ref(500)
 
 // Different protein class has different color
 const chooseColor = (d, flag) => {
-        if(d.length==0){
-            return '#68534d'
-        }
+        let color = ''
         // when d is protein_class
         if (flag == 1) {
-            return TypeDict[d].color
+            switch (d) {
+                case 'assembly':
+                    color = '#45bf43'
+                    break
+                case 'infection':
+                    color = '#5490F8'
+                    break
+                case 'hypothetical':
+                    color = '#29cbce'
+                    break
+                case 'immune':
+                    color = '#DF3AD2'
+                    break
+                case 'integration':
+                    color = '#9dc6e7'
+                    break
+                case 'replication':
+                    color = '#0FF0BF'
+                    break
+                case 'packaging':
+                    color = '#9343f0'
+                    break
+                case 'lysis':
+                    color = '#ec364e'
+                    break
+                case 'tRNA':
+                    color = '#90ed7d'
+                    break
+                case 'regulation':
+                    color = '#445d8f'
+                    break
+                // case "unsorted": color="#FB8679"; break;
+                // case "mix": color="#FFEE76"; break;
+            }
+            return color
         }
         // when d is final
-        return TypeDict[d.class].color
+        switch (d.class) {
+            case 'assembly':
+                color = '#45bf43'
+                break
+            case 'infection':
+                color = '#5490F8'
+                break
+            case 'hypothetical':
+                color = '#29cbce'
+                break
+            case 'immune':
+                color = '#DF3AD2'
+                break
+            case 'integration':
+                color = '#9dc6e7'
+                break
+            case 'replication':
+                color = '#0FF0BF'
+                break
+            case 'packaging':
+                color = '#9343f0'
+                break
+            case 'lysis':
+                color = '#ec364e'
+                break
+            case 'tRNA':
+                color = '#90ed7d'
+                break
+            case 'regulation':
+                color = '#445d8f'
+                break
+            // case "unsorted": color="#FB8679"; break;
+            // case "mix": color="#FFEE76"; break;
+        }
+        return color
     }
+
+
 
 // const margin = {top: 10, right: 10, bottom: 100, left: 100}
 
 // Labels of columns
 // const protein_class = proteinType
-const protein_class = Object.keys(COGCategoryDict2)
+const protein_class = [
+    'hypothetical',
+    'infection',
+    'assembly',
+    'replication',
+    'packaging',
+    'lysis',
+    'regulation',
+    'immune',
+    'integration',
+    'tRNA',
+] 
 
 const loaded =computed(()=>phageStore.heatmaploaded)
 
@@ -92,10 +170,7 @@ watch(loaded,()=>{
         .call(d3.axisLeft(y))
     yAix.select('.domain').remove()
     yAix.selectAll('.tick').selectAll('line').remove()
-    yAix.selectAll('text').attr('transform', 'translate(' + -y.bandwidth() + ',0)').text(function (d) {
-                const { name } = TypeDict[d]
-                return name
-            })
+    yAix.selectAll('text').attr('transform', 'translate(' + -y.bandwidth() + ',0)')
 
     yAix.selectAll('textRec')
         .data(protein_class)
@@ -126,10 +201,7 @@ watch(loaded,()=>{
         .call(d3.axisLeft(y))
     y1Aix.select('.domain').remove()
     y1Aix.selectAll('.tick').selectAll('line').remove()
-    y1Aix.selectAll('text').attr('transform', 'translate(' + -y.bandwidth() + ',0)').text(function (d) {
-                const { name } = TypeDict[d]
-                return name
-            })
+    y1Aix.selectAll('text').attr('transform', 'translate(' + -y.bandwidth() + ',0)')
 
     y1Aix
         .selectAll('textRec')
@@ -222,17 +294,15 @@ watch(loaded,()=>{
     phageStore.taskproteinlist.forEach(function (d) {
             let x = d.phageid
             delete d['phageid']
-            let cl = _.split(d.cog_category, '')
+            let cl = _.split(d.Protein_function_classification, ';')
             if (cl[0] == 'unsorted') {
             } else {
                 for (let i = 0; i < cl.length - 1; i++) {
                     let y = cl[i]
-                    if (y != ''){
-                        count.push({
-                            x: x,
-                            y: y,
-                        })
-                    }
+                    count.push({
+                        x: x,
+                        y: y,
+                    })
                 }
             }
         })
@@ -272,86 +342,38 @@ watch(loaded,()=>{
         }
 
         // calculate the max value for each row
-        let protein_class_max = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+        let protein_class_max = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         final.forEach(function (d) {
             switch (d.class) {
-                case 'J':
+                case 'hypothetical':
                     if (d.value > protein_class_max[0]) protein_class_max[0] = d.value
                     break
-                case 'A':
+                case 'infection':
                     if (d.value > protein_class_max[1]) protein_class_max[1] = d.value
                     break
-                case 'K':
+                case 'assembly':
                     if (d.value > protein_class_max[2]) protein_class_max[2] = d.value
                     break
-                case 'L':
+                case 'replication':
                     if (d.value > protein_class_max[3]) protein_class_max[3] = d.value
                     break
-                case 'B':
+                case 'packaging':
                     if (d.value > protein_class_max[4]) protein_class_max[4] = d.value
                     break
-                case 'D':
+                case 'lysis':
                     if (d.value > protein_class_max[5]) protein_class_max[5] = d.value
                     break
-                case 'Y':
+                case 'regulation':
                     if (d.value > protein_class_max[6]) protein_class_max[6] = d.value
                     break
-                case 'V':
+                case 'immune':
                     if (d.value > protein_class_max[7]) protein_class_max[7] = d.value
                     break
-                case 'T':
+                case 'integration':
                     if (d.value > protein_class_max[8]) protein_class_max[8] = d.value
                     break
-                case 'M':
+                case 'tRNA':
                     if (d.value > protein_class_max[9]) protein_class_max[9] = d.value
-                    break
-                case 'N':
-                    if (d.value > protein_class_max[10]) protein_class_max[10] = d.value
-                    break
-                case 'Z':
-                    if (d.value > protein_class_max[11]) protein_class_max[11] = d.value
-                    break
-                case 'W':
-                    if (d.value > protein_class_max[12]) protein_class_max[12] = d.value
-                    break
-                case 'U':
-                    if (d.value > protein_class_max[13]) protein_class_max[13] = d.value
-                    break
-                case 'O':
-                    if (d.value > protein_class_max[14]) protein_class_max[14] = d.value
-                    break
-                case 'X':
-                    if (d.value > protein_class_max[15]) protein_class_max[15] = d.value
-                    break
-                case 'C':
-                    if (d.value > protein_class_max[16]) protein_class_max[16] = d.value
-                    break
-                case 'G':
-                    if (d.value > protein_class_max[17]) protein_class_max[18] = d.value
-                    break
-                case 'E':
-                    if (d.value > protein_class_max[19]) protein_class_max[19] = d.value
-                    break
-                case 'F':
-                    if (d.value > protein_class_max[20]) protein_class_max[20] = d.value
-                    break
-                case 'H':
-                    if (d.value > protein_class_max[21]) protein_class_max[21] = d.value
-                    break
-                case 'I':
-                    if (d.value > protein_class_max[22]) protein_class_max[22] = d.value
-                    break
-                case 'P':
-                    if (d.value > protein_class_max[23]) protein_class_max[23] = d.value
-                    break
-                case 'Q':
-                    if (d.value > protein_class_max[24]) protein_class_max[24] = d.value
-                    break
-                case 'R':
-                    if (d.value > protein_class_max[25]) protein_class_max[25] = d.value
-                    break
-                case 'S':
-                    if (d.value > protein_class_max[26]) protein_class_max[26] = d.value
                     break
             }
         })
@@ -396,7 +418,6 @@ watch(loaded,()=>{
             .style('fill', function (d) {
                 return "url('#gradient" + d + "')"
             })
-            .attr('x', 1180)
             .attr('y', function (d) {
                 return y(d)
             })
@@ -408,7 +429,7 @@ watch(loaded,()=>{
             })
             .style('fill', 'white')
             .style('font-size', 10)
-            .attr('x', 1250)
+            .attr('x', 75)
             .attr('y', function (d) {
                 return y(d) + y.bandwidth() / 2 + 5
             })

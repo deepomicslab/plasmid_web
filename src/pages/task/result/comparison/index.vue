@@ -186,7 +186,7 @@
             <div class="flex flex-row my-5">
                 <div class="text-4xl ml-1 font-600">Annotation Overview</div>
             </div>
-            <div style="box-shadow: 0 0 64px #cfd5db" class="w-310 h-150 mt-10">
+            <div style="box-shadow: 0 0 64px #cfd5db" class="w-400 h-180 mt-10">
                 <heatmap />
             </div>
         </div> -->

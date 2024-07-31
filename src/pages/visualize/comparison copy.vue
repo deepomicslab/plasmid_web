@@ -8,8 +8,8 @@
                 <svg id="Viz_area" :height="height" :width="width" ref></svg>
             </el-scrollbar>
         </div>
-        <div class="w-330 h-60 bg-gray-200">
-            <svg id="Legend_area" height="400" width="1320"></svg>
+        <div class="w-330 h-30 bg-gray-200">
+            <svg id="Legend_area" height="120" width="1320"></svg>
         </div>
     </div>
 </template>
@@ -18,9 +18,26 @@
 import * as d3 from 'd3'
 import _ from 'lodash'
 // import { Operation } from '@element-plus/icons-vue'
-import { TypeDict, proteinType, coverageDict, identityDict } from '@/utils/annotation'
+import { coverageDict, identityDict } from '@/utils/annotation'
 
 import { usePhageStore } from '@/store/phage'
+
+const TypeDict = {
+    lysis: { color: '#ec364e', abbr: 'Lys', name: 'Lysis' },
+    integration: { color: '#9dc6e7', abbr: 'Int', name: 'Integration' },
+    replication: { color: '#0FF0BF', abbr: 'Rep', name: 'Replication' },
+    tRNA_related: { color: '#90ed7d ', abbr: 'tRNA-related', name: 'tRNA-related' },
+    regulation: { color: '#445d8f', abbr: 'Reg', name: 'Regulation' },
+    packaging: { color: '#9343f0', abbr: 'Pkg', name: 'Packaging' },
+    assembly: { color: '#45bf43', abbr: 'Asm', name: 'Assembly' },
+    infection: { color: '#5490F8', abbr: 'Inf', name: 'Infection' },
+    immune: { color: '#DF3AD2', abbr: 'Imm', name: 'Immune' },
+    mix: { color: '#ff6500', abbr: 'Mix', name: 'Mix' },
+    hypothetical: { color: '#29cbce', abbr: 'Hyp', name: 'Hypothetical' },
+    unsorted: { color: '#ffa235', abbr: 'Uns', name: 'Unsorted' },
+}
+
+const proteinType = Object.keys(TypeDict)
 
 const width = ref(1280)
 const height = ref(900)
@@ -83,15 +100,6 @@ watch(loaddata, () => {
 
         const proteindata = phagecomparisondata.value.proteins
         // The legend at the bottom
-        const tooltip = d3
-            .select('body')
-            .append('div')
-            .style('position', 'absolute')
-            .style('z-index', '100')
-            .style('visibility', 'hidden')
-            .style('background', '#000')
-            .style('color', '#fff')
-            .text('a simple tooltip')
         const legnedSvg = d3.select('#Legend_area')
 
         legnedSvg
@@ -101,10 +109,10 @@ watch(loaddata, () => {
             .append('rect')
             .attr('x', function (d, i) {
                 // eslint-disable-next-line no-bitwise
-                return ((i / 6) | 0) * 260 + 50
+                return ((i / 2) | 0) * 140 + 140
             })
             .attr('y', function (d, i) {
-                return (i % 6) * 30 + 35
+                return (i % 2) * 30 + 35
             })
             .attr('width', 20)
             .attr('height', 20)
@@ -118,32 +126,17 @@ watch(loaddata, () => {
             .append('text')
             .attr('x', function (d, i) {
                 // eslint-disable-next-line no-bitwise
-                return ((i / 6) | 0) * 260 + 75
+                return ((i / 2) | 0) * 140 + 170
             })
             .attr('y', function (d, i) {
-                return (i % 6) * 30 + 47
+                return (i % 2) * 30 + 47
             })
             .style('fill', '#818181')
             .text(function (d) {
-                const { name } = TypeDict[d]
-                if (name.length > 20) {
-                    return `${name.substring(0, 20)}...`
-                }
-                return name
+                return TypeDict[d].name
             })
             .attr('text-anchor', 'start')
             .style('alignment-baseline', 'middle')
-            .on('mouseover', function (event, d) {
-                // console.log(TypeDict[d])
-                tooltip.text(TypeDict[d].name)
-                return tooltip.style('visibility', 'visible')
-            })
-            .on('mousemove', function (event) {
-                return tooltip.style('top', `${event.pageY}px`).style('left', `${event.pageX}px`)
-            })
-            .on('mouseout', function () {
-                return tooltip.style('visibility', 'hidden')
-            })
         const maxEnd = ref(
             Number(
                 _.maxBy(proteindata, o => {
@@ -233,7 +226,7 @@ watch(loaddata, () => {
         for (let i = 0; i < textCount; i += 1) {
             toolTextPositions.push((i + 1) * posGap)
         }
-        const areaW = 320
+        const areaW = 220
         const areaH = 330
 
         const toolArea = svg
@@ -458,8 +451,13 @@ watch(loaddata, () => {
                         : backtriangle(startX, endX, index * lineHeight.value + 65)
                 })
                 .attr('fill', function (i) {
-                    const classlist = i.cog_category?.split('').slice(0, -1) as string[]
-                    return classlist.length === 1 ? TypeDict[classlist[0]].color : TypeDict.S.color
+                    const classlist = i.Protein_function_classification?.split(';').slice(
+                        0,
+                        -1
+                    ) as string[]
+                    return classlist.length === 1
+                        ? TypeDict[classlist[0]].color
+                        : TypeDict.mix.color
                 })
                 .attr('stroke', '#5b5b5b')
                 .attr('stroke-width', '1px')

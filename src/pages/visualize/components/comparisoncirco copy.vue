@@ -14,8 +14,7 @@ import * as d3 from 'd3'
 import _ from 'lodash'
 // import { Operation } from '@element-plus/icons-vue'
 // import { TypeDict, coverageDict, identityDict, proteinType } from '@/utils/annotation'
-// import { TypeDict, proteinType } from '@/utils/annotation'
-// import { COGCategoryDict } from '@/utils/phage'
+
 import { usePhageStore } from '@/store/phage'
 
 const width = ref(1000)

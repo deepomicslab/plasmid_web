@@ -172,7 +172,7 @@
         <div class="flex flex-row my-5">
             <div class="text-4xl ml-1 font-500">Annotation Overview</div>
             <div class="mt-1.5 felx flex-row justify-start items-center ml-5">
-                <el-button>
+                <el-button @click="downloadsvg">
                     <template #icon>
                         <n-icon><downicon /></n-icon>
                     </template>
@@ -180,7 +180,7 @@
                 </el-button>
             </div>
         </div>
-        <div style="box-shadow: 0 0 64px #cfd5db" class="w-310 h-150 mt-10">
+        <div style="box-shadow: 0 0 64px #cfd5db" class="w-400 h-180 mt-10">
             <heatmap />
         </div>
     </div>
@@ -218,7 +218,17 @@ const taskdata = ref({
         uploadpath: '',
     },
 })
-
+function downloadsvg() {
+    const svgElement = document.getElementById('Viz_area') as HTMLElement
+    const svgData = new XMLSerializer().serializeToString(svgElement as SVGElement)
+    const blob = new Blob([svgData], { type: 'image/svg+xml;charset=utf-8' })
+    const url = URL.createObjectURL(blob)
+    const link = document.createElement('a')
+    link.href = url
+    link.download = 'annotation.svg'
+    link.click()
+    URL.revokeObjectURL(url)
+}
 // const taskresultdata = ref({
 //     results: { completeness: [], quality_summary: [], checkv_result: [] },
 // })
