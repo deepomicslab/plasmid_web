@@ -122,7 +122,7 @@
                     <template #label>
                         <div class="cell-item"># of Secondary Metabolism</div>
                     </template>
-                    {{ phageStore.phageanti.length }}
+                    {{ phagedetail.sm }}
                 </el-descriptions-item>
                 <el-descriptions-item>
                     <template #label>
