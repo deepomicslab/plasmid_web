@@ -184,7 +184,6 @@ const isShowDetail = ref(true)
 
 const switchmap = () => {
     isShowDetail.value = !isShowDetail.value
-    console.log(isShowDetail.value)
 }
 onBeforeMount(async () => {
     loading.value = true

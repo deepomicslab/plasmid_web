@@ -41,18 +41,18 @@ const loaddata = computed(() => {
 })
 
 // const colors = ['pink', 'orange', 'blue', 'green', 'green']
-const colors = ['#da4b89', '#ff8000', '#4b89da', '#4bda9c', '#4bda9c']
+const colors = ['#96acb7', '#da4b89', '#ff8000', '#4b89da', '#4bda9c', '#4bda9c']
 const minVal = 90
 const maxVal = 100
 const sectionVal = (maxVal - minVal) / (colors.length - 1)
 
 const identityColor = (identity: Number) => {
     if (identity < minVal || identity > maxVal) {
-        return 'none'
+        return '#96acb7'
     }
 
     const idx = Math.floor((identity - minVal) / sectionVal)
-    return colors[idx]
+    return colors[idx + 1]
 }
 
 const drawLegend = () => {
@@ -89,7 +89,13 @@ const drawLegend = () => {
         .attr('x', boxMl + boxW + 10)
         .attr('y', (d, i) => boxMt + i * (boxW + 4) + boxW / 2 + 3)
         .style('fill', '#818181')
-        .text((d, i) => `>= ${minVal + i * sectionVal}%`)
+        .text((d, i) => {
+            // eslint-disable-next-line eqeqeq
+            if (i == 0) {
+                return `< 90%`
+            }
+            return `>= ${minVal + i * sectionVal}%`
+        })
         .attr('font-size', '13px')
 }
 
@@ -107,6 +113,7 @@ watch(loaddata, () => {
     if (phagecomparisondata.value.circlealignment.length <= 1) {
         return
     }
+    console.log('hah')
     drawLegend()
 
     const uniqueIDList = _.uniqBy(phagecomparisondata.value.proteins, 'phageid')
@@ -186,20 +193,21 @@ watch(loaddata, () => {
     for (let i = 0; i < textCount; i += 1) {
         toolTextPositions.push((i + 1) * posGap)
     }
-    const areaW = 220
+    const areaW = 300
     const areaH = 330
-
+    console.log(phagecomparisondata.value.circlealignment)
     const ribbonData = _.map(phagecomparisondata.value.circlealignment, align => {
+        console.log('1', phageList, align)
         const sourcePhage = _.find(phageList, p => p.phage_id === align.Source_Phage_ID)
         const targetPhage = _.find(phageList, p => p.phage_id === align.Target_Phage_ID)
         if (typeof sourcePhage === 'undefined' || typeof targetPhage === 'undefined') {
             console.log('ERROR')
         }
         const identity = Number(align.Identity)
-        if (identity < 90 || identity > 100) {
-            return ''
-        }
-
+        console.log(identity)
+        // if (identity < 90 || identity > 100) {
+        //     return ''
+        // }
         const markData = {
             source: {
                 startAngle: sourcePhage.scaler(align.Source_start_point),
@@ -224,7 +232,7 @@ watch(loaddata, () => {
         //     .style('stroke', '#818181')
         //     .attr('class', 'ribbon')
     })
-
+    console.log(ribbonData)
     const ribbons = svgArea
         .append('g')
         .attr('transform', `translate(${cx.value},${cy.value})`)
