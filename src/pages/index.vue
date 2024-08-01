@@ -216,7 +216,7 @@
                                         class="w-297 h-259 flex flex-row items-center justify-center"
                                     >
                                         <el-image
-                                            src="/png/plasmid_vis.jpg"
+                                            src="/png/Plasmid_vis.jpg"
                                             class="image w-297 h-259"
                                             z-index="100"
                                         />
