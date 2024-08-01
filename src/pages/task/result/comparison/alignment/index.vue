@@ -138,7 +138,7 @@
         <div class="ml-10" v-show="isShowDetail">
             <comp />
         </div>
-        <!-- <div class="ml-10" v-if="false">
+        <!-- <div class="ml-10" v-if="!isShowDetail">
             <compcirco />
         </div> -->
         <div class="ml-10" v-show="!isShowDetail">

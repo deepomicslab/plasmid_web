@@ -229,7 +229,7 @@ onBeforeMount(async () => {
     loading.value = true
     phageStore.heatmaploaded = false
 
-    const response2 = await axios.get(`/view_task_result/`, {
+    const response2 = await axios.get(`/view_task_detail/`, {
         baseURL: '/api/analysis',
         timeout: 100000,
         params: {
@@ -239,7 +239,7 @@ onBeforeMount(async () => {
     taskdata.value = response2.data
     taskStore.taskdetail = taskdata.value
 
-    const response = await axios.get(`/view_task_detail/`, {
+    const response = await axios.get(`/view_task_result/`, {
         baseURL: '/api/analysis',
         timeout: 100000,
         params: {
