@@ -22,13 +22,13 @@
                     <el-button round color="#069" class="w-30 h-9" @click="godatabasae">
                         Database
                     </el-button>
-                    <img src="../../public/png/database.png" class="image w-34 h-34" />
+                    <img src="/png/database.png" class="image w-34 h-34" />
                 </div>
                 <div class="h-2/8 flex flex-col justify-center items-center">
                     <el-button round color="#069" class="w-30 h-9" @click="goAnalysis">
                         Analysis
                     </el-button>
-                    <img src="../../public/png/analysis.png" class="image w-34 h-34" />
+                    <img src="/png/analysis.png" class="image w-34 h-34" />
                 </div>
             </div>
         </n-layout-sider>
@@ -211,17 +211,17 @@
                                         />
                                     </div>
                                 </el-carousel-item>
-                                <!-- <el-carousel-item>
+                                <el-carousel-item>
                                     <div
-                                        class="w-270 h-150 flex flex-row items-center justify-center"
+                                        class="w-297 h-259 flex flex-row items-center justify-center"
                                     >
                                         <el-image
-                                            src="/png/visualization.png"
-                                            class="image w-270 h-150"
+                                            src="/png/plasmid_vis.jpg"
+                                            class="image w-297 h-259"
                                             z-index="100"
                                         />
                                     </div>
-                                </el-carousel-item> -->
+                                </el-carousel-item>
                             </el-carousel>
                         </div>
                     </div>
