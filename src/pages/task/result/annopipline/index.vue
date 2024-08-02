@@ -462,7 +462,7 @@ const baseOption1 = {
     tooltip: {},
     series: [
         {
-            name: 'Phages',
+            name: 'Plasmids',
             type: 'pie',
             data: [
                 { value: 18, name: 'virulent' },
@@ -473,7 +473,7 @@ const baseOption1 = {
 }
 const baseOption2 = {
     title: {
-        text: 'Phage Taxonomy Distribution',
+        text: 'Plasmid Taxonomy Distribution',
         left: 'center',
     },
     toolbox: {
@@ -500,7 +500,7 @@ const baseOption2 = {
     },
     series: [
         {
-            name: 'Phages',
+            name: 'Plasmids',
             type: 'pie',
             data: [
                 { value: 1, name: 'Na' },

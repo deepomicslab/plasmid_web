@@ -46,7 +46,7 @@
                     1. Input Sequence
                     <n-button
                         text
-                        href="https://plasmid.deepomics.org/dataExample/data_demo/plasmid.fasta"
+                        href="https://plasmid.deepomics.org/dataExample/data_demo/alignment.fasta"
                         tag="a"
                         target="_blank"
                         type="primary"
@@ -185,7 +185,7 @@ const examplechange = async () => {
     console.log(exampleSwicth.value)
     if (exampleSwicth.value) {
         const fileURL = new URL(
-            '../../../../../public/dataExample/data_demo/plasmid.fasta',
+            '../../../../../public/dataExample/data_demo/alignment.fasta',
             import.meta.url
         )
         const response = await fetch(fileURL)
@@ -231,7 +231,7 @@ const remove = () => {
 const router = useRouter()
 
 const godemo = () => {
-    router.push({ path: '/task/result/comparison/alignment', query: { taskid: 13 } })
+    router.push({ path: '/task/result/comparison/alignment', query: { taskid: 30 } })
 }
 
 const modulelist = ref({
@@ -311,7 +311,7 @@ const submitdemo = async () => {
     submitdata.append('modulelist', JSON.stringify(modulelist.value))
     submitdata.append('rundemo', 'true')
     // /home/platform/phage_db/phage_api/demo_file/alignment_demo.fasta
-    submitdata.append('demopath', 'plasmid.fasta')
+    submitdata.append('demopath', 'alignment.fasta')
     const precheck = ref(true)
     if (precheck.value) {
         submitdata.append('analysistype', 'Sequence Alignment')

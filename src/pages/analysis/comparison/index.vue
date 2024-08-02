@@ -56,7 +56,7 @@
                             1. Input Sequence
                             <n-button
                                 text
-                                href="https://plasmid.deepomics.org/dataExample/data_demo/plasmid.fasta"
+                                href="https://plasmid.deepomics.org/dataExample/data_demo/alignment.fasta"
                                 tag="a"
                                 target="_blank"
                                 type="primary"
@@ -438,7 +438,7 @@ const examplechange = async () => {
     console.log(exampleSwicth.value)
     if (exampleSwicth.value) {
         const fileURL = new URL(
-            '../../../../../public/dataExample/data_demo/plasmid.fasta',
+            '../../../../../public/dataExample/data_demo/alignment.fasta',
             import.meta.url
         )
         const response = await fetch(fileURL)
@@ -675,6 +675,7 @@ const submitdemo = async () => {
     loading.value = true
     const submitdata = new FormData()
     submitdata.append('rundemo', 'true')
+    submitdata.append('demopath', 'alignment.fasta')
     const precheck = ref(true)
     modulelist.value = {
         annotation: true,
@@ -718,7 +719,7 @@ onBeforeMount(() => {
     userid.value = userId.value as string
 })
 const godemo = () => {
-    router.push({ path: '/task/result/comparison', query: { taskid: 17 } })
+    router.push({ path: '/task/result/comparison', query: { taskid: 31 } })
 }
 const gosubmithelper = () => {
     router.push({ path: '/tutorial', query: { type: 'Analysis_introduction' } })

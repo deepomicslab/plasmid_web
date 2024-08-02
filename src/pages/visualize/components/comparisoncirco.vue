@@ -1,7 +1,7 @@
 <template>
-    <div style="box-shadow: 0 0 64px #cfd5db" class="w-250 mt-10 h-250">
-        <div class="w-250">
-            <el-scrollbar class="h-250 border-dark">
+    <div style="box-shadow: 0 0 64px #cfd5db" class="w-330 mt-10 h-250">
+        <div class="w-330">
+            <el-scrollbar class="h-330 border-dark">
                 <svg id="Viz_comp" :height="height" :width="width"></svg>
             </el-scrollbar>
         </div>
@@ -41,22 +41,42 @@ const loaddata = computed(() => {
 })
 
 // const colors = ['pink', 'orange', 'blue', 'green', 'green']
-const colors = ['#96acb7', '#da4b89', '#ff8000', '#4b89da', '#4bda9c', '#4bda9c']
+// const colors = ['#96acb7', '#da4b89', '#ff8000', '#4b89da', '#4bda9c', '#4bda9c']
+const colors = ['#fed766', '#ff8000', '#4b89da', '#4bda9c', '#da4b89']
+
 const minVal = 90
 const maxVal = 100
 const sectionVal = (maxVal - minVal) / (colors.length - 1)
 
 const identityColor = (identity: Number) => {
     if (identity < minVal || identity > maxVal) {
-        return '#96acb7'
+        return ''
     }
-
-    const idx = Math.floor((identity - minVal) / sectionVal)
-    return colors[idx + 1]
+    if (identity === maxVal) {
+        return '#da4b89'
+    }
+    // eslint-disable-next-line no-bitwise
+    if ((identity >= minVal) & (identity < 92.5)) {
+        return '#fed766'
+    }
+    // eslint-disable-next-line no-bitwise
+    if ((identity >= 92.5) & (identity < 95)) {
+        return '#ff8000'
+    }
+    // eslint-disable-next-line no-bitwise
+    if ((identity >= 95) & (identity < 97.5)) {
+        return '#4b89da'
+    }
+    // eslint-disable-next-line no-bitwise
+    if ((identity >= 97.5) & (identity < 100)) {
+        return '#4bda9c'
+    }
+    // const idx = Math.floor((identity - minVal) / sectionVal)
+    // return colors[idx + 1]
 }
 
 const drawLegend = () => {
-    const colorArr = colors.slice(0, -1)
+    const colorArr = colors.slice()
     const legendSvg = d3.select('#Viz_comp').append('svg').attr('x', 15).attr('y', 15)
 
     legendSvg
@@ -91,8 +111,8 @@ const drawLegend = () => {
         .style('fill', '#818181')
         .text((d, i) => {
             // eslint-disable-next-line eqeqeq
-            if (i == 0) {
-                return `< 90%`
+            if (i === 4) {
+                return `= 100%`
             }
             return `>= ${minVal + i * sectionVal}%`
         })
@@ -205,9 +225,9 @@ watch(loaddata, () => {
         }
         const identity = Number(align.Identity)
         console.log(identity)
-        // if (identity < 90 || identity > 100) {
-        //     return ''
-        // }
+        if (identity < 90 || identity > 100) {
+            return ''
+        }
         const markData = {
             source: {
                 startAngle: sourcePhage.scaler(align.Source_start_point),
