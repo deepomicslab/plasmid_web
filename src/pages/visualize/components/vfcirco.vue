@@ -969,7 +969,7 @@ function downloadsvg() {
     const url = URL.createObjectURL(blob)
     const link = document.createElement('a')
     link.href = url
-    link.download = 'trna_circo.svg'
+    link.download = 'vf.svg'
     link.click()
     URL.revokeObjectURL(url)
 }
@@ -1001,7 +1001,7 @@ const downloadSVGAsPNG = async () => {
 
             const link = document.createElement('a')
             link.href = url
-            link.download = 'trna_circo.png'
+            link.download = 'vf.png'
             link.click()
 
             URL.revokeObjectURL(url)
