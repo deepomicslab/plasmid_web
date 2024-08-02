@@ -72,27 +72,27 @@ PlasmidScope applied **ESMFold** [24] to predict the structure of the **40,250,7
 Comparative genomic studies, including sequence alignment and comparative tree construction, are also provided for the curated plasmids.
 
 ## References
-[1] O’Leary,N.A., Wright,M.W., Brister,J.R., Ciufo,S., Haddad,D., McVeigh,R., Rajput,B., Robbertse,B., Smith-White,B., Ako-Adjei,D., et al. (2015) Reference sequence (refseq) database at NCBI: Current status, taxonomic expansion, and functional annotation. Nucleic Acids Research, 44, D733-45. 
-[2] Benson,D.A., Cavanaugh,M., Clark,K., Karsch-Mizrachi,I., Ostell,J., Pruitt,K.D. and Sayers,E.W. (2017) GenBank. Nucleic Acids Research, 46, D41-D47. 
-[3] Kanz,C. (2004) The EMBL nucleotide sequence database. Nucleic Acids Research, 33, D29-33. 
-[4] Ogasawara,O., Kodama,Y., Mashima,J., Kosuge,T. and Fujisawa,T. (2019) DDBJ database updates and Computational Infrastructure Enhancement. Nucleic Acids Research, 48, D45-D50. 
-[5] Cochrane,G., Bates,K., Apweiler,R., Tateno,Y., Mashima,J., Kosuge,T., Mizrachi,I.K., Schafer,S. and Fetchko,M. (2006) Evidence standards in experimental and inferential INSDC Third Party Annotation Data. OMICS: A Journal of Integrative Biology, 10, 105–113. 
-[6] Schmartz,G.P., Hartung,A., Hirsch,P., Kern,F., Fehlmann,T., Müller,R. and Keller,A. (2021) PLSDB: Advancing a comprehensive database of bacterial plasmids. Nucleic Acids Research, 50, D273–D278.
-[7] Camargo,A.P., Call,L., Roux,S., Nayfach,S., Huntemann,M., Palaniappan,K., Ratner,A., Chu,K., Mukherjeep,S., Reddy,T.B., et al. (2023) IMG/PR: A database of plasmids from genomes and metagenomes with rich annotations and metadata. Nucleic Acids Research, 52, D164–D173.
-[8] Douarre,P.-E., Mallet,L., Radomski,N., Felten,A. and Mistou,M.-Y. (2020) Analysis of Compass, a new comprehensive plasmid database revealed prevalence of Multireplicon and extensive diversity of INCF plasmids. Frontiers in Microbiology, 11, 483.
-[9] Wood,D.E., Lu,J. and Langmead,B. (2019) Improved metagenomic analysis with Kraken 2. Genome Biology, 20, 257. 
-[10] Lai,S., Jia,L., Subramanian,B., Pan,S., Zhang,J., Dong,Y., Chen,W.-H. and Zhao,X.-M. (2020) mMGE: A database for human metagenomic extrachromosomal mobile genetic elements. Nucleic Acids Research, 49, D783-D791. 
-[11] Federhen,S. (2011) The NCBI Taxonomy Database. Nucleic Acids Research, 40, D136-43. 
-[12] Robertson,J., Bessonov,K., Schonfeld,J. and Nash,J.H. (2020) Universal whole-sequence-based plasmid typing and its utility to prediction of host range and epidemiological surveillance. Microbial Genomics, 6, mgen000435. 
-[13] Seemann,T. (2014) Prokka: Rapid Prokaryotic Genome Annotation. Bioinformatics, 30, 2068–2069.
-[14] Cantalapiedra,C.P., Hernández-Plaza,A., Letunic,I., Bork,P. and Huerta-Cepas,J. (2021) Eggnog-mapper V2: Functional annotation, Orthology assignments, and domain prediction at the metagenomic scale. Molecular Biology and Evolution, 38, 5825–5829.
-[15] Buchfink,B., Reuter,K. and Drost,H.-G. (2021) Sensitive protein alignments at tree-of-life scale using Diamond. Nature Methods, 18, 366–368.
-[16] Chen,L. (2004) VFDB: A reference database for bacterial virulence factors. Nucleic Acids Research, 33, D325-8.
-[17] McArthur,A.G., Waglechner,N., Nizam,F., Yan,A., Azad,M.A., Baylay,A.J., Bhullar,K., Canova,M.J., De Pascale,G., Ejim,L., et al. (2013) The comprehensive antibiotic resistance database. Antimicrobial Agents and Chemotherapy, 57, 3348–3357. 
-[18] Alcock,B.P., Huynh,W., Chalil,R., Smith,K.W., Raphenya,A.R., Wlodarski,M.A., Edalatmand,A., Petkau,A., Syed,S.A., Tsang,K.K., et al. (2022) Card 2023: Expanded curation, support for machine learning, and resistome prediction at the comprehensive antibiotic resistance database. Nucleic Acids Research, 51, D690-D699.
-[19] Laslett,D. (2004) Aragorn, a program to detect trna genes and tmrna genes in nucleotide sequences. Nucleic Acids Research, 32, 11–16.
-[20] Russel,J., Pinilla-Redondo,R., Mayo-Muñoz,D., Shah,S.A. and Sørensen,S.J. (2020) CRISPRCASTYPER: Automated Identification, annotation, and classification of CRISPR-Cas Loci. The CRISPR Journal, 3, 462–469. 
-[21] Blin,K., Shaw,S., Augustijn,H.E., Reitz,Z.L., Biermann,F., Alanjary,M., Fetter,A., Terlouw,B.R., Metcalf,W.W., Helfrich,E.J., et al. (2023) Antismash 7.0: New and improved predictions for detection, regulation, chemical structures and visualisation. Nucleic Acids Research, 51, W46-W50.
-[22] Teufel,F., Almagro Armenteros,J.J., Johansen,A.R., Gíslason,M.H., Pihl,S.I., Tsirigos,K.D., Winther,O., Brunak,S., von Heijne,G. and Nielsen,H. (2022) SIGNALP 6.0 predicts all five types of signal peptides using protein language models. Nature Biotechnology, 40, 1023–1025. 
-[23] Krogh,A., Larsson,B., von Heijne,G. and Sonnhammer,E.L.L. (2001) Predicting transmembrane protein topology with a hidden Markov model: Application to complete genomes11edited by F. Cohen. Journal of Molecular Biology, 305, 567–580. 
+[1] O’Leary,N.A., Wright,M.W., Brister,J.R., Ciufo,S., Haddad,D., McVeigh,R., Rajput,B., Robbertse,B., Smith-White,B., Ako-Adjei,D., et al. (2015) Reference sequence (refseq) database at NCBI: Current status, taxonomic expansion, and functional annotation. Nucleic Acids Research, 44, D733-45. <br>
+[2] Benson,D.A., Cavanaugh,M., Clark,K., Karsch-Mizrachi,I., Ostell,J., Pruitt,K.D. and Sayers,E.W. (2017) GenBank. Nucleic Acids Research, 46, D41-D47. <br>
+[3] Kanz,C. (2004) The EMBL nucleotide sequence database. Nucleic Acids Research, 33, D29-33. <br>
+[4] Ogasawara,O., Kodama,Y., Mashima,J., Kosuge,T. and Fujisawa,T. (2019) DDBJ database updates and Computational Infrastructure Enhancement. Nucleic Acids Research, 48, D45-D50. <br>
+[5] Cochrane,G., Bates,K., Apweiler,R., Tateno,Y., Mashima,J., Kosuge,T., Mizrachi,I.K., Schafer,S. and Fetchko,M. (2006) Evidence standards in experimental and inferential INSDC Third Party Annotation Data. OMICS: A Journal of Integrative Biology, 10, 105–113. <br>
+[6] Schmartz,G.P., Hartung,A., Hirsch,P., Kern,F., Fehlmann,T., Müller,R. and Keller,A. (2021) PLSDB: Advancing a comprehensive database of bacterial plasmids. Nucleic Acids Research, 50, D273–D278.<br>
+[7] Camargo,A.P., Call,L., Roux,S., Nayfach,S., Huntemann,M., Palaniappan,K., Ratner,A., Chu,K., Mukherjeep,S., Reddy,T.B., et al. (2023) IMG/PR: A database of plasmids from genomes and metagenomes with rich annotations and metadata. Nucleic Acids Research, 52, D164–D173.<br>
+[8] Douarre,P.-E., Mallet,L., Radomski,N., Felten,A. and Mistou,M.-Y. (2020) Analysis of Compass, a new comprehensive plasmid database revealed prevalence of Multireplicon and extensive diversity of INCF plasmids. Frontiers in Microbiology, 11, 483.<br>
+[9] Wood,D.E., Lu,J. and Langmead,B. (2019) Improved metagenomic analysis with Kraken 2. Genome Biology, 20, 257. <br>
+[10] Lai,S., Jia,L., Subramanian,B., Pan,S., Zhang,J., Dong,Y., Chen,W.-H. and Zhao,X.-M. (2020) mMGE: A database for human metagenomic extrachromosomal mobile genetic elements. Nucleic Acids Research, 49, D783-D791. <br>
+[11] Federhen,S. (2011) The NCBI Taxonomy Database. Nucleic Acids Research, 40, D136-43. <br>
+[12] Robertson,J., Bessonov,K., Schonfeld,J. and Nash,J.H. (2020) Universal whole-sequence-based plasmid typing and its utility to prediction of host range and epidemiological surveillance. Microbial Genomics, 6, mgen000435. <br>
+[13] Seemann,T. (2014) Prokka: Rapid Prokaryotic Genome Annotation. Bioinformatics, 30, 2068–2069.<br>
+[14] Cantalapiedra,C.P., Hernández-Plaza,A., Letunic,I., Bork,P. and Huerta-Cepas,J. (2021) Eggnog-mapper V2: Functional annotation, Orthology assignments, and domain prediction at the metagenomic scale. Molecular Biology and Evolution, 38, 5825–5829.<br>
+[15] Buchfink,B., Reuter,K. and Drost,H.-G. (2021) Sensitive protein alignments at tree-of-life scale using Diamond. Nature Methods, 18, 366–368.<br>
+[16] Chen,L. (2004) VFDB: A reference database for bacterial virulence factors. Nucleic Acids Research, 33, D325-8.<br>
+[17] McArthur,A.G., Waglechner,N., Nizam,F., Yan,A., Azad,M.A., Baylay,A.J., Bhullar,K., Canova,M.J., De Pascale,G., Ejim,L., et al. (2013) The comprehensive antibiotic resistance database. Antimicrobial Agents and Chemotherapy, 57, 3348–3357. <br>
+[18] Alcock,B.P., Huynh,W., Chalil,R., Smith,K.W., Raphenya,A.R., Wlodarski,M.A., Edalatmand,A., Petkau,A., Syed,S.A., Tsang,K.K., et al. (2022) Card 2023: Expanded curation, support for machine learning, and resistome prediction at the comprehensive antibiotic resistance database. Nucleic Acids Research, 51, D690-D699.<br>
+[19] Laslett,D. (2004) Aragorn, a program to detect trna genes and tmrna genes in nucleotide sequences. Nucleic Acids Research, 32, 11–16.<br>
+[20] Russel,J., Pinilla-Redondo,R., Mayo-Muñoz,D., Shah,S.A. and Sørensen,S.J. (2020) CRISPRCASTYPER: Automated Identification, annotation, and classification of CRISPR-Cas Loci. The CRISPR Journal, 3, 462–469. <br>
+[21] Blin,K., Shaw,S., Augustijn,H.E., Reitz,Z.L., Biermann,F., Alanjary,M., Fetter,A., Terlouw,B.R., Metcalf,W.W., Helfrich,E.J., et al. (2023) Antismash 7.0: New and improved predictions for detection, regulation, chemical structures and visualisation. Nucleic Acids Research, 51, W46-W50.<br>
+[22] Teufel,F., Almagro Armenteros,J.J., Johansen,A.R., Gíslason,M.H., Pihl,S.I., Tsirigos,K.D., Winther,O., Brunak,S., von Heijne,G. and Nielsen,H. (2022) SIGNALP 6.0 predicts all five types of signal peptides using protein language models. Nature Biotechnology, 40, 1023–1025. <br>
+[23] Krogh,A., Larsson,B., von Heijne,G. and Sonnhammer,E.L.L. (2001) Predicting transmembrane protein topology with a hidden Markov model: Application to complete genomes11edited by F. Cohen. Journal of Molecular Biology, 305, 567–580. <br>
 [24] Lin,Z., Akin,H., Rao,R., Hie,B., Zhu,Z., Lu,W., Smetanin,N., Verkuil,R., Kabeli,O., Shmueli,Y., et al. (2023) Evolutionary-scale prediction of atomic-level protein structure with a language model. Science, 379, 1123–1130. 

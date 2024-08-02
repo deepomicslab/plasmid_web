@@ -134,7 +134,7 @@ The metadata for all the 9,133,791 transmembrane proteins. Each row gives the in
 + ``PLSDB plasmid Transmembrane Protein Meta Data``: The metadata for the 1,345,494 transmembrane proteins from PLSDB.
 + ``IMG/PR plasmid Transmembrane Protein Meta Data``: The metadata for the 3,221,059 transmembrane proteins from IMG/PR.
 + ``COMPASS plasmid Transmembrane Protein Meta Data``: The metadata for the 465,289 transmembrane proteins from COMPASS.
-+ ``GenBank plasmid Transmembrane Protein Meta Data: The metadata for the 1,313,235 transmembrane proteins from GenBank.
++ ``GenBank plasmid Transmembrane Protein Meta Data``: The metadata for the 1,313,235 transmembrane proteins from GenBank.
 + ``RefSeq plasmid Transmembrane Protein Meta Data``: The metadata for the 1,311,177 transmembrane proteins from RefSeq.
 + ``EMBL plasmid Transmembrane Protein Meta Data``: The metadata for the 76,271 transmembrane proteins from EMBL.
 + ``Kraken2 plasmid Transmembrane Protein Meta Data``: The metadata for the 10,749 transmembrane proteins from Kraken2.
