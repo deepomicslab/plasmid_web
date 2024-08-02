@@ -39,10 +39,6 @@ Then users can select specific modules to perform analyses.
 
 <div align=center><img src="/Ana_figures/comparison_modules.png" width="800"></div>
 
-PlasmidScope provides an option for users to incorporate the curated plasmids into genome comparison pipelines. Filtering options are available to select the curated sequences for comparison based on specific criteria such as sequence quality, length range, and  lifestyle.
-
-<div align=center><img src="/Ana_figures/comparison_withdb.png" width="800"></div>
-
 After the task is completed, users can get access to the genome comparison results from the workspace. Sequence alignment plots and comparative trees are available for the clustering results.
 
 <div align=center><img src="/Ana_figures/comparison_result1.png" width="800"></div>

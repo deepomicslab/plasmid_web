@@ -2,14 +2,14 @@
     <div v-show="phageStore.phagecrispr.length !== 0">
         <div>
             <div class="text-4xl font-500 mb-8 w-350 border-b-2 border-gray-300 pb-4">
-                CRISPR List
+                CRISPR-Cas List
             </div>
             <div class="flex flex-row w-350 justify-between mb-5 mt-8">
                 <el-button @click="downloadtsv">
                     <template #icon>
                         <n-icon><di /></n-icon>
                     </template>
-                    Download CRISPR Array Data
+                    Download CRISPR-Cas Data
                 </el-button>
             </div>
             <div class="flex w-350">
@@ -23,7 +23,7 @@
             </div>
         </div>
 
-        <div class="text-2xl font-500 my-10">Annotated Genome Map with Crispr</div>
+        <div class="text-2xl font-500 my-10">Annotated Genome Map with CRISPR-Cas</div>
         <div
             style="box-shadow: 0 0 64px #cfd5db"
             class="w-310 h-300 ml-15"

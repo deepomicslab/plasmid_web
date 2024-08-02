@@ -19,18 +19,18 @@
                             class="text-[21px] px-19.5 py-16 leading-12 mt-5 text-justify text-gray-700"
                         >
                             We are a diverse team of talented research assistants, Ph.D. candidates,
-                            and assistant investigators, led by Dr. CHEN Yu at the Shenzhen
-                            Institute of Advanced Technology and Dr. LI Shuai Cheng at the City
-                            University of Hong Kong. Our team comprises individuals with extensive
+                            and assistant investigators, led by Prof. LI Shuai Cheng at the City
+                            University of Hong Kong and Prof. CHEN Yu at the Shenzhen Institute of
+                            Advanced Technology. Our team comprises individuals with extensive
                             molecular biology, bioinformatics, and computer science expertise. If
                             you have any inquiries or require further information, please feel free
                             to reach out to us at
                             <strong class="text-[#069] font-400 mx-1 text-[21px]">
-                                yu.chen@siat.ac.cn
+                                shuaicli@gmail.com
                             </strong>
                             or
                             <strong class="text-[#069] font-400 mx-1 text-[21px]">
-                                shuaicli@gmail.com
+                                yu.chen@siat.ac.cn
                             </strong>
                             .
                         </div>
@@ -40,6 +40,10 @@
                     <div class="text-3xl font-500 text-[#3e5294] mt-10">PI</div>
                     <div class="flex flex-row justify-around w-160 mt-5">
                         <div class="flex flex-col justify-center items-center">
+                            <el-avatar shape="circle" :size="150" fit="fill" src="/png/lsc.jpg" />
+                            <div class="mt-3 text-lg font-500">LI Shuai Cheng</div>
+                        </div>
+                        <div class="flex flex-col justify-center items-center">
                             <el-avatar
                                 shape="circle"
                                 :size="150"
@@ -48,10 +52,6 @@
                                 style="background-color: #fff"
                             />
                             <div class="mt-3 text-lg font-500">CHEN Yu</div>
-                        </div>
-                        <div class="flex flex-col justify-center items-center">
-                            <el-avatar shape="circle" :size="150" fit="fill" src="/png/lsc.jpg" />
-                            <div class="mt-3 text-lg font-500">LI Shuai Cheng</div>
                         </div>
                     </div>
                     <div class="text-3xl font-500 text-[#3e5294] mt-10">Team</div>
