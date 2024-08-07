@@ -257,7 +257,7 @@
                                 <el-step :icon="Opportunity" status="process">
                                     <template #title>
                                         <div class="text-gray-700 font-600">
-                                            Version 1.0 (2024.7.1)
+                                            Version 1.0 (2024.5.1)
                                         </div>
                                     </template>
                                     <template #description>
