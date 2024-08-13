@@ -2,7 +2,7 @@
     <div v-show="phageStore.phagecrispr.length !== 0">
         <div>
             <div class="text-4xl font-500 mb-8 w-350 border-b-2 border-gray-300 pb-4">
-                CRISPR/Cas system List
+                CRISPR/Cas systems List
             </div>
             <div class="flex flex-row w-350 justify-between mb-5 mt-8">
                 <el-button @click="downloadtsv">
