@@ -12,7 +12,7 @@ After selecting the plasmids, please click on the ``Download`` button. A popup w
 <div align=center><img src="/DB_figures/datatype_selection.png" width="1000"></div>
 
 ## Batch download 
-PlasmidScope also provides a batch download interface for users to retrieve data, including the plasmid metadata, protein metadata, secondary metabolism metadata, tRNA & tmRNA gene metadata, CRISPR-Cas system metadata, signal peptides metadata, antimicrobial resistance gene metadata, virulence factor metadata, transmembrane protein metadata, plasmid sequences in fasta format, plasmid annotations in gbk/gff3 file. Users could click ``Download`` on the navigation bar to enter the download interface.
+PlasmidScope also provides a batch download interface for users to retrieve data, including the plasmid metadata, protein metadata, secondary metabolism metadata, tRNA & tmRNA gene metadata, CRISPR/Cas system metadata, signal peptides metadata, antimicrobial resistance gene metadata, virulence factor metadata, transmembrane protein metadata, plasmid sequences in fasta format, plasmid annotations in gbk/gff3 file. Users could click ``Download`` on the navigation bar to enter the download interface.
 
 <div align=center><img src="/DB_figures/download_interface.png" width="1000"></div>
 
@@ -73,18 +73,18 @@ The metadata for all the 118,171 tRNAs & tmRNAs predicted with Aragorn. Each row
 + ``TPA plasmid tRNA & tmRNA Gene Meta Data``: The metadata for the 1 tRNA & tmRNA genes from TPA.
 + ``mMGEs plasmid tRNA & tmRNA Gene Meta Data``: The metadata for the 8,661 tRNA & tmRNA genes from mMGEs.
 
-#### CRISPR-CAS meta data download
-The metadata for all the 10,470 CRISPR-CAS systems. Each row gives the information for a CRISPR-CAS system; The columns give information about the Plasmid\_ID, Cas\_ID,  Cac\_start, Cac\_end, the subtype of Cas (Cas\_Subtype), CRISPR\_ID, CRISPR\_start, CRISPR\_end, the subtype of CRISPR (CRISPR_Subtype), the CRISPR\-Cac consenus prediction (CRISPR\-Cas Consenus Prediction), the sequence of consenus repeat (Consensus Repeat Sequence), and the Cas genes (Cas Genes).
+#### CRISPR/Cas meta data download
+The metadata for all the 10,470 CRISPR/Cas systems. Each row gives the information for a CRISPR/Cas system; The columns give information about the Plasmid\_ID, Cas\_ID,  Cac\_start, Cac\_end, the subtype of Cas (Cas\_Subtype), CRISPR\_ID, CRISPR\_start, CRISPR\_end, the subtype of CRISPR (CRISPR_Subtype), the CRISPR\-Cac consenus prediction (CRISPR\-Cas Consenus Prediction), the sequence of consenus repeat (Consensus Repeat Sequence), and the Cas genes (Cas Genes).
 
-+ ``PLSDB plasmid CRISPR-CAS Meta Data``: The metadata for the 1,482 CRISPR-CAS systems from PLSDB.
-+ ``IMG/PR plasmid CRISPR-CAS Meta Data``: The metadata for the 3,653 CRISPR-CAS systems from IMG/PR.
-+ ``COMPASS plasmid CRISPR-CAS Meta Data``: The metadata for the 489 CRISPR-CAS systems from COMPASS.
-+ ``GenBank plasmid CRISPR-CAS Meta Data``: The metadata for the 1,967 CRISPR-CAS systems from GenBank.
-+ ``RefSeq plasmid CRISPR-CAS Meta Data``: The metadata for the 2,079 CRISPR-CAS systems from RefSeq.
-+ ``EMBL plasmid CRISPR-CAS Meta Data``: The metadata for the 88 CRISPR-CAS systems from EMBL.
-+ ``Kraken2 plasmid CRISPR-CAS Meta Data``: The metadata for the 13 CRISPR-CAS systems from Kraken2.
-+ ``DDBJ plasmid CRISPR-CAS Meta Data``: The metadata for the 317 CRISPR-CAS systems from DDBJ.
-+ ``mMGEs plasmid CRISPR-CAS Meta Data``: The metadata for the 382 CRISPR-CAS systems from mMGEs.
++ ``PLSDB plasmid CRISPR/Cas Meta Data``: The metadata for the 1,482 CRISPR/Cas systems from PLSDB.
++ ``IMG/PR plasmid CRISPR/Cas Meta Data``: The metadata for the 3,653 CRISPR/Cas systems from IMG/PR.
++ ``COMPASS plasmid CRISPR/Cas Meta Data``: The metadata for the 489 CRISPR/Cas systems from COMPASS.
++ ``GenBank plasmid CRISPR/Cas Meta Data``: The metadata for the 1,967 CRISPR/Cas systems from GenBank.
++ ``RefSeq plasmid CRISPR/Cas Meta Data``: The metadata for the 2,079 CRISPR/Cas systems from RefSeq.
++ ``EMBL plasmid CRISPR/Cas Meta Data``: The metadata for the 88 CRISPR/Cas systems from EMBL.
++ ``Kraken2 plasmid CRISPR/Cas Meta Data``: The metadata for the 13 CRISPR/Cas systems from Kraken2.
++ ``DDBJ plasmid CRISPR/Cas Meta Data``: The metadata for the 317 CRISPR/Cas systems from DDBJ.
++ ``mMGEs plasmid CRISPR/Cas Meta Data``: The metadata for the 382 CRISPR/Cas systems from mMGEs.
 
 #### Signal peptides meta data download
 The metadata for all the 4,239,609 signal peptides. Each row gives the information for a signal peptides; The columns give information about the Plasmid\_ID, Protein\_ID,  the protein start site on the genome (Start), the protein stop site on the genome(End), the strand encoding the protein (Strand), the protein product (Product), the predicted type of signal peptides (Prediction), the ration of other type of protein (OTHER), the ration of SP type of signal peptide (SP(Sec/SPI)), the ration of LIPO type of signal peptide (LIPO(Sec/SPII)), the ration of TAT type of signal peptide (TAT(Tat/SPI)), the ration of TATLIPO type of signal peptide (TATLIPO(Tat/SPII)), the ration of PILIN type of signal peptide (PILIN(Sec/SPIII)), the position of CS (CS position), and the probability of CS position (Probability of CS Position).

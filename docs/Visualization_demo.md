@@ -10,7 +10,7 @@ We provide some demo visualizations in this tutorial.
 + **The PlasmidScope visualization of the protein functional class distributions.** The upper heatmap showcases the percentage of ten functional classes for each plasmid, whereas the lower heatmap demonstrates the count of each functional class.
 <div align=center><img src="/Vis_figures/HeatmapDemo.png" width="600"></div>
 
-+ **The PlasmidScope visualization of the functional elements.** Based on the structural annotation visualization, the outermost circle shows the locations of the predicted tRNA and tmRNA (**a**), CRISPR-Cas systems (**b**), signal peptides (**c**), virulent factor (**d**), antimicrobial resistance gene (**e**), as well as protein transmembrane topology (**f**).
++ **The PlasmidScope visualization of the functional elements.** Based on the structural annotation visualization, the outermost circle shows the locations of the predicted tRNA and tmRNA (**a**), CRISPR/Cas systems (**b**), signal peptides (**c**), virulent factor (**d**), antimicrobial resistance gene (**e**), as well as protein transmembrane topology (**f**).
 <div align=center><img src="/Vis_figures/FuncDemo.png" width="700"></div>
 
 + **The PlasmidScope visualization of the sequence alignment.** PlasmidScope provides the linear (**a**) and circular (**b**) alignment visualizations. The color depth of the gray strips indicates the alignment coverage, whereas the color depth of the vertical blocks indicates the alignment identity.

@@ -156,7 +156,7 @@
             </div>
             <div class="w-280 mt-10">
                 <div class="w-280 bg-[rgb(18,49,73)] text-gray-50 p-4 text-[20px] font-600">
-                    <div>CRISPR-CAS Meta Data Download</div>
+                    <div>CRISPR/Cas Meta Data Download</div>
                     <div></div>
                 </div>
 
@@ -169,7 +169,7 @@
                         <div
                             class="w-160 border-r-1 border-gray-700 h-13 flex-row flex pl-4 items-center text-[19px]"
                         >
-                            {{ source }} Plasmid CRISPR-CAS Meta Data
+                            {{ source }} Plasmid CRISPR/Cas Meta Data
                         </div>
                         <div class="w-120 flex flex-row items-center justify-start">
                             <n-button class="ml-10 w-23 h-7 text-lg" text>
@@ -179,7 +179,7 @@
                                     </n-icon>
                                 </template>
                                 <a
-                                    :href="`https://plasmidapi.deepomics.org/api/database/files/${source}/data/${source}.CRISPR-Cas_list.xls`"
+                                    :href="`https://plasmidapi.deepomics.org/api/database/files/${source}/data/${source}.CRISPR/Cas_list.xls`"
                                     target="_blank"
                                     class="btn"
                                 >

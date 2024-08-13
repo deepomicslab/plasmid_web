@@ -90,7 +90,7 @@
                 {{ detailInfo.other_snps }}
             </el-descriptions-item>
         </el-descriptions>
-        <div class="w-350 mt-6">
+        <div class="w-330 mt-6">
             <div class="flex flex-row w-350">
                 <div class="text-xl font-300 mb-4">Protein Sequence</div>
             </div>

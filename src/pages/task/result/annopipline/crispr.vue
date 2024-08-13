@@ -62,7 +62,7 @@
         <el-descriptions class="w-330 text-xl ml-10" :column="1" size="large" border>
             <el-descriptions-item>
                 <template #label>
-                    <div class="cell-item">CRISPR-Cas_summary.tsv</div>
+                    <div class="cell-item">CRISPR/Cas_summary.tsv</div>
                 </template>
                 <n-button class="w-23 h-7 text-lg ml-20" text>
                     <template #icon>
@@ -314,10 +314,10 @@ const pagination = reactive({
         pagination.page = 1
     },
 })
-/// home/platform/phage_db/phage_api/workspace/user_task/1690810085_6563/output/rawdata/crispr/output/TSV/CRISPR-Cas_summary.tsv
+/// home/platform/phage_db/phage_api/workspace/user_task/1690810085_6563/output/rawdata/crispr/output/TSV/CRISPR/Cas_summary.tsv
 const urldict = computed(() => {
     return {
-        summary: `https://plasmidapi.deepomics.org/api/analysis/download_task_result_output_file/${taskdetail.value.uploadpath}/output/rawdata/crispr/output/TSV/CRISPR-Cas_summary.tsv`,
+        summary: `https://plasmidapi.deepomics.org/api/analysis/download_task_result_output_file/${taskdetail.value.uploadpath}/output/rawdata/crispr/output/TSV/CRISPR/Cas_summary.tsv`,
         report: `https://plasmidapi.deepomics.org/api/analysis/download_task_result_output_file/${taskdetail.value.uploadpath}/output/rawdata/crispr/output/TSV/Crisprs_REPORT.tsv`,
     }
 })

@@ -1,6 +1,6 @@
 <template>
-    <div class="flex flex-col mx-1/10 justify-start">
-        <div class="w-300 mt-18 ml-10">
+    <div class="m-auto w-5/6 mt-9 mb-4">
+        <div>
             <div class="flex flex-row w-350 border-b-2 border-gray-300">
                 <div class="text-4xl font-500 mb-8">Plasmid Informtion</div>
                 <div class="mt-1.5 ml-10">

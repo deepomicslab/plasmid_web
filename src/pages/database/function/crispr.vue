@@ -1,7 +1,7 @@
 <template>
     <div class="h-680 flex flex-col py-5 px-20">
         <div class="flex flex-row ml-1 my-7">
-            <div class="text-4xl font-600">CRIRSPR-CAS systems Information</div>
+            <div class="text-4xl font-600">CRISPR/Cas systems Information</div>
             <el-button round color="#069" class="ml-5 mt-2" @click="godatahelper">
                 Database Helper
             </el-button>
@@ -118,7 +118,7 @@
             </el-descriptions-item>
             <el-descriptions-item>
                 <template #label>
-                    <div class="cell-item">CRISPR-Cas Consenus Prediction</div>
+                    <div class="cell-item">CRISPR/Cas Consenus Prediction</div>
                 </template>
                 {{ crisprInfo.cas_consenus_prediction }}
             </el-descriptions-item>

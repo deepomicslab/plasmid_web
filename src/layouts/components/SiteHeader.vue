@@ -110,7 +110,7 @@ const menuOptions: MenuOption[] = [
                         key: '/database/function/trna',
                     },
                     {
-                        label: 'CRIRSPR-CAS systems List',
+                        label: 'CRISPR/Cas systems List',
                         key: '/database/function/crispr',
                     },
                     {

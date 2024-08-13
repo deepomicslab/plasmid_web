@@ -127,7 +127,7 @@
                                 {{ overview_data.crispr }}
                             </strong>
                             <strong class="text-[#069] font-400 ml-1 text-[21px]">
-                                CRISPR-CAS systems,
+                                CRISPR/Cas systems,
                             </strong>
                             <strong class="text-2xl font-600 text-[#069] ml-1">
                                 {{ overview_data.vf }}

@@ -27,7 +27,7 @@ These annotations provide valuable insights into the genome structure, genetic c
 
 #### Functional annotation
 + tRNA & tmRNA genes: tRNA and tmRNA genes, essential for protein synthesis and quality control, respectively, are detected using **ARAGORN** [9].
-+ Anti-CRISPR protein annotation: The presence and diversity of anti-CRISPR proteins, viral proteins that inhibit CRISPR-Cas systems, are identified using a combination of **BLASTP** [2] and **AcRanker** [10]. For BLASTP, we gathered the anti-CRISPR proteins from the **Anti-CRISPRdb** [11] to create a nucleotide database. The module returns the proteins with an e-value below 1e-5 and a coverage of over 90%. For Acranker, only candidate proteins that ranked higher than at least 50% of the proteins from Anti-CRISPRdb are considered as anti-CRISPR proteins.
++ Anti-CRISPR protein annotation: The presence and diversity of anti-CRISPR proteins, viral proteins that inhibit CRISPR/Cas systems, are identified using a combination of **BLASTP** [2] and **AcRanker** [10]. For BLASTP, we gathered the anti-CRISPR proteins from the **Anti-CRISPRdb** [11] to create a nucleotide database. The module returns the proteins with an e-value below 1e-5 and a coverage of over 90%. For Acranker, only candidate proteins that ranked higher than at least 50% of the proteins from Anti-CRISPRdb are considered as anti-CRISPR proteins.
 + CRISPR array annotation: CRISPR arrays, characteristic features of bacterial genomes, are identified using **CRISPRCasFinder** [12].
 + Transmembrane protein annotation: Transmembrane proteins, which span cell membranes, are detected using **TMHMM** [13].
 

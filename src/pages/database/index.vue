@@ -133,7 +133,7 @@
                             show-separator
                         />
                         <template #label>
-                            <h1 class="text-[#069] text-lg font-700">CRIRSPR-CAS systems</h1>
+                            <h1 class="text-[#069] text-lg font-700">CRISPR/Cas systems</h1>
                         </template>
                     </n-statistic>
                 </div>

@@ -67,8 +67,8 @@ The "Functional Annotation Data" interface provides access to the functional ele
 ### CRISPR List
 <div align=center><img src="/DB_figures/CRISPR_list.png" width="1000"></div>
 
-+ Detail: Access the basic information of the chosen CRISPR-Cas system.
-+ Download: Download the CRISPR-Cas system in FASTA format.
++ Detail: Access the basic information of the chosen CRISPR/Cas system.
++ Download: Download the CRISPR/Cas system in FASTA format.
 
 ### Secondary Metabolite List
 <div align=center><img src="/DB_figures/secondary_metabolites.png" width="1000"></div>
