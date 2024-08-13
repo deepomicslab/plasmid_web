@@ -1,7 +1,7 @@
 <template>
-    <div class="flex flex-col w-full h-full justify-start items-center">
-        <div class="flex flex-row w-full h-full bg-[#f8f9fa] justify-center items-center">
-            <div class="h-200 w-360 flex flex-row">
+    <div class="flex flex-col w-full justify-start items-center">
+        <div class="flex flex-row w-full bg-[#f8f9fa] justify-center items-center">
+            <div class="h-250 w-360 flex flex-row">
                 <div class="w-180 flex flex-col justify-start items-center">
                     <div class="flex flex-row">
                         <div class="mr-5">
@@ -87,16 +87,22 @@
                             <div class="mt-3 text-lg font-500">YANG Shuo</div>
                         </div>
                     </div>
-                    <!-- <div class="flex flex-row justify-around w-160 mt-5">
+                    <div class="flex flex-row justify-around w-160 mt-5">
                         <div class="flex flex-col justify-center items-center">
-                            <el-avatar shape="circle" :size="150" fit="cover" src="/png/wxy.jpg" />
-                            <div class="mt-3 text-lg font-500">WANG Xueying</div>
+                            <el-avatar
+                                shape="circle"
+                                :size="150"
+                                fit="cover"
+                                src="/png/zzc.jpg"
+                                style="background-color: rgb(154, 207, 250)"
+                            />
+                            <div class="mt-3 text-lg font-500">Zhao Zicheng</div>
                         </div>
-                        <div class="flex flex-col justify-center items-center">
+                        <!-- <div class="flex flex-col justify-center items-center">
                             <el-avatar shape="circle" :size="150" fit="cover" src="/png/xzx.jpg" />
                             <div class="mt-3 text-lg font-500">XU Zixin</div>
-                        </div>
-                    </div> -->
+                        </div> -->
+                    </div>
                 </div>
             </div>
         </div>
