@@ -61,6 +61,7 @@
                 :columns="columns"
                 :data="proteinList"
                 :row-key="rowKey"
+                :scroll-x="1900"
                 :max-height="1600"
                 @update:checked-row-keys="handleCheck"
             />
@@ -317,11 +318,12 @@ const createColumns = (): DataTableColumns<RowData> => [
         },
         key: 'plasmid_id',
         align: 'center',
+        width: 250,
         ellipsis: {
             tooltip: true,
         },
         render(row: any) {
-            return h('div', {}, [
+            return h('div', { style: { overflow: 'auto', 'text-overflow': 'ellipsis' } }, [
                 h(
                     NButton,
                     {
@@ -355,6 +357,7 @@ const createColumns = (): DataTableColumns<RowData> => [
         },
         key: 'protein_id',
         align: 'center',
+        width: 200,
         ellipsis: {
             tooltip: true,
         },
@@ -420,7 +423,7 @@ const createColumns = (): DataTableColumns<RowData> => [
         },
         key: 'cog_category',
         align: 'center',
-        width: '250px',
+        width: '200px',
         ellipsis: {
             tooltip: true,
         },
@@ -580,7 +583,7 @@ const handleSelectSet = async (key: any) => {
 const godatahelper = () => {
     router.push({
         path: '/tutorial',
-        query: { type: 'database_intro' },
+        query: { type: 'Database_introduction' },
     })
 }
 </script>

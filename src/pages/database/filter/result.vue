@@ -744,7 +744,7 @@ const handleSelectSet = (value: any) => {
 const godatahelper = () => {
     router.push({
         path: '/tutorial',
-        query: { type: 'database_intro' },
+        query: { type: 'Database_introduction' },
     })
 }
 </script>

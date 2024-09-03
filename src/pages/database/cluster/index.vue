@@ -357,7 +357,7 @@ const createColumns = (): DataTableColumns<RowData> => {
 const godatahelper = () => {
     router.push({
         path: '/tutorial',
-        query: { type: 'database_intro' },
+        query: { type: 'Database_introduction' },
     })
 }
 const columns = createColumns()

@@ -26,7 +26,6 @@
                     :props="defaultProps"
                     show-checkbox
                     lazy
-                    :load="loadNode"
                     node-key="label"
                     highlight-current
                     :filter-node-method="filterNode"
@@ -37,7 +36,7 @@
                                 <el-tag type="primary" class="mr-2" effect="dark">
                                     {{ data.rank }}
                                 </el-tag>
-                                <span class="text-2xl">{{ node.label }}</span>
+                                <span class="text-2xl">{{ data.label }}</span>
                                 <span class="ml-2">({{ data.count }})</span>
                             </div>
                             <div class="mr-7">
@@ -116,24 +115,24 @@ const defaultProps = {
 watch(filterText, val => {
     treeRef.value!.filter(val)
 })
-const level = ref(['Phylum', 'Class', 'Order', 'Family', 'Genus', 'Species'])
-const loadNode = async (node: Node, resolve: () => void) => {
-    console.log(node.level)
-    if (node.level === 6) {
-        resolve([] as any[])
-    } else {
-        const response2 = await axios.get(`/host_node/`, {
-            baseURL: '/api/database',
-            timeout: 100000,
-            params: {
-                rank: level.value[node.level],
-                node: node.label,
-            },
-        })
-        const { data } = response2
-        resolve(data)
-    }
-}
+// const level = ref(['Phylum', 'Class', 'Order', 'Family', 'Genus', 'Species'])
+// const loadNode = async (node: Node, resolve: () => void) => {
+//     console.log(node.level)
+//     if (node.level === 6) {
+//         resolve([] as any[])
+//     } else {
+//         const response2 = await axios.get(`/host_node/`, {
+//             baseURL: '/api/database',
+//             timeout: 100000,
+//             params: {
+//                 rank: level.value[node.level],
+//                 node: node.label,
+//             },
+//         })
+//         const { data } = response2
+//         resolve(data)
+//     }
+// }
 const filterNode = (value: string, data: Tree) => {
     if (!value) return true
     return data.label.includes(value)
@@ -155,7 +154,7 @@ const viewhost = (node: Node, data: Tree) => {
         path: `/database/host/list`,
         query: {
             rank: data.rank,
-            node: node.label,
+            node: data.label,
         },
     })
 }
@@ -416,7 +415,7 @@ onBeforeMount(async () => {
 const godatahelper = () => {
     router.push({
         path: '/tutorial',
-        query: { type: 'database_intro' },
+        query: { type: 'Database_introduction' },
     })
 }
 </script>

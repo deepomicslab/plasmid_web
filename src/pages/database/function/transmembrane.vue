@@ -536,7 +536,7 @@ const handleSelectSet = async (key: any) => {
 const godatahelper = () => {
     router.push({
         path: '/tutorial',
-        query: { type: 'database_intro' },
+        query: { type: 'Database_introduction' },
     })
 }
 const gofilter = () => {

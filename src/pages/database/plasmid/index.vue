@@ -502,16 +502,19 @@ const createColumns = (): DataTableColumns<RowData> => {
             key: 'plasmid_id',
             align: 'center',
             fixed: 'left',
-            width: 125,
+            width: '200px',
+            ellipsis: {
+                tooltip: true,
+            },
             render(row: any) {
-                return h('div', null, [
+                return h('div', { style: { overflow: 'auto', 'text-overflow': 'ellipsis' } }, [
                     h(
                         NButton,
                         {
                             type: 'info',
                             text: true,
                             size: 'small',
-                            style: { width: '100px' },
+                            style: { width: '200px' },
                             onClick: () => {
                                 const id = row.plasmid_id.replace(`${datasetList[row.source]}_`, '')
                                 window.open(`https://www.ncbi.nlm.nih.gov/nuccore/${id}/`)
@@ -599,7 +602,7 @@ const createColumns = (): DataTableColumns<RowData> => {
                 tooltip: true,
             },
             render(row: any) {
-                return h('div', {}, [
+                return h('div', { style: { overflow: 'auto', 'text-overflow': 'ellipsis' } }, [
                     h(
                         NButton,
                         {
@@ -857,7 +860,7 @@ const handleSelectSet = async (value: any) => {
 const godatahelper = () => {
     router.push({
         path: '/tutorial',
-        query: { type: 'database_intro' },
+        query: { type: 'Database_introduction' },
     })
 }
 

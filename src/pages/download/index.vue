@@ -23,11 +23,11 @@
                         :key="source"
                     >
                         <div
-                            class="w-160 border-r-1 border-gray-700 h-13 flex-row flex pl-4 items-center text-[19px]"
+                            class="w-140 border-r-1 border-gray-700 h-13 flex-row flex pl-4 items-center text-[19px]"
                         >
                             {{ source }} Plasmid Meta Data
                         </div>
-                        <div class="w-120 flex flex-row items-center justify-start">
+                        <div class="w-140 flex flex-row items-center justify-start">
                             <n-button class="ml-10 w-23 h-7 text-lg" text>
                                 <template #icon>
                                     <n-icon class="text-lg">
@@ -40,7 +40,22 @@
                                     target="_blank"
                                     class="btn"
                                 >
-                                    Click to Download
+                                    Click to Download(.xls)
+                                </a>
+                            </n-button>
+                            <n-button class="ml-50 w-23 h-7 text-lg" text>
+                                <template #icon>
+                                    <n-icon class="text-lg">
+                                        <Download />
+                                    </n-icon>
+                                </template>
+
+                                <a
+                                    :href="`https://plasmidapi.deepomics.org/api/database/files/${source}/data/${source}.plasmid_list.tsv`"
+                                    target="_blank"
+                                    class="btn"
+                                >
+                                    Click to Download(.tsv)
                                 </a>
                             </n-button>
                         </div>
@@ -59,11 +74,11 @@
                         :key="source"
                     >
                         <div
-                            class="w-160 border-r-1 border-gray-700 h-13 flex-row flex pl-4 items-center text-[19px]"
+                            class="w-140 border-r-1 border-gray-700 h-13 flex-row flex pl-4 items-center text-[19px]"
                         >
                             {{ source }} Plasmid Annotated Protein Meta Data
                         </div>
-                        <div class="w-120 flex flex-row items-center justify-start">
+                        <div class="w-140 flex flex-row items-center justify-start">
                             <n-button class="ml-10 w-23 h-7 text-lg" text>
                                 <template #icon>
                                     <n-icon class="text-lg">
@@ -75,7 +90,21 @@
                                     target="_blank"
                                     class="btn"
                                 >
-                                    Click to Download
+                                    Click to Download(.xls)
+                                </a>
+                            </n-button>
+                            <n-button class="ml-50 w-23 h-7 text-lg" text>
+                                <template #icon>
+                                    <n-icon class="text-lg">
+                                        <Download />
+                                    </n-icon>
+                                </template>
+                                <a
+                                    :href="`https://plasmidapi.deepomics.org/api/database/files/${source}/data/${source}.protein_list.tsv`"
+                                    target="_blank"
+                                    class="btn"
+                                >
+                                    Click to Download(.tsv)
                                 </a>
                             </n-button>
                         </div>
@@ -95,11 +124,11 @@
                         :key="source"
                     >
                         <div
-                            class="w-160 border-r-1 border-gray-700 h-13 flex-row flex pl-4 items-center text-[19px]"
+                            class="w-140 border-r-1 border-gray-700 h-13 flex-row flex pl-4 items-center text-[19px]"
                         >
                             {{ source }} Plasmid Secondary Metabolism Meta Data
                         </div>
-                        <div class="w-120 flex flex-row items-center justify-start">
+                        <div class="w-140 flex flex-row items-center justify-start">
                             <n-button class="ml-10 w-23 h-7 text-lg" text>
                                 <template #icon>
                                     <n-icon class="text-lg">
@@ -111,7 +140,21 @@
                                     target="_blank"
                                     class="btn"
                                 >
-                                    Click to Download
+                                    Click to Download(.xls)
+                                </a>
+                            </n-button>
+                            <n-button class="ml-50 w-23 h-7 text-lg" text>
+                                <template #icon>
+                                    <n-icon class="text-lg">
+                                        <Download />
+                                    </n-icon>
+                                </template>
+                                <a
+                                    :href="`https://plasmidapi.deepomics.org/api/database/files/${source}/data/${source}.SMs_list.tsv`"
+                                    target="_blank"
+                                    class="btn"
+                                >
+                                    Click to Download(.tsv)
                                 </a>
                             </n-button>
                         </div>
@@ -131,11 +174,11 @@
                         :key="source"
                     >
                         <div
-                            class="w-160 border-r-1 border-gray-700 h-13 flex-row flex pl-4 items-center text-[19px]"
+                            class="w-140 border-r-1 border-gray-700 h-13 flex-row flex pl-4 items-center text-[19px]"
                         >
                             {{ source }} Plasmid tRNA & tmRNA Gene Meta Data
                         </div>
-                        <div class="w-120 flex flex-row items-center justify-start">
+                        <div class="w-140 flex flex-row items-center justify-start">
                             <n-button class="ml-10 w-23 h-7 text-lg" text>
                                 <template #icon>
                                     <n-icon class="text-lg">
@@ -147,7 +190,21 @@
                                     target="_blank"
                                     class="btn"
                                 >
-                                    Click to Download
+                                    Click to Download(.xls)
+                                </a>
+                            </n-button>
+                            <n-button class="ml-50 w-23 h-7 text-lg" text>
+                                <template #icon>
+                                    <n-icon class="text-lg">
+                                        <Download />
+                                    </n-icon>
+                                </template>
+                                <a
+                                    :href="`https://plasmidapi.deepomics.org/api/database/files/${source}/data/${source}.trna_list.tsv`"
+                                    target="_blank"
+                                    class="btn"
+                                >
+                                    Click to Download(.tsv)
                                 </a>
                             </n-button>
                         </div>
@@ -167,11 +224,11 @@
                         :key="source"
                     >
                         <div
-                            class="w-160 border-r-1 border-gray-700 h-13 flex-row flex pl-4 items-center text-[19px]"
+                            class="w-140 border-r-1 border-gray-700 h-13 flex-row flex pl-4 items-center text-[19px]"
                         >
                             {{ source }} Plasmid CRISPR/Cas Meta Data
                         </div>
-                        <div class="w-120 flex flex-row items-center justify-start">
+                        <div class="w-140 flex flex-row items-center justify-start">
                             <n-button class="ml-10 w-23 h-7 text-lg" text>
                                 <template #icon>
                                     <n-icon class="text-lg">
@@ -179,11 +236,25 @@
                                     </n-icon>
                                 </template>
                                 <a
-                                    :href="`https://plasmidapi.deepomics.org/api/database/files/${source}/data/${source}.CRISPR/Cas_list.xls`"
+                                    :href="`https://plasmidapi.deepomics.org/api/database/files/${source}/data/${source}.CRISPR-Cas_list.xls`"
                                     target="_blank"
                                     class="btn"
                                 >
-                                    Click to Download
+                                    Click to Download(.xls)
+                                </a>
+                            </n-button>
+                            <n-button class="ml-50 w-23 h-7 text-lg" text>
+                                <template #icon>
+                                    <n-icon class="text-lg">
+                                        <Download />
+                                    </n-icon>
+                                </template>
+                                <a
+                                    :href="`https://plasmidapi.deepomics.org/api/database/files/${source}/data/${source}.CRISPR-Cas_list.tsv`"
+                                    target="_blank"
+                                    class="btn"
+                                >
+                                    Click to Download(.tsv)
                                 </a>
                             </n-button>
                         </div>
@@ -203,11 +274,11 @@
                         :key="source"
                     >
                         <div
-                            class="w-160 border-r-1 border-gray-700 h-13 flex-row flex pl-4 items-center text-[19px]"
+                            class="w-140 border-r-1 border-gray-700 h-13 flex-row flex pl-4 items-center text-[19px]"
                         >
                             {{ source }} Plasmid Signal Peptides Meta Data
                         </div>
-                        <div class="w-120 flex flex-row items-center justify-start">
+                        <div class="w-140 flex flex-row items-center justify-start">
                             <n-button class="ml-10 w-23 h-7 text-lg" text>
                                 <template #icon>
                                     <n-icon class="text-lg">
@@ -219,7 +290,21 @@
                                     target="_blank"
                                     class="btn"
                                 >
-                                    Click to Download
+                                    Click to Download(.xls)
+                                </a>
+                            </n-button>
+                            <n-button class="ml-50 w-23 h-7 text-lg" text>
+                                <template #icon>
+                                    <n-icon class="text-lg">
+                                        <Download />
+                                    </n-icon>
+                                </template>
+                                <a
+                                    :href="`https://plasmidapi.deepomics.org/api/database/files/${source}/data/${source}.SP_list.tsv`"
+                                    target="_blank"
+                                    class="btn"
+                                >
+                                    Click to Download(.tsv)
                                 </a>
                             </n-button>
                         </div>
@@ -239,11 +324,11 @@
                         :key="source"
                     >
                         <div
-                            class="w-160 border-r-1 border-gray-700 h-13 flex-row flex pl-4 items-center text-[19px]"
+                            class="w-140 border-r-1 border-gray-700 h-13 flex-row flex pl-4 items-center text-[19px]"
                         >
                             {{ source }} Plasmid Antimicrobial Resistance Gene Meta Data
                         </div>
-                        <div class="w-120 flex flex-row items-center justify-start">
+                        <div class="w-140 flex flex-row items-center justify-start">
                             <n-button class="ml-10 w-23 h-7 text-lg" text>
                                 <template #icon>
                                     <n-icon class="text-lg">
@@ -255,7 +340,21 @@
                                     target="_blank"
                                     class="btn"
                                 >
-                                    Click to Download
+                                    Click to Download(.xls)
+                                </a>
+                            </n-button>
+                            <n-button class="ml-50 w-23 h-7 text-lg" text>
+                                <template #icon>
+                                    <n-icon class="text-lg">
+                                        <Download />
+                                    </n-icon>
+                                </template>
+                                <a
+                                    :href="`https://plasmidapi.deepomics.org/api/database/files/${source}/data/${source}.ARG_list.tsv`"
+                                    target="_blank"
+                                    class="btn"
+                                >
+                                    Click to Download(.tsv)
                                 </a>
                             </n-button>
                         </div>
@@ -275,11 +374,11 @@
                         :key="source"
                     >
                         <div
-                            class="w-160 border-r-1 border-gray-700 h-13 flex-row flex pl-4 items-center text-[19px]"
+                            class="w-140 border-r-1 border-gray-700 h-13 flex-row flex pl-4 items-center text-[19px]"
                         >
                             {{ source }} Plasmid Virulent Factor Meta Data
                         </div>
-                        <div class="w-120 flex flex-row items-center justify-start">
+                        <div class="w-140 flex flex-row items-center justify-start">
                             <n-button class="ml-10 w-23 h-7 text-lg" text>
                                 <template #icon>
                                     <n-icon class="text-lg">
@@ -291,7 +390,21 @@
                                     target="_blank"
                                     class="btn"
                                 >
-                                    Click to Download
+                                    Click to Download(.xls)
+                                </a>
+                            </n-button>
+                            <n-button class="ml-50 w-23 h-7 text-lg" text>
+                                <template #icon>
+                                    <n-icon class="text-lg">
+                                        <Download />
+                                    </n-icon>
+                                </template>
+                                <a
+                                    :href="`https://plasmidapi.deepomics.org/api/database/files/${source}/data/${source}.VF_list.tsv`"
+                                    target="_blank"
+                                    class="btn"
+                                >
+                                    Click to Download(.tsv)
                                 </a>
                             </n-button>
                         </div>
@@ -311,11 +424,11 @@
                         :key="source"
                     >
                         <div
-                            class="w-160 border-r-1 border-gray-700 h-13 flex-row flex pl-4 items-center text-[19px]"
+                            class="w-140 border-r-1 border-gray-700 h-13 flex-row flex pl-4 items-center text-[19px]"
                         >
                             {{ source }} Plasmid Transmembrane Protein Meta Data
                         </div>
-                        <div class="w-120 flex flex-row items-center justify-start">
+                        <div class="w-140 flex flex-row items-center justify-start">
                             <n-button class="ml-10 w-23 h-7 text-lg" text>
                                 <template #icon>
                                     <n-icon class="text-lg">
@@ -327,7 +440,21 @@
                                     target="_blank"
                                     class="btn"
                                 >
-                                    Click to Download
+                                    Click to Download(.xls)
+                                </a>
+                            </n-button>
+                            <n-button class="ml-50 w-23 h-7 text-lg" text>
+                                <template #icon>
+                                    <n-icon class="text-lg">
+                                        <Download />
+                                    </n-icon>
+                                </template>
+                                <a
+                                    :href="`https://plasmidapi.deepomics.org/api/database/files/${source}/data/${source}.TMHs_list.tsv`"
+                                    target="_blank"
+                                    class="btn"
+                                >
+                                    Click to Download(.tsv)
                                 </a>
                             </n-button>
                         </div>

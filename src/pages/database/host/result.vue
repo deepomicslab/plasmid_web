@@ -225,16 +225,16 @@ const detail = (row: any) => {
 }
 
 type RowData = {
-    accesion_id: string
-    host: string
-    host_source: string
-    Species: string
-    Genus: string
-    Family: string
-    Order: string
-    Class: string
-    Phylum: string
-    phage: number
+    plasmid: number
+    plasmid_id: string
+    name: string
+    source: string
+    species: string
+    genus: string
+    family: string
+    order: string
+    host_class: string
+    phylum: string
 }
 
 const downloaddialogVisible = ref(false)
@@ -346,70 +346,322 @@ const createColumns = (): DataTableColumns<RowData> => {
         {
             type: 'selection',
             fixed: 'left',
+            width: 50,
         },
         {
-            title: 'Phage ID',
-            key: 'accesion_id',
-            sorter: 'default',
+            title() {
+                return renderTooltip(h('div', null, { default: () => 'Plasmid ID' }), 'Plasmid ID')
+            },
+            key: 'plasmid_id',
             align: 'center',
             fixed: 'left',
-        },
-        {
-            title: 'Host',
-            key: 'host',
-            sorter: 'default',
-            align: 'center',
-        },
-        {
-            title: 'Host source',
-            key: 'Host_source',
-            sorter: 'default',
-            align: 'center',
-            render(row: RowData) {
-                return h(
-                    NTag,
-                    { bordered: false, type: 'info' },
-                    {
-                        default: row.host_source,
-                    }
-                )
+            width: 250,
+            ellipsis: {
+                tooltip: true,
             },
         },
         {
-            title: 'Species',
-            key: 'Species',
-            sorter: 'default',
+            title() {
+                return renderTooltip(
+                    h('div', null, { default: () => 'Host' }),
+                    'host taxonomy in lowest rank'
+                )
+            },
+            key: 'name',
             align: 'center',
+            ellipsis: {
+                tooltip: true,
+            },
+            render(row: any) {
+                return h('div', { style: { overflow: 'auto', 'text-overflow': 'ellipsis' } }, [
+                    h(
+                        NButton,
+                        {
+                            type: 'info',
+                            text: true,
+                            size: 'small',
+                            onClick: () => {
+                                router.push({
+                                    path: `/database/host/list`,
+                                    query: {
+                                        rank: 'host',
+                                        node: row.name,
+                                    },
+                                })
+                            },
+                        },
+                        {
+                            default: () => {
+                                return row.name
+                            },
+                        }
+                    ),
+                ])
+            },
         },
         {
-            title: 'Genus',
-            key: 'Genus',
-            sorter: 'default',
+            title() {
+                return renderTooltip(
+                    h('div', null, { default: () => 'Host source' }),
+                    'source of the host annotation'
+                )
+            },
+            key: 'source',
+            ellipsis: {
+                tooltip: true,
+            },
             align: 'center',
+            render(row: any) {
+                return h('div', { style: { width: '100px' } }, [
+                    h(
+                        NTag,
+                        {
+                            type: 'info',
+                            size: 'small',
+                            round: true,
+                        },
+                        {
+                            default: () => {
+                                return datasetList[row.source]
+                            },
+                        }
+                    ),
+                ])
+            },
         },
         {
-            title: 'Family',
-            key: 'Family',
-            sorter: 'default',
+            title() {
+                return renderTooltip(
+                    h('div', null, { default: () => 'Species' }),
+                    'host taxonomy in species rank'
+                )
+            },
+            key: 'species',
+            ellipsis: {
+                tooltip: true,
+            },
             align: 'center',
+            render(row: any) {
+                return h('div', {}, [
+                    h(
+                        NButton,
+                        {
+                            type: 'info',
+                            text: true,
+                            size: 'small',
+                            onClick: () => {
+                                router.push({
+                                    path: `/database/host/list`,
+                                    query: {
+                                        rank: 'Species',
+                                        node: row.species,
+                                    },
+                                })
+                            },
+                        },
+                        {
+                            default: () => {
+                                return row.species
+                            },
+                        }
+                    ),
+                ])
+            },
         },
         {
-            title: 'Order',
-            key: 'Order',
-            sorter: 'default',
+            title() {
+                return renderTooltip(
+                    h('div', null, { default: () => 'Genus' }),
+                    'host taxonomy in genus rank'
+                )
+            },
+            key: 'genus',
+            ellipsis: {
+                tooltip: true,
+            },
             align: 'center',
+            render(row: any) {
+                return h('div', {}, [
+                    h(
+                        NButton,
+                        {
+                            type: 'info',
+                            text: true,
+                            size: 'small',
+                            onClick: () => {
+                                router.push({
+                                    path: `/database/host/list`,
+                                    query: {
+                                        rank: 'Genus',
+                                        node: row.genus,
+                                    },
+                                })
+                            },
+                        },
+                        {
+                            default: () => {
+                                return row.genus
+                            },
+                        }
+                    ),
+                ])
+            },
         },
         {
-            title: 'Class',
-            key: 'Class',
-            sorter: 'default',
+            title() {
+                return renderTooltip(
+                    h('div', null, { default: () => 'Family' }),
+                    'host taxonomy in family rank'
+                )
+            },
+            key: 'family',
+            ellipsis: {
+                tooltip: true,
+            },
             align: 'center',
+            render(row: any) {
+                return h('div', {}, [
+                    h(
+                        NButton,
+                        {
+                            type: 'info',
+                            text: true,
+                            size: 'small',
+                            onClick: () => {
+                                router.push({
+                                    path: `/database/host/list`,
+                                    query: {
+                                        rank: 'Family',
+                                        node: row.family,
+                                    },
+                                })
+                            },
+                        },
+                        {
+                            default: () => {
+                                return row.family
+                            },
+                        }
+                    ),
+                ])
+            },
         },
         {
-            title: 'Phylum',
-            key: 'Phylum',
-            sorter: 'default',
+            title() {
+                return renderTooltip(
+                    h('div', null, { default: () => 'Order' }),
+                    'host taxonomy in order rank'
+                )
+            },
+            key: 'order',
+            ellipsis: {
+                tooltip: true,
+            },
             align: 'center',
+            render(row: any) {
+                return h('div', {}, [
+                    h(
+                        NButton,
+                        {
+                            type: 'info',
+                            text: true,
+                            size: 'small',
+                            onClick: () => {
+                                router.push({
+                                    path: `/database/host/list`,
+                                    query: {
+                                        rank: 'Order',
+                                        node: row.order,
+                                    },
+                                })
+                            },
+                        },
+                        {
+                            default: () => {
+                                return row.order
+                            },
+                        }
+                    ),
+                ])
+            },
+        },
+        {
+            title() {
+                return renderTooltip(
+                    h('div', null, { default: () => 'Class' }),
+                    'host taxonomy in class rank'
+                )
+            },
+            key: 'host_class',
+            ellipsis: {
+                tooltip: true,
+            },
+            align: 'center',
+            render(row: any) {
+                return h('div', {}, [
+                    h(
+                        NButton,
+                        {
+                            type: 'info',
+                            text: true,
+                            size: 'small',
+                            onClick: () => {
+                                router.push({
+                                    path: `/database/host/list`,
+                                    query: {
+                                        rank: 'Class',
+                                        node: row.host_class,
+                                    },
+                                })
+                            },
+                        },
+                        {
+                            default: () => {
+                                return row.host_class
+                            },
+                        }
+                    ),
+                ])
+            },
+        },
+        {
+            title() {
+                return renderTooltip(
+                    h('div', null, { default: () => 'Phylum' }),
+                    'host taxonomy in phylum rank'
+                )
+            },
+            key: 'phylum',
+            ellipsis: {
+                tooltip: true,
+            },
+            align: 'center',
+            render(row: any) {
+                return h('div', {}, [
+                    h(
+                        NButton,
+                        {
+                            type: 'info',
+                            text: true,
+                            size: 'small',
+                            onClick: () => {
+                                router.push({
+                                    path: `/database/host/list`,
+                                    query: {
+                                        rank: 'Phylum',
+                                        node: row.phylum,
+                                    },
+                                })
+                            },
+                        },
+                        {
+                            default: () => {
+                                return row.phylum
+                            },
+                        }
+                    ),
+                ])
+            },
         },
         {
             title: 'Action',
@@ -460,7 +712,7 @@ const columns = createColumns()
 const godatahelper = () => {
     router.push({
         path: '/tutorial',
-        query: { type: 'database_intro' },
+        query: { type: 'Database_introduction' },
     })
 }
 </script>

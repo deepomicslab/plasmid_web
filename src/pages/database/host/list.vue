@@ -353,6 +353,7 @@ const createColumns = (): DataTableColumns<RowData> => {
             key: 'plasmid_id',
             align: 'center',
             fixed: 'left',
+            width: 250,
             ellipsis: {
                 tooltip: true,
             },
@@ -370,7 +371,7 @@ const createColumns = (): DataTableColumns<RowData> => {
                 tooltip: true,
             },
             render(row: any) {
-                return h('div', {}, [
+                return h('div', { style: { overflow: 'auto', 'text-overflow': 'ellipsis' } }, [
                     h(
                         NButton,
                         {
@@ -706,7 +707,7 @@ const createColumns = (): DataTableColumns<RowData> => {
 const godatahelper = () => {
     router.push({
         path: '/tutorial',
-        query: { type: 'database_intro' },
+        query: { type: 'Database_introduction' },
     })
 }
 const columns = createColumns()
