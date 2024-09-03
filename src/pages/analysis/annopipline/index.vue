@@ -490,7 +490,7 @@ const examplechange = async () => {
     console.log(exampleSwicth.value)
     if (exampleSwicth.value) {
         const fileURL = new URL(
-            '../../../../../public/dataExample/data_demo/plasmid.fasta',
+            'https://plasmid.deepomics.org/dataExample/data_demo/plasmid.fasta',
             import.meta.url
         )
         const response = await fetch(fileURL)

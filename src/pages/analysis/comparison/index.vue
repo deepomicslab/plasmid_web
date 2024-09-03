@@ -292,9 +292,9 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- <div class="font-600 text-3xl mt-10 flex flex-row items-end h-12">
+                        <div class="font-600 text-3xl mt-10 flex flex-row items-end h-12">
                             <div class="font-600 text-3xl pb-1">
-                                3. Compare with PhageScope Database"
+                                3. Compare with PlasmidScope Database
                             </div>
                             <el-switch
                                 class="ml-5"
@@ -317,7 +317,7 @@
                                 <div
                                     class="text-xl ml-18 mt-10 font-500 flex flex-row items-center border-b-2 w-130 pb-3"
                                 >
-                                    <div>Select all Sequences in Databse</div>
+                                    <div>Select all Sequences in Database</div>
                                     <el-switch class="ml-5" size="large" v-model="allseq" />
                                 </div>
                                 <div class="mt-8 ml-18 text-xl">Filter Sequences in Databse</div>
@@ -386,7 +386,7 @@
                                     </el-form-item>
                                 </el-form>
                             </div>
-                        </div> -->
+                        </div>
                         <div class="mt-20 flex flex-row justify-center w-17/20 ml-5">
                             <el-button
                                 size="large"
@@ -423,22 +423,22 @@ const loading = ref(false)
 const descrptionContentClass = ref('text-justify text-lg leading-relaxed tracking-wide')
 const descriptionTitleClass = ref('text-xl mb-5 font-800 text-left')
 const exampleSwicth = ref(false)
-// const allseq = ref(true)
+const allseq = ref(true)
 const selectseq = ref(false)
 
-// const filterform = ref({
-//     quality: '',
-//     datasets: [],
-//     LengthS: 0,
-//     LengthE: 5,
-//     lifestyle: 'all',
-// })
+const filterform = ref({
+    quality: '',
+    datasets: [],
+    LengthS: 0,
+    LengthE: 5,
+    lifestyle: 'all',
+})
 
 const examplechange = async () => {
     console.log(exampleSwicth.value)
     if (exampleSwicth.value) {
         const fileURL = new URL(
-            '../../../../../public/dataExample/data_demo/alignment.fasta',
+            'https://plasmid.deepomics.org/dataExample/data_demo/alignment.fasta',
             import.meta.url
         )
         const response = await fetch(fileURL)
@@ -549,7 +549,7 @@ const submit = async () => {
     loading.value = true
     const submitdata = new FormData()
     submitdata.append('rundemo', 'false')
-    submitdata.append('comparedatabase', 'false')
+    submitdata.append('comparedatabase', modulelist.value['comparedatabse'])
     submitdata.append('neednum', '3')
     const precheck = ref(false)
     // check empty
@@ -580,7 +580,7 @@ const submit = async () => {
             submitdata.append('phageid', pastefile.value)
             precheck.value = true
         } else {
-            window.$message.error('Please input phageid', {
+            window.$message.error('Please input plasmid id', {
                 closable: true,
                 duration: 5000,
             })
