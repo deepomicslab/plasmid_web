@@ -386,7 +386,17 @@ onBeforeMount(async () => {
     phagedata.value = data
 
     const id = phagedata.value.plasmid_id.replace(`${datasetList[phagedata.value.source]}_`, '')
-    phagedata.value.reference = `https://www.ncbi.nlm.nih.gov/nuccore/${id}/`
+    if (phagedata.value.source === 0) {
+        phagedata.value.reference = `https://ccb-microbe.cs.uni-saarland.de/plsdb/plasmids/plasmid/${id}/`
+    } else if (phagedata.value.source === 1) {
+        phagedata.value.reference = `https://genome.jgi.doe.gov/portal/IMG_PR/IMG_PR.home.html`
+    } else if (phagedata.value.source === 5) {
+        phagedata.value.reference = `https://www.ebi.ac.uk/ena/browser/view/${id}`
+    } else if (phagedata.value.source === 9) {
+        phagedata.value.reference = `https://mai.fudan.edu.cn/mgedb/client/`
+    } else {
+        phagedata.value.reference = `https://www.ncbi.nlm.nih.gov/nuccore/${id}/`
+    }
     phageStore.phageaccid = data.plasmid_id
     const response2 = await axios.get(`/protein`, {
         baseURL: '/api/database',

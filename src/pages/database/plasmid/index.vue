@@ -517,7 +517,21 @@ const createColumns = (): DataTableColumns<RowData> => {
                             style: { width: '200px' },
                             onClick: () => {
                                 const id = row.plasmid_id.replace(`${datasetList[row.source]}_`, '')
-                                window.open(`https://www.ncbi.nlm.nih.gov/nuccore/${id}/`)
+                                if (row.source === 0) {
+                                    window.open(
+                                        `https://ccb-microbe.cs.uni-saarland.de/plsdb/plasmids/plasmid/${id}/`
+                                    )
+                                } else if (row.source === 1) {
+                                    window.open(
+                                        `https://genome.jgi.doe.gov/portal/IMG_PR/IMG_PR.home.html`
+                                    )
+                                } else if (row.source === 5) {
+                                    window.open(`https://www.ebi.ac.uk/ena/browser/view/${id}`)
+                                } else if (row.source === 9) {
+                                    window.open(`https://mai.fudan.edu.cn/mgedb/client/`)
+                                } else {
+                                    window.open(`https://www.ncbi.nlm.nih.gov/nuccore/${id}/`)
+                                }
                             },
                         },
                         [

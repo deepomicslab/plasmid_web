@@ -25,7 +25,7 @@
                                 </el-tooltip>
                                 <el-select
                                     v-model="filterform.HostType"
-                                    placeholder="Select Data Type"
+                                    placeholder="Select Host Type"
                                     class="w-60 left"
                                     clearable
                                 >

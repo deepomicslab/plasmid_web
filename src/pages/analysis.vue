@@ -281,7 +281,7 @@ const menuOptions: MenuOption[] = [
                 key: '/analysis/comparison/alignment',
             },
             {
-                label: 'Phylogentic Anaysis',
+                label: 'Phylogentic Analysis',
                 key: '/analysis/comparison/phylogenetic',
             },
         ],

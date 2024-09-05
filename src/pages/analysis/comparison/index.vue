@@ -279,7 +279,7 @@
                                         </div>
                                         <div v-if="showDescription == 'tree'">
                                             <div :class="descriptionTitleClass">
-                                                Phylogentic Anaysis
+                                                Phylogentic Analysis
                                             </div>
                                             <div :class="descrptionContentClass">
                                                 Alfpy is applied to calculate the genome distance
@@ -314,24 +314,41 @@
                                 class="rounded w-180 h-120 mt-10 rounded-2xl flex-col flex ml-55"
                                 style="box-shadow: 0 0 64px #cfd5db"
                             >
-                                <div
+                                <!-- <div
                                     class="text-xl ml-18 mt-10 font-500 flex flex-row items-center border-b-2 w-130 pb-3"
                                 >
                                     <div>Select all Sequences in Database</div>
                                     <el-switch class="ml-5" size="large" v-model="allseq" />
-                                </div>
+                                </div> -->
+                                <n-alert
+                                    type="info"
+                                    closable
+                                    :bordered="false"
+                                    class="w-180 bg-[#9ab4c5]"
+                                >
+                                    <template #icon>
+                                        <el-icon class="text-lg mt-2 text-[#069]">
+                                            <InfoFilled />
+                                        </el-icon>
+                                    </template>
+                                    <template #header>
+                                        <p class="text-lg text-gray-50">Submit Note</p>
+                                    </template>
+                                    <p class="text-lg text-gray-50">
+                                        Due to server resource limitations, the number of plasmids
+                                        in our database is limited to 10.
+                                    </p>
+                                </n-alert>
                                 <div class="mt-8 ml-18 text-xl">Filter Sequences in Databse</div>
                                 <el-form
                                     class="mt-12 ml-20"
                                     label-position="right"
                                     label-width="auto"
                                     size="large"
-                                    :disabled="allseq"
                                 >
                                     <el-form-item label="Datasets">
                                         <el-select
                                             placeholder="Select datasets"
-                                            multiple
                                             clearable
                                             class="w-80"
                                             v-model="filterform.datasets"
@@ -344,15 +361,15 @@
                                             ></el-option>
                                         </el-select>
                                     </el-form-item>
-                                    <el-form-item label="Sequence Quality">
+                                    <el-form-item label="Host Phylum">
                                         <el-select
-                                            placeholder="Select Sequence Quality"
+                                            placeholder="Select Host Type"
                                             class="w-80"
                                             clearable
-                                            v-model="filterform.quality"
+                                            v-model="filterform.host"
                                         >
                                             <el-option
-                                                v-for="option in qualityOptions"
+                                                v-for="option in hostTypeOptions"
                                                 :key="option.value"
                                                 :label="option.label"
                                                 :value="option.value"
@@ -377,13 +394,13 @@
                                         />
                                         <div class="ml-4">kb</div>
                                     </el-form-item>
-                                    <el-form-item label="LifeStyle">
+                                    <!-- <el-form-item label="LifeStyle">
                                         <el-radio-group class="w-80" v-model="filterform.lifestyle">
                                             <el-radio label="virulent" />
                                             <el-radio label="temperate" />
                                             <el-radio label="all" />
                                         </el-radio-group>
-                                    </el-form-item>
+                                    </el-form-item> -->
                                 </el-form>
                             </div>
                         </div>
@@ -411,7 +428,7 @@ import { InfoFilled, Edit } from '@element-plus/icons-vue'
 import axios from 'axios'
 import _ from 'lodash'
 import { useUserIdGenerator } from '@/utils/userIdGenerator'
-// import { datasetsOptions, qualityOptions } from '@/utils/filteroption'
+import { datasetsOptions, hostTypeOptions } from '@/utils/filteroption'
 
 const fileList = ref<UploadFileInfo[]>([])
 const submitfile = ref<File>()
@@ -423,15 +440,16 @@ const loading = ref(false)
 const descrptionContentClass = ref('text-justify text-lg leading-relaxed tracking-wide')
 const descriptionTitleClass = ref('text-xl mb-5 font-800 text-left')
 const exampleSwicth = ref(false)
-const allseq = ref(true)
+// const allseq = ref(true)
 const selectseq = ref(false)
 
 const filterform = ref({
-    quality: '',
+    // quality: '',
+    host: '',
     datasets: [],
     LengthS: 0,
     LengthE: 5,
-    lifestyle: 'all',
+    // lifestyle: 'all',
 })
 
 const examplechange = async () => {
@@ -497,13 +515,14 @@ const modulelist = ref({
     cluster: false,
     tree: false,
     comparedatabse: false,
+    compare: false,
 })
 
 const selectseqchange=()=>{
     if(selectseq.value){
-        modulelist.value['comparedatabse'] = true
+        modulelist.value['compare'] = true
     }else{
-        modulelist.value['comparedatabse'] = false
+        modulelist.value['compare'] = false
     }
     console.log(modulelist.value)
 }
@@ -533,7 +552,7 @@ const data: Tree[] = [
     },
     {
         id: 2,
-        label: 'Phylogentic Anaysis',
+        label: 'Phylogentic Analysis',
         key: 'tree',
     }, 
     
@@ -549,7 +568,9 @@ const submit = async () => {
     loading.value = true
     const submitdata = new FormData()
     submitdata.append('rundemo', 'false')
-    submitdata.append('comparedatabase', modulelist.value['comparedatabse'])
+    submitdata.append('comparedatabase', 'false')
+    submitdata.append('compare', modulelist.value['compare'])
+    submitdata.append('filterdata', JSON.stringify(filterform.value))
     submitdata.append('neednum', '3')
     const precheck = ref(false)
     // check empty
