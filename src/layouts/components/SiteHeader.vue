@@ -158,7 +158,7 @@ const menuOptions: MenuOption[] = [
                         },
                         { default: () => 'Plasmid Annotation' }
                     ),
-                key: '/analysis/annopipline/structural/annotation',
+                key: '/analysis/annopipline/',
                 children: [
                     {
                         label: 'ORF prediction & Protein classification',
@@ -281,7 +281,7 @@ const menuOptions: MenuOption[] = [
                         },
                         { default: () => 'Plasmid Comparison' }
                     ),
-                key: '/analysis/comparison/alignment',
+                key: '/analysis/comparison',
                 children: [
                     {
                         label: 'Sequence Alignment',
