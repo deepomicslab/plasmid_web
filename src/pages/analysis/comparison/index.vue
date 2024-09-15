@@ -361,7 +361,7 @@
                                             ></el-option>
                                         </el-select>
                                     </el-form-item>
-                                    <el-form-item label="Host Phylum">
+                                    <!-- <el-form-item label="Host Phylum">
                                         <el-select
                                             placeholder="Select Host Type"
                                             class="w-80"
@@ -375,7 +375,7 @@
                                                 :value="option.value"
                                             ></el-option>
                                         </el-select>
-                                    </el-form-item>
+                                    </el-form-item> -->
                                     <el-form-item label="Length">
                                         <el-input
                                             class="w-35"
@@ -428,7 +428,7 @@ import { InfoFilled, Edit } from '@element-plus/icons-vue'
 import axios from 'axios'
 import _ from 'lodash'
 import { useUserIdGenerator } from '@/utils/userIdGenerator'
-import { datasetsOptions, hostTypeOptions } from '@/utils/filteroption'
+import { datasetsOptions } from '@/utils/filteroption'
 
 const fileList = ref<UploadFileInfo[]>([])
 const submitfile = ref<File>()
@@ -445,8 +445,8 @@ const selectseq = ref(false)
 
 const filterform = ref({
     // quality: '',
-    host: '',
-    datasets: [],
+    // host: '',
+    datasets: 0,
     LengthS: 0,
     LengthE: 5,
     // lifestyle: 'all',

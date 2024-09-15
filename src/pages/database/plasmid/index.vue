@@ -250,6 +250,7 @@ const nextPage = async () => {
             page: pagevalue.value + 1,
             pagesize: pageSize.value,
             search: searchinput.value,
+            source: source.value,
         },
     })
     const { data } = response
@@ -267,6 +268,7 @@ const prevPage = async () => {
             page: pagevalue.value - 1,
             pagesize: pageSize.value,
             search: searchinput.value,
+            source: source.value,
         },
     })
     const { data } = response
@@ -283,6 +285,7 @@ const pagechange = async () => {
             page: pagevalue.value,
             pagesize: pageSize.value,
             search: searchinput.value,
+            source: source.value,
         },
     })
     const { data } = response
@@ -299,6 +302,7 @@ const pagesizechange = async () => {
             page: pagevalue.value,
             pagesize: pageSize.value,
             search: searchinput.value,
+            source: source.value,
         },
     })
     const { data } = response
@@ -653,31 +657,31 @@ const createColumns = (): DataTableColumns<RowData> => {
             key: 'completeness',
             align: 'center',
             width: 140,
-            filterOptions: [
-                {
-                    label: 'Medium-quality',
-                    value: 'medium-quality',
-                },
-                {
-                    label: 'High-quality',
-                    value: 'high-quality',
-                },
-                {
-                    label: 'Low-quality',
-                    value: 'low-quality',
-                },
-                {
-                    label: 'Complete',
-                    value: 'complete',
-                },
-                {
-                    label: 'Not-determined',
-                    value: 'not-determined',
-                },
-            ],
-            filter(value: any, row: any) {
-                return row.completeness === value
-            },
+            // filterOptions: [
+            //     {
+            //         label: 'Medium-quality',
+            //         value: 'medium-quality',
+            //     },
+            //     {
+            //         label: 'High-quality',
+            //         value: 'high-quality',
+            //     },
+            //     {
+            //         label: 'Low-quality',
+            //         value: 'low-quality',
+            //     },
+            //     {
+            //         label: 'Complete',
+            //         value: 'complete',
+            //     },
+            //     {
+            //         label: 'Not-determined',
+            //         value: 'not-determined',
+            //     },
+            // ],
+            // filter(value: any, row: any) {
+            //     return row.completeness === value
+            // },
             render(row: any) {
                 return h('div', {}, [
                     h(

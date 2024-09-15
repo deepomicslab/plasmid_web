@@ -404,19 +404,36 @@ const createColumns = (): DataTableColumns<RowData> => {
             key: 'plasmid_id',
             align: 'center',
             fixed: 'left',
-            width: 125,
+            width: '200px',
+            ellipsis: {
+                tooltip: true,
+            },
             render(row: any) {
-                return h('div', null, [
+                return h('div', { style: { overflow: 'auto', 'text-overflow': 'ellipsis' } }, [
                     h(
                         NButton,
                         {
                             type: 'info',
                             text: true,
                             size: 'small',
-                            style: { width: '100px' },
+                            style: { width: '200px' },
                             onClick: () => {
                                 const id = row.plasmid_id.replace(`${datasetList[row.source]}_`, '')
-                                window.open(`https://www.ncbi.nlm.nih.gov/nuccore/${id}/`)
+                                if (row.source === 0) {
+                                    window.open(
+                                        `https://ccb-microbe.cs.uni-saarland.de/plsdb/plasmids/plasmid/${id}/`
+                                    )
+                                } else if (row.source === 1) {
+                                    window.open(
+                                        `https://genome.jgi.doe.gov/portal/IMG_PR/IMG_PR.home.html`
+                                    )
+                                } else if (row.source === 5) {
+                                    window.open(`https://www.ebi.ac.uk/ena/browser/view/${id}`)
+                                } else if (row.source === 9) {
+                                    window.open(`https://mai.fudan.edu.cn/mgedb/client/`)
+                                } else {
+                                    window.open(`https://www.ncbi.nlm.nih.gov/nuccore/${id}/`)
+                                }
                             },
                         },
                         [
@@ -537,31 +554,31 @@ const createColumns = (): DataTableColumns<RowData> => {
             key: 'completeness',
             align: 'center',
             width: 140,
-            filterOptions: [
-                {
-                    label: 'Medium-quality',
-                    value: 'medium-quality',
-                },
-                {
-                    label: 'High-quality',
-                    value: 'high-quality',
-                },
-                {
-                    label: 'Low-quality',
-                    value: 'low-quality',
-                },
-                {
-                    label: 'Complete',
-                    value: 'complete',
-                },
-                {
-                    label: 'Not-determined',
-                    value: 'not-determined',
-                },
-            ],
-            filter(value: any, row: any) {
-                return row.completeness === value
-            },
+            // filterOptions: [
+            //     {
+            //         label: 'Medium-quality',
+            //         value: 'medium-quality',
+            //     },
+            //     {
+            //         label: 'High-quality',
+            //         value: 'high-quality',
+            //     },
+            //     {
+            //         label: 'Low-quality',
+            //         value: 'low-quality',
+            //     },
+            //     {
+            //         label: 'Complete',
+            //         value: 'complete',
+            //     },
+            //     {
+            //         label: 'Not-determined',
+            //         value: 'not-determined',
+            //     },
+            // ],
+            // filter(value: any, row: any) {
+            //     return row.completeness === value
+            // },
             render(row: any) {
                 return h('div', {}, [
                     h(
@@ -601,18 +618,18 @@ const createColumns = (): DataTableColumns<RowData> => {
             align: 'center',
             width: 90,
         },
-        {
-            title() {
-                return renderTooltip(
-                    h('div', null, { default: () => 'MOB_type' }),
-                    'plasmid MOB_type'
-                )
-            },
-            key: 'mob_type',
-            sorter: 'default',
-            align: 'center',
-            width: 90,
-        },
+        // {
+        //     title() {
+        //         return renderTooltip(
+        //             h('div', null, { default: () => 'MOB_type' }),
+        //             'plasmid MOB_type'
+        //         )
+        //     },
+        //     key: 'mob_type',
+        //     sorter: 'default',
+        //     align: 'center',
+        //     width: 90,
+        // },
         {
             title() {
                 return renderTooltip(
