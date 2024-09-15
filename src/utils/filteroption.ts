@@ -37,7 +37,7 @@ export const datasetsOptions = [
     },
     {
         value: '5',
-        label: 'EMBL',
+        label: 'ENA',
     },
     {
         value: '6',
@@ -53,7 +53,7 @@ export const datasetsOptions = [
     },
     {
         value: '9',
-        label: 'mMGEs',
+        label: 'mMGE',
     },
 ]
 export const qualityOptions = [

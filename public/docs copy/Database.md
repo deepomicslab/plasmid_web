@@ -3,7 +3,7 @@
 ![image](https://github.com/deepomicslab/PhageScope/blob/main/Figures/database.png)
 
 ## Data description
-PhageScope database contains **441,637** phage sequences from various sources, including **4,637** sequences from **RefSeq** [1], **2,086** sequences from **Genbank** [2], **156** sequences from **EMBL** [3], **290** sequences from **DDBJ** [4], **3,754** sequences from **PhagesDB** [5], **31,402** sequences from **GVD** [6], **142,809** sequences from **GPD** [7], **189,680** sequences from MGV [8], and **66,823** sequences from **TemPhD** [9].   
+PhageScope database contains **441,637** phage sequences from various sources, including **4,637** sequences from **RefSeq** [1], **2,086** sequences from **Genbank** [2], **156** sequences from **ENA** [3], **290** sequences from **DDBJ** [4], **3,754** sequences from **PhagesDB** [5], **31,402** sequences from **GVD** [6], **142,809** sequences from **GPD** [7], **189,680** sequences from MGV [8], and **66,823** sequences from **TemPhD** [9].   
 
 Applying multiple state-of-the-art tools to analysing the phage sequences, we obtained **comprehensive annotations** for the phages.
 
@@ -25,7 +25,7 @@ The phages from the TemPhD dataset are temperate phages according to their phage
 ### ORF & annotated protein
 ORF stands for Open Reading Frame and represents a region of DNA that has the potential to be translated into a protein. In PhageScope, Information about ORFs and annotated proteins provides insights into the predicted genes and their corresponding proteins within the phage genomes. These annotations are crucial for understanding the genetic content of phages, identifying potential virulence factors, and exploring the functional diversity encoded in their genomes.  
 
-The phage sequences from RefSeq, Genbank, EMBL, and DDBJ come with these genetic features annotated. For the phages sourced from PhagesDB, GVD, GPD, MGV, and TemPhD, we first applied **Prodigal** [15] to identify the ORFs and obtained **23,424,959** proteins, and then employed **eggNOG-mapper** [16] to annotate the protein functions by assigning orthology. The proteins were categorized into ten types, including **lysis (643,820)**, **integration (575,847)**, **replication (1,271,047)**, **tRNA-related (38,305)**, **regulation (674,983)**, **packaging (706,058)**, **assembly (1,796,929)**, **infection (1,129,476)**, **immune (210,687)**, and **hypothetical (5,388,986)**, based on key word searches.
+The phage sequences from RefSeq, Genbank, ENA, and DDBJ come with these genetic features annotated. For the phages sourced from PhagesDB, GVD, GPD, MGV, and TemPhD, we first applied **Prodigal** [15] to identify the ORFs and obtained **23,424,959** proteins, and then employed **eggNOG-mapper** [16] to annotate the protein functions by assigning orthology. The proteins were categorized into ten types, including **lysis (643,820)**, **integration (575,847)**, **replication (1,271,047)**, **tRNA-related (38,305)**, **regulation (674,983)**, **packaging (706,058)**, **assembly (1,796,929)**, **infection (1,129,476)**, **immune (210,687)**, and **hypothetical (5,388,986)**, based on key word searches.
 
 ### Terminators
 Terminators are specific DNA sequences that indicate the end of a gene or a functional genetic region. The annotation of terminators provides information about the locations where the genes or functional regions within the phage genomes end. This information is valuable for accurately determining the boundaries of genes, regulatory regions, or other functional elements in the phage genomes.  
@@ -59,7 +59,7 @@ We applied **TMHMM** [22] to the phage protein sequences from the PhageScope dat
 ## Citation
 [1] O'Leary N A, Wright M W, Brister J R, et al. Reference sequence (RefSeq) database at NCBI: current status, taxonomic expansion, and functional annotation[J]. Nucleic acids research, 2016, 44(D1): D733-D745.  
 [2] Benson D A, Cavanaugh M, Clark K, et al. GenBank[J]. Nucleic acids research, 2018, 46(Database issue): D41.  
-[3] Kanz C, Aldebert P, Althorpe N, et al. The EMBL nucleotide sequence database[J]. Nucleic acids research, 2005, 33(suppl\_1): D29-D33.  
+[3] Kanz C, Aldebert P, Althorpe N, et al. The ENA nucleotide sequence database[J]. Nucleic acids research, 2005, 33(suppl\_1): D29-D33.  
 [4] Ogasawara O, Kodama Y, Mashima J, et al. DDBJ Database updates and computational infrastructure enhancement[J]. Nucleic acids research, 2020, 48(D1): D45-D50.  
 [5] Russell D A, Hatfull G F. PhagesDB: the actinobacteriophage database[J]. Bioinformatics, 2017, 33(5): 784-786.  
 [6] Gregory A C, Zablocki O, Zayed A A, et al. The gut virome database reveals age-dependent patterns of virome diversity in the human gut[J]. Cell host & microbe, 2020, 28(5): 724-740. e8.   

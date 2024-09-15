@@ -4,7 +4,7 @@
 <div align=center><img src="/Figures/Plasmid_database.png" width="80%"></div>
 
 ## Data description
-PlasmidScope integrates **1,045,930** plasmids from various databases, including **86,009** plasmids from **RefSeq** [1], **92,310** plasmids from **Genbank** [2], **6,267** plasmids from **EMBL** [3], **5,336** plasmids from **DDBJ** [4], **7** plasmids from **TPA** [5], **50,554** plasmids from **PLSDB** [6], **699,973** plasmids from **IMG/PR** [7], **12,084** plasmids from **COMPASS** [8], **898** plasmids from **Kraken2** [9], **92,492** plasmids from **mMGEs** [10].
+PlasmidScope integrates **1,045,930** plasmids from various databases, including **86,009** plasmids from **RefSeq** [1], **92,310** plasmids from **Genbank** [2], **6,267** plasmids from **ENA** [3], **5,336** plasmids from **DDBJ** [4], **7** plasmids from **TPA** [5], **50,554** plasmids from **PLSDB** [6], **699,973** plasmids from **IMG/PR** [7], **12,084** plasmids from **COMPASS** [8], **898** plasmids from **Kraken2** [9], **92,492** plasmids from **mMGE** [10].
 
 Applying multiple state-of-the-art tools to analyzing the plasmid sequences, we obtained **comprehensive annotations** for the plasmids.
 
@@ -31,7 +31,7 @@ To obtain reliable completeness information, we extracted the information on pla
 ### ORF prediction & protein annotation
 ORF stands for Open Reading Frame and represents a region of DNA that has the potential to be translated into a protein. In PlasmidScope, information about ORFs and annotated proteins provides insights into the predicted genes and their corresponding proteins within the plasmid genomes. These annotations are crucial for the understanding of the genetic content of plasmids, identifying potential virulence factors, antibiotic resistance genes, secondary metabolites, etc.
 
-The plasmids from RefSeq, Genbank, EMBL, DDBJ, and TPA contained the annotated genetic features. For the plasmids collected from PLSDB, IMG/PR, COMPASS, and Kraken2, we first applied **Prokka** [13] to identify the ORFs, and then employed **eggNOG-mapper** [14] to annotate the protein functions by assigning orthologs. A total of **40,250,759 proteins** were identified, which were categorized into **26 classes**, including carbohydrate transport and metabolism, posttranslational modification, cell cycle control, etc.
+The plasmids from RefSeq, Genbank, ENA, DDBJ, and TPA contained the annotated genetic features. For the plasmids collected from PLSDB, IMG/PR, COMPASS, and Kraken2, we first applied **Prokka** [13] to identify the ORFs, and then employed **eggNOG-mapper** [14] to annotate the protein functions by assigning orthologs. A total of **40,250,759 proteins** were identified, which were categorized into **26 classes**, including carbohydrate transport and metabolism, posttranslational modification, cell cycle control, etc.
 
 ### Virulence factors and antibiotic resistance genes
 Virulence factors (VFs) are molecules produced by pathogens that enhance their ability to cause disease. VFs help the pathogen invade the host, evade the immune system, and obtain nutrients from the host. Antibiotic resistance genes (ARGs) encode proteins that enable bacteria to survive in the presence of antibiotics. The presence of virulence factors and antibiotic resistance genes on plasmids could enhance bacterial adaptability, pathogenicity, and survival, contributing to the spread of infectious diseases and complicating their treatment.
@@ -74,7 +74,7 @@ Comparative genomic studies, including sequence alignment and comparative tree c
 ## References
 [1] O’Leary,N.A., Wright,M.W., Brister,J.R., Ciufo,S., Haddad,D., McVeigh,R., Rajput,B., Robbertse,B., Smith-White,B., Ako-Adjei,D., et al. (2015) Reference sequence (refseq) database at NCBI: Current status, taxonomic expansion, and functional annotation. Nucleic Acids Research, 44, D733-45. <br>
 [2] Benson,D.A., Cavanaugh,M., Clark,K., Karsch-Mizrachi,I., Ostell,J., Pruitt,K.D. and Sayers,E.W. (2017) GenBank. Nucleic Acids Research, 46, D41-D47. <br>
-[3] Kanz,C. (2004) The EMBL nucleotide sequence database. Nucleic Acids Research, 33, D29-33. <br>
+[3] Kanz,C. (2004) The ENA nucleotide sequence database. Nucleic Acids Research, 33, D29-33. <br>
 [4] Ogasawara,O., Kodama,Y., Mashima,J., Kosuge,T. and Fujisawa,T. (2019) DDBJ database updates and Computational Infrastructure Enhancement. Nucleic Acids Research, 48, D45-D50. <br>
 [5] Cochrane,G., Bates,K., Apweiler,R., Tateno,Y., Mashima,J., Kosuge,T., Mizrachi,I.K., Schafer,S. and Fetchko,M. (2006) Evidence standards in experimental and inferential INSDC Third Party Annotation Data. OMICS: A Journal of Integrative Biology, 10, 105–113. <br>
 [6] Schmartz,G.P., Hartung,A., Hirsch,P., Kern,F., Fehlmann,T., Müller,R. and Keller,A. (2021) PLSDB: Advancing a comprehensive database of bacterial plasmids. Nucleic Acids Research, 50, D273–D278.<br>

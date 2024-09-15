@@ -20,7 +20,7 @@ export const datasetsOption = {
         data: [
             'RefSeq',
             'Genbank',
-            'EMBL',
+            'ENA',
             'DDBJ',
             'PhagesDB',
             'GVD',
@@ -203,7 +203,7 @@ export const datasetspieOption = {
             data: [
                 { value: 4637, name: 'RefSeq' },
                 { value: 2086, name: 'Genbank' },
-                { value: 156, name: 'EMBL' },
+                { value: 156, name: 'ENA' },
                 { value: 290, name: 'DDBJ' },
                 { value: 3754, name: 'PhagesDB' },
                 { value: 31402, name: 'GVD' },

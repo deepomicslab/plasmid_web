@@ -4,11 +4,11 @@ export const datasetList = [
     'COMPASS',
     'GenBank',
     'RefSeq',
-    'EMBL',
+    'ENA',
     'Kraken2',
     'DDBJ',
     'TPA',
-    'mMGEs',
+    'mMGE',
 ]
 
 export const datasetDict = [
@@ -37,7 +37,7 @@ export const datasetDict = [
         value: 4,
     },
     {
-        label: 'EMBL',
+        label: 'ENA',
         value: 5,
     },
     {
@@ -53,7 +53,7 @@ export const datasetDict = [
         value: 8,
     },
     {
-        label: 'mMGEs',
+        label: 'mMGE',
         value: 9,
     },
 ]

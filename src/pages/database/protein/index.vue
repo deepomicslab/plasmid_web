@@ -49,11 +49,11 @@
                 <el-menu-item index="2" class="text-lg">COMPASS</el-menu-item>
                 <el-menu-item index="3" class="text-lg">GenBank</el-menu-item>
                 <el-menu-item index="4" class="text-lg">RefSeq</el-menu-item>
-                <el-menu-item index="5" class="text-lg">EMBL</el-menu-item>
+                <el-menu-item index="5" class="text-lg">ENA</el-menu-item>
                 <el-menu-item index="6" class="text-lg">Kraken2</el-menu-item>
                 <el-menu-item index="7" class="text-lg">DDBJ</el-menu-item>
                 <el-menu-item index="8" class="text-lg">TPA</el-menu-item>
-                <el-menu-item index="9" class="text-lg">mMGEs</el-menu-item>
+                <el-menu-item index="9" class="text-lg">mMGE</el-menu-item>
             </el-menu>
         </div>
         <div v-loading="loading" class="h-420">

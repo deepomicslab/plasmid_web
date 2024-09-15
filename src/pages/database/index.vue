@@ -312,16 +312,16 @@ const loading = ref(false)
 // eslint-disable-next-line camelcase
 const overview_data = ref({
     overview: {
-        plasmid: 1045930,
-        host: 14382,
-        protein: 40250759,
-        trna: 118171,
-        arg: 33114247,
-        sm: 65008,
-        sp: 4239609,
-        tmh: 9133791,
-        vf: 534898,
-        crispr: 10470,
+        plasmid: 852600,
+        host: 9572,
+        protein: 25231059,
+        trna: 82718,
+        arg: 21090397,
+        sm: 40466,
+        sp: 2710395,
+        tmh: 5191488,
+        vf: 306218,
+        crispr: 4083,
     },
     hosts: [
         'Pseudomonadota',

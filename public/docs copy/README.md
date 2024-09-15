@@ -4,7 +4,7 @@
 
 ## Database
 
-We have performed an exhaustive search for phage sequences across multiple public repositories (such as RefSeq, Genbank, EMBL, DDBJ) and published datasets (such as PhagesDB, GVD, GPD, MGV, TemPhD). As a result, we have gathered a dataset comprising of 441,637 phage sequences, only a tiny fraction of which have annotation information available, such as host taxonomy, lifestyle, and genetic features.
+We have performed an exhaustive search for phage sequences across multiple public repositories (such as RefSeq, Genbank, ENA, DDBJ) and published datasets (such as PhagesDB, GVD, GPD, MGV, TemPhD). As a result, we have gathered a dataset comprising of 441,637 phage sequences, only a tiny fraction of which have annotation information available, such as host taxonomy, lifestyle, and genetic features.
 
 To provide comprehensive and accurate annotations for the collected phage sequences, we applied thirteen state-of-the-art tools to give completeness assessment, phenotype annotation (host and lifestyle), structural annotation (ORFs, proteins, and terminators), functional annotation (tRNA & tmRNA, Anti-CRISPR protein, CRISPR array, and transmembrane proteins), and sequence comparison (clustering, alignment, and phylogenetic tree) for the phage sequences. The 441,637 phage sequences, along with their annotation information, are available in PhageScope.
 

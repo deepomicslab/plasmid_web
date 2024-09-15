@@ -237,23 +237,27 @@
                         >
                             <div class="text-3xl font-600 mt-4 ml-8">NEWS</div>
                             <el-steps direction="vertical" class="h-70 ml-8 mt-5 mb-10">
-                                <!-- <el-step :icon="Opportunity" status="process">
+                                <el-step :icon="Opportunity" status="process">
                                     <template #title>
                                         <div class="text-gray-700 font-600">
-                                            Version 1.1 (2023.10.10)
+                                            Version 1.1 (2024.9.14)
                                         </div>
                                     </template>
                                     <template #description>
                                         <div :class="descriptionClass">
-                                            Five additional phage datasets are incorporated into the
-                                            database.
+                                            1. Add deduplicated and high-quality plasmids in "All"
+                                            table in the "Plasmid list" page.
                                             <br />
-                                            Update the genome comparison modules to provide the
+                                            2. Add pLDDT value for the predicted protein structures.
+                                            <br />
+                                            3. Update the genome comparison modules to provide the
                                             option to compare customized phage genomes with the
                                             PhageScope database.
+                                            <br />
+                                            4. Fix bugs: redirection, links, etc.
                                         </div>
                                     </template>
-                                </el-step> -->
+                                </el-step>
                                 <el-step :icon="Opportunity" status="process">
                                     <template #title>
                                         <div class="text-gray-700 font-600">
@@ -354,16 +358,16 @@ import admin from './admin.vue'
 const loading = ref(false)
 // eslint-disable-next-line camelcase
 const overview_data = ref({
-    plasmid: 1045930,
-    host: 14382,
-    protein: 40250759,
-    trna: 118171,
-    arg: 33114247,
-    sm: 65008,
-    sp: 4239609,
-    tmh: 9133791,
-    vf: 534898,
-    crispr: 10470,
+    plasmid: 852600,
+    host: 9572,
+    protein: 25231059,
+    trna: 82718,
+    arg: 21090397,
+    sm: 40466,
+    sp: 2710395,
+    tmh: 5191488,
+    vf: 306218,
+    crispr: 4083,
 })
 
 const dialogVisible = ref(false)

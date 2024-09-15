@@ -580,7 +580,7 @@
                         <div
                             class="w-160 border-r-1 border-gray-700 h-13 flex-row flex pl-4 items-center text-[19px]"
                         >
-                            EMBL Protein FASTA File
+                            ENA Protein FASTA File
                         </div>
                         <div class="w-120 flex flex-row items-center justify-start">
                             <n-button class="ml-10 w-23 h-7 text-lg" text>
@@ -590,7 +590,7 @@
                                     </n-icon>
                                 </template>
                                 <a
-                                    href="https://plasmidapi.deepomics.org/fasta/phage_sequence/proteins/EMBL.tar.gz"
+                                    href="https://plasmidapi.deepomics.org/fasta/phage_sequence/proteins/ENA.tar.gz"
                                     target="_blank"
                                     class="btn"
                                 >
@@ -831,11 +831,11 @@ const datasetList = [
     'COMPASS',
     'GenBank',
     'RefSeq',
-    'EMBL',
+    'ENA',
     'Kraken2',
     'DDBJ',
     'TPA',
-    'mMGEs',
+    'mMGE',
 ]
 const datasetList2 = [
     'PLSDB',
@@ -843,11 +843,11 @@ const datasetList2 = [
     'COMPASS',
     'GenBank',
     'RefSeq',
-    'EMBL',
+    'ENA',
     'Kraken2',
     'DDBJ',
     'TPA',
-    'mMGEs',
+    'mMGE',
 ]
 const datasetList3 = [
     'PLSDB',
@@ -855,9 +855,9 @@ const datasetList3 = [
     'COMPASS',
     'GenBank',
     'RefSeq',
-    'EMBL',
+    'ENA',
     'Kraken2',
     'DDBJ',
-    'mMGEs',
+    'mMGE',
 ]
 </script>

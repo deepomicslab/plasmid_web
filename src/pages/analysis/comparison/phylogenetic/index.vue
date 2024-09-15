@@ -3,7 +3,7 @@
         <el-scrollbar class="w-full" ref="scrollbarRef">
             <div class="flex flex-col h-400">
                 <div class="font-600 ml-20 mt-16 flex flex-row border-b-2 w-9/10 pb-5">
-                    <div class="text-4xl text-[#253959]">Phylogentic Analysis</div>
+                    <div class="text-4xl text-[#253959]">Comparative Analysis</div>
                     <el-button
                         round
                         size="large"
