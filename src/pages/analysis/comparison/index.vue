@@ -446,7 +446,7 @@ const selectseq = ref(false)
 const filterform = ref({
     // quality: '',
     // host: '',
-    datasets: 0,
+    datasets: '',
     LengthS: 0,
     LengthE: 5,
     // lifestyle: 'all',
@@ -609,7 +609,8 @@ const submit = async () => {
         }
     }
     //check dependencies
-    if (_.values(modulelist.value).includes(true)) {
+    if(precheck.value){
+        if (_.values(modulelist.value).includes(true)) {
         if (modulelist.value['anticrispr'] && !modulelist.value['annotation']) {
             window.$message.error(
                 'If you want to perform Anti-CRISPR protein annotation, please also choose ORF prediction & Protein classification.',
@@ -663,7 +664,9 @@ const submit = async () => {
         })
         precheck.value = false
     }
-
+    }
+   
+    console.log(precheck.value)
     if (precheck.value) {
         submitdata.append('analysistype', 'Genome Comparison')
         submitdata.append('userid', userid.value)
@@ -690,6 +693,8 @@ const submit = async () => {
                 duration: 5000,
             })
         }
+    }else{
+        loading.value = false
     }
 }
 const submitdemo = async () => {
