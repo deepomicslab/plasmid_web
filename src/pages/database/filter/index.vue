@@ -67,7 +67,7 @@
                             <el-form-item label="Cluster">
                                 <el-tooltip
                                     effect="dark"
-                                    content="cluster_1-cluster_45854"
+                                    content="Search Cluster Name"
                                     placement="top"
                                 >
                                     <el-icon class="info-icon"><InfoFilled /></el-icon>
@@ -87,7 +87,11 @@
                                         :value="option.value"
                                     ></el-option>
                                 </el-select> -->
-                                <el-input v-model="filterform.cluster" class="w-60" />
+                                <el-input
+                                    v-model="filterform.cluster"
+                                    class="w-60"
+                                    placeholder="Search Cluster Name"
+                                />
                             </el-form-item>
                         </el-col>
                         <!-- <el-col :span="0.5" :offset="2"></el-col> -->
@@ -95,7 +99,7 @@
                             <el-form-item label="Subcluster">
                                 <el-tooltip
                                     effect="dark"
-                                    content="Subcluster_1-Subcluster_57657"
+                                    content="Search subCluster name"
                                     placement="top"
                                 >
                                     <el-icon class="info-icon"><InfoFilled /></el-icon>
@@ -115,7 +119,11 @@
                                         :value="option.value"
                                     ></el-option>
                                 </el-select> -->
-                                <el-input v-model="filterform.subcluster" class="w-60" />
+                                <el-input
+                                    v-model="filterform.subcluster"
+                                    class="w-60"
+                                    placeholder="Search subCluster Name"
+                                />
                             </el-form-item>
                         </el-col>
                     </el-row>
@@ -179,7 +187,7 @@
                             <el-form-item label="Presence of ARGs">
                                 <el-tooltip
                                     effect="dark"
-                                    content="Presence of ARGs"
+                                    content="Presence of Antibiotic Resistance Genes"
                                     placement="top"
                                 >
                                     <el-icon class="info-icon"><InfoFilled /></el-icon>
@@ -222,7 +230,150 @@
                         </el-col>
                     </el-row>
                     <el-row class="mt-4" justify="space-around">
+                        <!-- <el-col :span="9.5">
+                            <el-form-item label="Name Contain">
+                                <el-input v-model="filterform.Contain" class="w-60" />
+                            </el-form-item>
+                        </el-col>
+                        <el-col :span="0.5" :offset="2"></el-col> -->
+                        <el-col :span="9">
+                            <el-form-item label="Presence of SMs">
+                                <el-tooltip
+                                    effect="dark"
+                                    content="Presence of Secondary Metabolites"
+                                    placement="top"
+                                >
+                                    <el-icon class="info-icon"><InfoFilled /></el-icon>
+                                </el-tooltip>
+                                <el-select
+                                    v-model="filterform.sms"
+                                    placeholder="Select Presence of SMs"
+                                    class="w-60"
+                                    clearable
+                                >
+                                    <el-option
+                                        v-for="option in presenceOptions"
+                                        :key="option.value"
+                                        :label="option.label"
+                                        :value="option.value"
+                                    ></el-option>
+                                </el-select>
+                            </el-form-item>
+                        </el-col>
                         <!-- <el-col :span="0.5" :offset="2"></el-col> -->
+                        <el-col :span="9">
+                            <el-form-item label="Presence of SPs">
+                                <el-tooltip
+                                    effect="dark"
+                                    content="Presence of Signal Peptides"
+                                    placement="top"
+                                >
+                                    <el-icon class="info-icon"><InfoFilled /></el-icon>
+                                </el-tooltip>
+                                <el-select
+                                    v-model="filterform.sps"
+                                    placeholder="Select Presence of SPs"
+                                    class="w-60"
+                                    clearable
+                                >
+                                    <el-option
+                                        v-for="option in presenceOptions"
+                                        :key="option.value"
+                                        :label="option.label"
+                                        :value="option.value"
+                                    ></el-option>
+                                </el-select>
+                            </el-form-item>
+                        </el-col>
+                    </el-row>
+                    <el-row class="mt-4" justify="space-around">
+                        <!-- <el-col :span="9.5">
+                            <el-form-item label="Name Contain">
+                                <el-input v-model="filterform.Contain" class="w-60" />
+                            </el-form-item>
+                        </el-col>
+                        <el-col :span="0.5" :offset="2"></el-col> -->
+                        <el-col :span="9">
+                            <el-form-item label="Presence of tRNAs">
+                                <el-tooltip
+                                    effect="dark"
+                                    content="Presence of tRNAs & tmRNAs"
+                                    placement="top"
+                                >
+                                    <el-icon class="info-icon"><InfoFilled /></el-icon>
+                                </el-tooltip>
+                                <el-select
+                                    v-model="filterform.trnas"
+                                    placeholder="Select Presence of tRNAs"
+                                    class="w-60"
+                                    clearable
+                                >
+                                    <el-option
+                                        v-for="option in presenceOptions"
+                                        :key="option.value"
+                                        :label="option.label"
+                                        :value="option.value"
+                                    ></el-option>
+                                </el-select>
+                            </el-form-item>
+                        </el-col>
+                        <!-- <el-col :span="0.5" :offset="2"></el-col> -->
+                        <el-col :span="9">
+                            <el-form-item label="Presence of TPs">
+                                <el-tooltip
+                                    effect="dark"
+                                    content="Presence of Transmembrane Proteins"
+                                    placement="top"
+                                >
+                                    <el-icon class="info-icon"><InfoFilled /></el-icon>
+                                </el-tooltip>
+                                <el-select
+                                    v-model="filterform.tmhs"
+                                    placeholder="Select Presence of TPs"
+                                    class="w-60"
+                                    clearable
+                                >
+                                    <el-option
+                                        v-for="option in presenceOptions"
+                                        :key="option.value"
+                                        :label="option.label"
+                                        :value="option.value"
+                                    ></el-option>
+                                </el-select>
+                            </el-form-item>
+                        </el-col>
+                    </el-row>
+                    <el-row class="mt-4" justify="space-around">
+                        <!-- <el-col :span="9.5">
+                            <el-form-item label="Name Contain">
+                                <el-input v-model="filterform.Contain" class="w-60" />
+                            </el-form-item>
+                        </el-col>
+                        <el-col :span="0.5" :offset="2"></el-col> -->
+                        <el-col :span="9">
+                            <el-form-item label="Presence of C/Cs">
+                                <el-tooltip
+                                    effect="dark"
+                                    content="Presence of CRISPR/Cas systems"
+                                    placement="top"
+                                >
+                                    <el-icon class="info-icon"><InfoFilled /></el-icon>
+                                </el-tooltip>
+                                <el-select
+                                    v-model="filterform.crisprs"
+                                    placeholder="Select Presence of C/Cs"
+                                    class="w-60"
+                                    clearable
+                                >
+                                    <el-option
+                                        v-for="option in presenceOptions"
+                                        :key="option.value"
+                                        :label="option.label"
+                                        :value="option.value"
+                                    ></el-option>
+                                </el-select>
+                            </el-form-item>
+                        </el-col>
                         <el-col :span="9">
                             <el-form-item label="Length">
                                 <el-tooltip effect="dark" content="Length" placement="top">
@@ -246,6 +397,32 @@
                                 <div class="ml-4">kb</div>
                             </el-form-item>
                         </el-col>
+                    </el-row>
+                    <el-row class="mt-4" justify="space-around">
+                        <!-- <el-col :span="0.5" :offset="2"></el-col> -->
+                        <!-- <el-col :span="9">
+                            <el-form-item label="Length">
+                                <el-tooltip effect="dark" content="Length" placement="top">
+                                    <el-icon class="info-icon"><InfoFilled /></el-icon>
+                                </el-tooltip>
+                                <el-input
+                                    v-model.number="filterform.LengthS"
+                                    class="w-20"
+                                    type="number"
+                                    min="0"
+                                />
+                                <div class="mx-3">
+                                    <el-icon><Minus /></el-icon>
+                                </div>
+                                <el-input
+                                    v-model.number="filterform.LengthE"
+                                    class="w-20"
+                                    type="number"
+                                    min="0"
+                                />
+                                <div class="ml-4">kb</div>
+                            </el-form-item>
+                        </el-col> -->
                         <!-- <el-col :span="0.5" :offset="2"></el-col> -->
                         <!-- <el-col :span="9">
                             <el-form-item label="Annotation Ref">
@@ -386,6 +563,11 @@ const filterform = ref({
     completeness: '',
     args: '',
     vfs: '',
+    sms: '',
+    sps: '',
+    tmhs: '',
+    trnas: '',
+    crisprs: '',
     LengthS: 0,
     LengthE: 100,
     gcContentS: 30,
@@ -456,11 +638,20 @@ const resetFilterForm = () => {
         subcluster: '',
         quality: '',
         datasets: [],
+        mobility: '',
+        completeness: '',
+        args: '',
+        vfs: '',
+        sms: '',
+        sps: '',
+        tmhs: '',
+        trnas: '',
+        crisprs: '',
         LengthS: 0,
-        LengthE: 5,
-        gcContentS: 35,
-        gcContentE: 65,
-        lifestyle: '',
+        LengthE: 100,
+        gcContentS: 30,
+        gcContentE: 70,
+        lifestyle: 'all',
         Taxonomy: '',
     }
 }
