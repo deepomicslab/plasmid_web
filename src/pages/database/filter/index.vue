@@ -2,7 +2,7 @@
     <div class="h-full flex flex-col py-10 px-30 justify-start items-center">
         <div class="text-3xl text-gray-600">Sequence Filter</div>
         <div
-            class="rounded w-280 h-150 mt-15 rounded-xl"
+            class="rounded w-280 h-180 mt-15 rounded-xl"
             style="box-shadow: 0 0 64px #cfd5db"
             v-loading="loading"
         >
@@ -124,53 +124,102 @@
                             <el-form-item label="Name Contain">
                                 <el-input v-model="filterform.Contain" class="w-60" />
                             </el-form-item>
-                        </el-col> -->
-                        <!-- <el-col :span="0.5" :offset="2"></el-col> -->
-                        <!-- <el-col :span="9">
-                            <el-form-item label="Taxonomy">
-                                <el-tooltip effect="dark" content="Taxonomy" placement="top">
+                        </el-col>
+                        <el-col :span="0.5" :offset="2"></el-col> -->
+                        <el-col :span="9">
+                            <el-form-item label="Mobility">
+                                <el-tooltip effect="dark" content="Mobility" placement="top">
                                     <el-icon class="info-icon"><InfoFilled /></el-icon>
                                 </el-tooltip>
                                 <el-select
-                                    v-model="filterform.Taxonomy"
-                                    placeholder="Select Taxonomy"
+                                    v-model="filterform.mobility"
+                                    placeholder="Select Mobility"
                                     class="w-60"
                                     clearable
                                 >
                                     <el-option
-                                        v-for="option in taxonomyOptions"
+                                        v-for="option in mobilityOptions"
                                         :key="option.value"
                                         :label="option.label"
                                         :value="option.value"
                                     ></el-option>
                                 </el-select>
                             </el-form-item>
-                        </el-col> -->
+                        </el-col>
                         <!-- <el-col :span="0.5" :offset="2"></el-col> -->
-                        <!-- <el-col :span="9">
-                            <el-form-item label="Sequence Quality">
+                        <el-col :span="9">
+                            <el-form-item label="Completeness">
+                                <el-tooltip effect="dark" content="Completeness" placement="top">
+                                    <el-icon class="info-icon"><InfoFilled /></el-icon>
+                                </el-tooltip>
+                                <el-select
+                                    v-model="filterform.completeness"
+                                    placeholder="Select Sequence Completeness"
+                                    class="w-60"
+                                    clearable
+                                >
+                                    <el-option
+                                        v-for="option in completenessOptions"
+                                        :key="option.value"
+                                        :label="option.label"
+                                        :value="option.value"
+                                    ></el-option>
+                                </el-select>
+                            </el-form-item>
+                        </el-col>
+                    </el-row>
+                    <el-row class="mt-4" justify="space-around">
+                        <!-- <el-col :span="9.5">
+                            <el-form-item label="Name Contain">
+                                <el-input v-model="filterform.Contain" class="w-60" />
+                            </el-form-item>
+                        </el-col>
+                        <el-col :span="0.5" :offset="2"></el-col> -->
+                        <el-col :span="9">
+                            <el-form-item label="Presence of ARGs">
                                 <el-tooltip
                                     effect="dark"
-                                    content="Sequence Quality"
+                                    content="Presence of ARGs"
                                     placement="top"
                                 >
                                     <el-icon class="info-icon"><InfoFilled /></el-icon>
                                 </el-tooltip>
                                 <el-select
-                                    v-model="filterform.quality"
-                                    placeholder="Select Sequence Quality"
+                                    v-model="filterform.args"
+                                    placeholder="Select Presence of ARGs"
                                     class="w-60"
                                     clearable
                                 >
                                     <el-option
-                                        v-for="option in qualityOptions"
+                                        v-for="option in presenceOptions"
                                         :key="option.value"
                                         :label="option.label"
                                         :value="option.value"
                                     ></el-option>
                                 </el-select>
                             </el-form-item>
-                        </el-col> -->
+                        </el-col>
+                        <!-- <el-col :span="0.5" :offset="2"></el-col> -->
+                        <el-col :span="9">
+                            <el-form-item label="Presence of VFs">
+                                <el-tooltip effect="dark" content="Presence of VFs" placement="top">
+                                    <el-icon class="info-icon"><InfoFilled /></el-icon>
+                                </el-tooltip>
+                                <el-select
+                                    v-model="filterform.vfs"
+                                    placeholder="Select Presence of VFs"
+                                    class="w-60"
+                                    clearable
+                                >
+                                    <el-option
+                                        v-for="option in presenceOptions"
+                                        :key="option.value"
+                                        :label="option.label"
+                                        :value="option.value"
+                                    ></el-option>
+                                </el-select>
+                            </el-form-item>
+                        </el-col>
                     </el-row>
                     <el-row class="mt-4" justify="space-around">
                         <!-- <el-col :span="0.5" :offset="2"></el-col> -->
@@ -243,9 +292,9 @@
                         </el-col>
                     </el-row>
 
-                    <el-row class="mt-4">
-                        <!-- <el-col :span="0.5" :offset="2"></el-col> -->
-                        <!-- <el-col :span="12">
+                    <!-- <el-row class="mt-4"> -->
+                    <!-- <el-col :span="0.5" :offset="2"></el-col> -->
+                    <!-- <el-col :span="12">
                             <el-form-item label="LifeStyle" class="ml-17">
                                 <el-tooltip effect="dark" content="LifeStyle" placement="top">
                                     <el-icon class="info-icon"><InfoFilled /></el-icon>
@@ -257,8 +306,8 @@
                                 </el-radio-group>
                             </el-form-item>
                         </el-col> -->
-                        <!-- <el-col :span="0.5" :offset="2"></el-col> -->
-                        <!-- <el-col :span="12">
+                    <!-- <el-col :span="0.5" :offset="2"></el-col> -->
+                    <!-- <el-col :span="12">
                             <el-form-item label="GC Content" class="ml-17">
                                 <el-tooltip effect="dark" content="GC Content" placement="top">
                                     <el-icon class="info-icon"><InfoFilled /></el-icon>
@@ -281,7 +330,7 @@
                                 <div class="ml-3">%</div>
                             </el-form-item>
                         </el-col> -->
-                    </el-row>
+                    <!-- </el-row> -->
                     <el-row class="mt-12">
                         <el-col :span="24" class="text-center">
                             <el-button type="primary" @click="submitFilter">Submit</el-button>
@@ -317,6 +366,9 @@ import {
     subclusterOptions,
     hostTypeOptions,
     taxonomyOptions,
+    mobilityOptions,
+    completenessOptions,
+    presenceOptions,
 } from '@/utils/filteroption'
 import { useQueryStore } from '@/store/query'
 
@@ -330,6 +382,10 @@ const filterform = ref({
     subcluster: '',
     quality: '',
     datasets: [],
+    mobility: '',
+    completeness: '',
+    args: '',
+    vfs: '',
     LengthS: 0,
     LengthE: 100,
     gcContentS: 30,

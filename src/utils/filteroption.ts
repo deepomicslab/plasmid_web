@@ -204,3 +204,37 @@ export const taxonomyOptions = [
         label: 'Lavidaviridae',
     },
 ]
+export const mobilityOptions = [
+    {
+        value: 'mobilizable',
+        label: 'Mobilizable',
+    },
+    {
+        value: 'non-mobilizable',
+        label: 'Non-mobilizable',
+    },
+    {
+        value: 'conjugative',
+        label: 'Conjugative',
+    },
+]
+export const completenessOptions = [
+    {
+        value: 'complete',
+        label: 'Complete',
+    },
+    {
+        value: 'incomplete',
+        label: 'Incomplete',
+    },
+]
+export const presenceOptions = [
+    {
+        value: 'true',
+        label: 'True',
+    },
+    {
+        value: 'false',
+        label: 'False',
+    },
+]

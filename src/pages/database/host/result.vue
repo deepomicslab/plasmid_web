@@ -110,7 +110,7 @@
 /* eslint-disable camelcase */
 import type { DataTableColumns, DataTableRowKey } from 'naive-ui'
 import { h } from 'vue'
-import { NButton, NTag } from 'naive-ui'
+import { NButton, NTag, NTooltip } from 'naive-ui'
 import {
     CloudDownloadOutline as downicon,
     FunnelOutline,
@@ -121,6 +121,7 @@ import { ArrowDown } from '@element-plus/icons-vue'
 import _ from 'lodash'
 import axios from 'axios'
 import { useQueryStore } from '@/store/query'
+import { datasetList } from '@/utils/phage'
 
 const queryStore = useQueryStore()
 
@@ -135,8 +136,8 @@ submitdata.append('hosts', JSON.stringify(queryStore.selectedhostlist))
 
 onBeforeMount(async () => {
     loading.value = true
-    const response = await axios.post(`/hosts/filter/`, submitdata, {
-        baseURL: '/api',
+    const response = await axios.post(`/host_filter/`, submitdata, {
+        baseURL: '/api/database',
         timeout: 100000,
         params: {
             page: pagevalue.value,
@@ -159,8 +160,8 @@ const phageList = computed(() => {
 const count = computed(() => phagedata.value?.count)
 const nextPage = async () => {
     loading.value = true
-    const response = await axios.post(`/hosts/filter/`, submitdata, {
-        baseURL: '/api',
+    const response = await axios.post(`/host_filter/`, submitdata, {
+        baseURL: '/api/database',
         timeout: 100000,
         params: {
             page: pagevalue.value + 1,
@@ -173,8 +174,8 @@ const nextPage = async () => {
 }
 const prevPage = async () => {
     loading.value = true
-    const response = await axios.post(`/hosts/filter/`, submitdata, {
-        baseURL: '/api',
+    const response = await axios.post(`/host_filter/`, submitdata, {
+        baseURL: '/api/database',
         timeout: 100000,
         params: {
             page: pagevalue.value - 1,
@@ -188,8 +189,8 @@ const prevPage = async () => {
 
 const pagechange = async () => {
     loading.value = true
-    const response = await axios.post(`/hosts/filter/`, submitdata, {
-        baseURL: '/api',
+    const response = await axios.post(`/host_filter/`, submitdata, {
+        baseURL: '/api/database',
         timeout: 100000,
         params: {
             page: pagevalue.value,
@@ -202,8 +203,8 @@ const pagechange = async () => {
 }
 const pagesizechange = async () => {
     loading.value = true
-    const response = await axios.post(`/hosts/filter/`, submitdata, {
-        baseURL: '/api',
+    const response = await axios.post(`/host_filter/`, submitdata, {
+        baseURL: '/api/database',
         timeout: 100000,
         params: {
             page: pagevalue.value,
@@ -217,11 +218,11 @@ const pagesizechange = async () => {
 
 const router = useRouter()
 
+const detail = (row: any) => {
+    router.push({ path: '/database/plasmid/detail', query: { plasmid_id: row.plasmid } })
+}
 const gofilter = () => {
     router.push({ path: '/database/filter' })
-}
-const detail = (row: any) => {
-    router.push({ path: '/database/phage/detail', query: { phageid: row.id } })
 }
 
 type RowData = {
@@ -335,11 +336,17 @@ const downloadselected = () => {
 const download = (row: any) => {
     downloadtype.value = 'single'
     downloaddialogVisible.value = true
-    checkedRowKeysRef.value = [row.id]
+    checkedRowKeysRef.value = [row.plasmid]
+}
+const renderTooltip = (trigger: any, content: any) => {
+    return h(NTooltip, null, {
+        trigger: () => trigger,
+        default: () => content,
+    })
 }
 
 const rowKey = (row: RowData) => {
-    return row.accesion_id
+    return row.plasmid
 }
 const createColumns = (): DataTableColumns<RowData> => {
     return [
@@ -706,13 +713,12 @@ const createColumns = (): DataTableColumns<RowData> => {
         },
     ]
 }
-
-const columns = createColumns()
-
 const godatahelper = () => {
     router.push({
         path: '/tutorial',
         query: { type: 'Database_introduction' },
     })
 }
+
+const columns = createColumns()
 </script>

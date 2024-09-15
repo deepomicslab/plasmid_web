@@ -552,7 +552,7 @@ const data: Tree[] = [
     },
     {
         id: 2,
-        label: 'Comparative analysis',
+        label: 'Comparative Analysis',
         key: 'tree',
     }, 
     

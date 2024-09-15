@@ -717,18 +717,18 @@ const createColumns = (): DataTableColumns<RowData> => {
             align: 'center',
             width: 90,
         },
-        {
-            title() {
-                return renderTooltip(
-                    h('div', null, { default: () => 'MOB_type' }),
-                    'plasmid MOB_type'
-                )
-            },
-            key: 'mob_type',
-            sorter: 'default',
-            align: 'center',
-            width: 90,
-        },
+        // {
+        //     title() {
+        //         return renderTooltip(
+        //             h('div', null, { default: () => 'MOB_type' }),
+        //             'plasmid MOB_type'
+        //         )
+        //     },
+        //     key: 'mob_type',
+        //     sorter: 'default',
+        //     align: 'center',
+        //     width: 90,
+        // },
         {
             title() {
                 return renderTooltip(
