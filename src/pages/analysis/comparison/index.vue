@@ -515,14 +515,13 @@ const modulelist = ref({
     cluster: false,
     tree: false,
     comparedatabse: false,
-    compare: false,
 })
-
+const compare = ref(false)
 const selectseqchange=()=>{
     if(selectseq.value){
-        modulelist.value['compare'] = true
+        compare.value = true
     }else{
-        modulelist.value['compare'] = false
+        compare.value = false
     }
     console.log(modulelist.value)
 }
@@ -569,7 +568,7 @@ const submit = async () => {
     const submitdata = new FormData()
     submitdata.append('rundemo', 'false')
     submitdata.append('comparedatabase', 'false')
-    submitdata.append('compare', modulelist.value['compare'])
+    submitdata.append('compare', compare.value)
     submitdata.append('filterdata', JSON.stringify(filterform.value))
     submitdata.append('neednum', '3')
     const precheck = ref(false)
