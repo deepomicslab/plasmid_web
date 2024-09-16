@@ -321,6 +321,10 @@ const createColumns = (): DataTableColumns<crisprRowData> => [
         sorter: 'default',
         defaultSortOrder: 'ascend',
         fixed: 'left',
+        width: '150px',
+        ellipsis: {
+            tooltip: true,
+        },
     },
     {
         title() {
@@ -328,11 +332,13 @@ const createColumns = (): DataTableColumns<crisprRowData> => [
         },
         key: 'plasmid_id',
         align: 'center',
+        fixed: 'left',
+        width: '250px',
         ellipsis: {
             tooltip: true,
         },
         render(row: any) {
-            return h('div', { style: { width: '130px' } }, [
+            return h('div', {}, [
                 h(
                     NButton,
                     {
@@ -340,6 +346,7 @@ const createColumns = (): DataTableColumns<crisprRowData> => [
                         text: true,
                         size: 'small',
                         color: 'rgb(18,49,73)',
+                        style: { width: '250px' },
                         onClick: async () => {
                             const response = await axios.get(`/plasmid/${row.plasmid}`, {
                                 baseURL: '/api/database',
@@ -367,6 +374,10 @@ const createColumns = (): DataTableColumns<crisprRowData> => [
         },
         key: 'crispr_id',
         align: 'center',
+        width: '250px',
+        ellipsis: {
+            tooltip: true,
+        },
     },
     {
         title() {
@@ -377,6 +388,7 @@ const createColumns = (): DataTableColumns<crisprRowData> => [
         },
         key: 'crispr_subtype',
         align: 'center',
+        width: '150px',
         render(row: any) {
             return h(
                 'div',
@@ -405,6 +417,7 @@ const createColumns = (): DataTableColumns<crisprRowData> => [
         key: 'start',
         align: 'center',
         sorter: 'default',
+        width: '150px',
     },
     {
         title() {
@@ -416,6 +429,7 @@ const createColumns = (): DataTableColumns<crisprRowData> => [
         key: 'end',
         align: 'center',
         sorter: 'default',
+        width: '150px',
     },
     // {
     //     title() {

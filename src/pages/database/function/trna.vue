@@ -292,11 +292,12 @@ const createColumns = (): DataTableColumns<trnaRowData> => [
         },
         key: 'plasmid_id',
         align: 'center',
+        width: '300px',
         ellipsis: {
             tooltip: true,
         },
         render(row: any) {
-            return h('div', { style: { width: '130px' } }, [
+            return h('div', {}, [
                 h(
                     NButton,
                     {
@@ -304,6 +305,7 @@ const createColumns = (): DataTableColumns<trnaRowData> => [
                         text: true,
                         size: 'small',
                         color: 'rgb(18,49,73)',
+                        style: { width: '250px' },
                         onClick: async () => {
                             const response = await axios.get(`/plasmid/${row.plasmid}`, {
                                 baseURL: '/api/database',

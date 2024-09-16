@@ -367,6 +367,9 @@ const createColumns = (): DataTableColumns<RowData> => [
         key: 'plasmid_id',
         width: 350,
         align: 'center',
+        ellipsis: {
+            tooltip: true,
+        },
         render(row: any) {
             return h('div', {}, [
                 h(

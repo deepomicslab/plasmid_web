@@ -36,7 +36,7 @@
                                 </template>
 
                                 <a
-                                    :href="`https://plasmidapi.deepomics.org/api/database/files/${source}/data/${source}.plasmid_list.xls`"
+                                    :href="`https://plasmidapi.deepomics.org/api/database/files/${source}/data/${source}.plasmid_list.download.xls`"
                                     target="_blank"
                                     class="btn"
                                 >
@@ -51,7 +51,7 @@
                                 </template>
 
                                 <a
-                                    :href="`https://plasmidapi.deepomics.org/api/database/files/${source}/data/${source}.plasmid_list.tsv`"
+                                    :href="`https://plasmidapi.deepomics.org/api/database/files/${source}/data/${source}.plasmid_list.download.tsv`"
                                     target="_blank"
                                     class="btn"
                                 >

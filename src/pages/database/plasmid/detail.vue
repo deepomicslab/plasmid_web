@@ -375,50 +375,60 @@ onBeforeMount(async () => {
     loaddata.value = true
     phageStore.phagedataloaded = false
     phageStore.plasmid_id = plasmid_id.value
-    const response = await axios.get(`/plasmid/${plasmid_id.value}/`, {
-        baseURL: '/api/database',
-        timeout: 100000,
-        // params: {
-        //     id: plasmid_id.value,
-        // },
-    })
-    const { data } = response
-    phagedata.value = data
+    try {
+        const response = await axios.get(`/plasmid/${plasmid_id.value}/`, {
+            baseURL: '/api/database',
+            timeout: 100000,
+        })
+        const { data } = response
+        phagedata.value = data
+        // Handle successful response
+        const id = phagedata.value.plasmid_id.replace(`${datasetList[phagedata.value.source]}_`, '')
+        if (phagedata.value.source === 0) {
+            phagedata.value.reference = `https://ccb-microbe.cs.uni-saarland.de/plsdb/plasmids/plasmid/${id}/`
+        } else if (phagedata.value.source === 1) {
+            phagedata.value.reference = `https://genome.jgi.doe.gov/portal/IMG_PR/IMG_PR.home.html`
+        } else if (phagedata.value.source === 5) {
+            phagedata.value.reference = `https://www.ebi.ac.uk/ena/browser/view/${id}`
+        } else if (phagedata.value.source === 9) {
+            phagedata.value.reference = `https://mai.fudan.edu.cn/mgedb/client/`
+        } else {
+            phagedata.value.reference = `https://www.ncbi.nlm.nih.gov/nuccore/${id}/`
+        }
+        phageStore.phageaccid = data.plasmid_id
+        const response2 = await axios.get(`/protein`, {
+            baseURL: '/api/database',
+            timeout: 100000,
+            params: {
+                pagesize: 100000000,
+                plasmid_id: plasmid_id.value,
+            },
+        })
+        const prodata = response2.data
+        genes.value = prodata.count
+        proteindata.value = prodata.results
+        phageStore.phageprotein = prodata.results
 
-    const id = phagedata.value.plasmid_id.replace(`${datasetList[phagedata.value.source]}_`, '')
-    if (phagedata.value.source === 0) {
-        phagedata.value.reference = `https://ccb-microbe.cs.uni-saarland.de/plsdb/plasmids/plasmid/${id}/`
-    } else if (phagedata.value.source === 1) {
-        phagedata.value.reference = `https://genome.jgi.doe.gov/portal/IMG_PR/IMG_PR.home.html`
-    } else if (phagedata.value.source === 5) {
-        phagedata.value.reference = `https://www.ebi.ac.uk/ena/browser/view/${id}`
-    } else if (phagedata.value.source === 9) {
-        phagedata.value.reference = `https://mai.fudan.edu.cn/mgedb/client/`
-    } else {
-        phagedata.value.reference = `https://www.ncbi.nlm.nih.gov/nuccore/${id}/`
+        const response3 = await axios.get(`get_plasmid_fasta/${plasmid_id.value}/`, {
+            baseURL: '/api/database/',
+            timeout: 100000,
+        })
+
+        phageStore.phagefastadata = response3.data
+        loaddata.value = false
+        phageStore.phagedataloaded = true
+    } catch (error) {
+        if (error.response && error.response.status === 404) {
+            // Handle 404 error specifically
+            window.$message.error('Plasmid not found', {
+                closable: true,
+                duration: 5000,
+            })
+        } else {
+            // Handle other errors
+            console.error('An error occurred:', error.message)
+        }
     }
-    phageStore.phageaccid = data.plasmid_id
-    const response2 = await axios.get(`/protein`, {
-        baseURL: '/api/database',
-        timeout: 100000,
-        params: {
-            pagesize: 100000000,
-            plasmid_id: plasmid_id.value,
-        },
-    })
-    const prodata = response2.data
-    genes.value = prodata.count
-    proteindata.value = prodata.results
-    phageStore.phageprotein = prodata.results
-
-    const response3 = await axios.get(`get_plasmid_fasta/${plasmid_id.value}/`, {
-        baseURL: '/api/database/',
-        timeout: 100000,
-    })
-
-    phageStore.phagefastadata = response3.data
-    loaddata.value = false
-    phageStore.phagedataloaded = true
 })
 
 const phagedetail = computed(() => phagedata.value)
