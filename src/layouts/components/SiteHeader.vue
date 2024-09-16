@@ -83,6 +83,9 @@ const menuOptions: MenuOption[] = [
                         path: '/',
                     },
                     class: 'custom-link',
+                    style: {
+                        color: 'rgb(200, 200, 200)',
+                    },
                 },
                 { default: () => 'Home' }
             ),
@@ -98,6 +101,9 @@ const menuOptions: MenuOption[] = [
                         path: '/database/',
                     },
                     class: 'custom-link',
+                    style: {
+                        color: 'rgb(200, 200, 200)',
+                    },
                 },
                 { default: () => 'Database' }
             ),
@@ -313,6 +319,9 @@ const menuOptions: MenuOption[] = [
                         path: '/analysis/annopipline/',
                     },
                     class: 'custom-link',
+                    style: {
+                        color: 'rgb(200, 200, 200)',
+                    },
                 },
                 { default: () => 'Analysis' }
             ),
@@ -449,6 +458,9 @@ const menuOptions: MenuOption[] = [
                         path: '/workspace',
                     },
                     class: 'custom-link',
+                    style: {
+                        color: 'rgb(200, 200, 200)',
+                    },
                 },
                 { default: () => 'Workspace' }
             ),
@@ -464,6 +476,9 @@ const menuOptions: MenuOption[] = [
                         path: '/download',
                     },
                     class: 'custom-link',
+                    style: {
+                        color: 'rgb(200, 200, 200)',
+                    },
                 },
                 { default: () => 'Download' }
             ),
@@ -479,6 +494,9 @@ const menuOptions: MenuOption[] = [
                         path: '/tutorial',
                     },
                     class: 'custom-link',
+                    style: {
+                        color: 'rgb(200, 200, 200)',
+                    },
                 },
                 { default: () => 'Tutorial' }
             ),
@@ -494,6 +512,9 @@ const menuOptions: MenuOption[] = [
                         path: '/contact',
                     },
                     class: 'custom-link',
+                    style: {
+                        color: 'rgb(200, 200, 200)',
+                    },
                 },
                 { default: () => 'Contact us' }
             ),
@@ -516,17 +537,16 @@ const changeMenu = (_: string, option: MenuOption) => {
         @apply flex flex-grow;
     }
 }
-.n-menu.n-menu--horizontal .n-menu-item-content .n-menu-item-content-header a {
-    color: rgb(200, 200, 200) !important;
-}
-a.custom-link {
-    color: rgb(200, 200, 200) !important;
+::v-deep .custom-link {
+    color: rgb(200, 200, 200);
+    text-decoration: none;
 }
 
-a.custom-link:hover {
-    color: #069 !important;
+::v-deep .custom-link:hover {
+    color: #069;
 }
-a.custom-link:active {
-    color: #069 !important;
+
+::v-deep .custom-link:active {
+    color: #069;
 }
 </style>
