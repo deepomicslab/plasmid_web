@@ -542,11 +542,11 @@ const changeMenu = (_: string, option: MenuOption) => {
     text-decoration: none;
 }
 
-::v-deep .custom-link:hover {
-    color: #069;
+::v-deep .n-menu .n-menu-item-content .n-menu-item-content-header a.custom-link:hover {
+    color: rgb(255, 255, 255) !important;
 }
 
-::v-deep .custom-link:active {
-    color: #069;
+::v-deep .router-link-active.router-link-exact-active.custom-link {
+    color: #059669 !important;
 }
 </style>
