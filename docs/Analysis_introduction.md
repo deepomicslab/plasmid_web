@@ -30,7 +30,7 @@ The genome comparison analysis module of PlasmidScope allows users to compare an
 #### Sequence alignment
 This module compares the protein sequences of multiple plasmid genomes to identify regions of similarity. The **protein sequences from the annotation files** are extracted and compared with each other with **BLASTP** [9]. The **alignment identity and coverage** are returned for visualization. This analysis helps in locating conserved regions, detecting sequence variations, and finding potential functional elements.
 
-#### Phylogentic analysis
+#### Comparative analysis
 This module constructs a comparative tree that represents the sequence similarities between the plasmid genomes. **Alfpy** [10] is applied to calculate the genome distance between the input sequences, and **neighbor joining algorithm** [11] is applied for tree reconstruction. The module returns the comparative tree in **newick format**. The tree provides a visual representation of their genetic relatedness, allowing researchers to study the plasmid's evolutionary history and track the divergence and convergence of different plasmid lineages.
 
 ## References
