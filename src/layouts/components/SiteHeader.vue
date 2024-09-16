@@ -74,76 +74,248 @@ const renderIcon = (icon: Component) => {
 }
 
 const menuOptions: MenuOption[] = [
-    // { label: 'HOME', key: '/home', icon: renderIcon(HomeIcon) },
-    { label: 'Home', key: '/', icon: renderIcon(HomeIcon) },
     {
-        label: 'Database',
-        key: '/database',
+        label: () =>
+            h(
+                RouterLink,
+                {
+                    to: {
+                        path: '/',
+                    },
+                    class: 'custom-link',
+                },
+                { default: () => 'Home' }
+            ),
+        key: '/',
+        icon: renderIcon(HomeIcon),
+    },
+    {
+        label: () =>
+            h(
+                RouterLink,
+                {
+                    to: {
+                        path: '/database/',
+                    },
+                    class: 'custom-link',
+                },
+                { default: () => 'Database' }
+            ),
+        key: '/database/',
         icon: renderIcon(DatabaseIcon),
         children: [
             {
-                label: 'Overview',
+                label: () =>
+                    h(
+                        RouterLink,
+                        {
+                            to: {
+                                path: '/database/',
+                            },
+                            class: 'custom-link',
+                        },
+                        { default: () => 'Overview' }
+                    ),
                 key: '/database',
             },
             {
-                label: 'Plasmid List',
+                label: () =>
+                    h(
+                        RouterLink,
+                        {
+                            to: {
+                                path: '/database/plasmid',
+                            },
+                            class: 'custom-link',
+                        },
+                        { default: () => 'Plasmid List' }
+                    ),
                 key: '/database/plasmid',
             },
             {
-                label: 'Host List',
+                label: () =>
+                    h(
+                        RouterLink,
+                        {
+                            to: {
+                                path: '/database/host',
+                            },
+                            class: 'custom-link',
+                        },
+                        { default: () => 'Host List' }
+                    ),
                 key: '/database/host',
             },
             {
-                label: 'Cluster List',
+                label: () =>
+                    h(
+                        RouterLink,
+                        {
+                            to: {
+                                path: '/database/cluster',
+                            },
+                            class: 'custom-link',
+                        },
+                        { default: () => 'Cluster List' }
+                    ),
                 key: '/database/cluster',
             },
             {
-                label: 'Protein List',
+                label: () =>
+                    h(
+                        RouterLink,
+                        {
+                            to: {
+                                path: '/database/protein',
+                            },
+                            class: 'custom-link',
+                        },
+                        { default: () => 'Protein List' }
+                    ),
                 key: '/database/protein',
             },
             {
-                label: 'Functional Annotation Data',
+                label: () =>
+                    h(
+                        RouterLink,
+                        {
+                            to: {
+                                path: '/database/function',
+                            },
+                            class: 'custom-link',
+                        },
+                        { default: () => 'Functional Annotation Data' }
+                    ),
                 key: '/database/function',
                 children: [
                     {
-                        label: 'tRNAs & tmRNAs List',
+                        label: () =>
+                            h(
+                                RouterLink,
+                                {
+                                    to: {
+                                        path: '/database/function/trna',
+                                    },
+                                    class: 'custom-link',
+                                },
+                                { default: () => 'tRNAs & tmRNAs List' }
+                            ),
                         key: '/database/function/trna',
                     },
                     {
-                        label: 'CRISPR/Cas systems List',
+                        label: () =>
+                            h(
+                                RouterLink,
+                                {
+                                    to: {
+                                        path: '/database/function/crispr',
+                                    },
+                                    class: 'custom-link',
+                                },
+                                { default: () => 'CRISPR/Cas systems List' }
+                            ),
                         key: '/database/function/crispr',
                     },
                     {
-                        label: 'Secondary Metabolites List',
+                        label: () =>
+                            h(
+                                RouterLink,
+                                {
+                                    to: {
+                                        path: '/database/function/sm',
+                                    },
+                                    class: 'custom-link',
+                                },
+                                { default: () => 'Secondary Metabolites List' }
+                            ),
                         key: '/database/function/sm',
                     },
                     {
-                        label: 'Signal Peptides List',
+                        label: () =>
+                            h(
+                                RouterLink,
+                                {
+                                    to: {
+                                        path: '/database/function/sp',
+                                    },
+                                    class: 'custom-link',
+                                },
+                                { default: () => 'Signal Peptides List' }
+                            ),
                         key: '/database/function/sp',
                     },
                     {
-                        label: 'Virulence Factors List',
+                        label: () =>
+                            h(
+                                RouterLink,
+                                {
+                                    to: {
+                                        path: '/database/function/virulent',
+                                    },
+                                    class: 'custom-link',
+                                },
+                                { default: () => 'Virulence Factors List' }
+                            ),
                         key: '/database/function/virulent',
                     },
                     {
-                        label: 'Antibiotic Resistance Genes List',
+                        label: () =>
+                            h(
+                                RouterLink,
+                                {
+                                    to: {
+                                        path: '/database/function/antimicrobial_resistance',
+                                    },
+                                    class: 'custom-link',
+                                },
+                                { default: () => 'Antibiotic Resistance Genes List' }
+                            ),
                         key: '/database/function/antimicrobial_resistance',
                     },
                     {
-                        label: 'Transmembrane Protein List',
+                        label: () =>
+                            h(
+                                RouterLink,
+                                {
+                                    to: {
+                                        path: '/database/function/transmembrane',
+                                    },
+                                    class: 'custom-link',
+                                },
+                                { default: () => 'Transmembrane Protein List' }
+                            ),
                         key: '/database/function/transmembrane',
                     },
                 ],
             },
-
             {
-                label: 'Sequence Filter',
+                label: () =>
+                    h(
+                        RouterLink,
+                        {
+                            to: {
+                                path: '/database/filter',
+                            },
+                            class: 'custom-link',
+                        },
+                        { default: () => 'Sequence Filter' }
+                    ),
                 key: '/database/filter',
             },
         ],
     },
     {
-        label: 'Analysis',
+        label: () =>
+            h(
+                RouterLink,
+                {
+                    to: {
+                        path: '/analysis/annopipline/',
+                    },
+                    class: 'custom-link',
+                },
+                { default: () => 'Analysis' }
+            ),
         key: '/analysis',
         icon: renderIcon(AnalysisIcon),
         children: [
@@ -155,121 +327,73 @@ const menuOptions: MenuOption[] = [
                             to: {
                                 path: '/analysis/annopipline/',
                             },
+                            class: 'custom-link',
                         },
                         { default: () => 'Plasmid Annotation' }
                     ),
                 key: '/analysis/annopipline/',
                 children: [
                     {
-                        label: 'ORF prediction & Protein classification',
+                        label: () =>
+                            h(
+                                RouterLink,
+                                {
+                                    to: {
+                                        path: '/analysis/annopipline/structural/annotation',
+                                    },
+                                    class: 'custom-link',
+                                },
+                                { default: () => 'ORF prediction & Protein classification' }
+                            ),
                         key: '/analysis/annopipline/structural/annotation',
                     },
                     {
-                        label: 'tRNA & tmRNA prediction',
+                        label: () =>
+                            h(
+                                RouterLink,
+                                {
+                                    to: {
+                                        path: '/analysis/annopipline/functional/trna',
+                                    },
+                                    class: 'custom-link',
+                                },
+                                { default: () => 'tRNA & tmRNA prediction' }
+                            ),
                         key: '/analysis/annopipline/functional/trna',
                     },
                     {
-                        label: 'Virulence factor & Antibiotic resistance gene annotation',
+                        label: () =>
+                            h(
+                                RouterLink,
+                                {
+                                    to: {
+                                        path: '/analysis/annopipline/functional/arvf',
+                                    },
+                                    class: 'custom-link',
+                                },
+                                {
+                                    default: () =>
+                                        'Virulence factor & Antibiotic resistance gene annotation',
+                                }
+                            ),
                         key: '/analysis/annopipline/functional/arvf',
                     },
                     {
-                        label: 'Transmembrane protein annotation',
+                        label: () =>
+                            h(
+                                RouterLink,
+                                {
+                                    to: {
+                                        path: '/analysis/annopipline/functional/trans',
+                                    },
+                                    class: 'custom-link',
+                                },
+                                { default: () => 'Transmembrane protein annotation' }
+                            ),
                         key: '/analysis/annopipline/functional/trans',
                     },
-                    // {
-                    //     label: () =>
-                    //         h(
-                    //             RouterLink,
-                    //             {
-                    //                 to: {
-                    //                     path: '/analysis/annopipline/phenotype',
-                    //                 },
-                    //             },
-                    //             { default: () => 'Phenotype Annotation' }
-                    //         ),
-                    //     key: '/analysis/annopipline/phenotype',
-                    //     children: [
-                    //         {
-                    //             label: 'Host Assignment',
-                    //             key: '/analysis/annopipline/phenotype/host',
-                    //         },
-                    //         {
-                    //             label: 'Lifestyle Prediction',
-                    //             key: '/analysis/annopipline/phenotype/lifestyle',
-                    //         },
-                    //     ],
-                    // },
-
-                    // {
-                    //     label: () =>
-                    //         h(
-                    //             RouterLink,
-                    //             {
-                    //                 to: {
-                    //                     path: '/analysis/annopipline/structural',
-                    //                 },
-                    //             },
-                    //             { default: () => 'Structural Annotation' }
-                    //         ),
-                    //     key: '/analysis/annopipline/structural',
-                    //     children: [
-                    //         {
-                    //             label: 'ORF prediction & Protein Classification',
-                    //             key: '/analysis/annopipline/structural/annotation',
-                    //         },
-                    //         {
-                    //             label: 'Transcription Terminator Annotation',
-                    //             key: '/analysis/annopipline/structural/terminators',
-                    //         },
-                    //     ],
-                    // },
-                    // {
-                    //     label: 'Taxonomic Annotation',
-                    //     key: '/analysis/annopipline/taxonomic',
-                    // },
-                    // {
-                    //     label: () =>
-                    //         h(
-                    //             RouterLink,
-                    //             {
-                    //                 to: {
-                    //                     path: '/analysis/annopipline/functional',
-                    //                 },
-                    //             },
-                    //             { default: () => 'Functional Annotation' }
-                    //         ),
-                    //     key: '/analysis/annopipline/functional',
-                    //     children: [
-                    //         {
-                    //             label: 'tRNA & tmRNA Gene Annotation',
-                    //             key: '/analysis/annopipline/functional/trna',
-                    //         },
-
-                    //         {
-                    //             label: 'Anti-CRISPR Protein Annotation',
-                    //             key: '/analysis/annopipline/functional/anti',
-                    //         },
-                    //         {
-                    //             label: 'CRISPR Array Annotation',
-                    //             key: '/analysis/annopipline/functional/crispr',
-                    //         },
-                    //         {
-                    //             label: () =>
-                    //                 h(NEllipsis, null, {
-                    //                     default: () =>
-                    //                         'Virulent Factor & Antimicrobial Resistance Gene Detection',
-                    //                 }),
-                    //             key: '/analysis/annopipline/functional/arvf',
-                    //         },
-                    //         {
-                    //             label: 'Transmembrane Protein Annotation',
-                    //             key: '/analysis/annopipline/functional/trans',
-                    //         },
-                    //     ],
-                    // },
                 ],
             },
-
             {
                 label: () =>
                     h(
@@ -278,27 +402,104 @@ const menuOptions: MenuOption[] = [
                             to: {
                                 path: '/analysis/comparison',
                             },
+                            class: 'custom-link',
                         },
                         { default: () => 'Plasmid Comparison' }
                     ),
                 key: '/analysis/comparison',
                 children: [
                     {
-                        label: 'Sequence Alignment',
+                        label: () =>
+                            h(
+                                RouterLink,
+                                {
+                                    to: {
+                                        path: '/analysis/comparison/alignment',
+                                    },
+                                    class: 'custom-link',
+                                },
+                                { default: () => 'Sequence Alignment' }
+                            ),
                         key: '/analysis/comparison/alignment',
                     },
                     {
-                        label: 'Comparative Analysis',
+                        label: () =>
+                            h(
+                                RouterLink,
+                                {
+                                    to: {
+                                        path: '/analysis/comparison/phylogenetic',
+                                    },
+                                    class: 'custom-link',
+                                },
+                                { default: () => 'Comparative Analysis' }
+                            ),
                         key: '/analysis/comparison/phylogenetic',
                     },
                 ],
             },
         ],
     },
-    { label: 'Workspace', key: '/workspace', icon: renderIcon(WorkspaceIcon) },
-    { label: 'Download', key: '/download', icon: renderIcon(DownloadIcon) },
-    { label: 'Tutorial', key: '/tutorial', icon: renderIcon(tutorialIcon) },
-    { label: 'Contact us', key: '/contact', icon: renderIcon(UserIcon) },
+    {
+        label: () =>
+            h(
+                RouterLink,
+                {
+                    to: {
+                        path: '/workspace',
+                    },
+                    class: 'custom-link',
+                },
+                { default: () => 'Workspace' }
+            ),
+        key: '/workspace',
+        icon: renderIcon(WorkspaceIcon),
+    },
+    {
+        label: () =>
+            h(
+                RouterLink,
+                {
+                    to: {
+                        path: '/download',
+                    },
+                    class: 'custom-link',
+                },
+                { default: () => 'Download' }
+            ),
+        key: '/download',
+        icon: renderIcon(DownloadIcon),
+    },
+    {
+        label: () =>
+            h(
+                RouterLink,
+                {
+                    to: {
+                        path: '/tutorial',
+                    },
+                    class: 'custom-link',
+                },
+                { default: () => 'Tutorial' }
+            ),
+        key: '/tutorial',
+        icon: renderIcon(tutorialIcon),
+    },
+    {
+        label: () =>
+            h(
+                RouterLink,
+                {
+                    to: {
+                        path: '/contact',
+                    },
+                    class: 'custom-link',
+                },
+                { default: () => 'Contact us' }
+            ),
+        key: '/contact',
+        icon: renderIcon(UserIcon),
+    },
 ]
 
 const router = useRouter()
@@ -314,5 +515,18 @@ const changeMenu = (_: string, option: MenuOption) => {
     .n-menu-item {
         @apply flex flex-grow;
     }
+}
+.n-menu.n-menu--horizontal .n-menu-item-content .n-menu-item-content-header a {
+    color: rgb(200, 200, 200) !important;
+}
+a.custom-link {
+    color: rgb(200, 200, 200) !important;
+}
+
+a.custom-link:hover {
+    color: #069 !important;
+}
+a.custom-link:active {
+    color: #069 !important;
 }
 </style>
