@@ -215,6 +215,11 @@ onBeforeMount(async () => {
         source.value = route.query?.dataset as string
     }
     loading.value = true
+    if (source.value === '-1') {
+        phageurl.value = '/allplasmid/'
+    } else {
+        phageurl.value = '/plasmid/'
+    }
     const response = await axios.get(phageurl.value, {
         baseURL: '/api/database/',
         timeout: 100000,
@@ -243,6 +248,11 @@ const count = computed(() => phagedata.value?.count)
 
 const nextPage = async () => {
     loading.value = true
+    if (source.value === '-1') {
+        phageurl.value = '/allplasmid/'
+    } else {
+        phageurl.value = '/plasmid/'
+    }
     const response = await axios.get(phageurl.value, {
         baseURL: '/api/database',
         timeout: 100000,
@@ -261,6 +271,11 @@ const nextPage = async () => {
 
 const prevPage = async () => {
     loading.value = true
+    if (source.value === '-1') {
+        phageurl.value = '/allplasmid/'
+    } else {
+        phageurl.value = '/plasmid/'
+    }
     const response = await axios.get(phageurl.value, {
         baseURL: '/api/database',
         timeout: 100000,
@@ -278,6 +293,11 @@ const prevPage = async () => {
 }
 const pagechange = async () => {
     loading.value = true
+    if (source.value === '-1') {
+        phageurl.value = '/allplasmid/'
+    } else {
+        phageurl.value = '/plasmid/'
+    }
     const response = await axios.get(phageurl.value, {
         baseURL: '/api/database',
         timeout: 100000,
@@ -295,6 +315,11 @@ const pagechange = async () => {
 }
 const pagesizechange = async () => {
     loading.value = true
+    if (source.value === '-1') {
+        phageurl.value = '/allplasmid/'
+    } else {
+        phageurl.value = '/plasmid/'
+    }
     const response = await axios.get(phageurl.value, {
         baseURL: '/api/database',
         timeout: 100000,
@@ -463,6 +488,11 @@ const complete = (comp: any) => {
 const filtersearch = async () => {
     loading.value = true
     phageurl.value = 'plasmid/'
+    if (source.value === '-1') {
+        phageurl.value = 'allplasmid/'
+    } else {
+        phageurl.value = 'plasmid/'
+    }
     const response = await axios.get(phageurl.value, {
         baseURL: '/api/database/',
         timeout: 100000,
@@ -479,6 +509,11 @@ const filtersearch = async () => {
 }
 const resetsearch = async () => {
     phageurl.value = '/plasmid/'
+    if (source.value === '-1') {
+        phageurl.value = '/allplasmid/'
+    } else {
+        phageurl.value = '/plasmid/'
+    }
     searchinput.value = ''
     loading.value = true
     const response = await axios.get(phageurl.value, {
@@ -511,7 +546,66 @@ const createColumns = (): DataTableColumns<RowData> => {
             ellipsis: {
                 tooltip: true,
             },
+            // eslint-disable-next-line consistent-return
             render(row: any) {
+                if (source.value === '-1') {
+                    const plasmids = String(row.plasmid_id).split(',')
+                    return h('div', { style: { overflow: 'auto', 'text-overflow': 'ellipsis' } }, [
+                        plasmids.map((plasmid_id_value, index) =>
+                            h('div', { style: { marginBottom: '4px' } }, [
+                                // Wrap each button in a div
+                                h(
+                                    NButton,
+                                    {
+                                        type: 'info',
+                                        text: true,
+                                        size: 'small',
+                                        style: { width: '200px', marginBottom: '4px' }, // Optional margin for spacing
+                                        onClick: () => {
+                                            const sources = String(row.source).split(',')
+                                            const sourceValue = sources[index]
+                                            const id = plasmid_id_value.replace(
+                                                `${sourceValue}_`,
+                                                ''
+                                            ) // Assuming sourceValue is properly set
+                                            console.log(sourceValue)
+                                            if (sourceValue === 'PLSDB') {
+                                                window.open(
+                                                    `https://ccb-microbe.cs.uni-saarland.de/plsdb/plasmids/plasmid/${id}/`
+                                                )
+                                            } else if (sourceValue === 'IMG-PR') {
+                                                window.open(
+                                                    `https://genome.jgi.doe.gov/portal/IMG_PR/IMG_PR.home.html`
+                                                )
+                                            } else if (sourceValue === 'ENA') {
+                                                window.open(
+                                                    `https://www.ebi.ac.uk/ena/browser/view/${id}`
+                                                )
+                                            } else if (sourceValue === 'DDBJ') {
+                                                window.open(
+                                                    `https://getentry.ddbj.nig.ac.jp/getentry/na/${id}/`
+                                                )
+                                            } else if (sourceValue === 'mMGE') {
+                                                window.open(
+                                                    `https://mai.fudan.edu.cn/mgedb/client/`
+                                                )
+                                            } else {
+                                                window.open(
+                                                    `https://www.ncbi.nlm.nih.gov/nuccore/${id}/`
+                                                )
+                                            }
+                                        },
+                                    },
+                                    [
+                                        h(NEllipsis, null, {
+                                            default: () => plasmid_id_value, // Display the source value
+                                        }),
+                                    ]
+                                ),
+                            ])
+                        ),
+                    ])
+                }
                 return h('div', { style: { overflow: 'auto', 'text-overflow': 'ellipsis' } }, [
                     h(
                         NButton,
@@ -532,6 +626,10 @@ const createColumns = (): DataTableColumns<RowData> => {
                                     )
                                 } else if (row.source === 5) {
                                     window.open(`https://www.ebi.ac.uk/ena/browser/view/${id}`)
+                                } else if (row.source === 7) {
+                                    window.open(
+                                        `https://getentry.ddbj.nig.ac.jp/getentry/na/${id}/`
+                                    )
                                 } else if (row.source === 9) {
                                     window.open(`https://mai.fudan.edu.cn/mgedb/client/`)
                                 } else {
@@ -565,6 +663,28 @@ const createColumns = (): DataTableColumns<RowData> => {
                 return row.source === value
             },
             render(row: any) {
+                if (source.value === '-1') {
+                    const sources = String(row.source).split(',')
+                    return h('div', { style: { overflow: 'auto', 'text-overflow': 'ellipsis' } }, [
+                        sources.map(source_value =>
+                            h('div', { style: { marginBottom: '4px' } }, [
+                                h(
+                                    NTag,
+                                    {
+                                        type: 'info',
+                                        size: 'small',
+                                        round: true,
+                                    },
+                                    {
+                                        default: () => {
+                                            return source_value
+                                        },
+                                    }
+                                ),
+                            ])
+                        ),
+                    ])
+                }
                 return h('div', { style: { width: '100px' } }, [
                     h(
                         NTag,
@@ -860,8 +980,14 @@ const paginationReactive = reactive({
 })
 const handleSelectSet = async (value: any) => {
     source.value = value
+    console.log(source.value)
     loading.value = true
-    const response = await axios.get('/plasmid/', {
+    if (source.value === '-1') {
+        phageurl.value = '/allplasmid/'
+    } else {
+        phageurl.value = '/plasmid/'
+    }
+    const response = await axios.get(phageurl.value, {
         baseURL: '/api/database',
         timeout: 100000,
         params: {

@@ -12,7 +12,12 @@
             <div class="flex flex-row justify-start mt-6 w-full">
                 <el-button round color="rgb(18,49,73) " class="w-40 ml-58">Back</el-button>
                 <el-button round color="rgb(18,49,73) " class="ml-5 w-40">Task Monitor</el-button>
-                <el-button round color="rgb(18,49,73) " class="ml-5 w-40" @click="ViewDemoVisualization">
+                <el-button
+                    round
+                    color="rgb(18,49,73) "
+                    class="ml-5 w-40"
+                    @click="ViewDemoVisualization"
+                >
                     Visualization
                 </el-button>
             </div>

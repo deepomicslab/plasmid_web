@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-col justify-center items-center h-full">
         <div class="w-290">
-            <div class="flex flex-row w-200">
+            <div class="flex flex-row w-250">
                 <div class="text-4xl font-500 mb-12">Protein Detail</div>
                 <div class="mt-1.5 ml-10">
                     <el-button @click="downloadprotein">
@@ -15,6 +15,12 @@
                             <n-icon><downicon /></n-icon>
                         </template>
                         Download PDB Structure File
+                    </el-button>
+                    <el-button @click="downloadcif">
+                        <template #icon>
+                            <n-icon><downicon /></n-icon>
+                        </template>
+                        Download CIF Structure File
                     </el-button>
                 </div>
             </div>
@@ -285,6 +291,12 @@ const downloadprotein = () => {
 const downloadpdb = () => {
     window.open(
         `/api/database/download_protein_pdb/?protein_id=${props.proteinInfo.id}&sequence=${props.proteinInfo.sequence}`,
+        '_blank'
+    )
+}
+const downloadcif = () => {
+    window.open(
+        `/api/database/download_protein_cif/?protein_id=${props.proteinInfo.id}&sequence=${props.proteinInfo.sequence}`,
         '_blank'
     )
 }

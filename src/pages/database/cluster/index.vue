@@ -281,6 +281,9 @@ const createColumns = (): DataTableColumns<RowData> => {
             key: 'avg_gc',
             sorter: 'default',
             align: 'center',
+            render(row: any) {
+                return (Math.round(row.avg_gc * 100) / 100).toFixed(2)
+            },
         },
         // {
         //     title() {
