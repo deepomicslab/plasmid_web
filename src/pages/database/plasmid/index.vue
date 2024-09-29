@@ -741,6 +741,37 @@ const createColumns = (): DataTableColumns<RowData> => {
                 tooltip: true,
             },
             render(row: any) {
+                if (source.value === '-1') {
+                    const hosts = String(row.host).split(',')
+                    return h('div', { style: { overflow: 'auto', 'text-overflow': 'ellipsis' } }, [
+                        hosts.map(host_value =>
+                            h('div', { style: { marginBottom: '4px' } }, [
+                                h(
+                                    NButton,
+                                    {
+                                        type: 'info',
+                                        text: true,
+                                        size: 'small',
+                                        onClick: () => {
+                                            router.push({
+                                                path: `/database/host/list`,
+                                                query: {
+                                                    rank: 'host',
+                                                    node: host_value,
+                                                },
+                                            })
+                                        },
+                                    },
+                                    {
+                                        default: () => {
+                                            return host_value
+                                        },
+                                    }
+                                ),
+                            ])
+                        ),
+                    ])
+                }
                 return h('div', { style: { overflow: 'auto', 'text-overflow': 'ellipsis' } }, [
                     h(
                         NButton,
