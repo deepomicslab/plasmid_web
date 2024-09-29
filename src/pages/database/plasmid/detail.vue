@@ -383,14 +383,18 @@ onBeforeMount(async () => {
         const { data } = response
         phagedata.value = data
         // Handle successful response
-        const id = phagedata.value.plasmid_id.replace(`${datasetList[phagedata.value.source]}_`, '')
+        let id = phagedata.value.plasmid_id.replace(`${datasetList[phagedata.value.source]}_`, '')
         if (phagedata.value.source === 0) {
             phagedata.value.reference = `https://ccb-microbe.cs.uni-saarland.de/plsdb/plasmids/plasmid/${id}/`
         } else if (phagedata.value.source === 1) {
             phagedata.value.reference = `https://genome.jgi.doe.gov/portal/IMG_PR/IMG_PR.home.html`
         } else if (phagedata.value.source === 5) {
+            id = phagedata.value.plasmid_id.replace(`EMBL_`, '')
             phagedata.value.reference = `https://www.ebi.ac.uk/ena/browser/view/${id}`
+        } else if (phagedata.value.source === 7) {
+            phagedata.value.reference = `https://getentry.ddbj.nig.ac.jp/getentry/na/${id}/`
         } else if (phagedata.value.source === 9) {
+            id = phagedata.value.plasmid_id.replace(`mMGEs_`, '')
             phagedata.value.reference = `https://mai.fudan.edu.cn/mgedb/client/`
         } else {
             phagedata.value.reference = `https://www.ncbi.nlm.nih.gov/nuccore/${id}/`
