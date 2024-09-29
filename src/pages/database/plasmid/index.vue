@@ -564,10 +564,7 @@ const createColumns = (): DataTableColumns<RowData> => {
                                         onClick: () => {
                                             const sources = String(row.source).split(',')
                                             const sourceValue = sources[index]
-                                            const id = plasmid_id_value.replace(
-                                                `${sourceValue}_`,
-                                                ''
-                                            ) // Assuming sourceValue is properly set
+                                            let id = plasmid_id_value.replace(`${sourceValue}_`, '') // Assuming sourceValue is properly set
                                             console.log(sourceValue)
                                             if (sourceValue === 'PLSDB') {
                                                 window.open(
@@ -578,6 +575,7 @@ const createColumns = (): DataTableColumns<RowData> => {
                                                     `https://genome.jgi.doe.gov/portal/IMG_PR/IMG_PR.home.html`
                                                 )
                                             } else if (sourceValue === 'ENA') {
+                                                id = plasmid_id_value.replace(`EMBL_`, '') // Assuming sourceValue is properly set
                                                 window.open(
                                                     `https://www.ebi.ac.uk/ena/browser/view/${id}`
                                                 )
@@ -586,6 +584,7 @@ const createColumns = (): DataTableColumns<RowData> => {
                                                     `https://getentry.ddbj.nig.ac.jp/getentry/na/${id}/`
                                                 )
                                             } else if (sourceValue === 'mMGE') {
+                                                id = plasmid_id_value.replace(`mMGEs_`, '')
                                                 window.open(
                                                     `https://mai.fudan.edu.cn/mgedb/client/`
                                                 )
@@ -615,7 +614,7 @@ const createColumns = (): DataTableColumns<RowData> => {
                             size: 'small',
                             style: { width: '200px' },
                             onClick: () => {
-                                const id = row.plasmid_id.replace(`${datasetList[row.source]}_`, '')
+                                let id = row.plasmid_id.replace(`${datasetList[row.source]}_`, '')
                                 if (row.source === 0) {
                                     window.open(
                                         `https://ccb-microbe.cs.uni-saarland.de/plsdb/plasmids/plasmid/${id}/`
@@ -625,12 +624,14 @@ const createColumns = (): DataTableColumns<RowData> => {
                                         `https://genome.jgi.doe.gov/portal/IMG_PR/IMG_PR.home.html`
                                     )
                                 } else if (row.source === 5) {
+                                    id = row.plasmid_id.replace(`EMBL_`, '')
                                     window.open(`https://www.ebi.ac.uk/ena/browser/view/${id}`)
                                 } else if (row.source === 7) {
                                     window.open(
                                         `https://getentry.ddbj.nig.ac.jp/getentry/na/${id}/`
                                     )
                                 } else if (row.source === 9) {
+                                    id = row.plasmid_id.replace(`mMGEs_`, '')
                                     window.open(`https://mai.fudan.edu.cn/mgedb/client/`)
                                 } else {
                                     window.open(`https://www.ncbi.nlm.nih.gov/nuccore/${id}/`)
