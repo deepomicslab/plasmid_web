@@ -240,6 +240,24 @@
                                 <el-step :icon="Opportunity" status="process">
                                     <template #title>
                                         <div class="text-gray-700 font-600">
+                                            Version 1.2 (2024.10.1)
+                                        </div>
+                                    </template>
+                                    <template #description>
+                                        <div :class="descriptionClass">
+                                            1. Add a download option for protein structure files in
+                                            CIF format on the "Protein Detail" page.
+                                            <br />
+                                            2. Add the display of multiple plasmid IDs and plasmid
+                                            sources on the "Plasmid List" page.
+                                            <br />
+                                            3. Fix bugs: issues with floating point display, etc.
+                                        </div>
+                                    </template>
+                                </el-step>
+                                <el-step :icon="Opportunity" status="process">
+                                    <template #title>
+                                        <div class="text-gray-700 font-600">
                                             Version 1.1 (2024.9.14)
                                         </div>
                                     </template>
